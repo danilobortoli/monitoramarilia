@@ -43,8 +43,8 @@ const DASHBOARD_DATA = {
             id: 1,
             tipo: "critico",
             titulo: "Contrato sem licitação - valor elevado",
-            descricao: "Contrato nº 2024/089 no valor de R$ 890.000,00 firmado por dispensa de licitação. Verificar enquadramento legal.",
-            data: "2024-01-15",
+            descricao: "Contrato nº 2026/089 no valor de R$ 890.000,00 firmado por dispensa de licitação. Verificar enquadramento legal.",
+            data: "2026-01-15",
             categoria: "contratos"
         },
         {
@@ -52,7 +52,7 @@ const DASHBOARD_DATA = {
             tipo: "critico",
             titulo: "Possível fracionamento de despesas",
             descricao: "Detectadas 5 compras de material de escritório no mesmo mês, totalizando R$ 78.000,00, com mesmo fornecedor.",
-            data: "2024-01-12",
+            data: "2026-01-12",
             categoria: "despesas"
         },
         {
@@ -60,39 +60,39 @@ const DASHBOARD_DATA = {
             tipo: "alerta",
             titulo: "Atraso na atualização de despesas",
             descricao: "Dados de despesas não atualizados há 3 dias. LAI exige atualização em tempo real.",
-            data: "2024-01-18",
+            data: "2026-01-18",
             categoria: "lai"
         },
         {
             id: 4,
             tipo: "alerta",
             titulo: "Fornecedor com alta concentração",
-            descricao: "Empresa XYZ LTDA recebeu 15% do total de pagamentos do mês de dezembro/2023.",
-            data: "2024-01-10",
+            descricao: "Empresa XYZ LTDA recebeu 15% do total de pagamentos do mês de dezembro/2025.",
+            data: "2026-01-10",
             categoria: "fornecedores"
         },
         {
             id: 5,
             tipo: "info",
             titulo: "Aditivo contratual acima de 25%",
-            descricao: "Contrato nº 2023/045 teve aditivo de 32%, superando o limite legal de 25%.",
-            data: "2024-01-08",
+            descricao: "Contrato nº 2025/045 teve aditivo de 32%, superando o limite legal de 25%.",
+            data: "2026-01-08",
             categoria: "contratos"
         },
         {
             id: 6,
             tipo: "info",
             titulo: "Licitação deserta",
-            descricao: "Pregão Eletrônico nº 012/2024 declarado deserto. Nova licitação necessária.",
-            data: "2024-01-05",
+            descricao: "Pregão Eletrônico nº 012/2026 declarado deserto. Nova licitação necessária.",
+            data: "2026-01-05",
             categoria: "licitacoes"
         },
         {
             id: 7,
             tipo: "info",
             titulo: "Dados de folha de pagamento",
-            descricao: "Folha de dezembro/2023 publicada com 15 dias de atraso.",
-            data: "2024-01-03",
+            descricao: "Folha de dezembro/2025 publicada com 15 dias de atraso.",
+            data: "2026-01-03",
             categoria: "pessoal"
         }
     ],
@@ -114,11 +114,11 @@ const DASHBOARD_DATA = {
 
     // Últimas licitações
     licitacoes: [
-        { numero: "PE 001/2024", objeto: "Aquisição de medicamentos", valor: 2500000, modalidade: "Pregão Eletrônico", status: "Em andamento", data: "2024-01-18" },
-        { numero: "PE 002/2024", objeto: "Serviços de limpeza hospitalar", valor: 1800000, modalidade: "Pregão Eletrônico", status: "Homologada", data: "2024-01-15" },
-        { numero: "CC 001/2024", objeto: "Reforma de escola municipal", valor: 3200000, modalidade: "Concorrência", status: "Em andamento", data: "2024-01-12" },
-        { numero: "PE 003/2024", objeto: "Material de escritório", valor: 150000, modalidade: "Pregão Eletrônico", status: "Homologada", data: "2024-01-10" },
-        { numero: "DL 001/2024", objeto: "Manutenção emergencial", valor: 45000, modalidade: "Dispensa", status: "Contratada", data: "2024-01-08" }
+        { numero: "PE 001/2026", objeto: "Aquisição de medicamentos", valor: 2500000, modalidade: "Pregão Eletrônico", status: "Em andamento", data: "2026-01-18" },
+        { numero: "PE 002/2026", objeto: "Serviços de limpeza hospitalar", valor: 1800000, modalidade: "Pregão Eletrônico", status: "Homologada", data: "2026-01-15" },
+        { numero: "CC 001/2026", objeto: "Reforma de escola municipal", valor: 3200000, modalidade: "Concorrência", status: "Em andamento", data: "2026-01-12" },
+        { numero: "PE 003/2026", objeto: "Material de escritório", valor: 150000, modalidade: "Pregão Eletrônico", status: "Homologada", data: "2026-01-10" },
+        { numero: "DL 001/2026", objeto: "Manutenção emergencial", valor: 45000, modalidade: "Dispensa", status: "Contratada", data: "2026-01-08" }
     ],
 
     // Maiores fornecedores
