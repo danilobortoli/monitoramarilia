@@ -57,9 +57,14 @@ token.json
 .DS_Store
 Thumbs.db
 
-# Relatórios gerados (manter apenas exemplos)
+# Relatórios gerados (manter apenas estrutura)
 docs/relatorios/*.pdf
 !docs/relatorios/.gitkeep
+
+# Dados do dashboard (queremos commitar o dashboard.json)
+!docs/data/
+!docs/data/dashboard.json
+!docs/data/.gitkeep
 
 # Cache
 .cache/

@@ -9,6 +9,12 @@ Fontes de dados abertas:
 - SICONFI (Tesouro Nacional): Dados fiscais (RGF, RREO, DCA)
 - TCE-SP: Despesas e receitas detalhadas
 - Portal Federal: Transferências, convênios, sanções (CEIS/CNEP)
+
+Funcionalidades:
+- Coleta de dados de APIs oficiais
+- Armazenamento em banco SQLite para histórico
+- Geração de relatórios PDF
+- Atualização de dashboard web
 """
 
 import argparse
@@ -448,6 +454,199 @@ def _save_json(path: str, data):
     log(f"Dados salvos em: {output_path}", "success")
 
 
+def cmd_db_stats(args):
+    """Mostra estatísticas do banco de dados."""
+    from database import DatabaseManager
+
+    log("Carregando estatísticas do banco de dados...", "info")
+
+    db = DatabaseManager()
+    stats = db.get_estatisticas()
+
+    if RICH_AVAILABLE:
+        table = Table(title="Estatísticas do Banco de Dados")
+        table.add_column("Métrica", style="cyan")
+        table.add_column("Valor", style="green")
+
+        table.add_row("Total de coletas", str(stats.get("total_coletas", 0)))
+        table.add_row("Total de despesas", str(stats.get("total_despesas", 0)))
+        table.add_row("Total de fornecedores", str(stats.get("total_fornecedores", 0)))
+        table.add_row("Alertas ativos", str(stats.get("alertas_ativos", 0)))
+        table.add_row("Relatórios gerados", str(stats.get("total_relatorios", 0)))
+        table.add_row("Última coleta", stats.get("ultima_coleta", "Nunca") or "Nunca")
+
+        console.print(table)
+    else:
+        print("\nEstatísticas do Banco de Dados:")
+        print(f"  Total de coletas: {stats.get('total_coletas', 0)}")
+        print(f"  Total de despesas: {stats.get('total_despesas', 0)}")
+        print(f"  Total de fornecedores: {stats.get('total_fornecedores', 0)}")
+        print(f"  Alertas ativos: {stats.get('alertas_ativos', 0)}")
+        print(f"  Relatórios gerados: {stats.get('total_relatorios', 0)}")
+        print(f"  Última coleta: {stats.get('ultima_coleta', 'Nunca') or 'Nunca'}")
+
+
+def cmd_generate_report(args):
+    """Gera relatórios PDF."""
+    from reports.generator import FiscalReport, SupplierReport, TransferReport, ConsolidatedReport
+    from database import DatabaseManager
+
+    log(f"Gerando relatório: {args.tipo}...", "info")
+
+    ano = args.ano or datetime.now().year
+    output_dir = Path(args.output) if args.output else Path("docs/relatorios")
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Coletar dados atuais das APIs
+    dados_fiscal = {}
+    dados_fornecedores = {}
+    dados_transferencias = {}
+
+    if args.tipo in ["fiscal", "consolidado"]:
+        try:
+            from collectors.siconfi import SiconfiCollector
+            siconfi = SiconfiCollector()
+            dados_fiscal = siconfi.get_dados_para_dashboard(ano)
+            log("Dados fiscais carregados", "success")
+        except Exception as e:
+            log(f"Erro ao carregar dados fiscais: {e}", "warning")
+
+    if args.tipo in ["fornecedores", "consolidado"]:
+        try:
+            from collectors.tce_sp import TCESPCollector
+            tce = TCESPCollector()
+            dados_fornecedores = tce.get_dados_para_dashboard(ano)
+            log("Dados de fornecedores carregados", "success")
+        except Exception as e:
+            log(f"Erro ao carregar dados de fornecedores: {e}", "warning")
+
+    if args.tipo in ["transferencias", "consolidado"]:
+        try:
+            from collectors.portal_federal import PortalFederalCollector
+            federal = PortalFederalCollector()
+            if federal.api_key:
+                dados_transferencias = federal.get_dados_para_dashboard(ano)
+                log("Dados de transferências carregados", "success")
+            else:
+                log("API Key do Portal Federal não configurada", "warning")
+        except Exception as e:
+            log(f"Erro ao carregar dados de transferências: {e}", "warning")
+
+    # Gerar relatório
+    pdf_path = None
+
+    if args.tipo == "fiscal":
+        generator = FiscalReport(output_dir)
+        pdf_path = generator.generate(dados_fiscal.get("resumo", {}).get("indicadores", dados_fiscal), ano)
+
+    elif args.tipo == "fornecedores":
+        generator = SupplierReport(output_dir)
+        pdf_path = generator.generate(dados_fornecedores, ano)
+
+    elif args.tipo == "transferencias":
+        generator = TransferReport(output_dir)
+        pdf_path = generator.generate(dados_transferencias, ano)
+
+    elif args.tipo == "consolidado":
+        generator = ConsolidatedReport(output_dir)
+        pdf_path = generator.generate(
+            dados_fiscal.get("resumo", {}).get("indicadores", dados_fiscal),
+            dados_fornecedores,
+            dados_transferencias,
+            ano
+        )
+
+    if pdf_path:
+        log(f"Relatório gerado: {pdf_path}", "success")
+
+        # Registrar no banco de dados
+        try:
+            db = DatabaseManager()
+            db.registrar_relatorio(
+                tipo=args.tipo,
+                titulo=f"Relatório {args.tipo.title()} {ano}",
+                arquivo_path=str(pdf_path),
+                periodo=f"Ano {ano}",
+                tamanho_bytes=pdf_path.stat().st_size if pdf_path.exists() else 0
+            )
+        except Exception as e:
+            log(f"Erro ao registrar relatório no banco: {e}", "warning")
+    else:
+        log("Falha ao gerar relatório", "error")
+
+
+def cmd_list_reports(args):
+    """Lista relatórios gerados."""
+    from database import DatabaseManager
+
+    log("Listando relatórios...", "info")
+
+    db = DatabaseManager()
+    relatorios = db.get_relatorios(tipo=args.tipo, limite=args.limite or 20)
+
+    if not relatorios:
+        log("Nenhum relatório encontrado", "info")
+        return
+
+    if RICH_AVAILABLE:
+        table = Table(title="Relatórios Gerados")
+        table.add_column("ID", style="cyan")
+        table.add_column("Tipo", style="green")
+        table.add_column("Título", style="white")
+        table.add_column("Data", style="yellow")
+        table.add_column("Arquivo", style="blue")
+
+        for r in relatorios:
+            table.add_row(
+                str(r.get("id", "")),
+                r.get("tipo", ""),
+                r.get("titulo", "")[:30],
+                r.get("data_geracao", "")[:10],
+                Path(r.get("arquivo_path", "")).name if r.get("arquivo_path") else ""
+            )
+
+        console.print(table)
+    else:
+        print("\nRelatórios Gerados:")
+        for r in relatorios:
+            print(f"  [{r.get('id')}] {r.get('tipo')}: {r.get('titulo')} ({r.get('data_geracao', '')[:10]})")
+
+
+def cmd_alertas(args):
+    """Lista alertas ativos."""
+    from database import DatabaseManager
+
+    log("Carregando alertas...", "info")
+
+    db = DatabaseManager()
+    alertas = db.get_alertas_ativos()
+
+    if not alertas:
+        log("Nenhum alerta ativo", "success")
+        return
+
+    if RICH_AVAILABLE:
+        table = Table(title=f"Alertas Ativos ({len(alertas)})")
+        table.add_column("Tipo", style="red")
+        table.add_column("Categoria", style="yellow")
+        table.add_column("Título", style="white")
+        table.add_column("Data", style="cyan")
+
+        for a in alertas:
+            table.add_row(
+                a.get("tipo", ""),
+                a.get("categoria", ""),
+                a.get("titulo", "")[:40],
+                a.get("data_criacao", "")[:10]
+            )
+
+        console.print(table)
+    else:
+        print(f"\nAlertas Ativos ({len(alertas)}):")
+        for a in alertas:
+            print(f"  [{a.get('tipo')}] {a.get('titulo')}")
+
+
 def main():
     """Função principal."""
     print_header()
@@ -518,6 +717,26 @@ Exemplos de uso:
                                              help="Atualizar dados do dashboard (todas as fontes)")
     dashboard_parser.add_argument("--ano", type=int, help="Ano de referência")
     dashboard_parser.add_argument("-o", "--output", help="Diretório de saída")
+    dashboard_parser.add_argument("--salvar-db", action="store_true", help="Salvar no banco de dados")
+
+    # Comando: db-stats
+    db_parser = subparsers.add_parser("db-stats", help="Mostrar estatísticas do banco de dados")
+
+    # Comando: generate-report
+    report_parser = subparsers.add_parser("generate-report", help="Gerar relatório PDF")
+    report_parser.add_argument("--tipo", required=True,
+                               choices=["fiscal", "fornecedores", "transferencias", "consolidado"],
+                               help="Tipo de relatório")
+    report_parser.add_argument("--ano", type=int, help="Ano de referência")
+    report_parser.add_argument("-o", "--output", help="Diretório de saída")
+
+    # Comando: list-reports
+    list_reports_parser = subparsers.add_parser("list-reports", help="Listar relatórios gerados")
+    list_reports_parser.add_argument("--tipo", help="Filtrar por tipo")
+    list_reports_parser.add_argument("--limite", type=int, default=20, help="Limite de resultados")
+
+    # Comando: alertas
+    alertas_parser = subparsers.add_parser("alertas", help="Listar alertas ativos")
 
     args = parser.parse_args()
 
@@ -532,6 +751,14 @@ Exemplos de uso:
         cmd_integrado(args)
     elif args.command == "update-dashboard":
         cmd_update_dashboard(args)
+    elif args.command == "db-stats":
+        cmd_db_stats(args)
+    elif args.command == "generate-report":
+        cmd_generate_report(args)
+    elif args.command == "list-reports":
+        cmd_list_reports(args)
+    elif args.command == "alertas":
+        cmd_alertas(args)
     else:
         parser.print_help()
         sys.exit(1)

@@ -1,27 +1,16 @@
 """
-Módulos de banco de dados e modelos.
+Módulo de banco de dados SQLite para armazenamento histórico.
+
+Armazena dados coletados das APIs para:
+- Análise histórica e tendências
+- Geração de relatórios
+- Comparação entre períodos
 """
 
-from .connection import get_engine, get_session, init_db
-from .models import (
-    Licitacao,
-    Contrato,
-    Despesa,
-    Receita,
-    Servidor,
-    Fornecedor,
-    LAICheck,
-)
+from .models import DatabaseManager, init_database, get_connection
 
 __all__ = [
-    "get_engine",
-    "get_session",
-    "init_db",
-    "Licitacao",
-    "Contrato",
-    "Despesa",
-    "Receita",
-    "Servidor",
-    "Fornecedor",
-    "LAICheck",
+    "DatabaseManager",
+    "init_database",
+    "get_connection",
 ]
