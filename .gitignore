@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Configurações locais
+config/config.yaml
+.env
+.env.local
+
+# Logs
+logs/
+*.log
+
+# Dados temporários
+data/
+*.db
+*.sqlite
+
+# Credenciais
+credentials.json
+token.json
+*.pem
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Relatórios gerados (manter apenas exemplos)
+docs/relatorios/*.pdf
+!docs/relatorios/.gitkeep
+
+# Cache
+.cache/
+.pytest_cache/

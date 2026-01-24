@@ -1,0 +1,59 @@
+name: Atualização Diária do Dashboard
+
+on:
+  schedule:
+    # Executa diariamente às 6h (horário de Brasília = 9h UTC)
+    - cron: '0 9 * * *'
+  workflow_dispatch:  # Permite execução manual
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Atualizar dados do dashboard
+        run: |
+          cd src
+          python main.py update-dashboard
+
+      - name: Verificar alterações
+        id: check_changes
+        run: |
+          git diff --quiet docs/data/ || echo "changes=true" >> $GITHUB_OUTPUT
+
+      - name: Commit e push das alterações
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/data/
+          git commit -m "chore: atualização automática dos dados do dashboard
+
+          Data: $(date +'%Y-%m-%d %H:%M:%S')"
+          git push
+
+      - name: Resumo da execução
+        run: |
+          echo "## Atualização do Dashboard" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Data:** $(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f docs/data/dashboard.json ]; then
+            echo "✅ Dados atualizados com sucesso" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ Verificar logs para detalhes" >> $GITHUB_STEP_SUMMARY
+          fi

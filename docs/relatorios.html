@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - MonitoraMarília</title>
+    <meta name="description" content="Relatórios de monitoramento do Portal de Transparência de Marília">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="bg-white/20 p-3 rounded-lg hover:bg-white/30 transition">
+                        <i class="fas fa-search-dollar text-2xl"></i>
+                    </a>
+                    <div>
+                        <h1 class="text-2xl font-bold">MonitoraMarília</h1>
+                        <p class="text-blue-200 text-sm">Relatórios de Transparência</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="index.html" class="hover:text-blue-200 transition">Dashboard</a>
+                    <a href="relatorios.html" class="text-blue-200 font-medium">Relatórios</a>
+                    <a href="metodologia.html" class="hover:text-blue-200 transition">Metodologia</a>
+                    <a href="sobre.html" class="hover:text-blue-200 transition">Sobre</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="text-sm text-gray-500">
+                <a href="index.html" class="hover:text-blue-600">Início</a>
+                <span class="mx-2">/</span>
+                <span class="text-gray-800">Relatórios</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Page Title -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">
+                <i class="fas fa-file-alt mr-2 text-blue-600"></i>Relatórios de Monitoramento
+            </h2>
+            <p class="text-gray-600">Acesse os relatórios gerados pelo sistema de monitoramento do Portal de Transparência.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="mb-6 flex flex-wrap gap-2">
+            <button class="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium" data-filter="todos">Todos</button>
+            <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300" data-filter="lai">Conformidade LAI</button>
+            <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300" data-filter="mensal">Mensais</button>
+            <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300" data-filter="licitacoes">Licitações</button>
+            <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300" data-filter="fornecedores">Fornecedores</button>
+        </div>
+
+        <!-- Reports Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Relatório LAI Janeiro 2024 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition" data-category="lai">
+                <div class="bg-green-500 px-4 py-2">
+                    <span class="text-white text-sm font-medium">Conformidade LAI</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-gray-800 mb-2">Relatório de Conformidade LAI</h3>
+                    <p class="text-sm text-gray-600 mb-4">Análise completa da conformidade do Portal de Transparência com a Lei 12.527/2011.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500"><i class="fas fa-calendar mr-1"></i>Janeiro 2024</span>
+                        <span class="text-gray-500"><i class="fas fa-file-pdf mr-1"></i>PDF</span>
+                    </div>
+                    <div class="mt-4 flex space-x-2">
+                        <a href="relatorios/lai-janeiro-2024.pdf" class="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition text-sm">
+                            <i class="fas fa-download mr-1"></i>Baixar
+                        </a>
+                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-sm text-gray-600">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Relatório Mensal Dezembro 2023 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition" data-category="mensal">
+                <div class="bg-blue-500 px-4 py-2">
+                    <span class="text-white text-sm font-medium">Mensal</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-gray-800 mb-2">Relatório Mensal - Dezembro 2023</h3>
+                    <p class="text-sm text-gray-600 mb-4">Síntese das despesas, licitações e contratos do mês de dezembro.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500"><i class="fas fa-calendar mr-1"></i>Dezembro 2023</span>
+                        <span class="text-gray-500"><i class="fas fa-file-pdf mr-1"></i>PDF</span>
+                    </div>
+                    <div class="mt-4 flex space-x-2">
+                        <a href="relatorios/mensal-dezembro-2023.pdf" class="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition text-sm">
+                            <i class="fas fa-download mr-1"></i>Baixar
+                        </a>
+                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-sm text-gray-600">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Análise de Fornecedores -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition" data-category="fornecedores">
+                <div class="bg-purple-500 px-4 py-2">
+                    <span class="text-white text-sm font-medium">Fornecedores</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-gray-800 mb-2">Análise de Fornecedores 2023</h3>
+                    <p class="text-sm text-gray-600 mb-4">Ranking dos maiores fornecedores e análise de concentração de contratos.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500"><i class="fas fa-calendar mr-1"></i>Anual 2023</span>
+                        <span class="text-gray-500"><i class="fas fa-file-excel mr-1"></i>Excel</span>
+                    </div>
+                    <div class="mt-4 flex space-x-2">
+                        <a href="relatorios/fornecedores-2023.xlsx" class="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition text-sm">
+                            <i class="fas fa-download mr-1"></i>Baixar
+                        </a>
+                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-sm text-gray-600">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Licitações 2023 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition" data-category="licitacoes">
+                <div class="bg-yellow-500 px-4 py-2">
+                    <span class="text-white text-sm font-medium">Licitações</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-gray-800 mb-2">Panorama de Licitações 2023</h3>
+                    <p class="text-sm text-gray-600 mb-4">Análise das licitações realizadas, modalidades e valores homologados.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500"><i class="fas fa-calendar mr-1"></i>Anual 2023</span>
+                        <span class="text-gray-500"><i class="fas fa-file-pdf mr-1"></i>PDF</span>
+                    </div>
+                    <div class="mt-4 flex space-x-2">
+                        <a href="relatorios/licitacoes-2023.pdf" class="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition text-sm">
+                            <i class="fas fa-download mr-1"></i>Baixar
+                        </a>
+                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-sm text-gray-600">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alertas Detectados -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition" data-category="mensal">
+                <div class="bg-red-500 px-4 py-2">
+                    <span class="text-white text-sm font-medium">Alertas</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-gray-800 mb-2">Relatório de Alertas - 4º Tri 2023</h3>
+                    <p class="text-sm text-gray-600 mb-4">Compilação de anomalias e irregularidades detectadas no trimestre.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500"><i class="fas fa-calendar mr-1"></i>Out-Dez 2023</span>
+                        <span class="text-gray-500"><i class="fas fa-file-pdf mr-1"></i>PDF</span>
+                    </div>
+                    <div class="mt-4 flex space-x-2">
+                        <a href="relatorios/alertas-4tri-2023.pdf" class="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition text-sm">
+                            <i class="fas fa-download mr-1"></i>Baixar
+                        </a>
+                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-sm text-gray-600">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Relatório LAI Dezembro 2023 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition" data-category="lai">
+                <div class="bg-green-500 px-4 py-2">
+                    <span class="text-white text-sm font-medium">Conformidade LAI</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-gray-800 mb-2">Relatório de Conformidade LAI</h3>
+                    <p class="text-sm text-gray-600 mb-4">Verificação dos itens obrigatórios de transparência ativa.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500"><i class="fas fa-calendar mr-1"></i>Dezembro 2023</span>
+                        <span class="text-gray-500"><i class="fas fa-file-pdf mr-1"></i>PDF</span>
+                    </div>
+                    <div class="mt-4 flex space-x-2">
+                        <a href="relatorios/lai-dezembro-2023.pdf" class="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition text-sm">
+                            <i class="fas fa-download mr-1"></i>Baixar
+                        </a>
+                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-sm text-gray-600">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Box -->
+        <div class="mt-10 bg-blue-50 border border-blue-200 rounded-xl p-6">
+            <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-info-circle text-blue-600 text-2xl"></i>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-blue-800 mb-2">Sobre os Relatórios</h4>
+                    <p class="text-blue-700 text-sm mb-3">
+                        Os relatórios são gerados automaticamente pelo sistema MonitoraMarília com base nos dados coletados do
+                        Portal de Transparência do Município de Marília. Eles podem ser utilizados como subsídio para:
+                    </p>
+                    <ul class="text-blue-700 text-sm space-y-1">
+                        <li><i class="fas fa-check mr-2"></i>Representações ao Ministério Público</li>
+                        <li><i class="fas fa-check mr-2"></i>Requerimentos ao Tribunal de Contas</li>
+                        <li><i class="fas fa-check mr-2"></i>Pedidos de informação via LAI</li>
+                        <li><i class="fas fa-check mr-2"></i>Ações de controle social</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-10">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400 text-sm">&copy; 2024 MATRA - Marília Transparente. Projeto de código aberto para controle social.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Filtro de relatórios
+        document.querySelectorAll('[data-filter]').forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.dataset.filter;
+
+                // Update button styles
+                document.querySelectorAll('[data-filter]').forEach(b => {
+                    b.classList.remove('bg-blue-600', 'text-white');
+                    b.classList.add('bg-gray-200', 'text-gray-700');
+                });
+                this.classList.remove('bg-gray-200', 'text-gray-700');
+                this.classList.add('bg-blue-600', 'text-white');
+
+                // Filter cards
+                document.querySelectorAll('[data-category]').forEach(card => {
+                    if (filter === 'todos' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

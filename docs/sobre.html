@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - MonitoraMarília</title>
+    <meta name="description" content="Sobre a MATRA - Marília Transparente e o projeto MonitoraMarília">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="bg-white/20 p-3 rounded-lg hover:bg-white/30 transition">
+                        <i class="fas fa-search-dollar text-2xl"></i>
+                    </a>
+                    <div>
+                        <h1 class="text-2xl font-bold">MonitoraMarília</h1>
+                        <p class="text-blue-200 text-sm">Sobre o Projeto</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="index.html" class="hover:text-blue-200 transition">Dashboard</a>
+                    <a href="relatorios.html" class="hover:text-blue-200 transition">Relatórios</a>
+                    <a href="metodologia.html" class="hover:text-blue-200 transition">Metodologia</a>
+                    <a href="sobre.html" class="text-blue-200 font-medium">Sobre</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="text-sm text-gray-500">
+                <a href="index.html" class="hover:text-blue-600">Início</a>
+                <span class="mx-2">/</span>
+                <span class="text-gray-800">Sobre</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Hero Section -->
+        <section class="bg-white rounded-xl shadow-md p-8 mb-8 text-center">
+            <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-users text-blue-600 text-3xl"></i>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">MATRA</h2>
+            <p class="text-xl text-blue-600 font-medium mb-2">Marília Transparente</p>
+            <p class="text-gray-600">Organização da Sociedade Civil de Interesse Público (OSCIP)</p>
+        </section>
+
+        <!-- Missão -->
+        <section class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                <i class="fas fa-bullseye mr-2 text-blue-600"></i>Nossa Missão
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+                Promover a transparência, a accountability e a participação cidadã na gestão pública do
+                Município de Marília, por meio do monitoramento sistemático dos atos administrativos,
+                da análise de dados públicos e da difusão de informações para a sociedade.
+            </p>
+        </section>
+
+        <!-- O Projeto -->
+        <section class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                <i class="fas fa-project-diagram mr-2 text-blue-600"></i>O Projeto MonitoraMarília
+            </h3>
+            <p class="text-gray-600 leading-relaxed mb-4">
+                O MonitoraMarília é uma ferramenta de controle social desenvolvida para automatizar o
+                monitoramento do Portal de Transparência do Município de Marília. O sistema coleta,
+                analisa e apresenta dados de forma acessível, permitindo que qualquer cidadão
+                acompanhe a gestão dos recursos públicos.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                <div class="text-center p-4 bg-blue-50 rounded-lg">
+                    <i class="fas fa-robot text-blue-600 text-2xl mb-2"></i>
+                    <h4 class="font-semibold text-gray-800">Automatizado</h4>
+                    <p class="text-sm text-gray-600">Coleta diária de dados do portal</p>
+                </div>
+                <div class="text-center p-4 bg-green-50 rounded-lg">
+                    <i class="fas fa-chart-bar text-green-600 text-2xl mb-2"></i>
+                    <h4 class="font-semibold text-gray-800">Analítico</h4>
+                    <p class="text-sm text-gray-600">Detecção de anomalias e padrões</p>
+                </div>
+                <div class="text-center p-4 bg-purple-50 rounded-lg">
+                    <i class="fas fa-unlock-alt text-purple-600 text-2xl mb-2"></i>
+                    <h4 class="font-semibold text-gray-800">Aberto</h4>
+                    <p class="text-sm text-gray-600">Código e dados públicos</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Controle Social -->
+        <section class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                <i class="fas fa-balance-scale mr-2 text-blue-600"></i>O que é Controle Social?
+            </h3>
+            <p class="text-gray-600 leading-relaxed mb-4">
+                O controle social é o direito e dever que todo cidadão tem de fiscalizar e acompanhar
+                a gestão pública. A Constituição Federal de 1988 garante este direito, fortalecido
+                posteriormente pela Lei de Acesso à Informação (Lei 12.527/2011).
+            </p>
+
+            <div class="bg-gray-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                <p class="text-gray-700 italic">
+                    "É dever dos órgãos e entidades públicas promover, independentemente de requerimentos,
+                    a divulgação em local de fácil acesso, no âmbito de suas competências, de informações
+                    de interesse coletivo ou geral por eles produzidas ou custodiadas."
+                </p>
+                <p class="text-sm text-gray-500 mt-2">— Art. 8º da Lei 12.527/2011</p>
+            </div>
+        </section>
+
+        <!-- Como Contribuir -->
+        <section class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                <i class="fas fa-hands-helping mr-2 text-blue-600"></i>Como Contribuir
+            </h3>
+
+            <div class="space-y-4">
+                <div class="flex items-start space-x-4">
+                    <span class="w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full font-bold">1</span>
+                    <div>
+                        <h4 class="font-semibold text-gray-800">Acompanhe os dados</h4>
+                        <p class="text-gray-600 text-sm">Acesse regularmente o dashboard e os relatórios publicados.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <span class="w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full font-bold">2</span>
+                    <div>
+                        <h4 class="font-semibold text-gray-800">Denuncie irregularidades</h4>
+                        <p class="text-gray-600 text-sm">Identificou algo suspeito? Entre em contato conosco.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <span class="w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full font-bold">3</span>
+                    <div>
+                        <h4 class="font-semibold text-gray-800">Contribua com o código</h4>
+                        <p class="text-gray-600 text-sm">O projeto é open source. Desenvolvedores são bem-vindos!</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <span class="w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full font-bold">4</span>
+                    <div>
+                        <h4 class="font-semibold text-gray-800">Divulgue</h4>
+                        <p class="text-gray-600 text-sm">Compartilhe o projeto em suas redes sociais.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                <i class="fas fa-envelope mr-2 text-blue-600"></i>Contato
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="mailto:contato@mariliatransparente.org.br"
+                   class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
+                    <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                    <span class="text-gray-700">contato@mariliatransparente.org.br</span>
+                </a>
+
+                <a href="https://github.com/danilobortoli/monitoramarilia" target="_blank"
+                   class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
+                    <i class="fab fa-github text-gray-800 text-xl"></i>
+                    <span class="text-gray-700">GitHub do Projeto</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Redes Sociais -->
+        <section class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl shadow-md p-6 text-white text-center">
+            <h3 class="text-xl font-semibold mb-4">Siga a MATRA nas redes sociais</h3>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="hover:text-blue-200 transition">
+                    <i class="fab fa-instagram text-3xl"></i>
+                </a>
+                <a href="#" class="hover:text-blue-200 transition">
+                    <i class="fab fa-facebook text-3xl"></i>
+                </a>
+                <a href="#" class="hover:text-blue-200 transition">
+                    <i class="fab fa-twitter text-3xl"></i>
+                </a>
+                <a href="#" class="hover:text-blue-200 transition">
+                    <i class="fab fa-linkedin text-3xl"></i>
+                </a>
+                <a href="#" class="hover:text-blue-200 transition">
+                    <i class="fab fa-youtube text-3xl"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-10">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400 text-sm">&copy; 2024 MATRA - Marília Transparente. Projeto de código aberto para controle social.</p>
+            <p class="text-gray-500 text-xs mt-2">
+                Desenvolvido com <i class="fas fa-heart text-red-500"></i> para a democracia e transparência pública.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

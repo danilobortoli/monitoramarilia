@@ -1,0 +1,70 @@
+# MonitoraMarília - Configurações
+# Copie este arquivo para config.yaml e ajuste as configurações
+
+# Portal de Transparência
+portal:
+  base_url: "https://transparencia.marilia.sp.gov.br"
+  timeout: 30  # segundos
+  max_retries: 3
+
+# Coleta de dados
+coleta:
+  frequencia: "diario"  # diario, semanal, mensal
+  horario: "06:00"  # horário de execução
+  tipos:
+    - licitacoes
+    - contratos
+    - despesas
+    - receitas
+    - pessoal
+
+# Análise de anomalias
+analise:
+  # Detecção de valores atípicos
+  outliers:
+    threshold_zscore: 2.0  # desvios padrão
+
+  # Fracionamento de despesas
+  fracionamento:
+    limite_dispensa: 17600.0  # limite para dispensa por valor
+    janela_dias: 30
+
+  # Concentração de fornecedores
+  concentracao:
+    limite_percentual: 10.0  # máximo % por fornecedor
+
+  # Aditivos contratuais
+  aditivos:
+    limite_percentual: 25.0  # limite legal
+
+# Dashboard
+dashboard:
+  output_dir: "docs/data"
+  atualizar_automaticamente: true
+
+# Relatórios
+relatorios:
+  output_dir: "docs/relatorios"
+  formatos:
+    - pdf
+    - json
+
+# Notificações (opcional)
+notificacoes:
+  telegram:
+    enabled: false
+    bot_token: ""
+    chat_id: ""
+
+  email:
+    enabled: false
+    smtp_server: ""
+    smtp_port: 587
+    username: ""
+    password: ""
+    destinatarios: []
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  arquivo: "logs/monitoramarilia.log"
