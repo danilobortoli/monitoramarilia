@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MonitoraMarília - Portal de Transparência</title>
-    <meta name="description" content="Sistema de monitoramento e análise do Portal de Transparência de Marília - MATRA">
+    <title>MonitoraMarília - Controle Social</title>
+    <meta name="description" content="Sistema de monitoramento fiscal de Marília com dados de fontes abertas - MATRA">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -45,7 +45,6 @@
                 </div>
                 <nav class="hidden md:flex space-x-6">
                     <a href="#dashboard" class="hover:text-blue-200 transition">Dashboard</a>
-                    <a href="#lai" class="hover:text-blue-200 transition">Conformidade LAI</a>
                     <a href="#alertas" class="hover:text-blue-200 transition">Alertas</a>
                     <a href="relatorios.html" class="hover:text-blue-200 transition">Relatórios</a>
                     <a href="sobre.html" class="hover:text-blue-200 transition">Sobre</a>
@@ -244,24 +243,6 @@
             </div>
         </section>
 
-        <!-- LAI Compliance Section -->
-        <section id="lai" class="mb-10">
-            <div class="bg-white rounded-xl shadow-md p-6">
-                <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-lg font-semibold text-gray-800">
-                        <i class="fas fa-clipboard-check mr-2 text-blue-600"></i>Conformidade com a LAI (Lei 12.527/2011)
-                    </h3>
-                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                        Última verificação: <span id="lai-check-date">--</span>
-                    </span>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="lai-checklist">
-                    <!-- Items will be populated by JavaScript -->
-                </div>
-            </div>
-        </section>
-
         <!-- Alerts Section -->
         <section id="alertas" class="mb-10">
             <div class="bg-white rounded-xl shadow-md p-6">
@@ -411,7 +392,7 @@
                 <div>
                     <h4 class="font-semibold text-lg mb-4">MonitoraMarília</h4>
                     <p class="text-gray-400 text-sm">
-                        Sistema de monitoramento e análise do Portal de Transparência,
+                        Sistema de monitoramento fiscal com dados de fontes abertas (SICONFI, TCE-SP, Portal Federal),
                         desenvolvido para fortalecer o controle social no município de Marília.
                     </p>
                 </div>
@@ -420,8 +401,7 @@
                     <ul class="space-y-2 text-gray-400 text-sm">
                         <li><a href="https://siconfi.tesouro.gov.br" target="_blank" class="hover:text-white transition"><i class="fas fa-database mr-1"></i>SICONFI - Tesouro Nacional</a></li>
                         <li><a href="https://transparencia.tce.sp.gov.br" target="_blank" class="hover:text-white transition"><i class="fas fa-balance-scale mr-1"></i>TCE-SP</a></li>
-                        <li><a href="https://portaldatransparencia.gov.br" target="_blank" class="hover:text-white transition"><i class="fas fa-landmark mr-1"></i>Portal Federal</a></li>
-                        <li><a href="https://transparencia.marilia.sp.gov.br" target="_blank" class="hover:text-white transition"><i class="fas fa-city mr-1"></i>Portal Municipal</a></li>
+                        <li><a href="https://portaldatransparencia.gov.br" target="_blank" class="hover:text-white transition"><i class="fas fa-landmark mr-1"></i>Portal da Transparência Federal</a></li>
                     </ul>
                 </div>
                 <div>

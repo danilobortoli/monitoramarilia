@@ -57,43 +57,19 @@
             <h2 class="text-2xl font-bold text-gray-800 mb-2">
                 <i class="fas fa-file-alt mr-2 text-blue-600"></i>Relatórios de Monitoramento
             </h2>
-            <p class="text-gray-600">Acesse os relatórios gerados pelo sistema de monitoramento do Portal de Transparência.</p>
+            <p class="text-gray-600">Acesse os relatórios gerados a partir de dados do SICONFI, TCE-SP e Portal Federal.</p>
         </div>
 
         <!-- Filter Tabs -->
         <div class="mb-6 flex flex-wrap gap-2">
             <button class="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium" data-filter="todos">Todos</button>
-            <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300" data-filter="lai">Conformidade LAI</button>
             <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300" data-filter="mensal">Mensais</button>
-            <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300" data-filter="licitacoes">Licitações</button>
+            <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300" data-filter="fiscal">Indicadores Fiscais</button>
             <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300" data-filter="fornecedores">Fornecedores</button>
         </div>
 
         <!-- Reports Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Relatório LAI Janeiro 2026 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition" data-category="lai">
-                <div class="bg-green-500 px-4 py-2">
-                    <span class="text-white text-sm font-medium">Conformidade LAI</span>
-                </div>
-                <div class="p-6">
-                    <h3 class="font-semibold text-gray-800 mb-2">Relatório de Conformidade LAI</h3>
-                    <p class="text-sm text-gray-600 mb-4">Análise completa da conformidade do Portal de Transparência com a Lei 12.527/2011.</p>
-                    <div class="flex items-center justify-between text-sm">
-                        <span class="text-gray-500"><i class="fas fa-calendar mr-1"></i>Janeiro 2026</span>
-                        <span class="text-gray-500"><i class="fas fa-file-pdf mr-1"></i>PDF</span>
-                    </div>
-                    <div class="mt-4 flex space-x-2">
-                        <a href="relatorios/lai-janeiro-2026.pdf" class="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition text-sm">
-                            <i class="fas fa-download mr-1"></i>Baixar
-                        </a>
-                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-sm text-gray-600">
-                            <i class="fas fa-eye"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
             <!-- Relatório Mensal Dezembro 2025 -->
             <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition" data-category="mensal">
                 <div class="bg-blue-500 px-4 py-2">
@@ -140,20 +116,20 @@
                 </div>
             </div>
 
-            <!-- Licitações 2025 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition" data-category="licitacoes">
-                <div class="bg-yellow-500 px-4 py-2">
-                    <span class="text-white text-sm font-medium">Licitações</span>
+            <!-- Indicadores Fiscais LRF -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition" data-category="fiscal">
+                <div class="bg-green-500 px-4 py-2">
+                    <span class="text-white text-sm font-medium">Indicadores Fiscais</span>
                 </div>
                 <div class="p-6">
-                    <h3 class="font-semibold text-gray-800 mb-2">Panorama de Licitações 2025</h3>
-                    <p class="text-sm text-gray-600 mb-4">Análise das licitações realizadas, modalidades e valores homologados.</p>
+                    <h3 class="font-semibold text-gray-800 mb-2">Indicadores LRF - 3º Quad 2025</h3>
+                    <p class="text-sm text-gray-600 mb-4">Análise dos indicadores fiscais do SICONFI: despesa com pessoal, dívida consolidada e RCL.</p>
                     <div class="flex items-center justify-between text-sm">
-                        <span class="text-gray-500"><i class="fas fa-calendar mr-1"></i>Anual 2025</span>
+                        <span class="text-gray-500"><i class="fas fa-calendar mr-1"></i>Set-Dez 2025</span>
                         <span class="text-gray-500"><i class="fas fa-file-pdf mr-1"></i>PDF</span>
                     </div>
                     <div class="mt-4 flex space-x-2">
-                        <a href="relatorios/licitacoes-2025.pdf" class="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition text-sm">
+                        <a href="relatorios/lrf-3quad-2025.pdf" class="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition text-sm">
                             <i class="fas fa-download mr-1"></i>Baixar
                         </a>
                         <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-sm text-gray-600">
@@ -186,20 +162,20 @@
                 </div>
             </div>
 
-            <!-- Relatório LAI Dezembro 2025 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition" data-category="lai">
-                <div class="bg-green-500 px-4 py-2">
-                    <span class="text-white text-sm font-medium">Conformidade LAI</span>
+            <!-- Transferências Federais -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition" data-category="fiscal">
+                <div class="bg-purple-500 px-4 py-2">
+                    <span class="text-white text-sm font-medium">Recursos Federais</span>
                 </div>
                 <div class="p-6">
-                    <h3 class="font-semibold text-gray-800 mb-2">Relatório de Conformidade LAI</h3>
-                    <p class="text-sm text-gray-600 mb-4">Verificação dos itens obrigatórios de transparência ativa.</p>
+                    <h3 class="font-semibold text-gray-800 mb-2">Transferências Federais 2025</h3>
+                    <p class="text-sm text-gray-600 mb-4">Análise das transferências, convênios e emendas parlamentares recebidos.</p>
                     <div class="flex items-center justify-between text-sm">
-                        <span class="text-gray-500"><i class="fas fa-calendar mr-1"></i>Dezembro 2025</span>
+                        <span class="text-gray-500"><i class="fas fa-calendar mr-1"></i>Anual 2025</span>
                         <span class="text-gray-500"><i class="fas fa-file-pdf mr-1"></i>PDF</span>
                     </div>
                     <div class="mt-4 flex space-x-2">
-                        <a href="relatorios/lai-dezembro-2025.pdf" class="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition text-sm">
+                        <a href="relatorios/transferencias-2025.pdf" class="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition text-sm">
                             <i class="fas fa-download mr-1"></i>Baixar
                         </a>
                         <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-sm text-gray-600">
@@ -219,13 +195,13 @@
                 <div>
                     <h4 class="font-semibold text-blue-800 mb-2">Sobre os Relatórios</h4>
                     <p class="text-blue-700 text-sm mb-3">
-                        Os relatórios são gerados automaticamente pelo sistema MonitoraMarília com base nos dados coletados do
-                        Portal de Transparência do Município de Marília. Eles podem ser utilizados como subsídio para:
+                        Os relatórios são gerados automaticamente pelo sistema MonitoraMarília com base em dados de fontes abertas
+                        (SICONFI, TCE-SP e Portal Federal). Eles podem ser utilizados como subsídio para:
                     </p>
                     <ul class="text-blue-700 text-sm space-y-1">
                         <li><i class="fas fa-check mr-2"></i>Representações ao Ministério Público</li>
                         <li><i class="fas fa-check mr-2"></i>Requerimentos ao Tribunal de Contas</li>
-                        <li><i class="fas fa-check mr-2"></i>Pedidos de informação via LAI</li>
+                        <li><i class="fas fa-check mr-2"></i>Pedidos de informação</li>
                         <li><i class="fas fa-check mr-2"></i>Ações de controle social</li>
                     </ul>
                 </div>

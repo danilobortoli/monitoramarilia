@@ -169,30 +169,6 @@ const DEFAULT_DATA = {
         ]
     },
 
-    // ========== LAI - Conformidade ==========
-    lai: {
-        score: "87%",
-        totalItens: 12,
-        conformes: 10,
-        atencao: 2,
-        irregulares: 0,
-        ultimaVerificacao: new Date().toISOString(),
-        checklist: [
-            { id: 1, item: "Estrutura organizacional", status: "ok", artigo: "Art. 8º, §1º, I" },
-            { id: 2, item: "Competências e atribuições", status: "ok", artigo: "Art. 8º, §1º, I" },
-            { id: 3, item: "Endereços e telefones", status: "ok", artigo: "Art. 8º, §1º, I" },
-            { id: 4, item: "Horários de atendimento", status: "ok", artigo: "Art. 8º, §1º, I" },
-            { id: 5, item: "Repasses e transferências", status: "ok", artigo: "Art. 8º, §1º, II" },
-            { id: 6, item: "Despesas (execução orçamentária)", status: "ok", artigo: "Art. 8º, §1º, III" },
-            { id: 7, item: "Licitações e contratos", status: "ok", artigo: "Art. 8º, §1º, IV" },
-            { id: 8, item: "Receitas", status: "ok", artigo: "Art. 8º, §1º, V" },
-            { id: 9, item: "Perguntas frequentes", status: "warning", artigo: "Art. 8º, §1º, VI", note: "Seção incompleta" },
-            { id: 10, item: "Ferramenta de pesquisa", status: "ok", artigo: "Art. 8º, §3º, I" },
-            { id: 11, item: "Dados em formatos abertos", status: "warning", artigo: "Art. 8º, §3º, II", note: "Apenas PDF disponível" },
-            { id: 12, item: "Relatório estatístico LAI", status: "ok", artigo: "Art. 30, III" }
-        ]
-    },
-
     // ========== Gráficos ==========
     graficos: {
         despesasPorOrgao: {

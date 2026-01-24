@@ -22,7 +22,6 @@ function initDashboard() {
     renderExecucaoTCE();
     renderFornecedores();
     renderSancoes();
-    renderLAIChecklist();
     renderAlerts();
 }
 
@@ -43,12 +42,6 @@ function updateLastUpdate() {
             hour: '2-digit',
             minute: '2-digit'
         });
-    }
-
-    const laiCheckDate = document.getElementById('lai-check-date');
-    if (laiCheckDate && DASHBOARD_DATA.lai) {
-        const date = new Date(DASHBOARD_DATA.lai.ultimaVerificacao);
-        laiCheckDate.textContent = date.toLocaleDateString('pt-BR');
     }
 }
 
@@ -261,45 +254,6 @@ function renderSancoes() {
     } else {
         if (emptyMsg) emptyMsg.style.display = 'block';
     }
-}
-
-/**
- * Renderiza o checklist de conformidade LAI
- */
-function renderLAIChecklist() {
-    const container = document.getElementById('lai-checklist');
-    if (!container) return;
-
-    const lai = DASHBOARD_DATA.lai;
-    if (!lai) return;
-
-    // Atualizar score
-    setElementText('lai-score', lai.score);
-    setElementText('lai-items', lai.totalItens);
-
-    const items = lai.checklist || [];
-
-    container.innerHTML = items.map(item => {
-        const statusClass = getStatusClass(item.status);
-        const statusIcon = getStatusIcon(item.status);
-        const statusText = getStatusText(item.status);
-
-        return `
-            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
-                <div class="flex items-center space-x-3">
-                    <span class="w-8 h-8 flex items-center justify-center rounded-full ${statusClass}">
-                        <i class="${statusIcon} text-white text-sm"></i>
-                    </span>
-                    <div>
-                        <p class="text-sm font-medium text-gray-800">${item.item}</p>
-                        <p class="text-xs text-gray-400">${item.artigo}</p>
-                        ${item.note ? `<p class="text-xs text-yellow-600">${item.note}</p>` : ''}
-                    </div>
-                </div>
-                <span class="text-xs font-medium ${statusClass.replace('bg-', 'text-').replace('-500', '-600')}">${statusText}</span>
-            </div>
-        `;
-    }).join('');
 }
 
 /**

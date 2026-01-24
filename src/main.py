@@ -5,20 +5,17 @@ Sistema de monitoramento de transparência pública de Marília.
 
 Desenvolvido pela MATRA - Marília Transparente
 
-Fontes de dados:
+Fontes de dados abertas:
 - SICONFI (Tesouro Nacional): Dados fiscais (RGF, RREO, DCA)
 - TCE-SP: Despesas e receitas detalhadas
 - Portal Federal: Transferências, convênios, sanções (CEIS/CNEP)
-- Portal local (SMARAPD): Licitações, contratos (via Playwright)
 """
 
 import argparse
-import asyncio
 import json
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Optional
 
 # Tentar importar Rich para output bonito
 try:
@@ -38,7 +35,7 @@ def print_header():
 ║              MonitoraMarília - Controle Social               ║
 ║                  MATRA - Marília Transparente                ║
 ║                                                              ║
-║  Fontes: SICONFI | TCE-SP | Portal Federal | SMARAPD        ║
+║  Fontes: SICONFI | TCE-SP | Portal Federal                  ║
 ╚══════════════════════════════════════════════════════════════╝
     """
     if RICH_AVAILABLE:
@@ -57,37 +54,6 @@ def log(message: str, level: str = "info"):
         console.print(f"{icon} {message}", style=colors.get(level, "white"))
     else:
         print(f"{icon} {message}")
-
-
-async def cmd_check_lai(args):
-    """Verifica conformidade com a LAI usando Playwright."""
-    log("Verificando conformidade com a Lei de Acesso à Informação...", "info")
-
-    from analyzers.lai_compliance import LAIComplianceAnalyzer
-
-    async with LAIComplianceAnalyzer() as analyzer:
-        report = await analyzer.run_compliance_check()
-
-    # Mostrar resumo
-    resumo = report["resumo"]
-    log(f"Resultado: {resumo['score']} de conformidade", "success")
-    print(f"  - Conformes: {resumo['conformes']}/{resumo['total_itens']}")
-    print(f"  - Atenção: {resumo['atencao']}")
-    print(f"  - Irregulares: {resumo['irregulares']}")
-
-    # Mostrar itens
-    print("\nDetalhamento:")
-    for item in report["itens"]:
-        status_icon = "✓" if item["status"] == "ok" else "!" if item["status"] == "warning" else "✗"
-        print(f"  [{status_icon}] {item['item']}: {item.get('observacao', '')}")
-
-    # Exportar se solicitado
-    if args.output:
-        output_path = Path(args.output)
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(report, f, ensure_ascii=False, indent=2)
-        log(f"Relatório salvo em: {output_path}", "success")
 
 
 def cmd_siconfi(args):
@@ -234,16 +200,15 @@ def cmd_integrado(args):
         print(json.dumps(data, indent=2, ensure_ascii=False))
 
 
-async def cmd_update_dashboard(args):
+def cmd_update_dashboard(args):
     """
-    Atualiza os dados do dashboard com dados de múltiplas fontes.
+    Atualiza os dados do dashboard com dados de múltiplas fontes abertas.
 
     Este comando:
     1. Coleta dados do SICONFI (fiscais)
     2. Coleta dados do TCE-SP (despesas, fornecedores)
     3. Coleta dados do Portal Federal (transferências, sanções) - se API disponível
-    4. Verifica conformidade LAI do portal local
-    5. Gera arquivos JSON para o dashboard estático
+    4. Gera arquivos JSON para o dashboard estático
     """
     log("Atualizando dados do dashboard...", "info")
 
@@ -258,16 +223,14 @@ async def cmd_update_dashboard(args):
     from collectors.siconfi import SiconfiCollector
     from collectors.tce_sp import TCESPCollector
     from collectors.portal_federal import PortalFederalCollector
-    from models.dados_integrados import DadosIntegrados
 
     # Dados coletados
     fiscal_data = {}
     tce_data = {}
     federal_data = {}
-    lai_data = {}
 
     # 1. Coletar dados fiscais (SICONFI)
-    log("1/5 Coletando dados fiscais (SICONFI)...", "info")
+    log("1/3 Coletando dados fiscais (SICONFI)...", "info")
     try:
         siconfi = SiconfiCollector()
         fiscal_data = siconfi.get_dados_para_dashboard(ano)
@@ -276,7 +239,7 @@ async def cmd_update_dashboard(args):
         log(f"Erro SICONFI: {e}", "warning")
 
     # 2. Coletar dados TCE-SP
-    log("2/5 Coletando dados de execução (TCE-SP)...", "info")
+    log("2/3 Coletando dados de execução (TCE-SP)...", "info")
     try:
         tce = TCESPCollector()
         tce_data = tce.get_dados_para_dashboard(ano)
@@ -285,7 +248,7 @@ async def cmd_update_dashboard(args):
         log(f"Erro TCE-SP: {e}", "warning")
 
     # 3. Coletar dados Portal Federal
-    log("3/5 Coletando dados federais (Portal Transparência)...", "info")
+    log("3/3 Coletando dados federais (Portal Transparência)...", "info")
     try:
         federal = PortalFederalCollector()
         if federal.api_key:
@@ -297,27 +260,15 @@ async def cmd_update_dashboard(args):
     except Exception as e:
         log(f"Erro Portal Federal: {e}", "warning")
 
-    # 4. Verificar LAI
-    log("4/5 Verificando conformidade LAI...", "info")
-    try:
-        from analyzers.lai_compliance import LAIComplianceAnalyzer
-        async with LAIComplianceAnalyzer() as analyzer:
-            lai_report = await analyzer.run_compliance_check()
-            lai_data = analyzer.get_summary_for_dashboard()
-        log(f"LAI: {lai_data.get('laiScore', 'N/D')}", "success")
-    except Exception as e:
-        log(f"Erro LAI: {e}", "warning")
-        lai_data = _get_default_lai_data()
-
-    # 5. Gerar dados integrados
-    log("5/5 Consolidando dados...", "info")
+    # Gerar dados integrados
+    log("Consolidando dados...", "info")
 
     # Extrair valores dos coletores
     rcl = fiscal_data.get("resumo", {}).get("indicadores", {}).get("rcl", {}).get("valor", 0)
     alertas_lrf = fiscal_data.get("alertas_lrf", [])
 
-    # Despesa com pessoal (estimar com base nos alertas)
-    pessoal_percentual = 50.0  # Valor padrão
+    # Despesa com pessoal
+    pessoal_percentual = 50.0
     for alerta in alertas_lrf:
         if alerta.get("categoria") == "pessoal":
             pessoal_percentual = alerta.get("valor", 50.0)
@@ -333,7 +284,7 @@ async def cmd_update_dashboard(args):
             "valor": f.get("valor_total", 0),
             "valorFmt": f"R$ {f.get('valor_total', 0)/1_000_000:.2f}M",
             "qtdPagamentos": f.get("qtd_pagamentos", 0),
-            "situacaoSancoes": "REGULAR"  # Será verificado se API disponível
+            "situacaoSancoes": "REGULAR"
         })
 
     # Dados consolidados para o dashboard
@@ -426,17 +377,6 @@ async def cmd_update_dashboard(args):
             "outros": []
         },
 
-        # LAI
-        "lai": {
-            "score": lai_data.get("laiScore", "N/D"),
-            "totalItens": lai_data.get("laiItems", 12),
-            "conformes": lai_data.get("laiCompliant", 0),
-            "atencao": 0,
-            "irregulares": 0,
-            "ultimaVerificacao": datetime.now().isoformat(),
-            "checklist": lai_data.get("checklist", [])
-        },
-
         # Gráficos
         "graficos": {
             "despesasPorOrgao": {
@@ -490,9 +430,6 @@ async def cmd_update_dashboard(args):
         with open(output_dir / "portal-federal.json", "w", encoding="utf-8") as f:
             json.dump(federal_data, f, ensure_ascii=False, indent=2)
 
-    with open(output_dir / "lai-compliance.json", "w", encoding="utf-8") as f:
-        json.dump(lai_data, f, ensure_ascii=False, indent=2)
-
     log("Dashboard atualizado com sucesso!", "success")
     log(f"Arquivos gerados em: {output_dir}", "info")
 
@@ -509,16 +446,6 @@ def _save_json(path: str, data):
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     log(f"Dados salvos em: {output_path}", "success")
-
-
-def _get_default_lai_data():
-    """Retorna dados padrão de LAI quando a coleta falha."""
-    return {
-        "laiScore": "N/D",
-        "laiItems": 12,
-        "laiCompliant": 0,
-        "checklist": []
-    }
 
 
 def main():
@@ -546,9 +473,6 @@ Exemplos de uso:
 
   # Atualizar dashboard
   python -m src.main update-dashboard --output docs/data/
-
-  # Verificar LAI (portal local)
-  python -m src.main check-lai
         """
     )
     subparsers = parser.add_subparsers(dest="command", help="Comandos disponíveis")
@@ -589,10 +513,6 @@ Exemplos de uso:
     integrado_parser.add_argument("--ano", type=int, help="Ano de referência")
     integrado_parser.add_argument("-o", "--output", help="Arquivo de saída (JSON)")
 
-    # Comando: check-lai
-    lai_parser = subparsers.add_parser("check-lai", help="Verificar conformidade LAI (portal local)")
-    lai_parser.add_argument("-o", "--output", help="Arquivo de saída (JSON)")
-
     # Comando: update-dashboard
     dashboard_parser = subparsers.add_parser("update-dashboard",
                                              help="Atualizar dados do dashboard (todas as fontes)")
@@ -610,10 +530,8 @@ Exemplos de uso:
         cmd_portal_federal(args)
     elif args.command == "integrado":
         cmd_integrado(args)
-    elif args.command == "check-lai":
-        asyncio.run(cmd_check_lai(args))
     elif args.command == "update-dashboard":
-        asyncio.run(cmd_update_dashboard(args))
+        cmd_update_dashboard(args)
     else:
         parser.print_help()
         sys.exit(1)

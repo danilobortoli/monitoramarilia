@@ -1,15 +1,12 @@
 """
 Módulos de análise de dados e detecção de anomalias.
+
+Analisadores disponíveis:
+- AnomalyDetector: Detecta anomalias em despesas, contratos e licitações
 """
 
-from .lai_compliance import LAIComplianceAnalyzer
 from .anomaly_detector import AnomalyDetector
-from .contract_analyzer import ContractAnalyzer
-from .spending_analyzer import SpendingAnalyzer
 
 __all__ = [
-    "LAIComplianceAnalyzer",
     "AnomalyDetector",
-    "ContractAnalyzer",
-    "SpendingAnalyzer",
 ]
