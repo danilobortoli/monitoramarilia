@@ -66,10 +66,12 @@
                     <span class="text-gray-600">Última atualização: <span id="last-update" class="font-medium">--</span></span>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <span class="text-gray-500">Portal de Transparência de Marília</span>
-                    <a href="https://marilia.sp.gov.br/transparencia" target="_blank" class="text-blue-600 hover:underline">
-                        <i class="fas fa-external-link-alt mr-1"></i>Acessar Portal
-                    </a>
+                    <span class="text-gray-500">Dados de fontes oficiais abertas</span>
+                    <span class="flex items-center space-x-2 text-xs text-gray-400">
+                        <span class="px-2 py-0.5 bg-blue-50 rounded">SICONFI</span>
+                        <span class="px-2 py-0.5 bg-green-50 rounded">TCE-SP</span>
+                        <span class="px-2 py-0.5 bg-purple-50 rounded">Portal Federal</span>
+                    </span>
                 </div>
             </div>
         </div>
@@ -77,72 +79,140 @@
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
-        <!-- KPI Cards -->
+        <!-- KPI Cards - Indicadores Fiscais (SICONFI) -->
         <section id="dashboard" class="mb-10">
             <h2 class="text-xl font-semibold text-gray-800 mb-6">
-                <i class="fas fa-chart-line mr-2 text-blue-600"></i>Indicadores Principais
+                <i class="fas fa-chart-line mr-2 text-blue-600"></i>Indicadores Fiscais
+                <span class="text-xs font-normal text-gray-400 ml-2">Fonte: SICONFI/Tesouro Nacional</span>
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Conformidade LAI -->
-                <div class="bg-white rounded-xl shadow-md p-6 card-hover border-l-4 border-green-500">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm">Conformidade LAI</p>
-                            <p class="text-3xl font-bold text-gray-800" id="lai-score">--</p>
-                            <p class="text-green-600 text-sm mt-1">
-                                <i class="fas fa-check-circle mr-1"></i><span id="lai-items">--</span> itens verificados
-                            </p>
-                        </div>
-                        <div class="bg-green-100 p-4 rounded-full">
-                            <i class="fas fa-balance-scale text-green-600 text-xl"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Licitações Monitoradas -->
+                <!-- RCL -->
                 <div class="bg-white rounded-xl shadow-md p-6 card-hover border-l-4 border-blue-500">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-gray-500 text-sm">Licitações 2026</p>
-                            <p class="text-3xl font-bold text-gray-800" id="licitacoes-count">--</p>
+                            <p class="text-gray-500 text-sm">Receita Corrente Líquida</p>
+                            <p class="text-3xl font-bold text-gray-800" id="rcl-valor">--</p>
                             <p class="text-blue-600 text-sm mt-1">
-                                <i class="fas fa-money-bill-wave mr-1"></i>R$ <span id="licitacoes-valor">--</span>
+                                <i class="fas fa-database mr-1"></i>Base de cálculo LRF
                             </p>
                         </div>
                         <div class="bg-blue-100 p-4 rounded-full">
-                            <i class="fas fa-gavel text-blue-600 text-xl"></i>
+                            <i class="fas fa-coins text-blue-600 text-xl"></i>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contratos Ativos -->
-                <div class="bg-white rounded-xl shadow-md p-6 card-hover border-l-4 border-purple-500">
+                <!-- Despesa com Pessoal -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover" id="pessoal-card">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-gray-500 text-sm">Contratos Ativos</p>
-                            <p class="text-3xl font-bold text-gray-800" id="contratos-count">--</p>
-                            <p class="text-purple-600 text-sm mt-1">
-                                <i class="fas fa-file-contract mr-1"></i><span id="contratos-aditivos">--</span> com aditivos
+                            <p class="text-gray-500 text-sm">Despesa com Pessoal</p>
+                            <p class="text-3xl font-bold text-gray-800" id="pessoal-percentual">--</p>
+                            <p class="text-sm mt-1" id="pessoal-status">
+                                <i class="fas fa-info-circle mr-1"></i>Limite: 54% da RCL
                             </p>
                         </div>
-                        <div class="bg-purple-100 p-4 rounded-full">
-                            <i class="fas fa-file-signature text-purple-600 text-xl"></i>
+                        <div class="bg-gray-100 p-4 rounded-full" id="pessoal-icon">
+                            <i class="fas fa-users text-gray-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="h-2 rounded-full transition-all" id="pessoal-bar" style="width: 0%"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Alertas Ativos -->
+                <!-- Dívida Consolidada -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover" id="divida-card">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm">Dívida Consolidada</p>
+                            <p class="text-3xl font-bold text-gray-800" id="divida-percentual">--</p>
+                            <p class="text-sm mt-1" id="divida-status">
+                                <i class="fas fa-info-circle mr-1"></i>Limite: 120% da RCL
+                            </p>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-full" id="divida-icon">
+                            <i class="fas fa-landmark text-gray-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="h-2 rounded-full transition-all" id="divida-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alertas LRF -->
                 <div class="bg-white rounded-xl shadow-md p-6 card-hover border-l-4 border-red-500">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-gray-500 text-sm">Alertas Ativos</p>
-                            <p class="text-3xl font-bold text-gray-800" id="alertas-count">--</p>
+                            <p class="text-gray-500 text-sm">Alertas LRF</p>
+                            <p class="text-3xl font-bold text-gray-800" id="alertas-lrf-count">--</p>
                             <p class="text-red-600 text-sm mt-1">
                                 <i class="fas fa-exclamation-triangle mr-1"></i><span id="alertas-criticos">--</span> críticos
                             </p>
                         </div>
                         <div class="bg-red-100 p-4 rounded-full">
                             <i class="fas fa-bell text-red-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transferências Federais -->
+        <section id="transferencias" class="mb-10">
+            <h2 class="text-xl font-semibold text-gray-800 mb-6">
+                <i class="fas fa-hand-holding-usd mr-2 text-purple-600"></i>Recursos Federais
+                <span class="text-xs font-normal text-gray-400 ml-2">Fonte: Portal da Transparência Federal</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Total Transferências -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover border-l-4 border-purple-500">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm">Transferências Recebidas</p>
+                            <p class="text-2xl font-bold text-gray-800" id="transf-total">--</p>
+                            <p class="text-purple-600 text-sm mt-1">
+                                <i class="fas fa-arrow-down mr-1"></i>Ano atual
+                            </p>
+                        </div>
+                        <div class="bg-purple-100 p-4 rounded-full">
+                            <i class="fas fa-money-check-alt text-purple-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Convênios -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover border-l-4 border-indigo-500">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm">Convênios Ativos</p>
+                            <p class="text-2xl font-bold text-gray-800" id="convenios-count">--</p>
+                            <p class="text-indigo-600 text-sm mt-1" id="convenios-valor">
+                                <i class="fas fa-handshake mr-1"></i>--
+                            </p>
+                        </div>
+                        <div class="bg-indigo-100 p-4 rounded-full">
+                            <i class="fas fa-file-contract text-indigo-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emendas Parlamentares -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover border-l-4 border-teal-500">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm">Emendas Parlamentares</p>
+                            <p class="text-2xl font-bold text-gray-800" id="emendas-valor">--</p>
+                            <p class="text-teal-600 text-sm mt-1" id="emendas-count">
+                                <i class="fas fa-vote-yea mr-1"></i>-- emendas
+                            </p>
+                        </div>
+                        <div class="bg-teal-100 p-4 rounded-full">
+                            <i class="fas fa-university text-teal-600 text-xl"></i>
                         </div>
                     </div>
                 </div>
@@ -210,26 +280,124 @@
             </div>
         </section>
 
-        <!-- Recent Activity -->
+        <!-- Despesas TCE-SP -->
+        <section id="despesas-tce" class="mb-10">
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg font-semibold text-gray-800">
+                        <i class="fas fa-receipt mr-2 text-green-600"></i>Execução Orçamentária
+                        <span class="text-xs font-normal text-gray-400 ml-2">Fonte: TCE-SP</span>
+                    </h3>
+                    <div class="flex items-center space-x-4 text-sm">
+                        <span class="flex items-center">
+                            <span class="w-3 h-3 bg-blue-500 rounded-full mr-1"></span>Empenhado
+                        </span>
+                        <span class="flex items-center">
+                            <span class="w-3 h-3 bg-yellow-500 rounded-full mr-1"></span>Liquidado
+                        </span>
+                        <span class="flex items-center">
+                            <span class="w-3 h-3 bg-green-500 rounded-full mr-1"></span>Pago
+                        </span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div class="text-center p-4 bg-blue-50 rounded-lg">
+                        <p class="text-sm text-gray-600">Total Empenhado</p>
+                        <p class="text-2xl font-bold text-blue-600" id="tce-empenhado">--</p>
+                    </div>
+                    <div class="text-center p-4 bg-yellow-50 rounded-lg">
+                        <p class="text-sm text-gray-600">Total Liquidado</p>
+                        <p class="text-2xl font-bold text-yellow-600" id="tce-liquidado">--</p>
+                    </div>
+                    <div class="text-center p-4 bg-green-50 rounded-lg">
+                        <p class="text-sm text-gray-600">Total Pago</p>
+                        <p class="text-2xl font-bold text-green-600" id="tce-pago">--</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fornecedores com Verificação de Sanções -->
         <section class="mb-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <!-- Últimas Licitações -->
+                <!-- Maiores Fornecedores -->
                 <div class="bg-white rounded-xl shadow-md p-6">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-4">
-                        <i class="fas fa-gavel mr-2 text-blue-600"></i>Últimas Licitações
-                    </h3>
-                    <div class="space-y-3" id="licitacoes-list">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-gray-800">
+                            <i class="fas fa-building mr-2 text-blue-600"></i>Maiores Fornecedores
+                        </h3>
+                        <span class="text-xs text-gray-400">Fonte: TCE-SP</span>
+                    </div>
+                    <div class="space-y-3" id="fornecedores-list">
                         <!-- Items will be populated by JavaScript -->
                     </div>
                 </div>
 
-                <!-- Maiores Fornecedores -->
+                <!-- Verificação de Sanções -->
                 <div class="bg-white rounded-xl shadow-md p-6">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-4">
-                        <i class="fas fa-building mr-2 text-blue-600"></i>Maiores Fornecedores (2026)
-                    </h3>
-                    <div class="space-y-3" id="fornecedores-list">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-gray-800">
+                            <i class="fas fa-search mr-2 text-red-600"></i>Verificação de Sanções
+                        </h3>
+                        <span class="text-xs text-gray-400">Fonte: Portal Federal (CEIS/CNEP)</span>
+                    </div>
+                    <div class="mb-4 p-4 bg-gray-50 rounded-lg">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm text-gray-600">Fornecedores Verificados</p>
+                                <p class="text-2xl font-bold text-gray-800" id="sancoes-verificados">--</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm text-gray-600">Com Irregularidades</p>
+                                <p class="text-2xl font-bold text-red-600" id="sancoes-irregulares">--</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2" id="sancoes-list">
                         <!-- Items will be populated by JavaScript -->
+                        <div class="text-center py-4 text-gray-500 text-sm" id="sancoes-empty">
+                            <i class="fas fa-check-circle text-green-500 text-2xl mb-2"></i>
+                            <p>Nenhuma irregularidade detectada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conexões de Dados -->
+        <section id="conexoes" class="mb-10">
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">
+                    <i class="fas fa-project-diagram mr-2 text-indigo-600"></i>Conexões entre Dados
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="p-4 border rounded-lg hover:bg-gray-50 transition cursor-pointer">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <i class="fas fa-link text-indigo-500"></i>
+                            <span class="font-medium text-gray-800">Despesas → Fornecedores</span>
+                        </div>
+                        <p class="text-xs text-gray-500">Pagamentos do TCE-SP vinculados a fornecedores</p>
+                    </div>
+                    <div class="p-4 border rounded-lg hover:bg-gray-50 transition cursor-pointer">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <i class="fas fa-link text-indigo-500"></i>
+                            <span class="font-medium text-gray-800">Fornecedores → Sanções</span>
+                        </div>
+                        <p class="text-xs text-gray-500">Verificação cruzada com CEIS/CNEP</p>
+                    </div>
+                    <div class="p-4 border rounded-lg hover:bg-gray-50 transition cursor-pointer">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <i class="fas fa-link text-indigo-500"></i>
+                            <span class="font-medium text-gray-800">Transferências → Despesas</span>
+                        </div>
+                        <p class="text-xs text-gray-500">Rastreamento de recursos federais</p>
+                    </div>
+                    <div class="p-4 border rounded-lg hover:bg-gray-50 transition cursor-pointer">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <i class="fas fa-link text-indigo-500"></i>
+                            <span class="font-medium text-gray-800">RCL → Limites LRF</span>
+                        </div>
+                        <p class="text-xs text-gray-500">Cálculo automático de conformidade</p>
                     </div>
                 </div>
             </div>
@@ -248,12 +416,12 @@
                     </p>
                 </div>
                 <div>
-                    <h4 class="font-semibold text-lg mb-4">Links Úteis</h4>
+                    <h4 class="font-semibold text-lg mb-4">Fontes de Dados</h4>
                     <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><a href="https://marilia.sp.gov.br/transparencia" target="_blank" class="hover:text-white transition">Portal de Transparência</a></li>
-                        <li><a href="http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm" target="_blank" class="hover:text-white transition">Lei de Acesso à Informação</a></li>
-                        <li><a href="relatorios.html" class="hover:text-white transition">Relatórios</a></li>
-                        <li><a href="metodologia.html" class="hover:text-white transition">Metodologia</a></li>
+                        <li><a href="https://siconfi.tesouro.gov.br" target="_blank" class="hover:text-white transition"><i class="fas fa-database mr-1"></i>SICONFI - Tesouro Nacional</a></li>
+                        <li><a href="https://transparencia.tce.sp.gov.br" target="_blank" class="hover:text-white transition"><i class="fas fa-balance-scale mr-1"></i>TCE-SP</a></li>
+                        <li><a href="https://portaldatransparencia.gov.br" target="_blank" class="hover:text-white transition"><i class="fas fa-landmark mr-1"></i>Portal Federal</a></li>
+                        <li><a href="https://transparencia.marilia.sp.gov.br" target="_blank" class="hover:text-white transition"><i class="fas fa-city mr-1"></i>Portal Municipal</a></li>
                     </ul>
                 </div>
                 <div>

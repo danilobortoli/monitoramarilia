@@ -1,70 +1,234 @@
 /**
  * MonitoraMarília - Dados do Dashboard
  *
- * Carrega dados do JSON gerado pelo GitHub Actions.
- * Se não disponível, usa dados de exemplo como fallback.
+ * Estrutura de dados integrada de múltiplas fontes:
+ * - SICONFI (Tesouro Nacional): Dados fiscais, RCL, LRF
+ * - TCE-SP: Despesas, receitas, fornecedores
+ * - Portal Federal: Transferências, convênios, emendas, sanções
  */
 
 // Dados de exemplo (fallback quando não há JSON atualizado)
 const DEFAULT_DATA = {
     lastUpdate: new Date().toISOString(),
-    kpis: {
-        laiScore: "87%",
-        laiItems: 12,
-        laiCompliant: 10,
-        licitacoesCount: 156,
-        licitacoesValor: "45.230.000,00",
-        contratosCount: 89,
-        contratosAditivos: 23,
-        alertasCount: 7,
-        alertasCriticos: 2
+    ano: new Date().getFullYear(),
+    municipio: "Marília",
+    codigoIBGE: "3529005",
+
+    // ========== SICONFI - Dados Fiscais ==========
+    fiscal: {
+        fonte: "SICONFI - Tesouro Nacional",
+        rcl: 850000000,
+        rclFormatado: "R$ 850,0M",
+        despesaPessoal: {
+            valor: 425000000,
+            percentual: 50.0,
+            limite: 54,
+            limiteAlerta: 48.6,
+            limitePrudencial: 51.3,
+            status: "ok" // ok, alerta, prudencial, critico
+        },
+        divida: {
+            valor: 170000000,
+            percentual: 20.0,
+            limite: 120,
+            status: "ok"
+        },
+        alertasLRF: []
     },
-    laiChecklist: [
-        { id: 1, item: "Estrutura organizacional", status: "ok", url: "https://transparencia.marilia.sp.gov.br/#/estrutura" },
-        { id: 2, item: "Competências e atribuições", status: "ok", url: "https://transparencia.marilia.sp.gov.br/#/competencias" },
-        { id: 3, item: "Endereços e telefones", status: "ok", url: "https://transparencia.marilia.sp.gov.br/#/contato" },
-        { id: 4, item: "Horários de atendimento", status: "ok", url: "https://transparencia.marilia.sp.gov.br/#/atendimento" },
-        { id: 5, item: "Repasses e transferências", status: "ok", url: "https://transparencia.marilia.sp.gov.br/#/repasses" },
-        { id: 6, item: "Despesas (execução orçamentária)", status: "ok", url: "https://transparencia.marilia.sp.gov.br/#/despesas" },
-        { id: 7, item: "Licitações e contratos", status: "ok", url: "https://transparencia.marilia.sp.gov.br/#/licitacoes" },
-        { id: 8, item: "Receitas", status: "ok", url: "https://transparencia.marilia.sp.gov.br/#/receitas" },
-        { id: 9, item: "Perguntas frequentes", status: "warning", url: null, note: "Seção incompleta" },
-        { id: 10, item: "Ferramenta de pesquisa", status: "ok", url: "https://transparencia.marilia.sp.gov.br/#/pesquisa" },
-        { id: 11, item: "Dados em formatos abertos", status: "warning", url: null, note: "Apenas PDF disponível" },
-        { id: 12, item: "Relatório estatístico LAI", status: "ok", url: "https://transparencia.marilia.sp.gov.br/#/relatorio-lai" }
-    ],
-    alertas: [
-        { id: 1, tipo: "critico", titulo: "Contrato sem licitação - valor elevado", descricao: "Contrato nº 2026/089 no valor de R$ 890.000,00 firmado por dispensa de licitação.", data: "2026-01-15", categoria: "contratos" },
-        { id: 2, tipo: "critico", titulo: "Possível fracionamento de despesas", descricao: "Detectadas 5 compras de material de escritório no mesmo mês, totalizando R$ 78.000,00.", data: "2026-01-12", categoria: "despesas" },
-        { id: 3, tipo: "alerta", titulo: "Atraso na atualização de despesas", descricao: "Dados de despesas não atualizados há 3 dias.", data: "2026-01-18", categoria: "lai" },
-        { id: 4, tipo: "alerta", titulo: "Fornecedor com alta concentração", descricao: "Empresa XYZ LTDA recebeu 15% do total de pagamentos.", data: "2026-01-10", categoria: "fornecedores" },
-        { id: 5, tipo: "info", titulo: "Aditivo contratual acima de 25%", descricao: "Contrato nº 2025/045 teve aditivo de 32%.", data: "2026-01-08", categoria: "contratos" }
-    ],
-    despesasPorCategoria: {
-        labels: ["Pessoal", "Custeio", "Investimentos", "Saúde", "Educação", "Outros"],
-        data: [45, 20, 10, 12, 8, 5],
-        valores: ["R$ 180M", "R$ 80M", "R$ 40M", "R$ 48M", "R$ 32M", "R$ 20M"]
+
+    // ========== TCE-SP - Execução Orçamentária ==========
+    execucao: {
+        fonte: "TCE-SP",
+        periodo: "Últimos 3 meses",
+        empenhado: 125000000,
+        empenhadoFmt: "R$ 125,0M",
+        liquidado: 118000000,
+        liquidadoFmt: "R$ 118,0M",
+        pago: 110000000,
+        pagoFmt: "R$ 110,0M",
+        qtdDespesas: 15420
     },
-    despesasMensais: {
-        labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
-        empenhado: [35.2, 32.1, 38.5, 36.8, 34.2, 37.9, 35.6, 33.8, 36.2, 38.1, 35.4, 42.3],
-        liquidado: [33.1, 30.5, 36.2, 35.1, 32.8, 35.6, 34.2, 32.1, 34.8, 36.5, 33.9, 40.1],
-        pago: [31.5, 29.8, 34.8, 33.9, 31.2, 34.2, 32.8, 30.9, 33.2, 35.1, 32.5, 38.5]
+
+    // ========== Fornecedores (TCE-SP + Portal Federal) ==========
+    fornecedores: {
+        fonte: "TCE-SP + Portal Federal",
+        totalAnalisados: 100,
+        top10: [
+            {
+                cnpj: "12.345.678/0001-90",
+                nome: "DISTRIBUIDORA FARMA LTDA",
+                valor: 8500000,
+                valorFmt: "R$ 8,50M",
+                qtdPagamentos: 45,
+                situacaoSancoes: "REGULAR"
+            },
+            {
+                cnpj: "98.765.432/0001-10",
+                nome: "CONSTRUTORA ABC S/A",
+                valor: 6200000,
+                valorFmt: "R$ 6,20M",
+                qtdPagamentos: 12,
+                situacaoSancoes: "REGULAR"
+            },
+            {
+                cnpj: "11.222.333/0001-44",
+                nome: "SERVIÇOS GERAIS ME",
+                valor: 4800000,
+                valorFmt: "R$ 4,80M",
+                qtdPagamentos: 89,
+                situacaoSancoes: "REGULAR"
+            },
+            {
+                cnpj: "55.666.777/0001-88",
+                nome: "TECNOLOGIA INFO LTDA",
+                valor: 3200000,
+                valorFmt: "R$ 3,20M",
+                qtdPagamentos: 34,
+                situacaoSancoes: "REGULAR"
+            },
+            {
+                cnpj: "22.333.444/0001-55",
+                nome: "ALIMENTOS E CIA EIRELI",
+                valor: 2900000,
+                valorFmt: "R$ 2,90M",
+                qtdPagamentos: 156,
+                situacaoSancoes: "REGULAR"
+            }
+        ],
+        sancoesVerificadas: {
+            total: 100,
+            regulares: 100,
+            irregulares: 0,
+            alertas: []
+        }
     },
-    licitacoes: [
-        { numero: "PE 001/2026", objeto: "Aquisição de medicamentos", valor: 2500000, modalidade: "Pregão Eletrônico", status: "Em andamento", data: "2026-01-18" },
-        { numero: "PE 002/2026", objeto: "Serviços de limpeza hospitalar", valor: 1800000, modalidade: "Pregão Eletrônico", status: "Homologada", data: "2026-01-15" },
-        { numero: "CC 001/2026", objeto: "Reforma de escola municipal", valor: 3200000, modalidade: "Concorrência", status: "Em andamento", data: "2026-01-12" },
-        { numero: "PE 003/2026", objeto: "Material de escritório", valor: 150000, modalidade: "Pregão Eletrônico", status: "Homologada", data: "2026-01-10" },
-        { numero: "DL 001/2026", objeto: "Manutenção emergencial", valor: 45000, modalidade: "Dispensa", status: "Contratada", data: "2026-01-08" }
-    ],
-    fornecedores: [
-        { nome: "DISTRIBUIDORA FARMA LTDA", cnpj: "12.345.678/0001-90", valor: 8500000, contratos: 5 },
-        { nome: "CONSTRUTORA ABC S/A", cnpj: "98.765.432/0001-10", valor: 6200000, contratos: 3 },
-        { nome: "SERVIÇOS GERAIS ME", cnpj: "11.222.333/0001-44", valor: 4800000, contratos: 8 },
-        { nome: "TECNOLOGIA INFO LTDA", cnpj: "55.666.777/0001-88", valor: 3200000, contratos: 4 },
-        { nome: "ALIMENTOS E CIA EIRELI", cnpj: "22.333.444/0001-55", valor: 2900000, contratos: 6 }
-    ]
+
+    // ========== Portal Federal - Transferências ==========
+    transferencias: {
+        fonte: "Portal da Transparência Federal",
+        disponivel: true,
+        total: 45000000,
+        totalFmt: "R$ 45,0M",
+        porTipo: {
+            "Constitucional": 25000000,
+            "Legal": 12000000,
+            "Voluntária": 8000000
+        }
+    },
+
+    // ========== Convênios Federais ==========
+    convenios: {
+        fonte: "Portal da Transparência Federal",
+        quantidade: 12,
+        valorTotal: 18500000,
+        valorFmt: "R$ 18,5M",
+        lista: [
+            {
+                numero: "890123/2025",
+                objeto: "Pavimentação asfáltica",
+                valorRepasse: 5200000,
+                situacao: "Em Execução",
+                orgao: "Ministério das Cidades"
+            },
+            {
+                numero: "890456/2025",
+                objeto: "Equipamentos de saúde",
+                valorRepasse: 3800000,
+                situacao: "Em Execução",
+                orgao: "Ministério da Saúde"
+            }
+        ]
+    },
+
+    // ========== Emendas Parlamentares ==========
+    emendas: {
+        fonte: "Portal da Transparência Federal",
+        quantidade: 8,
+        valorTotal: 12000000,
+        valorFmt: "R$ 12,0M",
+        porAutor: [
+            { autor: "Dep. Federal A", valor: 4500000, quantidade: 3 },
+            { autor: "Dep. Federal B", valor: 3200000, quantidade: 2 },
+            { autor: "Sen. Federal C", valor: 4300000, quantidade: 3 }
+        ]
+    },
+
+    // ========== Alertas Consolidados ==========
+    alertas: {
+        total: 5,
+        lrf: [],
+        fornecedores: [],
+        outros: [
+            {
+                tipo: "info",
+                categoria: "fiscal",
+                titulo: "Despesa com pessoal dentro do limite",
+                descricao: "Percentual de 50,0% está abaixo do limite de alerta (48,6%)",
+                data: new Date().toISOString().split('T')[0]
+            }
+        ]
+    },
+
+    // ========== LAI - Conformidade ==========
+    lai: {
+        score: "87%",
+        totalItens: 12,
+        conformes: 10,
+        atencao: 2,
+        irregulares: 0,
+        ultimaVerificacao: new Date().toISOString(),
+        checklist: [
+            { id: 1, item: "Estrutura organizacional", status: "ok", artigo: "Art. 8º, §1º, I" },
+            { id: 2, item: "Competências e atribuições", status: "ok", artigo: "Art. 8º, §1º, I" },
+            { id: 3, item: "Endereços e telefones", status: "ok", artigo: "Art. 8º, §1º, I" },
+            { id: 4, item: "Horários de atendimento", status: "ok", artigo: "Art. 8º, §1º, I" },
+            { id: 5, item: "Repasses e transferências", status: "ok", artigo: "Art. 8º, §1º, II" },
+            { id: 6, item: "Despesas (execução orçamentária)", status: "ok", artigo: "Art. 8º, §1º, III" },
+            { id: 7, item: "Licitações e contratos", status: "ok", artigo: "Art. 8º, §1º, IV" },
+            { id: 8, item: "Receitas", status: "ok", artigo: "Art. 8º, §1º, V" },
+            { id: 9, item: "Perguntas frequentes", status: "warning", artigo: "Art. 8º, §1º, VI", note: "Seção incompleta" },
+            { id: 10, item: "Ferramenta de pesquisa", status: "ok", artigo: "Art. 8º, §3º, I" },
+            { id: 11, item: "Dados em formatos abertos", status: "warning", artigo: "Art. 8º, §3º, II", note: "Apenas PDF disponível" },
+            { id: 12, item: "Relatório estatístico LAI", status: "ok", artigo: "Art. 30, III" }
+        ]
+    },
+
+    // ========== Gráficos ==========
+    graficos: {
+        despesasPorOrgao: {
+            labels: ["Saúde", "Educação", "Administração", "Obras", "Assistência Social", "Outros"],
+            valores: [35, 28, 15, 10, 7, 5]
+        },
+        evolucaoMensal: {
+            labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+            empenhado: [35.2, 32.1, 38.5, 36.8, 34.2, 37.9, 35.6, 33.8, 36.2, 38.1, 35.4, 42.3],
+            liquidado: [33.1, 30.5, 36.2, 35.1, 32.8, 35.6, 34.2, 32.1, 34.8, 36.5, 33.9, 40.1],
+            pago: [31.5, 29.8, 34.8, 33.9, 31.2, 34.2, 32.8, 30.9, 33.2, 35.1, 32.5, 38.5]
+        }
+    },
+
+    // ========== Metadados das Fontes ==========
+    fontes: {
+        siconfi: {
+            nome: "SICONFI - Tesouro Nacional",
+            url: "https://siconfi.tesouro.gov.br",
+            dados: ["RGF", "RREO", "DCA"],
+            atualizacao: "Quadrimestral/Bimestral"
+        },
+        tceSP: {
+            nome: "TCE-SP - Tribunal de Contas SP",
+            url: "https://transparencia.tce.sp.gov.br",
+            dados: ["Despesas", "Receitas"],
+            atualizacao: "Mensal"
+        },
+        portalFederal: {
+            nome: "Portal da Transparência Federal",
+            url: "https://portaldatransparencia.gov.br",
+            dados: ["Convênios", "Transferências", "CEIS", "CNEP", "Emendas"],
+            requerApiKey: true,
+            atualizacao: "Diária"
+        }
+    }
 };
 
 // Inicializar com dados padrão
@@ -78,9 +242,14 @@ let DASHBOARD_DATA = { ...DEFAULT_DATA };
             const data = await response.json();
             DASHBOARD_DATA = { ...DEFAULT_DATA, ...data };
             console.log('✓ Dados atualizados carregados:', DASHBOARD_DATA.lastUpdate);
+
+            // Re-inicializar dashboard se já carregado
+            if (typeof initDashboard === 'function') {
+                initDashboard();
+            }
         }
     } catch (e) {
-        console.log('Usando dados de exemplo');
+        console.log('Usando dados de exemplo (desenvolvimento)');
     }
     window.DASHBOARD_DATA = DASHBOARD_DATA;
 })();
