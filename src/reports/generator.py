@@ -113,276 +113,565 @@ def format_date(date_str: Optional[str], output_format: str = "%d/%m/%Y") -> str
     return date_str
 
 
-# Template HTML base para relatórios
-BASE_TEMPLATE = """
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ titulo }}</title>
-    <style>
-        @page {
-            size: A4;
-            margin: 2cm;
-            @top-center {
-                content: "MonitoraMarília - {{ titulo }}";
-                font-size: 9pt;
-                color: #666;
-            }
-            @bottom-center {
-                content: "Página " counter(page) " de " counter(pages);
-                font-size: 9pt;
-                color: #666;
-            }
-        }
+# ============================================================================
+# CSS Base para todos os relatorios
+# ============================================================================
 
-        body {
-            font-family: 'Helvetica', 'Arial', sans-serif;
-            font-size: 11pt;
-            line-height: 1.5;
-            color: #333;
-        }
+BASE_CSS = """
+@page {
+    size: A4;
+    margin: 2cm 1.5cm;
+    @top-center {
+        content: "MonitoraMarilia - MATRA";
+        font-size: 9pt;
+        color: #666;
+    }
+    @bottom-center {
+        content: "Pagina " counter(page) " de " counter(pages);
+        font-size: 9pt;
+        color: #666;
+    }
+}
 
-        .header {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
-            color: white;
-            padding: 20px;
-            margin: -2cm -2cm 20px -2cm;
-            text-align: center;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        .header h1 {
-            margin: 0;
-            font-size: 24pt;
-        }
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.4;
+    color: #333;
+}
 
-        .header .subtitle {
-            font-size: 12pt;
-            opacity: 0.9;
-        }
+/* Header / Cabecalho */
+.header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #1a5276;
+    margin-bottom: 25px;
+}
 
-        .header .matra {
-            font-size: 10pt;
-            margin-top: 10px;
-            opacity: 0.8;
-        }
+.logo-placeholder {
+    width: 120px;
+    height: 60px;
+    margin: 0 auto 15px;
+    background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14pt;
+    letter-spacing: 2px;
+}
 
-        .meta-info {
-            background: #f5f5f5;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
+.header h1 {
+    color: #1a5276;
+    font-size: 18pt;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
 
-        .meta-info p {
-            margin: 5px 0;
-        }
+.header .subtitle {
+    color: #666;
+    font-size: 12pt;
+    font-weight: normal;
+}
 
-        h2 {
-            color: #1e3a5f;
-            border-bottom: 2px solid #1e3a5f;
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
+.header .report-date {
+    color: #888;
+    font-size: 10pt;
+    margin-top: 10px;
+}
 
-        h3 {
-            color: #2d5a87;
-            margin-top: 20px;
-        }
+/* Titulos de secao */
+h2 {
+    color: #1a5276;
+    font-size: 14pt;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    margin: 25px 0 15px;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-        }
+h3 {
+    color: #2c3e50;
+    font-size: 12pt;
+    margin: 20px 0 10px;
+}
 
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
+/* Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 10pt;
+}
 
-        th {
-            background: #1e3a5f;
-            color: white;
-            font-weight: bold;
-        }
+th {
+    background: #1a5276;
+    color: white;
+    padding: 10px 8px;
+    text-align: left;
+    font-weight: 600;
+}
 
-        tr:nth-child(even) {
-            background: #f9f9f9;
-        }
+td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
 
-        .status-ok {
-            color: #10b981;
-            font-weight: bold;
-        }
+tr:nth-child(even) {
+    background: #f8f9fa;
+}
 
-        .status-alerta {
-            color: #f59e0b;
-            font-weight: bold;
-        }
+tr:hover {
+    background: #e8f4f8;
+}
 
-        .status-critico {
-            color: #ef4444;
-            font-weight: bold;
-        }
+.text-right {
+    text-align: right;
+}
 
-        .alert-box {
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-        }
+.text-center {
+    text-align: center;
+}
 
-        .alert-info {
-            background: #e0f2fe;
-            border-left: 4px solid #0284c7;
-        }
+/* Valores monetarios */
+.currency {
+    text-align: right;
+    font-family: 'Courier New', monospace;
+    white-space: nowrap;
+}
 
-        .alert-warning {
-            background: #fef3c7;
-            border-left: 4px solid #f59e0b;
-        }
+.percentage {
+    text-align: center;
+    font-weight: 600;
+}
 
-        .alert-danger {
-            background: #fee2e2;
-            border-left: 4px solid #ef4444;
-        }
+/* Cards de KPI */
+.kpi-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
 
-        .kpi-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin: 20px 0;
-        }
+.kpi-card {
+    flex: 1;
+    min-width: 150px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 8px;
+    padding: 15px;
+    border-left: 4px solid #3498db;
+}
 
-        .kpi-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-        }
+.kpi-card.success {
+    border-left-color: #27ae60;
+}
 
-        .kpi-card .value {
-            font-size: 24pt;
-            font-weight: bold;
-            color: #1e3a5f;
-        }
+.kpi-card.warning {
+    border-left-color: #f39c12;
+}
 
-        .kpi-card .label {
-            font-size: 10pt;
-            color: #64748b;
-        }
+.kpi-card.danger {
+    border-left-color: #e74c3c;
+}
 
-        .footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-            font-size: 9pt;
-            color: #666;
-        }
+.kpi-label {
+    font-size: 9pt;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
 
-        .footer .sources {
-            margin-top: 10px;
-        }
+.kpi-value {
+    font-size: 16pt;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 5px;
+}
 
-        .page-break {
-            page-break-before: always;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h1>{{ titulo }}</h1>
-        <div class="subtitle">{{ subtitulo }}</div>
-        <div class="matra">MATRA - Marília Transparente | Controle Social</div>
-    </div>
+.kpi-detail {
+    font-size: 9pt;
+    color: #888;
+    margin-top: 3px;
+}
 
-    <div class="meta-info">
-        <p><strong>Município:</strong> Marília - SP (IBGE: 3529005)</p>
-        <p><strong>Período:</strong> {{ periodo }}</p>
-        <p><strong>Gerado em:</strong> {{ data_geracao }}</p>
-    </div>
+/* Alertas */
+.alert {
+    padding: 12px 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 10pt;
+}
 
-    {{ conteudo }}
+.alert-critico, .alert-danger {
+    background: #fdecea;
+    border-left: 4px solid #e74c3c;
+    color: #c0392b;
+}
 
-    <div class="footer">
-        <p><strong>Nota:</strong> Este relatório foi gerado automaticamente pelo sistema MonitoraMarília
-        com base em dados públicos oficiais. Os dados são atualizados conforme disponibilização pelas fontes.</p>
-        <div class="sources">
-            <strong>Fontes:</strong>
-            <ul>
-                {% for fonte in fontes %}
-                <li>{{ fonte }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-</body>
-</html>
+.alert-alerta, .alert-warning {
+    background: #fef9e7;
+    border-left: 4px solid #f39c12;
+    color: #b7950b;
+}
+
+.alert-info {
+    background: #e8f6f3;
+    border-left: 4px solid #1abc9c;
+    color: #148f77;
+}
+
+.alert-title {
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+/* Placeholder para graficos */
+.chart-placeholder {
+    background: #f8f9fa;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    margin: 20px 0;
+    color: #888;
+}
+
+.chart-placeholder .icon {
+    font-size: 40pt;
+    margin-bottom: 10px;
+    opacity: 0.5;
+}
+
+/* Rodape */
+.footer {
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    font-size: 9pt;
+    color: #666;
+}
+
+.footer .sources {
+    margin-bottom: 10px;
+}
+
+.footer .disclaimer {
+    font-style: italic;
+    color: #888;
+}
+
+/* Quebra de pagina */
+.page-break {
+    page-break-after: always;
+}
+
+/* Status badges */
+.badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 9pt;
+    font-weight: 600;
+}
+
+.badge-ok {
+    background: #d4edda;
+    color: #155724;
+}
+
+.badge-warning {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.badge-danger {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Sumario executivo */
+.executive-summary {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.executive-summary h3 {
+    margin-top: 0;
+}
+
+.executive-summary ul {
+    margin: 10px 0 0 20px;
+}
+
+.executive-summary li {
+    margin: 5px 0;
+}
+
+/* Meta info box */
+.meta-info {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.meta-info p {
+    margin: 5px 0;
+}
 """
 
 
-class ReportGenerator:
-    """Classe base para geração de relatórios."""
+# ============================================================================
+# Classe base para relatorios
+# ============================================================================
 
-    def __init__(self, output_dir: Path = None):
+class BaseReport(ABC):
+    """Classe base abstrata para todos os relatorios."""
+
+    def __init__(self, output_dir: Optional[Path] = None):
         """
-        Inicializa o gerador de relatórios.
+        Inicializa o gerador de relatorio.
 
         Args:
-            output_dir: Diretório para salvar os relatórios
+            output_dir: Diretorio de saida para os PDFs
         """
-        self.output_dir = output_dir or DEFAULT_OUTPUT_DIR
+        self.output_dir = output_dir or REPORTS_DIR
         self.output_dir.mkdir(parents=True, exist_ok=True)
+        self.css = CSS(string=BASE_CSS) if WEASYPRINT_AVAILABLE else None
 
-    def _render_template(
-        self,
-        titulo: str,
-        subtitulo: str,
-        periodo: str,
-        conteudo: str,
-        fontes: List[str]
-    ) -> str:
-        """Renderiza o template HTML com os dados."""
-        template = Template(BASE_TEMPLATE)
-        return template.render(
-            titulo=titulo,
-            subtitulo=subtitulo,
-            periodo=periodo,
-            data_geracao=datetime.now().strftime("%d/%m/%Y às %H:%M"),
-            conteudo=conteudo,
-            fontes=fontes
-        )
-
-    def _generate_pdf(self, html_content: str, filename: str) -> Optional[Path]:
+    @abstractmethod
+    def _build_html(self, data: Dict[str, Any]) -> str:
         """
-        Gera o PDF a partir do HTML.
+        Constroi o HTML do relatorio.
 
         Args:
-            html_content: Conteúdo HTML
-            filename: Nome do arquivo PDF
+            data: Dados para o relatorio
 
         Returns:
-            Caminho do arquivo gerado ou None se falhar
+            HTML completo como string
         """
+        pass
+
+    @abstractmethod
+    def get_report_title(self) -> str:
+        """Retorna o titulo do relatorio."""
+        pass
+
+    def _build_header(self, title: str, subtitle: str = "", date: str = None) -> str:
+        """
+        Constroi o cabecalho do relatorio.
+
+        Args:
+            title: Titulo principal
+            subtitle: Subtitulo
+            date: Data do relatorio
+
+        Returns:
+            HTML do cabecalho
+        """
+        if date is None:
+            date = datetime.now().strftime("%d/%m/%Y as %H:%M")
+
+        return f"""
+        <div class="header">
+            <div class="logo-placeholder">MATRA</div>
+            <h1>{title}</h1>
+            <div class="subtitle">{subtitle}</div>
+            <div class="report-date">Gerado em: {date}</div>
+        </div>
+        """
+
+    def _build_footer(self, sources: List[str] = None) -> str:
+        """
+        Constroi o rodape do relatorio.
+
+        Args:
+            sources: Lista de fontes de dados
+
+        Returns:
+            HTML do rodape
+        """
+        sources = sources or []
+        sources_html = "<br>".join(sources) if sources else "APIs publicas oficiais"
+
+        return f"""
+        <div class="footer">
+            <div class="sources">
+                <strong>Fontes:</strong><br>
+                {sources_html}
+            </div>
+            <div class="disclaimer">
+                Este relatorio foi gerado automaticamente pelo sistema MonitoraMarilia,
+                uma iniciativa do MATRA (Movimento por uma Administracao Transparente de Marilia).
+                Os dados sao obtidos de fontes oficiais e podem apresentar defasagem em relacao
+                aos valores mais recentes.
+            </div>
+        </div>
+        """
+
+    def _build_kpi_cards(self, kpis: List[Dict[str, Any]]) -> str:
+        """
+        Constroi cards de KPI.
+
+        Args:
+            kpis: Lista de KPIs com keys: label, value, detail, status
+
+        Returns:
+            HTML dos cards
+        """
+        cards = []
+        for kpi in kpis:
+            status_class = kpi.get("status", "")
+            cards.append(f"""
+            <div class="kpi-card {status_class}">
+                <div class="kpi-label">{kpi.get('label', '')}</div>
+                <div class="kpi-value">{kpi.get('value', 'N/D')}</div>
+                <div class="kpi-detail">{kpi.get('detail', '')}</div>
+            </div>
+            """)
+
+        return f'<div class="kpi-container">{"".join(cards)}</div>'
+
+    def _build_table(
+        self,
+        headers: List[str],
+        rows: List[List[str]],
+        col_classes: List[str] = None
+    ) -> str:
+        """
+        Constroi uma tabela HTML.
+
+        Args:
+            headers: Cabecalhos das colunas
+            rows: Linhas de dados
+            col_classes: Classes CSS para cada coluna
+
+        Returns:
+            HTML da tabela
+        """
+        col_classes = col_classes or [""] * len(headers)
+
+        header_html = "".join(f"<th>{h}</th>" for h in headers)
+
+        rows_html = []
+        for row in rows:
+            cells = []
+            for i, cell in enumerate(row):
+                cls = col_classes[i] if i < len(col_classes) else ""
+                cells.append(f'<td class="{cls}">{cell}</td>')
+            rows_html.append(f"<tr>{''.join(cells)}</tr>")
+
+        return f"""
+        <table>
+            <thead><tr>{header_html}</tr></thead>
+            <tbody>{''.join(rows_html)}</tbody>
+        </table>
+        """
+
+    def _build_alerts_section(self, alerts: List[Dict[str, Any]]) -> str:
+        """
+        Constroi secao de alertas.
+
+        Args:
+            alerts: Lista de alertas
+
+        Returns:
+            HTML da secao de alertas
+        """
+        if not alerts:
+            return '<div class="alert alert-info">Nenhum alerta identificado no periodo.</div>'
+
+        alerts_html = []
+        for alert in alerts:
+            tipo = alert.get("tipo", "info").lower()
+            alerts_html.append(f"""
+            <div class="alert alert-{tipo}">
+                <div class="alert-title">{alert.get('titulo', 'Alerta')}</div>
+                <div>{alert.get('descricao', '')}</div>
+            </div>
+            """)
+
+        return "".join(alerts_html)
+
+    def _build_chart_placeholder(self, title: str, description: str = "") -> str:
+        """
+        Constroi placeholder para grafico.
+
+        Args:
+            title: Titulo do grafico
+            description: Descricao
+
+        Returns:
+            HTML do placeholder
+        """
+        return f"""
+        <div class="chart-placeholder">
+            <div class="icon">[Grafico]</div>
+            <div><strong>{title}</strong></div>
+            <div>{description}</div>
+        </div>
+        """
+
+    def generate(
+        self,
+        data: Dict[str, Any],
+        filename: Optional[str] = None
+    ) -> Path:
+        """
+        Gera o relatorio em PDF.
+
+        Args:
+            data: Dados para o relatorio
+            filename: Nome do arquivo (sem extensao)
+
+        Returns:
+            Caminho do arquivo gerado
+        """
+        if filename is None:
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            filename = f"{self.__class__.__name__}_{timestamp}"
+
+        html_content = self._build_html(data)
+
         if not WEASYPRINT_AVAILABLE:
-            logger.warning("WeasyPrint não disponível. Salvando apenas HTML.")
-            html_path = self.output_dir / filename.replace(".pdf", ".html")
+            logger.warning("WeasyPrint nao disponivel. Salvando apenas HTML.")
+            html_path = self.output_dir / f"{filename}.html"
             html_path.write_text(html_content, encoding="utf-8")
             return html_path
 
         try:
-            pdf_path = self.output_dir / filename
-            HTML(string=html_content).write_pdf(pdf_path)
-            logger.info(f"Relatório gerado: {pdf_path}")
-            return pdf_path
+            filepath = self.output_dir / f"{filename}.pdf"
+            logger.info(f"Gerando relatorio: {filepath}")
+            html_doc = HTML(string=html_content)
+            html_doc.write_pdf(filepath, stylesheets=[self.css])
+            logger.info(f"Relatorio gerado: {filepath} ({filepath.stat().st_size} bytes)")
+            return filepath
         except Exception as e:
             logger.error(f"Erro ao gerar PDF: {e}")
             # Fallback para HTML
-            html_path = self.output_dir / filename.replace(".pdf", ".html")
+            html_path = self.output_dir / f"{filename}.html"
             html_path.write_text(html_content, encoding="utf-8")
             return html_path
+
+
+# Alias para compatibilidade
+class ReportGenerator(BaseReport):
+    """Alias para BaseReport para compatibilidade."""
+
+    def _build_html(self, data: Dict[str, Any]) -> str:
+        return ""
+
+    def get_report_title(self) -> str:
+        return "Relatorio"
 
 
 class FiscalReport(ReportGenerator):
