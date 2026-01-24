@@ -7,6 +7,8 @@
  * - Portal Federal: Transferências, convênios, sanções
  */
 
+const PLACEHOLDER = 'Aguardando dados';
+
 document.addEventListener('DOMContentLoaded', function() {
     // Aguardar carregamento dos dados
     setTimeout(initDashboard, 100);
@@ -23,25 +25,59 @@ function initDashboard() {
     renderFornecedores();
     renderSancoes();
     renderAlerts();
+    showDataWarningIfNeeded();
 }
 
 // Expor globalmente para recarregamento
 window.initDashboard = initDashboard;
 
 /**
+ * Mostra aviso se os dados não foram carregados
+ */
+function showDataWarningIfNeeded() {
+    if (!DASHBOARD_DATA.dadosCarregados) {
+        const alertContainer = document.getElementById('alerts-list');
+        if (alertContainer) {
+            alertContainer.innerHTML = `
+                <div class="flex items-start space-x-4 p-4 border-l-4 border-yellow-500 bg-yellow-50 rounded-r-lg">
+                    <div class="flex-shrink-0">
+                        <span class="w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100">
+                            <i class="fas fa-exclamation-triangle text-yellow-600"></i>
+                        </span>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="text-sm font-semibold text-yellow-800">Dados ainda não carregados</h4>
+                        <p class="text-sm text-yellow-700 mt-1">
+                            Os dados reais precisam ser obtidos das APIs oficiais.
+                            Execute o comando <code class="bg-yellow-200 px-1 rounded">python -m src.main update-dashboard</code>
+                            para carregar dados do SICONFI, TCE-SP e Portal Federal.
+                        </p>
+                    </div>
+                </div>
+            `;
+        }
+    }
+}
+
+/**
  * Atualiza a data da última atualização
  */
 function updateLastUpdate() {
     const element = document.getElementById('last-update');
-    if (element && DASHBOARD_DATA.lastUpdate) {
-        const date = new Date(DASHBOARD_DATA.lastUpdate);
-        element.textContent = date.toLocaleString('pt-BR', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit'
-        });
+    if (element) {
+        if (DASHBOARD_DATA.lastUpdate) {
+            const date = new Date(DASHBOARD_DATA.lastUpdate);
+            element.textContent = date.toLocaleString('pt-BR', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        } else {
+            element.textContent = 'Nunca';
+            element.classList.add('text-yellow-600');
+        }
     }
 }
 
@@ -53,20 +89,28 @@ function renderFiscalKPIs() {
     if (!fiscal) return;
 
     // RCL
-    setElementText('rcl-valor', fiscal.rclFormatado || formatCurrency(fiscal.rcl));
+    setElementText('rcl-valor', fiscal.rclFormatado || formatCurrency(fiscal.rcl) || PLACEHOLDER);
 
     // Despesa com Pessoal
     const pessoal = fiscal.despesaPessoal;
     if (pessoal) {
-        setElementText('pessoal-percentual', `${pessoal.percentual.toFixed(1)}%`);
-        updateLimitCard('pessoal', pessoal.percentual, pessoal.limite, pessoal.status);
+        if (pessoal.percentual !== null && pessoal.percentual !== undefined) {
+            setElementText('pessoal-percentual', `${pessoal.percentual.toFixed(1)}%`);
+            updateLimitCard('pessoal', pessoal.percentual, pessoal.limite, pessoal.status);
+        } else {
+            setElementText('pessoal-percentual', PLACEHOLDER);
+        }
     }
 
     // Dívida Consolidada
     const divida = fiscal.divida;
     if (divida) {
-        setElementText('divida-percentual', `${divida.percentual.toFixed(1)}%`);
-        updateLimitCard('divida', divida.percentual, divida.limite, divida.status);
+        if (divida.percentual !== null && divida.percentual !== undefined) {
+            setElementText('divida-percentual', `${divida.percentual.toFixed(1)}%`);
+            updateLimitCard('divida', divida.percentual, divida.limite, divida.status);
+        } else {
+            setElementText('divida-percentual', PLACEHOLDER);
+        }
     }
 
     // Alertas LRF
@@ -86,6 +130,11 @@ function updateLimitCard(tipo, percentual, limite, status) {
     const icon = document.getElementById(`${tipo}-icon`);
 
     if (!card) return;
+
+    // Se não há status, manter cinza
+    if (!status) {
+        return;
+    }
 
     // Calcular cor baseado no status
     let borderColor, barColor, iconColor, textColor;
@@ -127,7 +176,7 @@ function updateLimitCard(tipo, percentual, limite, status) {
     card.classList.add('border-l-4', borderColor);
 
     // Atualizar barra de progresso
-    if (bar) {
+    if (bar && percentual !== null && percentual !== undefined) {
         bar.className = `h-2 rounded-full transition-all ${barColor}`;
         bar.style.width = `${Math.min(percentual / limite * 100, 100)}%`;
     }
@@ -155,17 +204,20 @@ function renderTransferencias() {
     const emendas = DASHBOARD_DATA.emendas;
 
     if (transf) {
-        setElementText('transf-total', transf.totalFmt || formatCurrency(transf.total));
+        const valor = transf.totalFmt || formatCurrency(transf.total);
+        setElementText('transf-total', valor || PLACEHOLDER);
     }
 
     if (conv) {
-        setElementText('convenios-count', conv.quantidade);
-        setElementText('convenios-valor', conv.valorFmt || formatCurrency(conv.valorTotal));
+        setElementText('convenios-count', conv.quantidade !== null ? conv.quantidade : '--');
+        const valorConv = conv.valorFmt || formatCurrency(conv.valorTotal);
+        setElementText('convenios-valor', valorConv || PLACEHOLDER);
     }
 
     if (emendas) {
-        setElementText('emendas-valor', emendas.valorFmt || formatCurrency(emendas.valorTotal));
-        setElementText('emendas-count', `${emendas.quantidade} emendas`);
+        const valorEmendas = emendas.valorFmt || formatCurrency(emendas.valorTotal);
+        setElementText('emendas-valor', valorEmendas || PLACEHOLDER);
+        setElementText('emendas-count', emendas.quantidade !== null ? `${emendas.quantidade} emendas` : '--');
     }
 }
 
@@ -176,9 +228,13 @@ function renderExecucaoTCE() {
     const exec = DASHBOARD_DATA.execucao;
     if (!exec) return;
 
-    setElementText('tce-empenhado', exec.empenhadoFmt || formatCurrency(exec.empenhado));
-    setElementText('tce-liquidado', exec.liquidadoFmt || formatCurrency(exec.liquidado));
-    setElementText('tce-pago', exec.pagoFmt || formatCurrency(exec.pago));
+    const empenhado = exec.empenhadoFmt || formatCurrency(exec.empenhado);
+    const liquidado = exec.liquidadoFmt || formatCurrency(exec.liquidado);
+    const pago = exec.pagoFmt || formatCurrency(exec.pago);
+
+    setElementText('tce-empenhado', empenhado || PLACEHOLDER);
+    setElementText('tce-liquidado', liquidado || PLACEHOLDER);
+    setElementText('tce-pago', pago || PLACEHOLDER);
 }
 
 /**
@@ -191,7 +247,13 @@ function renderFornecedores() {
     const fornecedores = DASHBOARD_DATA.fornecedores?.top10 || [];
 
     if (fornecedores.length === 0) {
-        container.innerHTML = '<p class="text-gray-500 text-center py-4">Nenhum dado disponível</p>';
+        container.innerHTML = `
+            <div class="text-center py-8 text-gray-500">
+                <i class="fas fa-building text-3xl text-gray-300 mb-2"></i>
+                <p class="text-sm">Dados de fornecedores ainda não carregados</p>
+                <p class="text-xs text-gray-400 mt-1">Execute: python -m src.main update-dashboard</p>
+            </div>
+        `;
         return;
     }
 
@@ -228,17 +290,16 @@ function renderFornecedores() {
  */
 function renderSancoes() {
     const sancoes = DASHBOARD_DATA.fornecedores?.sancoesVerificadas;
-    if (!sancoes) return;
 
-    setElementText('sancoes-verificados', sancoes.total);
-    setElementText('sancoes-irregulares', sancoes.irregulares);
+    setElementText('sancoes-verificados', sancoes?.total ?? '--');
+    setElementText('sancoes-irregulares', sancoes?.irregulares ?? '--');
 
     const container = document.getElementById('sancoes-list');
     const emptyMsg = document.getElementById('sancoes-empty');
 
     if (!container) return;
 
-    if (sancoes.alertas && sancoes.alertas.length > 0) {
+    if (sancoes?.alertas && sancoes.alertas.length > 0) {
         if (emptyMsg) emptyMsg.style.display = 'none';
 
         container.innerHTML = sancoes.alertas.map(alerta => `
@@ -262,6 +323,11 @@ function renderSancoes() {
 function renderAlerts() {
     const container = document.getElementById('alerts-list');
     if (!container) return;
+
+    // Se dados não carregados, showDataWarningIfNeeded() cuida disso
+    if (!DASHBOARD_DATA.dadosCarregados) {
+        return;
+    }
 
     // Consolidar todos os alertas
     const alertas = [
@@ -308,8 +374,8 @@ function renderAlerts() {
 
 function setElementText(id, value) {
     const element = document.getElementById(id);
-    if (element && value !== undefined) {
-        element.textContent = value;
+    if (element) {
+        element.textContent = value !== undefined && value !== null ? value : PLACEHOLDER;
     }
 }
 
@@ -367,6 +433,9 @@ function getAlertConfig(tipo) {
 }
 
 function formatCurrency(value) {
+    if (value === null || value === undefined) {
+        return null;
+    }
     if (value >= 1000000) {
         return 'R$ ' + (value / 1000000).toLocaleString('pt-BR', {
             minimumFractionDigits: 1,

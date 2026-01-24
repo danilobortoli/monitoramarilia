@@ -25,22 +25,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Instalar Playwright e navegadores
+      - name: Coletar dados das APIs oficiais
         run: |
-          pip install playwright
-          playwright install chromium
-          playwright install-deps chromium
-
-      - name: Coletar dados do Portal de Transparência
-        run: |
+          echo "Coletando dados de fontes abertas..."
+          echo "- SICONFI (Tesouro Nacional)"
+          echo "- TCE-SP (Tribunal de Contas)"
+          echo "- Portal Federal (se API key configurada)"
           python -m src.main update-dashboard --output docs/data/
         env:
           PYTHONPATH: ${{ github.workspace }}
+          PORTAL_TRANSPARENCIA_KEY: ${{ secrets.PORTAL_TRANSPARENCIA_KEY }}
 
       - name: Verificar arquivos gerados
         run: |
           echo "Arquivos em docs/data/:"
-          ls -la docs/data/ || echo "Pasta não existe"
+          ls -la docs/data/ || mkdir -p docs/data && echo "Pasta criada"
 
       - name: Verificar alterações
         id: check_changes
@@ -56,7 +55,7 @@ jobs:
           git commit -m "chore: atualização automática dos dados do dashboard
 
           Data: $(date +'%Y-%m-%d %H:%M:%S')
-          Portal: https://transparencia.marilia.sp.gov.br"
+          Fontes: SICONFI, TCE-SP, Portal Federal"
           git push
 
       - name: Resumo da execução
@@ -64,13 +63,17 @@ jobs:
           echo "## Atualização do Dashboard MonitoraMarília" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Data:** $(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_STEP_SUMMARY
-          echo "**Portal:** https://transparencia.marilia.sp.gov.br" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Fontes de dados:" >> $GITHUB_STEP_SUMMARY
+          echo "- SICONFI (Tesouro Nacional): Indicadores fiscais e LRF" >> $GITHUB_STEP_SUMMARY
+          echo "- TCE-SP: Despesas e fornecedores municipais" >> $GITHUB_STEP_SUMMARY
+          echo "- Portal Federal: Transferências, convênios, sanções" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           if [ -f docs/data/dashboard.json ]; then
             echo "### Arquivos atualizados:" >> $GITHUB_STEP_SUMMARY
             ls docs/data/*.json 2>/dev/null | while read f; do
-              echo "- ✅ $(basename $f)" >> $GITHUB_STEP_SUMMARY
+              echo "- $(basename $f)" >> $GITHUB_STEP_SUMMARY
             done
           else
-            echo "⚠️ Verificar logs para detalhes" >> $GITHUB_STEP_SUMMARY
+            echo "Verificar logs para detalhes" >> $GITHUB_STEP_SUMMARY
           fi
