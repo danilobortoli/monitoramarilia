@@ -44,15 +44,16 @@ function initDespesasChart() {
         },
         options: {
             responsive: true,
-            maintainAspectRatio: false,
+            maintainAspectRatio: true,
+            aspectRatio: 1.5,
             plugins: {
                 legend: {
-                    position: 'right',
+                    position: 'bottom',
                     labels: {
                         padding: 15,
                         usePointStyle: true,
                         font: {
-                            size: 12
+                            size: 11
                         }
                     }
                 },
@@ -107,13 +108,17 @@ function initEvolucaoChart() {
         },
         options: {
             responsive: true,
-            maintainAspectRatio: false,
+            maintainAspectRatio: true,
+            aspectRatio: 2,
             plugins: {
                 legend: {
                     position: 'top',
                     labels: {
-                        padding: 15,
-                        usePointStyle: true
+                        padding: 10,
+                        usePointStyle: true,
+                        font: {
+                            size: 11
+                        }
                     }
                 },
                 tooltip: {
@@ -128,6 +133,11 @@ function initEvolucaoChart() {
                 x: {
                     grid: {
                         display: false
+                    },
+                    ticks: {
+                        font: {
+                            size: 10
+                        }
                     }
                 },
                 y: {
@@ -138,6 +148,9 @@ function initEvolucaoChart() {
                     ticks: {
                         callback: function(value) {
                             return 'R$ ' + value + 'M';
+                        },
+                        font: {
+                            size: 10
                         }
                     }
                 }
