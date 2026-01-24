@@ -20,15 +20,27 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Instalar dependências
+      - name: Instalar dependências Python
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Atualizar dados do dashboard
+      - name: Instalar Playwright e navegadores
         run: |
-          cd src
-          python main.py update-dashboard
+          pip install playwright
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Coletar dados do Portal de Transparência
+        run: |
+          python -m src.main update-dashboard --output docs/data/
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+
+      - name: Verificar arquivos gerados
+        run: |
+          echo "Arquivos em docs/data/:"
+          ls -la docs/data/ || echo "Pasta não existe"
 
       - name: Verificar alterações
         id: check_changes
@@ -43,17 +55,22 @@ jobs:
           git add docs/data/
           git commit -m "chore: atualização automática dos dados do dashboard
 
-          Data: $(date +'%Y-%m-%d %H:%M:%S')"
+          Data: $(date +'%Y-%m-%d %H:%M:%S')
+          Portal: https://transparencia.marilia.sp.gov.br"
           git push
 
       - name: Resumo da execução
         run: |
-          echo "## Atualização do Dashboard" >> $GITHUB_STEP_SUMMARY
+          echo "## Atualização do Dashboard MonitoraMarília" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Data:** $(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_STEP_SUMMARY
+          echo "**Portal:** https://transparencia.marilia.sp.gov.br" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           if [ -f docs/data/dashboard.json ]; then
-            echo "✅ Dados atualizados com sucesso" >> $GITHUB_STEP_SUMMARY
+            echo "### Arquivos atualizados:" >> $GITHUB_STEP_SUMMARY
+            ls docs/data/*.json 2>/dev/null | while read f; do
+              echo "- ✅ $(basename $f)" >> $GITHUB_STEP_SUMMARY
+            done
           else
             echo "⚠️ Verificar logs para detalhes" >> $GITHUB_STEP_SUMMARY
           fi

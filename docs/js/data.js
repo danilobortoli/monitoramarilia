@@ -1,14 +1,13 @@
 /**
  * MonitoraMarília - Dados do Dashboard
- * Dados de exemplo para demonstração
- * Em produção, estes dados são gerados pelo sistema Python
+ *
+ * Carrega dados do JSON gerado pelo GitHub Actions.
+ * Se não disponível, usa dados de exemplo como fallback.
  */
 
-const DASHBOARD_DATA = {
-    // Última atualização
+// Dados de exemplo (fallback quando não há JSON atualizado)
+const DEFAULT_DATA = {
     lastUpdate: new Date().toISOString(),
-
-    // KPIs principais
     kpis: {
         laiScore: "87%",
         laiItems: 12,
@@ -20,8 +19,6 @@ const DASHBOARD_DATA = {
         alertasCount: 7,
         alertasCriticos: 2
     },
-
-    // Checklist LAI (Lei 12.527/2011, Art. 8º, §1º)
     laiChecklist: [
         { id: 1, item: "Estrutura organizacional", status: "ok", url: "https://transparencia.marilia.sp.gov.br/#/estrutura" },
         { id: 2, item: "Competências e atribuições", status: "ok", url: "https://transparencia.marilia.sp.gov.br/#/competencias" },
@@ -36,83 +33,24 @@ const DASHBOARD_DATA = {
         { id: 11, item: "Dados em formatos abertos", status: "warning", url: null, note: "Apenas PDF disponível" },
         { id: 12, item: "Relatório estatístico LAI", status: "ok", url: "https://transparencia.marilia.sp.gov.br/#/relatorio-lai" }
     ],
-
-    // Alertas ativos
     alertas: [
-        {
-            id: 1,
-            tipo: "critico",
-            titulo: "Contrato sem licitação - valor elevado",
-            descricao: "Contrato nº 2026/089 no valor de R$ 890.000,00 firmado por dispensa de licitação. Verificar enquadramento legal.",
-            data: "2026-01-15",
-            categoria: "contratos"
-        },
-        {
-            id: 2,
-            tipo: "critico",
-            titulo: "Possível fracionamento de despesas",
-            descricao: "Detectadas 5 compras de material de escritório no mesmo mês, totalizando R$ 78.000,00, com mesmo fornecedor.",
-            data: "2026-01-12",
-            categoria: "despesas"
-        },
-        {
-            id: 3,
-            tipo: "alerta",
-            titulo: "Atraso na atualização de despesas",
-            descricao: "Dados de despesas não atualizados há 3 dias. LAI exige atualização em tempo real.",
-            data: "2026-01-18",
-            categoria: "lai"
-        },
-        {
-            id: 4,
-            tipo: "alerta",
-            titulo: "Fornecedor com alta concentração",
-            descricao: "Empresa XYZ LTDA recebeu 15% do total de pagamentos do mês de dezembro/2025.",
-            data: "2026-01-10",
-            categoria: "fornecedores"
-        },
-        {
-            id: 5,
-            tipo: "info",
-            titulo: "Aditivo contratual acima de 25%",
-            descricao: "Contrato nº 2025/045 teve aditivo de 32%, superando o limite legal de 25%.",
-            data: "2026-01-08",
-            categoria: "contratos"
-        },
-        {
-            id: 6,
-            tipo: "info",
-            titulo: "Licitação deserta",
-            descricao: "Pregão Eletrônico nº 012/2026 declarado deserto. Nova licitação necessária.",
-            data: "2026-01-05",
-            categoria: "licitacoes"
-        },
-        {
-            id: 7,
-            tipo: "info",
-            titulo: "Dados de folha de pagamento",
-            descricao: "Folha de dezembro/2025 publicada com 15 dias de atraso.",
-            data: "2026-01-03",
-            categoria: "pessoal"
-        }
+        { id: 1, tipo: "critico", titulo: "Contrato sem licitação - valor elevado", descricao: "Contrato nº 2026/089 no valor de R$ 890.000,00 firmado por dispensa de licitação.", data: "2026-01-15", categoria: "contratos" },
+        { id: 2, tipo: "critico", titulo: "Possível fracionamento de despesas", descricao: "Detectadas 5 compras de material de escritório no mesmo mês, totalizando R$ 78.000,00.", data: "2026-01-12", categoria: "despesas" },
+        { id: 3, tipo: "alerta", titulo: "Atraso na atualização de despesas", descricao: "Dados de despesas não atualizados há 3 dias.", data: "2026-01-18", categoria: "lai" },
+        { id: 4, tipo: "alerta", titulo: "Fornecedor com alta concentração", descricao: "Empresa XYZ LTDA recebeu 15% do total de pagamentos.", data: "2026-01-10", categoria: "fornecedores" },
+        { id: 5, tipo: "info", titulo: "Aditivo contratual acima de 25%", descricao: "Contrato nº 2025/045 teve aditivo de 32%.", data: "2026-01-08", categoria: "contratos" }
     ],
-
-    // Despesas por categoria (para gráfico de pizza)
     despesasPorCategoria: {
         labels: ["Pessoal", "Custeio", "Investimentos", "Saúde", "Educação", "Outros"],
         data: [45, 20, 10, 12, 8, 5],
         valores: ["R$ 180M", "R$ 80M", "R$ 40M", "R$ 48M", "R$ 32M", "R$ 20M"]
     },
-
-    // Evolução mensal de despesas (para gráfico de barras)
     despesasMensais: {
         labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
         empenhado: [35.2, 32.1, 38.5, 36.8, 34.2, 37.9, 35.6, 33.8, 36.2, 38.1, 35.4, 42.3],
         liquidado: [33.1, 30.5, 36.2, 35.1, 32.8, 35.6, 34.2, 32.1, 34.8, 36.5, 33.9, 40.1],
         pago: [31.5, 29.8, 34.8, 33.9, 31.2, 34.2, 32.8, 30.9, 33.2, 35.1, 32.5, 38.5]
     },
-
-    // Últimas licitações
     licitacoes: [
         { numero: "PE 001/2026", objeto: "Aquisição de medicamentos", valor: 2500000, modalidade: "Pregão Eletrônico", status: "Em andamento", data: "2026-01-18" },
         { numero: "PE 002/2026", objeto: "Serviços de limpeza hospitalar", valor: 1800000, modalidade: "Pregão Eletrônico", status: "Homologada", data: "2026-01-15" },
@@ -120,8 +58,6 @@ const DASHBOARD_DATA = {
         { numero: "PE 003/2026", objeto: "Material de escritório", valor: 150000, modalidade: "Pregão Eletrônico", status: "Homologada", data: "2026-01-10" },
         { numero: "DL 001/2026", objeto: "Manutenção emergencial", valor: 45000, modalidade: "Dispensa", status: "Contratada", data: "2026-01-08" }
     ],
-
-    // Maiores fornecedores
     fornecedores: [
         { nome: "DISTRIBUIDORA FARMA LTDA", cnpj: "12.345.678/0001-90", valor: 8500000, contratos: 5 },
         { nome: "CONSTRUTORA ABC S/A", cnpj: "98.765.432/0001-10", valor: 6200000, contratos: 3 },
@@ -131,7 +67,23 @@ const DASHBOARD_DATA = {
     ]
 };
 
-// Exportar para uso global
-if (typeof window !== 'undefined') {
+// Inicializar com dados padrão
+let DASHBOARD_DATA = { ...DEFAULT_DATA };
+
+// Tentar carregar dados atualizados do JSON
+(async function loadData() {
+    try {
+        const response = await fetch('data/dashboard.json');
+        if (response.ok) {
+            const data = await response.json();
+            DASHBOARD_DATA = { ...DEFAULT_DATA, ...data };
+            console.log('✓ Dados atualizados carregados:', DASHBOARD_DATA.lastUpdate);
+        }
+    } catch (e) {
+        console.log('Usando dados de exemplo');
+    }
     window.DASHBOARD_DATA = DASHBOARD_DATA;
-}
+})();
+
+// Disponibilizar globalmente
+window.DASHBOARD_DATA = DASHBOARD_DATA;
