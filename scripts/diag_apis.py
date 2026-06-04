@@ -7,12 +7,14 @@ TCE-SP com timeout curto. Pode ser removido após o ajuste.
 """
 import datetime
 import json
+import os
 
 import requests
 
 S = requests.Session()
 S.headers.update({"Accept": "application/json", "User-Agent": "MonitoraMarilia/diag"})
 ano = datetime.date.today().year
+OUT = {}  # capturado e gravado em docs/data/_diag_schema.json para leitura via git
 
 
 def siconfi(endpoint, params, titulo, filtro):
@@ -25,17 +27,21 @@ def siconfi(endpoint, params, titulo, filtro):
         if r.ok:
             items = r.json().get("items", [])
             print(f"  total: {len(items)}")
+            achados = []
             if items:
                 print(f"  chaves: {list(items[0].keys())}")
-                print(f"  colunas distintas: {sorted(set(i.get('coluna','') for i in items))[:12]}")
+                OUT[titulo] = {"chaves": list(items[0].keys()),
+                               "colunas": sorted(set(i.get('coluna', '') for i in items))}
             for it in items:
                 conta = (it.get("conta") or "").upper()
                 if any(f in conta for f in filtro):
-                    print("   >>>", json.dumps(
-                        {k: it.get(k) for k in ("cod_conta", "conta", "coluna", "valor")},
-                        ensure_ascii=False))
+                    linha = {k: it.get(k) for k in ("cod_conta", "conta", "coluna", "valor")}
+                    achados.append(linha)
+                    print("   >>>", json.dumps(linha, ensure_ascii=False))
+            OUT.setdefault(titulo, {})["achados"] = achados[:40]
     except Exception as e:
         print(f"{titulo} erro:", e, flush=True)
+        OUT[titulo] = {"erro": str(e)}
 
 
 # 1) SICONFI RREO Anexo 03 (RCL) — período fechado do ano anterior
@@ -69,8 +75,19 @@ for tano, tmes in ((ano, 2), (ano, 1), (ano - 1, 12)):
                 print(f"  chaves: {list(data[0].keys())}")
                 for it in data[:3]:
                     print("  amostra:", json.dumps(it, ensure_ascii=False)[:700])
+                OUT["TCE despesas"] = {
+                    "periodo": f"{tano}/{tmes}",
+                    "total": len(data),
+                    "chaves": list(data[0].keys()),
+                    "amostra": data[:3],
+                }
                 break
     except Exception as e:
         print(f"  TCE {tano}/{tmes} erro:", e, flush=True)
+        OUT.setdefault("TCE despesas", {})["erro"] = str(e)
 
-print("\n===== fim do diagnóstico =====", flush=True)
+# Grava o schema capturado para leitura confiável via git
+os.makedirs("docs/data", exist_ok=True)
+with open("docs/data/_diag_schema.json", "w", encoding="utf-8") as f:
+    json.dump(OUT, f, ensure_ascii=False, indent=2)
+print("\n===== fim do diagnóstico (schema em docs/data/_diag_schema.json) =====", flush=True)
