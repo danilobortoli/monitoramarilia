@@ -2,7 +2,12 @@
   "municipio": "Marília",
   "codigo_ibge": "3529005",
   "ano": 2026,
-  "data_consulta": "2026-06-04T20:11:04.174447",
+  "data_consulta": "2026-06-04T20:24:10.365999",
   "fonte": "SICONFI - Tesouro Nacional",
-  "indicadores": {}
+  "indicadores": {
+    "rcl": {
+      "valor": 1436085117.62,
+      "formatado": "R$ 1436.1 milhões"
+    }
+  }
 }

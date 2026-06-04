@@ -1,14 +1,14 @@
 {
-  "lastUpdate": "2026-06-04T20:11:08.623579",
+  "lastUpdate": "2026-06-04T20:24:18.414871",
   "ano": 2026,
   "municipio": "Marília",
   "codigoIBGE": "3529005",
   "fiscal": {
     "fonte": "SICONFI - Tesouro Nacional",
-    "rcl": 0,
-    "rclFormatado": "N/D",
+    "rcl": 1436085117.62,
+    "rclFormatado": "R$ 1436.1M",
     "despesaPessoal": {
-      "valor": 0,
+      "valor": 718042558.81,
       "percentual": 50.0,
       "limite": 54,
       "limiteAlerta": 48.6,
@@ -21,12 +21,7 @@
       "limite": 120,
       "status": "ok"
     },
-    "alertasLRF": [
-      {
-        "tipo": "warning",
-        "mensagem": "RCL não disponível para cálculo"
-      }
-    ]
+    "alertasLRF": []
   },
   "execucao": {
     "fonte": "TCE-SP",
@@ -81,13 +76,8 @@
     "porAutor": []
   },
   "alertas": {
-    "total": 1,
-    "lrf": [
-      {
-        "tipo": "warning",
-        "mensagem": "RCL não disponível para cálculo"
-      }
-    ],
+    "total": 0,
+    "lrf": [],
     "fornecedores": [],
     "outros": []
   },
