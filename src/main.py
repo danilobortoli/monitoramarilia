@@ -211,6 +211,19 @@ def cmd_integrado(args):
         print(json.dumps(data, indent=2, ensure_ascii=False))
 
 
+def _status_pessoal(percentual):
+    """Classifica a despesa com pessoal frente aos limites da LRF (ou None)."""
+    if percentual is None:
+        return None
+    if percentual < 48.6:
+        return "ok"
+    if percentual < 51.3:
+        return "alerta"
+    if percentual < 54:
+        return "prudencial"
+    return "critico"
+
+
 def cmd_update_dashboard(args):
     """
     Atualiza os dados do dashboard com dados de múltiplas fontes abertas.
@@ -288,11 +301,12 @@ def cmd_update_dashboard(args):
     rcl = fiscal_data.get("resumo", {}).get("indicadores", {}).get("rcl", {}).get("valor", 0)
     alertas_lrf = fiscal_data.get("alertas_lrf", [])
 
-    # Despesa com pessoal
-    pessoal_percentual = 50.0
+    # Despesa com pessoal — só preenche se houver dado real (RGF); caso
+    # contrário fica None (o painel mostra "—" em vez de um valor inventado).
+    pessoal_percentual = None
     for alerta in alertas_lrf:
-        if alerta.get("categoria") == "pessoal":
-            pessoal_percentual = alerta.get("valor", 50.0)
+        if alerta.get("categoria") == "pessoal" and alerta.get("valor") is not None:
+            pessoal_percentual = alerta.get("valor")
             break
 
     # Formatar fornecedores
@@ -321,18 +335,20 @@ def cmd_update_dashboard(args):
             "rcl": rcl,
             "rclFormatado": f"R$ {rcl/1_000_000:.1f}M" if rcl else "N/D",
             "despesaPessoal": {
-                "valor": rcl * (pessoal_percentual / 100) if rcl else 0,
+                "valor": (rcl * (pessoal_percentual / 100)) if (rcl and pessoal_percentual is not None) else None,
                 "percentual": pessoal_percentual,
                 "limite": 54,
                 "limiteAlerta": 48.6,
                 "limitePrudencial": 51.3,
-                "status": "ok" if pessoal_percentual < 48.6 else "alerta" if pessoal_percentual < 51.3 else "prudencial" if pessoal_percentual < 54 else "critico"
+                "status": _status_pessoal(pessoal_percentual)
             },
+            # Dívida consolidada: ainda sem coleta confiável (RGF Anexo 02);
+            # mantém None para o painel mostrar "—" em vez de 0% fictício.
             "divida": {
-                "valor": 0,
-                "percentual": 0,
+                "valor": None,
+                "percentual": None,
                 "limite": 120,
-                "status": "ok"
+                "status": None
             },
             "alertasLRF": alertas_lrf
         },

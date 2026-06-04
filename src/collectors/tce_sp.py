@@ -96,19 +96,22 @@ class TCESPCollector:
         if not data:
             return []
 
-        # Normalizar dados
+        # Normalizar dados.
+        # Nomes reais retornados pela API do TCE-SP:
+        #   orgao, mes (nome do mês), evento, nr_empenho, id_fornecedor,
+        #   nm_fornecedor, dt_emissao_despesa, vl_despesa ("1.234,56")
         despesas = []
         for item in data:
             despesas.append({
                 "orgao": item.get("orgao", ""),
-                "unidade": item.get("unidadeorcamentaria", ""),
-                "mes": item.get("mes", mes),
-                "evento": item.get("evento", ""),  # EMPENHADO, LIQUIDADO, PAGO
-                "numero_empenho": item.get("numeroempenho", ""),
-                "fornecedor": item.get("fornecedor", ""),
-                "cnpj_parcial": item.get("cnpj", ""),
-                "data": item.get("data", ""),
-                "valor": self._parse_valor(item.get("valor", 0)),
+                "unidade": item.get("unidadeorcamentaria", item.get("orgao", "")),
+                "mes": mes,  # usamos o mês numérico da consulta (a API devolve o nome)
+                "evento": item.get("evento", ""),  # Empenhado, Liquidado, Pago
+                "numero_empenho": item.get("nr_empenho", ""),
+                "fornecedor": item.get("nm_fornecedor", ""),
+                "cnpj_parcial": item.get("id_fornecedor", ""),
+                "data": item.get("dt_emissao_despesa", ""),
+                "valor": self._parse_valor(item.get("vl_despesa", 0)),
                 "fonte": "TCE-SP"
             })
 
