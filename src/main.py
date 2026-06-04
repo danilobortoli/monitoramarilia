@@ -293,6 +293,55 @@ def cmd_update_dashboard(args):
             "situacaoSancoes": "REGULAR"
         })
 
+    # Gráficos a partir de dados REAIS do TCE-SP (sem fabricar números).
+    # Uma única coleta anual alimenta a série mensal e a despesa por função.
+    graficos_data = {
+        "despesasPorOrgao": {"labels": [], "valores": []},
+        "evolucaoMensal": {"labels": [], "empenhado": [], "liquidado": [], "pago": []},
+    }
+    log("Montando gráficos com dados reais do TCE-SP...", "info")
+    try:
+        despesas_ano = TCESPCollector().get_despesas_ano(ano)
+        if despesas_ano:
+            meses_nome = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun",
+                          "Jul", "Ago", "Set", "Out", "Nov", "Dez"]
+            evol = {m: {"empenhado": 0.0, "liquidado": 0.0, "pago": 0.0} for m in range(1, 13)}
+            por_orgao = {}
+
+            for d in despesas_ano:
+                evento = (d.get("evento") or "").upper()
+                valor = d.get("valor", 0) or 0
+                try:
+                    mes = int(d.get("mes") or 0)
+                except (ValueError, TypeError):
+                    mes = 0
+                if 1 <= mes <= 12:
+                    if "EMPENH" in evento:
+                        evol[mes]["empenhado"] += valor
+                    elif "LIQUID" in evento:
+                        evol[mes]["liquidado"] += valor
+                    elif "PAG" in evento:
+                        evol[mes]["pago"] += valor
+                if "PAG" in evento:
+                    orgao = d.get("orgao") or "Não informado"
+                    por_orgao[orgao] = por_orgao.get(orgao, 0) + valor
+
+            top_orgaos = sorted(por_orgao.items(), key=lambda x: x[1], reverse=True)[:6]
+            graficos_data["despesasPorOrgao"]["labels"] = [k for k, _ in top_orgaos]
+            graficos_data["despesasPorOrgao"]["valores"] = [round(v, 2) for _, v in top_orgaos]
+
+            meses_com_dado = [m for m in range(1, 13) if any(evol[m].values())]
+            graficos_data["evolucaoMensal"]["labels"] = [meses_nome[m - 1] for m in meses_com_dado]
+            for chave in ("empenhado", "liquidado", "pago"):
+                graficos_data["evolucaoMensal"][chave] = [
+                    round(evol[m][chave] / 1_000_000, 2) for m in meses_com_dado
+                ]
+            log(f"Gráficos: {len(top_orgaos)} funções, {len(meses_com_dado)} meses", "success")
+        else:
+            log("Sem despesas do TCE-SP para gráficos (mantendo vazio)", "warning")
+    except Exception as e:
+        log(f"Erro ao montar gráficos (mantendo vazio): {e}", "warning")
+
     # Dados consolidados para o dashboard
     dashboard_data = {
         "lastUpdate": datetime.now().isoformat(),
@@ -383,19 +432,8 @@ def cmd_update_dashboard(args):
             "outros": []
         },
 
-        # Gráficos
-        "graficos": {
-            "despesasPorOrgao": {
-                "labels": ["Saúde", "Educação", "Administração", "Obras", "Assistência Social", "Outros"],
-                "valores": [35, 28, 15, 10, 7, 5]
-            },
-            "evolucaoMensal": {
-                "labels": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
-                "empenhado": [35.2, 32.1, 38.5, 36.8, 34.2, 37.9, 35.6, 33.8, 36.2, 38.1, 35.4, 42.3],
-                "liquidado": [33.1, 30.5, 36.2, 35.1, 32.8, 35.6, 34.2, 32.1, 34.8, 36.5, 33.9, 40.1],
-                "pago": [31.5, 29.8, 34.8, 33.9, 31.2, 34.2, 32.8, 30.9, 33.2, 35.1, 32.5, 38.5]
-            }
-        },
+        # Gráficos (dados reais do TCE-SP; vazio quando ainda não coletado)
+        "graficos": graficos_data,
 
         # Fontes
         "fontes": {
@@ -436,6 +474,14 @@ def cmd_update_dashboard(args):
         with open(output_dir / "portal-federal.json", "w", encoding="utf-8") as f:
             json.dump(federal_data, f, ensure_ascii=False, indent=2)
 
+    # Índice dos relatórios PDF para a página de relatórios do site
+    try:
+        manifest = _build_reports_manifest(output_dir.parent / "relatorios",
+                                           output_dir / "relatorios.json")
+        log(f"Índice de relatórios atualizado ({manifest['total']} arquivos)", "success")
+    except Exception as e:
+        log(f"Erro ao indexar relatórios: {e}", "warning")
+
     log("Dashboard atualizado com sucesso!", "success")
     log(f"Arquivos gerados em: {output_dir}", "info")
 
@@ -452,6 +498,71 @@ def _save_json(path: str, data):
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     log(f"Dados salvos em: {output_path}", "success")
+
+
+# Metadados por tipo de relatório (nome de arquivo: "{tipo}-{ano}-{data}.pdf")
+_REPORT_META = {
+    "fiscal": ("Indicadores Fiscais (LRF)",
+               "Indicadores fiscais e limites da LRF: RCL, despesa com pessoal e dívida."),
+    "fornecedores": ("Análise de Fornecedores",
+                     "Ranking de fornecedores e concentração de pagamentos no exercício."),
+    "transferencias": ("Transferências Federais",
+                       "Transferências, convênios e emendas parlamentares recebidos."),
+    "consolidado": ("Relatório Consolidado",
+                    "Panorama fiscal e orçamentário consolidado do exercício."),
+}
+
+
+def _build_reports_manifest(reports_dir, output_path) -> dict:
+    """
+    Varre a pasta de PDFs e gera um índice JSON para a página de relatórios.
+
+    Mantém o site honesto: lista apenas os relatórios que de fato existem,
+    com data e tamanho reais, em vez de cards fixos com links quebrados.
+    """
+    reports_dir = Path(reports_dir)
+    relatorios = []
+
+    if reports_dir.exists():
+        pdfs = sorted(reports_dir.glob("*.pdf"),
+                      key=lambda p: p.stat().st_mtime, reverse=True)
+        for pdf in pdfs:
+            partes = pdf.stem.split("-")
+            tipo = partes[0].lower()
+            ano = partes[1] if len(partes) >= 2 and partes[1].isdigit() else None
+            titulo, descricao = _REPORT_META.get(tipo, (pdf.stem, ""))
+            stat = pdf.stat()
+            relatorios.append({
+                "tipo": tipo if tipo in _REPORT_META else "consolidado",
+                "titulo": f"{titulo}{f' — {ano}' if ano else ''}",
+                "descricao": descricao,
+                "arquivo": f"relatorios/{pdf.name}",
+                "periodo": f"Ano {ano}" if ano else "",
+                "data": datetime.fromtimestamp(stat.st_mtime).isoformat(),
+                "tamanho": stat.st_size,
+                "formato": "PDF",
+            })
+
+    manifest = {
+        "lastUpdate": datetime.now().isoformat(),
+        "total": len(relatorios),
+        "relatorios": relatorios,
+    }
+
+    output_path = Path(output_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(manifest, f, ensure_ascii=False, indent=2)
+
+    return manifest
+
+
+def cmd_index_reports(args):
+    """Gera o índice JSON dos relatórios PDF publicados."""
+    reports_dir = Path(args.reports_dir) if args.reports_dir else Path("docs/relatorios")
+    output = Path(args.output) if args.output else Path("docs/data/relatorios.json")
+    manifest = _build_reports_manifest(reports_dir, output)
+    log(f"Índice gerado: {manifest['total']} relatório(s) → {output}", "success")
 
 
 def cmd_db_stats(args):
@@ -738,6 +849,12 @@ Exemplos de uso:
     # Comando: alertas
     alertas_parser = subparsers.add_parser("alertas", help="Listar alertas ativos")
 
+    # Comando: index-reports
+    index_parser = subparsers.add_parser("index-reports",
+                                         help="Gerar índice JSON dos relatórios PDF para o site")
+    index_parser.add_argument("--reports-dir", help="Diretório dos PDFs (default: docs/relatorios)")
+    index_parser.add_argument("-o", "--output", help="Arquivo de saída (default: docs/data/relatorios.json)")
+
     args = parser.parse_args()
 
     # Executar comando
@@ -759,6 +876,8 @@ Exemplos de uso:
         cmd_list_reports(args)
     elif args.command == "alertas":
         cmd_alertas(args)
+    elif args.command == "index-reports":
+        cmd_index_reports(args)
     else:
         parser.print_help()
         sys.exit(1)
