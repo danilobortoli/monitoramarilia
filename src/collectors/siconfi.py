@@ -233,11 +233,60 @@ class SiconfiCollector:
 
         return resultado
 
+    def _periodos_rreo(self, ano: int) -> List[tuple]:
+        """
+        Gera (ano, bimestre) candidatos, do mais recente provavelmente
+        publicado para trás, com fallback ao fechamento do ano anterior.
+
+        Evita consultar bimestres que ainda não existem no ano corrente.
+        """
+        hoje = datetime.now()
+        if ano >= hoje.year:
+            inicio = max(1, (hoje.month - 1) // 2)  # bimestre provavelmente fechado
+        else:
+            inicio = 6
+        periodos = [(ano, b) for b in range(inicio, 0, -1)]
+        periodos.append((ano - 1, 6))
+        return periodos
+
+    @staticmethod
+    def _extrair_rcl(rreo: List[Dict[str, Any]]) -> Optional[float]:
+        """
+        Extrai a RCL (últimos 12 meses) do RREO Anexo 03.
+
+        A linha correta tem cod_conta 'RREO3ReceitaCorrenteLiquida' e o valor
+        de referência da LRF está na coluna 'TOTAL (ÚLTIMOS 12 MESES)'.
+        """
+        def _valor(item):
+            try:
+                return float(item.get("valor", 0))
+            except (ValueError, TypeError):
+                return None
+
+        # 1) Correspondência exata (cod_conta + coluna dos 12 meses)
+        for item in rreo:
+            coluna = (item.get("coluna") or "").upper()
+            if item.get("cod_conta") == "RREO3ReceitaCorrenteLiquida" and "12 MESES" in coluna:
+                v = _valor(item)
+                if v:
+                    return v
+        # 2) Fallback por nome da conta + coluna dos 12 meses
+        for item in rreo:
+            conta = (item.get("conta") or "").upper()
+            coluna = (item.get("coluna") or "").upper()
+            if "RECEITA CORRENTE LÍQUIDA" in conta and "12 MESES" in coluna and "AJUSTADA" not in conta:
+                v = _valor(item)
+                if v:
+                    return v
+        return None
+
     def get_receita_corrente_liquida(self, ano: int) -> Optional[float]:
         """
-        Busca a Receita Corrente Líquida (RCL) do município.
+        Busca a Receita Corrente Líquida (RCL) do município (base da LRF).
 
-        A RCL é a base de cálculo para os limites da LRF.
+        Tenta o período disponível mais recente do ano e, se necessário,
+        recua até o fechamento do ano anterior — a RCL do Anexo 03 é sempre
+        a soma móvel dos últimos 12 meses.
 
         Args:
             ano: Ano do exercício
@@ -245,20 +294,12 @@ class SiconfiCollector:
         Returns:
             Valor da RCL ou None
         """
-        # RCL está no RREO Anexo 03
-        rreo = self.get_rreo(ano, bimestre=6, anexo="RREO-Anexo 03")
-
-        if not rreo:
-            return None
-
-        for item in rreo:
-            conta = item.get("conta", "").upper()
-            if "RECEITA CORRENTE LÍQUIDA" in conta or "RCL" in conta:
-                try:
-                    return float(item.get("valor", 0))
-                except (ValueError, TypeError):
-                    pass
-
+        for a, b in self._periodos_rreo(ano):
+            rreo = self.get_rreo(a, bimestre=b, anexo="RREO-Anexo 03")
+            if rreo:
+                rcl = self._extrair_rcl(rreo)
+                if rcl:
+                    return rcl
         return None
 
     def get_divida_consolidada(self, ano: int) -> Dict[str, Any]:
