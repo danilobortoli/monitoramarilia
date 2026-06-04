@@ -12,6 +12,10 @@ on:
         default: 'true'
         type: boolean
 
+# Necessário para o passo de commit/push devolver os dados ao repositório
+permissions:
+  contents: write
+
 env:
   PYTHONPATH: ${{ github.workspace }}
   # Disponibiliza a chave para os passos e para a condição `if` do Portal Federal
