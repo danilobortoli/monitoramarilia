@@ -249,12 +249,22 @@ def cmd_update_dashboard(args):
     except Exception as e:
         log(f"Erro SICONFI: {e}", "warning")
 
-    # 2. Coletar dados TCE-SP
-    log("2/3 Coletando dados de execução (TCE-SP)...", "info")
+    # 2. Coletar execução do TCE-SP — UMA ÚNICA coleta anual alimenta totais,
+    #    fornecedores, concentração e gráficos. Evita re-buscar o ano inteiro
+    #    várias vezes (o que tornava o job lento e frágil sob throttling).
+    log("2/3 Coletando execução orçamentária (TCE-SP)...", "info")
+    graficos_data = {
+        "despesasPorOrgao": {"labels": [], "valores": []},
+        "evolucaoMensal": {"labels": [], "empenhado": [], "liquidado": [], "pago": []},
+    }
     try:
-        tce = TCESPCollector()
-        tce_data = tce.get_dados_para_dashboard(ano)
-        log(f"TCE-SP: {tce_data.get('qtd_despesas', 0)} despesas", "success")
+        despesas_ano = TCESPCollector().get_despesas_ano(ano)
+        if despesas_ano:
+            tce_data = _consolidar_tce(despesas_ano, ano, graficos_data)
+            log(f"TCE-SP: {tce_data.get('qtd_despesas', 0)} lançamentos, "
+                f"{len(tce_data.get('fornecedores', []))} fornecedores", "success")
+        else:
+            log("TCE-SP: sem dados no período (mantendo vazio)", "warning")
     except Exception as e:
         log(f"Erro TCE-SP: {e}", "warning")
 
@@ -298,55 +308,6 @@ def cmd_update_dashboard(args):
             "situacaoSancoes": "REGULAR"
         })
 
-    # Gráficos a partir de dados REAIS do TCE-SP (sem fabricar números).
-    # Uma única coleta anual alimenta a série mensal e a despesa por função.
-    graficos_data = {
-        "despesasPorOrgao": {"labels": [], "valores": []},
-        "evolucaoMensal": {"labels": [], "empenhado": [], "liquidado": [], "pago": []},
-    }
-    log("Montando gráficos com dados reais do TCE-SP...", "info")
-    try:
-        despesas_ano = TCESPCollector().get_despesas_ano(ano)
-        if despesas_ano:
-            meses_nome = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun",
-                          "Jul", "Ago", "Set", "Out", "Nov", "Dez"]
-            evol = {m: {"empenhado": 0.0, "liquidado": 0.0, "pago": 0.0} for m in range(1, 13)}
-            por_orgao = {}
-
-            for d in despesas_ano:
-                evento = (d.get("evento") or "").upper()
-                valor = d.get("valor", 0) or 0
-                try:
-                    mes = int(d.get("mes") or 0)
-                except (ValueError, TypeError):
-                    mes = 0
-                if 1 <= mes <= 12:
-                    if "EMPENH" in evento:
-                        evol[mes]["empenhado"] += valor
-                    elif "LIQUID" in evento:
-                        evol[mes]["liquidado"] += valor
-                    elif "PAG" in evento:
-                        evol[mes]["pago"] += valor
-                if "PAG" in evento:
-                    orgao = d.get("orgao") or "Não informado"
-                    por_orgao[orgao] = por_orgao.get(orgao, 0) + valor
-
-            top_orgaos = sorted(por_orgao.items(), key=lambda x: x[1], reverse=True)[:6]
-            graficos_data["despesasPorOrgao"]["labels"] = [k for k, _ in top_orgaos]
-            graficos_data["despesasPorOrgao"]["valores"] = [round(v, 2) for _, v in top_orgaos]
-
-            meses_com_dado = [m for m in range(1, 13) if any(evol[m].values())]
-            graficos_data["evolucaoMensal"]["labels"] = [meses_nome[m - 1] for m in meses_com_dado]
-            for chave in ("empenhado", "liquidado", "pago"):
-                graficos_data["evolucaoMensal"][chave] = [
-                    round(evol[m][chave] / 1_000_000, 2) for m in meses_com_dado
-                ]
-            log(f"Gráficos: {len(top_orgaos)} funções, {len(meses_com_dado)} meses", "success")
-        else:
-            log("Sem despesas do TCE-SP para gráficos (mantendo vazio)", "warning")
-    except Exception as e:
-        log(f"Erro ao montar gráficos (mantendo vazio): {e}", "warning")
-
     # Dados consolidados para o dashboard
     dashboard_data = {
         "lastUpdate": datetime.now().isoformat(),
@@ -382,8 +343,8 @@ def cmd_update_dashboard(args):
             "periodo": tce_data.get("periodo", ""),
             "empenhado": tce_data.get("totais", {}).get("empenhado", 0),
             "empenhadoFmt": tce_data.get("totais", {}).get("empenhado_fmt", "N/D"),
-            "liquidado": 0,
-            "liquidadoFmt": "N/D",
+            "liquidado": tce_data.get("totais", {}).get("liquidado", 0),
+            "liquidadoFmt": tce_data.get("totais", {}).get("liquidado_fmt", "N/D"),
             "pago": tce_data.get("totais", {}).get("pago", 0),
             "pagoFmt": tce_data.get("totais", {}).get("pago_fmt", "N/D"),
             "qtdDespesas": tce_data.get("qtd_despesas", 0)
@@ -494,6 +455,107 @@ def cmd_update_dashboard(args):
     print("\nArquivos gerados:")
     for f in output_dir.glob("*.json"):
         print(f"  - {f.name}")
+
+
+def _consolidar_tce(despesas, ano, graficos_data):
+    """
+    Consolida UMA coleta anual de despesas do TCE-SP em um único passo:
+    totais (empenhado/liquidado/pago), maiores fornecedores, alertas de
+    concentração e os dados dos gráficos (série mensal e despesa por função).
+
+    Faz tudo a partir da mesma lista de despesas, evitando re-buscar o ano
+    inteiro várias vezes — o que deixava a atualização lenta e frágil.
+    """
+    meses_nome = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun",
+                  "Jul", "Ago", "Set", "Out", "Nov", "Dez"]
+    evol = {m: {"empenhado": 0.0, "liquidado": 0.0, "pago": 0.0} for m in range(1, 13)}
+    por_orgao = {}
+    fornecedores = {}
+    total_empenhado = total_liquidado = total_pago = 0.0
+
+    for d in despesas:
+        evento = (d.get("evento") or "").upper()
+        valor = d.get("valor", 0) or 0
+        try:
+            mes = int(d.get("mes") or 0)
+        except (ValueError, TypeError):
+            mes = 0
+
+        is_pago = "PAG" in evento
+        if "EMPENH" in evento:
+            total_empenhado += valor
+            if 1 <= mes <= 12:
+                evol[mes]["empenhado"] += valor
+        elif "LIQUID" in evento:
+            total_liquidado += valor
+            if 1 <= mes <= 12:
+                evol[mes]["liquidado"] += valor
+        elif is_pago:
+            total_pago += valor
+            if 1 <= mes <= 12:
+                evol[mes]["pago"] += valor
+
+        if is_pago:
+            orgao = d.get("orgao") or "Não informado"
+            por_orgao[orgao] = por_orgao.get(orgao, 0) + valor
+            nome = d.get("fornecedor") or "Não informado"
+            cnpj = d.get("cnpj_parcial", "")
+            reg = fornecedores.get((nome, cnpj))
+            if reg is None:
+                reg = {"fornecedor": nome, "cnpj_parcial": cnpj,
+                       "valor_total": 0.0, "qtd_pagamentos": 0}
+                fornecedores[(nome, cnpj)] = reg
+            reg["valor_total"] += valor
+            reg["qtd_pagamentos"] += 1
+
+    ranking = sorted(fornecedores.values(), key=lambda x: x["valor_total"], reverse=True)
+    for r in ranking:
+        r["percentual"] = (r["valor_total"] / total_pago * 100) if total_pago > 0 else 0
+
+    alertas_concentracao = []
+    for r in ranking:
+        if r["percentual"] > 10.0:
+            alertas_concentracao.append({
+                "tipo": "alerta",
+                "categoria": "concentracao",
+                "titulo": f"Alta concentração: {r['fornecedor'][:30]}",
+                "descricao": (f"Fornecedor recebeu {r['percentual']:.1f}% do total pago "
+                              f"(R$ {r['valor_total']/1_000_000:.2f} milhões)"),
+                "fornecedor": r["fornecedor"],
+                "cnpj_parcial": r["cnpj_parcial"],
+                "valor": r["valor_total"],
+                "percentual": r["percentual"],
+                "data": datetime.now().strftime("%Y-%m-%d"),
+            })
+
+    # Gráficos
+    top_orgaos = sorted(por_orgao.items(), key=lambda x: x[1], reverse=True)[:6]
+    graficos_data["despesasPorOrgao"]["labels"] = [k for k, _ in top_orgaos]
+    graficos_data["despesasPorOrgao"]["valores"] = [round(v, 2) for _, v in top_orgaos]
+    meses_com_dado = [m for m in range(1, 13) if any(evol[m].values())]
+    graficos_data["evolucaoMensal"]["labels"] = [meses_nome[m - 1] for m in meses_com_dado]
+    for chave in ("empenhado", "liquidado", "pago"):
+        graficos_data["evolucaoMensal"][chave] = [
+            round(evol[m][chave] / 1_000_000, 2) for m in meses_com_dado
+        ]
+
+    return {
+        "fonte": "TCE-SP",
+        "ano": ano,
+        "ultima_atualizacao": datetime.now().isoformat(),
+        "periodo": f"Ano {ano}",
+        "totais": {
+            "empenhado": total_empenhado,
+            "liquidado": total_liquidado,
+            "pago": total_pago,
+            "empenhado_fmt": f"R$ {total_empenhado/1_000_000:.1f}M",
+            "liquidado_fmt": f"R$ {total_liquidado/1_000_000:.1f}M",
+            "pago_fmt": f"R$ {total_pago/1_000_000:.1f}M",
+        },
+        "fornecedores": ranking[:10],
+        "alertas_concentracao": alertas_concentracao,
+        "qtd_despesas": len(despesas),
+    }
 
 
 def _save_json(path: str, data):

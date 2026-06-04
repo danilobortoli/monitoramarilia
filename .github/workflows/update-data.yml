@@ -25,6 +25,9 @@ jobs:
   collect-data:
     runs-on: ubuntu-latest
     name: Coletar Dados das APIs
+    # Rede de segurança: as APIs públicas podem ficar lentas/limitar (throttle);
+    # o job nunca deve ficar pendurado nas requisições.
+    timeout-minutes: 20
 
     steps:
       - name: Checkout do repositório
@@ -82,14 +85,11 @@ jobs:
           python -m src.main siconfi --tipo alertas --ano $ANO \
             -o docs/data/siconfi_alertas_${ANO}.json || echo "SICONFI alertas: indisponível"
 
-      - name: Coletar despesas executadas (TCE-SP)
-        run: |
-          ANO=$(date +%Y)
-          echo "Coletando despesas e fornecedores do TCE-SP..."
-          python -m src.main tce-sp --tipo despesas --ano $ANO \
-            -o docs/data/tce_despesas_${ANO}.json || echo "TCE-SP despesas: indisponível"
-          python -m src.main tce-sp --tipo fornecedores --ano $ANO --top 30 \
-            -o docs/data/tce_fornecedores_${ANO}.json || echo "TCE-SP fornecedores: indisponível"
+      # Obs.: a execução do TCE-SP (despesas, fornecedores, evolução mensal e
+      # despesa por função) é coletada uma única vez no passo "Atualizar
+      # dashboard" abaixo, que já grava docs/data/tce-sp.json. Dumps brutos
+      # anuais separados foram removidos por serem redundantes, lentos
+      # (re-buscavam o ano inteiro) e pesados no histórico do repositório.
 
       - name: Coletar dados do Portal Federal
         if: ${{ env.PORTAL_TRANSPARENCIA_KEY != '' }}
