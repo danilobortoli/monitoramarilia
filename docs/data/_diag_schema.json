@@ -1,5 +1,7 @@
 {
   "RREO Anexo03 2025/bim6 (RCL)": {
+    "http": 200,
+    "total": 430,
     "chaves": [
       "exercicio",
       "demonstrativo",
@@ -16,6 +18,42 @@
       "cod_conta",
       "conta",
       "valor"
+    ],
+    "amostra_crua": [
+      {
+        "exercicio": 2025,
+        "demonstrativo": "RREO",
+        "periodo": 6,
+        "periodicidade": "B",
+        "instituicao": "Prefeitura Municipal de Marília - SP",
+        "cod_ibge": 3529005,
+        "uf": "SP",
+        "populacao": 238605,
+        "anexo": "RREO-Anexo 03",
+        "esfera": "M",
+        "rotulo": "Padrão",
+        "coluna": "<MR-11>",
+        "cod_conta": "ReceitasCorrentesLiquidasExcetoTransferenciasEFUNDEB",
+        "conta": "RECEITAS CORRENTES (I)",
+        "valor": 144169895.89
+      },
+      {
+        "exercicio": 2025,
+        "demonstrativo": "RREO",
+        "periodo": 6,
+        "periodicidade": "B",
+        "instituicao": "Prefeitura Municipal de Marília - SP",
+        "cod_ibge": 3529005,
+        "uf": "SP",
+        "populacao": 238605,
+        "anexo": "RREO-Anexo 03",
+        "esfera": "M",
+        "rotulo": "Padrão",
+        "coluna": "<MR-10>",
+        "cod_conta": "ReceitasCorrentesLiquidasExcetoTransferenciasEFUNDEB",
+        "conta": "RECEITAS CORRENTES (I)",
+        "valor": 162048827.39
+      }
     ],
     "colunas": [
       "<MR-10>",
@@ -273,13 +311,77 @@
         "conta": "RECEITA CORRENTE LÍQUIDA AJUSTADA PARA CÁLCULO DOS LIMITES DA DESPESA COM PESSOAL (IX) = (V - VI - VII - VIII)",
         "coluna": "<MR>",
         "valor": 137835169.36
+      },
+      {
+        "cod_conta": "RREO3ReceitaCorrenteLiquidaAjustadaParaCalculoDosLimitesDaDespesaComPessoal",
+        "conta": "RECEITA CORRENTE LÍQUIDA AJUSTADA PARA CÁLCULO DOS LIMITES DA DESPESA COM PESSOAL (IX) = (V - VI - VII - VIII)",
+        "coluna": "TOTAL (ÚLTIMOS 12 MESES)",
+        "valor": 1377592241.4
+      },
+      {
+        "cod_conta": "RREO3ReceitaCorrenteLiquidaAjustadaParaCalculoDosLimitesDaDespesaComPessoal",
+        "conta": "RECEITA CORRENTE LÍQUIDA AJUSTADA PARA CÁLCULO DOS LIMITES DA DESPESA COM PESSOAL (IX) = (V - VI - VII - VIII)",
+        "coluna": "PREVISÃO ATUALIZADA 2025",
+        "valor": 1509753420
       }
     ]
   },
   "RGF Anexo01 2025/quad3 (Pessoal)": {
-    "achados": []
+    "http": 200,
+    "total": 0
+  },
+  "RGF Anexo01 2025/quad2 (Pessoal)": {
+    "http": 200,
+    "total": 0
+  },
+  "RGF Anexo01 2024/quad3 (Pessoal)": {
+    "http": 200,
+    "total": 0
   },
   "TCE despesas": {
-    "erro": "HTTPSConnectionPool(host='transparencia.tce.sp.gov.br', port=443): Max retries exceeded with url: /api/json/despesas/marilia/2025/12 (Caused by ConnectTimeoutError(<HTTPSConnection(host='transparencia.tce.sp.gov.br', port=443) at 0x7f1f56ddf290>, 'Connection to transparencia.tce.sp.gov.br timed out. (connect timeout=15)'))"
+    "periodo": "2026/2",
+    "total": 7605,
+    "chaves": [
+      "orgao",
+      "mes",
+      "evento",
+      "nr_empenho",
+      "id_fornecedor",
+      "nm_fornecedor",
+      "dt_emissao_despesa",
+      "vl_despesa"
+    ],
+    "amostra": [
+      {
+        "orgao": "CÂMARA MUNICIPAL DE MARÍLIA",
+        "mes": "Fevereiro",
+        "evento": "Empenhado",
+        "nr_empenho": "176-2026",
+        "id_fornecedor": "PESSOA FÍSICA - 620578",
+        "nm_fornecedor": "VANESSA I  TEODORO PRECIOSO",
+        "dt_emissao_despesa": "09/02/2026",
+        "vl_despesa": "2720,00"
+      },
+      {
+        "orgao": "CÂMARA MUNICIPAL DE MARÍLIA",
+        "mes": "Fevereiro",
+        "evento": "Empenhado",
+        "nr_empenho": "148-2026",
+        "id_fornecedor": "CNPJ - PESSOA JURÍDICA - 44478196000108",
+        "nm_fornecedor": "CAMARA MUNICIPAL DE MARILIA",
+        "dt_emissao_despesa": "03/02/2026",
+        "vl_despesa": "699,96"
+      },
+      {
+        "orgao": "CÂMARA MUNICIPAL DE MARÍLIA",
+        "mes": "Fevereiro",
+        "evento": "Empenhado",
+        "nr_empenho": "175-2026",
+        "id_fornecedor": "PESSOA FÍSICA - 365308",
+        "nm_fornecedor": "ALESSANDRA FERREIRA DA ROCHA",
+        "dt_emissao_despesa": "09/02/2026",
+        "vl_despesa": "1200,00"
+      }
+    ]
   }
 }
