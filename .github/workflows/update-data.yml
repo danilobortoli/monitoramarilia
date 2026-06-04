@@ -54,6 +54,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: "[TEMP] Diagnóstico de schema das APIs"
+        run: python scripts/diag_apis.py || echo "diagnóstico falhou"
+
       - name: Criar diretórios necessários
         run: |
           mkdir -p docs/data
