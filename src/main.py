@@ -23,6 +23,11 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+# Garante que os pacotes internos (collectors, reports, database) sejam
+# encontrados tanto via `python -m src.main` quanto `python src/main.py`,
+# independentemente do PYTHONPATH configurado no ambiente.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 # Tentar importar Rich para output bonito
 try:
     from rich.console import Console
