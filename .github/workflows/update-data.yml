@@ -14,6 +14,8 @@ on:
 
 env:
   PYTHONPATH: ${{ github.workspace }}
+  # Disponibiliza a chave para os passos e para a condição `if` do Portal Federal
+  PORTAL_TRANSPARENCIA_KEY: ${{ secrets.PORTAL_TRANSPARENCIA_KEY }}
 
 jobs:
   collect-data:
@@ -51,23 +53,49 @@ jobs:
           mkdir -p docs/relatorios
           mkdir -p data
 
-      - name: Coletar dados do SICONFI
+      - name: Coletar execução orçamentária (RREO / SICONFI)
         run: |
-          echo "Coletando indicadores fiscais do SICONFI..."
-          python -m src.main siconfi --ano $(date +%Y) --salvar-db || echo "SICONFI: Alguns dados não disponíveis"
+          ANO=$(date +%Y)
+          echo "Coletando Relatório Resumido da Execução Orçamentária (RREO) de $ANO..."
+          # Balanço orçamentário por bimestre (a API publica conforme os bimestres fecham)
+          for BIM in 1 2 3 4 5 6; do
+            python -m src.main siconfi --tipo rreo --ano $ANO --bimestre $BIM \
+              -o docs/data/rreo_${ANO}_bim${BIM}.json \
+              && echo "RREO ${ANO} bim ${BIM}: OK" \
+              || echo "RREO ${ANO} bim ${BIM}: indisponível"
+          done
+          # Fallback: fechamento do ano anterior (6º bimestre), útil no início do ano
+          python -m src.main siconfi --tipo rreo --ano $((ANO - 1)) --bimestre 6 \
+            -o docs/data/rreo_$((ANO - 1))_bim6.json \
+            || echo "RREO $((ANO - 1)) bim 6: indisponível"
 
-      - name: Coletar dados do TCE-SP
+      - name: Coletar indicadores fiscais e alertas LRF (SICONFI)
         run: |
+          ANO=$(date +%Y)
+          echo "Coletando resumo fiscal e alertas da LRF..."
+          python -m src.main siconfi --tipo resumo --ano $ANO \
+            -o docs/data/siconfi_resumo_${ANO}.json || echo "SICONFI resumo: indisponível"
+          python -m src.main siconfi --tipo alertas --ano $ANO \
+            -o docs/data/siconfi_alertas_${ANO}.json || echo "SICONFI alertas: indisponível"
+
+      - name: Coletar despesas executadas (TCE-SP)
+        run: |
+          ANO=$(date +%Y)
           echo "Coletando despesas e fornecedores do TCE-SP..."
-          python -m src.main tce-sp --ano $(date +%Y) --salvar-db || echo "TCE-SP: Alguns dados não disponíveis"
+          python -m src.main tce-sp --tipo despesas --ano $ANO \
+            -o docs/data/tce_despesas_${ANO}.json || echo "TCE-SP despesas: indisponível"
+          python -m src.main tce-sp --tipo fornecedores --ano $ANO --top 30 \
+            -o docs/data/tce_fornecedores_${ANO}.json || echo "TCE-SP fornecedores: indisponível"
 
       - name: Coletar dados do Portal Federal
         if: ${{ env.PORTAL_TRANSPARENCIA_KEY != '' }}
         run: |
-          echo "Coletando transferências e convênios do Portal Federal..."
-          python -m src.main portal-federal --ano $(date +%Y) --salvar-db || echo "Portal Federal: Alguns dados não disponíveis"
-        env:
-          PORTAL_TRANSPARENCIA_KEY: ${{ secrets.PORTAL_TRANSPARENCIA_KEY }}
+          ANO=$(date +%Y)
+          echo "Coletando transferências, convênios e emendas do Portal Federal..."
+          python -m src.main portal-federal --tipo transferencias --ano $ANO \
+            -o docs/data/federal_transferencias_${ANO}.json || echo "Portal Federal transferências: indisponível"
+          python -m src.main portal-federal --tipo convenios --ano $ANO \
+            -o docs/data/federal_convenios_${ANO}.json || echo "Portal Federal convênios: indisponível"
 
       - name: Atualizar dashboard
         run: |
