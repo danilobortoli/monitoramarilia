@@ -3,243 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatórios - MonitoraMarília</title>
-    <meta name="description" content="Relatórios de monitoramento do Portal de Transparência de Marília">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); }
-    </style>
+    <title>Relatórios — MonitoraMarília</title>
+    <meta name="description" content="Relatórios fiscais gerados automaticamente a partir de SICONFI, TCE-SP e Portal da Transparência.">
+    <link rel="stylesheet" href="css/tufte-bortoli.css">
 </head>
-<body class="bg-gray-50 min-h-screen">
-    <!-- Header -->
-    <header class="gradient-bg text-white shadow-lg">
-        <div class="container mx-auto px-4 py-6">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-4">
-                    <a href="index.html" class="bg-white/20 p-3 rounded-lg hover:bg-white/30 transition">
-                        <i class="fas fa-search-dollar text-2xl"></i>
-                    </a>
-                    <div>
-                        <h1 class="text-2xl font-bold">MonitoraMarília</h1>
-                        <p class="text-blue-200 text-sm">Relatórios de Transparência</p>
-                    </div>
-                </div>
-                <nav class="hidden md:flex space-x-6">
-                    <a href="index.html" class="hover:text-blue-200 transition">Dashboard</a>
-                    <a href="relatorios.html" class="text-blue-200 font-medium">Relatórios</a>
-                    <a href="metodologia.html" class="hover:text-blue-200 transition">Metodologia</a>
-                    <a href="sobre.html" class="hover:text-blue-200 transition">Sobre</a>
-                </nav>
+<body>
+    <header class="masthead">
+        <div class="masthead__inner">
+            <div class="wordmark">
+                <span class="wordmark__title"><a href="index.html">MonitoraMarília</a></span>
+                <span class="wordmark__kicker">Controle social · MATRA</span>
             </div>
-        </div>
-    </header>
-
-    <!-- Breadcrumb -->
-    <div class="bg-white border-b">
-        <div class="container mx-auto px-4 py-3">
-            <nav class="text-sm text-gray-500">
-                <a href="index.html" class="hover:text-blue-600">Início</a>
-                <span class="mx-2">/</span>
-                <span class="text-gray-800">Relatórios</span>
+            <nav class="menu">
+                <a href="index.html">Painel</a>
+                <a href="relatorios.html" aria-current="page">Relatórios</a>
+                <a href="metodologia.html">Metodologia</a>
+                <a href="sobre.html">Sobre</a>
             </nav>
         </div>
-    </div>
+    </header>
+    <div class="breadcrumb"><a href="index.html" style="border:0;color:inherit">Início</a> / Relatórios</div>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-        <!-- Page Title -->
-        <div class="mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-2">
-                <i class="fas fa-file-alt mr-2 text-blue-600"></i>Relatórios de Monitoramento
-            </h2>
-            <p class="text-gray-600">Acesse os relatórios gerados a partir de dados do SICONFI, TCE-SP e Portal Federal.</p>
-        </div>
+    <main class="wrap">
+        <section>
+            <div class="section-head">
+                <h2>Relatórios de monitoramento</h2>
+                <span class="src" id="rel-updated"></span>
+            </div>
+            <p class="lead">Documentos gerados automaticamente a partir de dados oficiais abertos
+               (SICONFI, TCE&#8209;SP e Portal da Transparência). Servem de subsídio para representações
+               ao Ministério Público, requerimentos ao Tribunal de Contas e ações de controle social.</p>
 
-        <!-- Filter Tabs -->
-        <div class="mb-6 flex flex-wrap gap-2">
-            <button class="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium" data-filter="todos">Todos</button>
-            <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300" data-filter="mensal">Mensais</button>
-            <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300" data-filter="fiscal">Indicadores Fiscais</button>
-            <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300" data-filter="fornecedores">Fornecedores</button>
-        </div>
-
-        <!-- Reports Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Relatório Mensal Dezembro 2025 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition" data-category="mensal">
-                <div class="bg-blue-500 px-4 py-2">
-                    <span class="text-white text-sm font-medium">Mensal</span>
-                </div>
-                <div class="p-6">
-                    <h3 class="font-semibold text-gray-800 mb-2">Relatório Mensal - Dezembro 2025</h3>
-                    <p class="text-sm text-gray-600 mb-4">Síntese das despesas, licitações e contratos do mês de dezembro.</p>
-                    <div class="flex items-center justify-between text-sm">
-                        <span class="text-gray-500"><i class="fas fa-calendar mr-1"></i>Dezembro 2025</span>
-                        <span class="text-gray-500"><i class="fas fa-file-pdf mr-1"></i>PDF</span>
-                    </div>
-                    <div class="mt-4 flex space-x-2">
-                        <a href="relatorios/mensal-dezembro-2025.pdf" class="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition text-sm">
-                            <i class="fas fa-download mr-1"></i>Baixar
-                        </a>
-                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-sm text-gray-600">
-                            <i class="fas fa-eye"></i>
-                        </a>
-                    </div>
-                </div>
+            <div class="filters" id="rel-filters">
+                <button data-filter="todos" aria-pressed="true">Todos</button>
+                <button data-filter="fiscal" aria-pressed="false">Fiscais (LRF)</button>
+                <button data-filter="fornecedores" aria-pressed="false">Fornecedores</button>
+                <button data-filter="transferencias" aria-pressed="false">Transferências</button>
+                <button data-filter="consolidado" aria-pressed="false">Consolidados</button>
             </div>
 
-            <!-- Análise de Fornecedores -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition" data-category="fornecedores">
-                <div class="bg-purple-500 px-4 py-2">
-                    <span class="text-white text-sm font-medium">Fornecedores</span>
-                </div>
-                <div class="p-6">
-                    <h3 class="font-semibold text-gray-800 mb-2">Análise de Fornecedores 2025</h3>
-                    <p class="text-sm text-gray-600 mb-4">Ranking dos maiores fornecedores e análise de concentração de contratos.</p>
-                    <div class="flex items-center justify-between text-sm">
-                        <span class="text-gray-500"><i class="fas fa-calendar mr-1"></i>Anual 2025</span>
-                        <span class="text-gray-500"><i class="fas fa-file-excel mr-1"></i>Excel</span>
-                    </div>
-                    <div class="mt-4 flex space-x-2">
-                        <a href="relatorios/fornecedores-2025.xlsx" class="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition text-sm">
-                            <i class="fas fa-download mr-1"></i>Baixar
-                        </a>
-                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-sm text-gray-600">
-                            <i class="fas fa-eye"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <div id="rel-list" class="rows"></div>
+        </section>
 
-            <!-- Indicadores Fiscais LRF -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition" data-category="fiscal">
-                <div class="bg-green-500 px-4 py-2">
-                    <span class="text-white text-sm font-medium">Indicadores Fiscais</span>
-                </div>
-                <div class="p-6">
-                    <h3 class="font-semibold text-gray-800 mb-2">Indicadores LRF - 3º Quad 2025</h3>
-                    <p class="text-sm text-gray-600 mb-4">Análise dos indicadores fiscais do SICONFI: despesa com pessoal, dívida consolidada e RCL.</p>
-                    <div class="flex items-center justify-between text-sm">
-                        <span class="text-gray-500"><i class="fas fa-calendar mr-1"></i>Set-Dez 2025</span>
-                        <span class="text-gray-500"><i class="fas fa-file-pdf mr-1"></i>PDF</span>
-                    </div>
-                    <div class="mt-4 flex space-x-2">
-                        <a href="relatorios/lrf-3quad-2025.pdf" class="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition text-sm">
-                            <i class="fas fa-download mr-1"></i>Baixar
-                        </a>
-                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-sm text-gray-600">
-                            <i class="fas fa-eye"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Alertas Detectados -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition" data-category="mensal">
-                <div class="bg-red-500 px-4 py-2">
-                    <span class="text-white text-sm font-medium">Alertas</span>
-                </div>
-                <div class="p-6">
-                    <h3 class="font-semibold text-gray-800 mb-2">Relatório de Alertas - 4º Tri 2025</h3>
-                    <p class="text-sm text-gray-600 mb-4">Compilação de anomalias e irregularidades detectadas no trimestre.</p>
-                    <div class="flex items-center justify-between text-sm">
-                        <span class="text-gray-500"><i class="fas fa-calendar mr-1"></i>Out-Dez 2025</span>
-                        <span class="text-gray-500"><i class="fas fa-file-pdf mr-1"></i>PDF</span>
-                    </div>
-                    <div class="mt-4 flex space-x-2">
-                        <a href="relatorios/alertas-4tri-2025.pdf" class="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition text-sm">
-                            <i class="fas fa-download mr-1"></i>Baixar
-                        </a>
-                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-sm text-gray-600">
-                            <i class="fas fa-eye"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Transferências Federais -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition" data-category="fiscal">
-                <div class="bg-purple-500 px-4 py-2">
-                    <span class="text-white text-sm font-medium">Recursos Federais</span>
-                </div>
-                <div class="p-6">
-                    <h3 class="font-semibold text-gray-800 mb-2">Transferências Federais 2025</h3>
-                    <p class="text-sm text-gray-600 mb-4">Análise das transferências, convênios e emendas parlamentares recebidos.</p>
-                    <div class="flex items-center justify-between text-sm">
-                        <span class="text-gray-500"><i class="fas fa-calendar mr-1"></i>Anual 2025</span>
-                        <span class="text-gray-500"><i class="fas fa-file-pdf mr-1"></i>PDF</span>
-                    </div>
-                    <div class="mt-4 flex space-x-2">
-                        <a href="relatorios/transferencias-2025.pdf" class="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition text-sm">
-                            <i class="fas fa-download mr-1"></i>Baixar
-                        </a>
-                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-sm text-gray-600">
-                            <i class="fas fa-eye"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Info Box -->
-        <div class="mt-10 bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <div class="flex items-start space-x-4">
-                <div class="flex-shrink-0">
-                    <i class="fas fa-info-circle text-blue-600 text-2xl"></i>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-blue-800 mb-2">Sobre os Relatórios</h4>
-                    <p class="text-blue-700 text-sm mb-3">
-                        Os relatórios são gerados automaticamente pelo sistema MonitoraMarília com base em dados de fontes abertas
-                        (SICONFI, TCE-SP e Portal Federal). Eles podem ser utilizados como subsídio para:
-                    </p>
-                    <ul class="text-blue-700 text-sm space-y-1">
-                        <li><i class="fas fa-check mr-2"></i>Representações ao Ministério Público</li>
-                        <li><i class="fas fa-check mr-2"></i>Requerimentos ao Tribunal de Contas</li>
-                        <li><i class="fas fa-check mr-2"></i>Pedidos de informação</li>
-                        <li><i class="fas fa-check mr-2"></i>Ações de controle social</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <section>
+            <div class="section-head"><h2>Como os relatórios são atualizados</h2></div>
+            <p>A coleta e a geração rodam diariamente por automação (GitHub Actions). Cada execução
+               consulta as APIs, atualiza o painel e regenera os PDFs disponíveis abaixo. A periodicidade
+               efetiva de cada fonte limita o que há de novo a cada dia:</p>
+            <table>
+                <thead><tr><th>Relatório</th><th>Fonte</th><th>Cadência real da fonte</th></tr></thead>
+                <tbody>
+                    <tr><td>Indicadores fiscais (LRF)</td><td>SICONFI</td><td>RREO bimestral · RGF quadrimestral</td></tr>
+                    <tr><td>Fornecedores</td><td>TCE&#8209;SP</td><td>Mensal</td></tr>
+                    <tr><td>Transferências federais</td><td>Portal da Transparência</td><td>Diária</td></tr>
+                </tbody>
+            </table>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-10">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-gray-400 text-sm">&copy; 2026 MATRA - Marília Transparente. Projeto de código aberto para controle social.</p>
+    <footer class="site">
+        <div class="wrap colophon">
+            <span>© 2026 MATRA — Marília Transparente · projeto de código aberto</span>
+            <span class="signature">desenho <b>Tufte · Bortoli</b></span>
         </div>
     </footer>
 
     <script>
-        // Filtro de relatórios
-        document.querySelectorAll('[data-filter]').forEach(button => {
-            button.addEventListener('click', function() {
-                const filter = this.dataset.filter;
+    (function () {
+        const KICKER = {
+            fiscal: 'Indicadores fiscais',
+            fornecedores: 'Fornecedores',
+            transferencias: 'Transferências',
+            consolidado: 'Consolidado'
+        };
+        const list = document.getElementById('rel-list');
+        const updated = document.getElementById('rel-updated');
+        let relatorios = [];
+        let filtro = 'todos';
 
-                // Update button styles
-                document.querySelectorAll('[data-filter]').forEach(b => {
-                    b.classList.remove('bg-blue-600', 'text-white');
-                    b.classList.add('bg-gray-200', 'text-gray-700');
-                });
-                this.classList.remove('bg-gray-200', 'text-gray-700');
-                this.classList.add('bg-blue-600', 'text-white');
+        function fmtBytes(b) {
+            if (!b) return '';
+            if (b > 1048576) return (b / 1048576).toFixed(1) + ' MB';
+            if (b > 1024) return Math.round(b / 1024) + ' KB';
+            return b + ' B';
+        }
+        function fmtData(d) {
+            if (!d) return '';
+            try { return new Date(d).toLocaleDateString('pt-BR'); } catch (e) { return d; }
+        }
 
-                // Filter cards
-                document.querySelectorAll('[data-category]').forEach(card => {
-                    if (filter === 'todos' || card.dataset.category === filter) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
+        function render() {
+            const itens = relatorios.filter(r => filtro === 'todos' || r.tipo === filtro);
+            if (itens.length === 0) {
+                list.innerHTML = `<p class="empty">Nenhum relatório disponível ainda.
+                    Os PDFs são gerados pela automação diária — rode
+                    <code>python -m src.main generate-report --tipo fiscal</code> para criar um localmente.</p>`;
+                return;
+            }
+            list.innerHTML = itens.map(r => `
+                <article class="report" data-tipo="${r.tipo}">
+                    <div>
+                        <p class="report__kicker">${KICKER[r.tipo] || r.tipo}</p>
+                        <h3 class="report__title">${r.titulo || ''}</h3>
+                        <p class="report__desc">${r.descricao || ''}</p>
+                    </div>
+                    <div>
+                        <p class="report__meta">${r.periodo || ''}${r.data ? ' · ' + fmtData(r.data) : ''}<br>
+                           ${(r.formato || 'PDF')}${r.tamanho ? ' · ' + fmtBytes(r.tamanho) : ''}</p>
+                        <p class="report__dl"><a href="${r.arquivo}">baixar →</a></p>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        document.querySelectorAll('#rel-filters button').forEach(btn => {
+            btn.addEventListener('click', function () {
+                filtro = this.dataset.filter;
+                document.querySelectorAll('#rel-filters button')
+                    .forEach(b => b.setAttribute('aria-pressed', b === this ? 'true' : 'false'));
+                render();
             });
         });
+
+        fetch('data/relatorios.json')
+            .then(r => r.ok ? r.json() : Promise.reject())
+            .then(data => {
+                relatorios = data.relatorios || [];
+                if (data.lastUpdate) {
+                    updated.textContent = 'atualizado em ' +
+                        new Date(data.lastUpdate).toLocaleDateString('pt-BR');
+                }
+                render();
+            })
+            .catch(() => {
+                list.innerHTML = `<p class="empty">Índice de relatórios não encontrado.
+                    A automação diária gera <code>docs/data/relatorios.json</code> ao publicar os PDFs.</p>`;
+            });
+    })();
     </script>
 </body>
 </html>

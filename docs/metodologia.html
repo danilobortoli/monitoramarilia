@@ -3,316 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metodologia - MonitoraMarília</title>
-    <meta name="description" content="Metodologia de análise e base legal do monitoramento">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); }
-    </style>
+    <title>Metodologia — MonitoraMarília</title>
+    <meta name="description" content="Critérios de análise, indicadores fiscais e base legal do monitoramento.">
+    <link rel="stylesheet" href="css/tufte-bortoli.css">
 </head>
-<body class="bg-gray-50 min-h-screen">
-    <!-- Header -->
-    <header class="gradient-bg text-white shadow-lg">
-        <div class="container mx-auto px-4 py-6">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-4">
-                    <a href="index.html" class="bg-white/20 p-3 rounded-lg hover:bg-white/30 transition">
-                        <i class="fas fa-search-dollar text-2xl"></i>
-                    </a>
-                    <div>
-                        <h1 class="text-2xl font-bold">MonitoraMarília</h1>
-                        <p class="text-blue-200 text-sm">Metodologia de Análise</p>
-                    </div>
-                </div>
-                <nav class="hidden md:flex space-x-6">
-                    <a href="index.html" class="hover:text-blue-200 transition">Dashboard</a>
-                    <a href="relatorios.html" class="hover:text-blue-200 transition">Relatórios</a>
-                    <a href="metodologia.html" class="text-blue-200 font-medium">Metodologia</a>
-                    <a href="sobre.html" class="hover:text-blue-200 transition">Sobre</a>
-                </nav>
+<body>
+    <header class="masthead">
+        <div class="masthead__inner">
+            <div class="wordmark">
+                <span class="wordmark__title"><a href="index.html">MonitoraMarília</a></span>
+                <span class="wordmark__kicker">Controle social · MATRA</span>
             </div>
-        </div>
-    </header>
-
-    <!-- Breadcrumb -->
-    <div class="bg-white border-b">
-        <div class="container mx-auto px-4 py-3">
-            <nav class="text-sm text-gray-500">
-                <a href="index.html" class="hover:text-blue-600">Início</a>
-                <span class="mx-2">/</span>
-                <span class="text-gray-800">Metodologia</span>
+            <nav class="menu">
+                <a href="index.html">Painel</a>
+                <a href="relatorios.html">Relatórios</a>
+                <a href="metodologia.html" aria-current="page">Metodologia</a>
+                <a href="sobre.html">Sobre</a>
             </nav>
         </div>
-    </div>
+    </header>
+    <div class="breadcrumb"><a href="index.html" style="border:0;color:inherit">Início</a> / Metodologia</div>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8 max-w-4xl">
-        <!-- Page Title -->
-        <div class="mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-2">
-                <i class="fas fa-book mr-2 text-blue-600"></i>Metodologia de Análise
-            </h2>
-            <p class="text-gray-600">Conheça os critérios, indicadores e base legal utilizados no monitoramento.</p>
-        </div>
+    <main class="prose">
+        <h2 style="margin-top:1rem">Metodologia de análise</h2>
+        <p class="lead">Como o MonitoraMarília coleta, calcula e interpreta os dados — e sob que base legal.</p>
 
-        <!-- Base Legal -->
-        <section class="bg-white rounded-xl shadow-md p-6 mb-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-4">
-                <i class="fas fa-balance-scale mr-2 text-blue-600"></i>Base Legal
-            </h3>
+        <h3>Base legal</h3>
+        <dl class="deflist">
+            <dt>Lei nº 12.527/2011 — Lei de Acesso à Informação</dt>
+            <dd>Estabelece a transparência como regra e o sigilo como exceção, regulando o acesso
+                previsto na Constituição.</dd>
+            <dt>Lei Complementar nº 131/2009 — Lei da Transparência</dt>
+            <dd>Acrescenta dispositivos à LRF, exigindo a divulgação em tempo real da execução
+                orçamentária e financeira.</dd>
+            <dt>Decreto nº 7.724/2012</dt>
+            <dd>Regulamenta a LAI no Executivo federal, referência para estados e municípios na
+                transparência ativa.</dd>
+            <dt>Lei nº 14.129/2021 — Governo Digital</dt>
+            <dd>Dispõe sobre princípios e instrumentos do governo digital, incluindo dados abertos.</dd>
+        </dl>
 
-            <div class="space-y-4">
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <h4 class="font-semibold text-gray-800">Lei nº 12.527/2011 - Lei de Acesso à Informação (LAI)</h4>
-                    <p class="text-gray-600 text-sm mt-1">
-                        Regula o acesso a informações previsto no inciso XXXIII do art. 5º, no inciso II do § 3º do art. 37
-                        e no § 2º do art. 216 da Constituição Federal. Estabelece a transparência como regra e o sigilo como exceção.
-                    </p>
-                </div>
+        <h3>Indicadores fiscais (LRF)</h3>
+        <p>A Lei de Responsabilidade Fiscal (LC 101/2000) fixa limites de despesa e endividamento
+           sobre a Receita Corrente Líquida (RCL). O painel calcula a proximidade de cada teto.</p>
+        <table>
+            <caption>Limites aplicáveis ao Poder Executivo municipal.</caption>
+            <thead>
+                <tr><th>Indicador</th><th class="num">Teto</th><th class="num">Prudencial</th><th class="num">Alerta</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Despesa com pessoal</td><td class="num">54%</td><td class="num">51,3%</td><td class="num">48,6%</td></tr>
+                <tr><td>Dívida consolidada líquida</td><td class="num">120%</td><td class="num">108%</td><td class="num">—</td></tr>
+                <tr><td>Operações de crédito</td><td class="num">16%</td><td class="num">—</td><td class="num">—</td></tr>
+                <tr><td>Garantias</td><td class="num">22%</td><td class="num">—</td><td class="num">—</td></tr>
+            </tbody>
+        </table>
 
-                <div class="border-l-4 border-green-500 pl-4">
-                    <h4 class="font-semibold text-gray-800">Lei Complementar nº 131/2009 - Lei da Transparência</h4>
-                    <p class="text-gray-600 text-sm mt-1">
-                        Acrescenta dispositivos à Lei de Responsabilidade Fiscal (LC 101/2000), determinando a disponibilização
-                        em tempo real de informações sobre execução orçamentária e financeira.
-                    </p>
-                </div>
+        <h3>Detecção de anomalias</h3>
+        <p>Sobre os pagamentos do TCE&#8209;SP, o sistema aplica testes automáticos. Os parâmetros
+           são configuráveis e os limiares atuais são:</p>
+        <dl class="deflist">
+            <dt>Valores atípicos</dt>
+            <dd>Despesas que se afastam mais de 2 desvios-padrão (z&#8209;score &gt; 2,0) da média da série.</dd>
+            <dt>Fracionamento</dt>
+            <dd>Sequência de despesas ao mesmo fornecedor/objeto numa janela de 30 dias cuja soma
+                ultrapassa o limite de dispensa — possível burla à licitação.</dd>
+            <dt>Concentração de fornecedores</dt>
+            <dd>Fornecedor que recebe mais de 10% do total pago no período.</dd>
+            <dt>Aditivos contratuais</dt>
+            <dd>Aditivos que superam 25% do valor original do contrato (limite legal).</dd>
+            <dt>Sanções</dt>
+            <dd>Cruzamento dos fornecedores com os cadastros CEIS e CNEP do Portal da Transparência.</dd>
+        </dl>
+        <p><small>Os alertas são indícios para investigação, não conclusões. Cada apontamento deve ser
+           confirmado nos documentos originais antes de qualquer providência.</small></p>
 
-                <div class="border-l-4 border-purple-500 pl-4">
-                    <h4 class="font-semibold text-gray-800">Decreto nº 7.724/2012</h4>
-                    <p class="text-gray-600 text-sm mt-1">
-                        Regulamenta a LAI no âmbito do Poder Executivo federal, servindo como referência para
-                        estados e municípios na implementação da transparência ativa.
-                    </p>
-                </div>
+        <h3>Frequência de atualização</h3>
+        <p>A automação roda diariamente, mas o que há de novo depende da cadência de cada fonte:</p>
+        <table>
+            <thead><tr><th>Fonte</th><th>Cadência</th><th>Conteúdo</th></tr></thead>
+            <tbody>
+                <tr><td>SICONFI</td><td>Bimestral / quadrimestral</td><td>RREO, RGF, DCA — execução e LRF</td></tr>
+                <tr><td>TCE&#8209;SP</td><td>Mensal</td><td>Despesas, receitas, fornecedores</td></tr>
+                <tr><td>Portal da Transparência</td><td>Diária</td><td>Transferências, convênios, emendas, CEIS/CNEP</td></tr>
+            </tbody>
+        </table>
 
-                <div class="border-l-4 border-yellow-500 pl-4">
-                    <h4 class="font-semibold text-gray-800">Lei nº 14.129/2021 - Lei do Governo Digital</h4>
-                    <p class="text-gray-600 text-sm mt-1">
-                        Dispõe sobre princípios, regras e instrumentos para o Governo Digital, incluindo
-                        a disponibilização de dados em formato aberto.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Indicadores LRF -->
-        <section class="bg-white rounded-xl shadow-md p-6 mb-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-4">
-                <i class="fas fa-chart-line mr-2 text-blue-600"></i>Indicadores Fiscais - LRF
-            </h3>
-
-            <p class="text-gray-600 mb-4">
-                A Lei de Responsabilidade Fiscal (LC 101/2000) estabelece limites para despesas e endividamento
-                dos entes públicos, com base na Receita Corrente Líquida (RCL):
-            </p>
-
-            <div class="overflow-x-auto">
-                <table class="w-full text-sm">
-                    <thead>
-                        <tr class="bg-gray-100">
-                            <th class="text-left p-3 font-semibold text-gray-700">Indicador</th>
-                            <th class="text-left p-3 font-semibold text-gray-700">Limite Máximo</th>
-                            <th class="text-left p-3 font-semibold text-gray-700">Limite Prudencial</th>
-                            <th class="text-left p-3 font-semibold text-gray-700">Limite de Alerta</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        <tr>
-                            <td class="p-3 font-medium">Despesa com Pessoal (Executivo)</td>
-                            <td class="p-3 text-gray-600">54% da RCL</td>
-                            <td class="p-3 text-gray-600">51,3% da RCL</td>
-                            <td class="p-3 text-gray-600">48,6% da RCL</td>
-                        </tr>
-                        <tr>
-                            <td class="p-3 font-medium">Dívida Consolidada Líquida</td>
-                            <td class="p-3 text-gray-600">120% da RCL</td>
-                            <td class="p-3 text-gray-600">108% da RCL</td>
-                            <td class="p-3 text-gray-600">--</td>
-                        </tr>
-                        <tr>
-                            <td class="p-3 font-medium">Operações de Crédito</td>
-                            <td class="p-3 text-gray-600">16% da RCL</td>
-                            <td class="p-3 text-gray-600">--</td>
-                            <td class="p-3 text-gray-600">--</td>
-                        </tr>
-                        <tr>
-                            <td class="p-3 font-medium">Garantias</td>
-                            <td class="p-3 text-gray-600">22% da RCL</td>
-                            <td class="p-3 text-gray-600">--</td>
-                            <td class="p-3 text-gray-600">--</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- Detecção de Anomalias -->
-        <section class="bg-white rounded-xl shadow-md p-6 mb-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-4">
-                <i class="fas fa-exclamation-triangle mr-2 text-yellow-500"></i>Critérios de Detecção de Anomalias
-            </h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-red-50 border border-red-200 rounded-lg p-4">
-                    <h4 class="font-semibold text-red-800 mb-2">
-                        <i class="fas fa-file-contract mr-1"></i>Contratos
-                    </h4>
-                    <ul class="text-sm text-red-700 space-y-1">
-                        <li>• Dispensa de licitação acima de R$ 50.000</li>
-                        <li>• Aditivos superiores a 25% do valor original</li>
-                        <li>• Contratos com vigência excessiva</li>
-                        <li>• Objetos genéricos ou imprecisos</li>
-                    </ul>
-                </div>
-
-                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                    <h4 class="font-semibold text-yellow-800 mb-2">
-                        <i class="fas fa-money-bill-wave mr-1"></i>Despesas
-                    </h4>
-                    <ul class="text-sm text-yellow-700 space-y-1">
-                        <li>• Valores atípicos (desvio > 2σ)</li>
-                        <li>• Fracionamento de compras</li>
-                        <li>• Pagamentos em datas atípicas</li>
-                        <li>• Concentração em final de exercício</li>
-                    </ul>
-                </div>
-
-                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
-                    <h4 class="font-semibold text-purple-800 mb-2">
-                        <i class="fas fa-building mr-1"></i>Fornecedores
-                    </h4>
-                    <ul class="text-sm text-purple-700 space-y-1">
-                        <li>• Concentração > 10% do total</li>
-                        <li>• Empresas recém-criadas</li>
-                        <li>• Múltiplos contratos simultâneos</li>
-                        <li>• Sócios em comum entre fornecedores</li>
-                    </ul>
-                </div>
-
-                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                    <h4 class="font-semibold text-blue-800 mb-2">
-                        <i class="fas fa-gavel mr-1"></i>Licitações
-                    </h4>
-                    <ul class="text-sm text-blue-700 space-y-1">
-                        <li>• Licitações desertas recorrentes</li>
-                        <li>• Participante único</li>
-                        <li>• Preços acima da média de mercado</li>
-                        <li>• Prazos exíguos para participação</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Frequência de Atualização -->
-        <section class="bg-white rounded-xl shadow-md p-6 mb-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-4">
-                <i class="fas fa-clock mr-2 text-blue-600"></i>Frequência de Atualização
-            </h3>
-
-            <div class="space-y-4">
-                <div class="flex items-center space-x-4 p-4 bg-blue-50 rounded-lg">
-                    <div class="flex-shrink-0">
-                        <span class="w-12 h-12 flex items-center justify-center bg-blue-600 text-white rounded-full">
-                            <i class="fas fa-database"></i>
-                        </span>
-                    </div>
-                    <div>
-                        <p class="font-semibold text-blue-800">SICONFI - Quadrimestral/Bimestral</p>
-                        <p class="text-blue-700 text-sm">
-                            Relatórios de Gestão Fiscal (RGF) são publicados quadrimestralmente.
-                            Relatórios Resumidos de Execução Orçamentária (RREO) são bimestrais.
-                        </p>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4 p-4 bg-green-50 rounded-lg">
-                    <div class="flex-shrink-0">
-                        <span class="w-12 h-12 flex items-center justify-center bg-green-600 text-white rounded-full">
-                            <i class="fas fa-balance-scale"></i>
-                        </span>
-                    </div>
-                    <div>
-                        <p class="font-semibold text-green-800">TCE-SP - Mensal</p>
-                        <p class="text-green-700 text-sm">
-                            Dados de despesas e receitas são atualizados mensalmente pelo Tribunal de Contas.
-                        </p>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4 p-4 bg-purple-50 rounded-lg">
-                    <div class="flex-shrink-0">
-                        <span class="w-12 h-12 flex items-center justify-center bg-purple-600 text-white rounded-full">
-                            <i class="fas fa-landmark"></i>
-                        </span>
-                    </div>
-                    <div>
-                        <p class="font-semibold text-purple-800">Portal Federal - Diária</p>
-                        <p class="text-purple-700 text-sm">
-                            Transferências, convênios, emendas e cadastros de sanções (CEIS/CNEP) são atualizados diariamente.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Fontes de Dados -->
-        <section class="bg-white rounded-xl shadow-md p-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-4">
-                <i class="fas fa-database mr-2 text-blue-600"></i>Fontes de Dados Abertas
-            </h3>
-
-            <p class="text-gray-600 mb-4">
-                Todos os dados são obtidos de APIs públicas oficiais, garantindo confiabilidade e rastreabilidade:
-            </p>
-
-            <div class="space-y-3">
-                <a href="https://siconfi.tesouro.gov.br/" target="_blank"
-                   class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-database text-blue-600"></i>
-                        <div>
-                            <span class="text-gray-800 font-medium">SICONFI - Tesouro Nacional</span>
-                            <p class="text-xs text-gray-500">RGF, RREO, DCA - Indicadores fiscais e LRF</p>
-                        </div>
-                    </div>
-                    <i class="fas fa-external-link-alt text-gray-400"></i>
-                </a>
-
-                <a href="https://transparencia.tce.sp.gov.br/" target="_blank"
-                   class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-balance-scale text-green-600"></i>
-                        <div>
-                            <span class="text-gray-800 font-medium">TCE-SP</span>
-                            <p class="text-xs text-gray-500">Despesas, receitas e fornecedores municipais</p>
-                        </div>
-                    </div>
-                    <i class="fas fa-external-link-alt text-gray-400"></i>
-                </a>
-
-                <a href="https://portaldatransparencia.gov.br/" target="_blank"
-                   class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-landmark text-purple-600"></i>
-                        <div>
-                            <span class="text-gray-800 font-medium">Portal da Transparência Federal</span>
-                            <p class="text-xs text-gray-500">Transferências, convênios, emendas, CEIS/CNEP</p>
-                        </div>
-                    </div>
-                    <i class="fas fa-external-link-alt text-gray-400"></i>
-                </a>
-            </div>
-        </section>
+        <h3>Fontes de dados abertas</h3>
+        <p>Todos os números vêm de APIs públicas oficiais, garantindo rastreabilidade:</p>
+        <ul>
+            <li><a href="https://siconfi.tesouro.gov.br/" target="_blank" rel="noopener">SICONFI — Tesouro Nacional</a> · indicadores fiscais e LRF</li>
+            <li><a href="https://transparencia.tce.sp.gov.br/" target="_blank" rel="noopener">TCE&#8209;SP</a> · despesas, receitas e fornecedores</li>
+            <li><a href="https://portaldatransparencia.gov.br/" target="_blank" rel="noopener">Portal da Transparência Federal</a> · transferências, convênios, sanções</li>
+        </ul>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-10">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-gray-400 text-sm">&copy; 2026 MATRA - Marília Transparente. Projeto de código aberto para controle social.</p>
+    <footer class="site">
+        <div class="wrap colophon">
+            <span>© 2026 MATRA — Marília Transparente · projeto de código aberto</span>
+            <span class="signature">desenho <b>Tufte · Bortoli</b></span>
         </div>
     </footer>
 </body>

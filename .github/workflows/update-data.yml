@@ -109,6 +109,11 @@ jobs:
           python -m src.main generate-report --tipo fiscal --output docs/relatorios/ || echo "Relatório fiscal não gerado"
           python -m src.main generate-report --tipo fornecedores --output docs/relatorios/ || echo "Relatório fornecedores não gerado"
 
+      - name: Indexar relatórios para o site
+        run: |
+          echo "Atualizando índice de relatórios (docs/data/relatorios.json)..."
+          python -m src.main index-reports || echo "Índice de relatórios não atualizado"
+
       - name: Listar arquivos gerados
         run: |
           echo "=== Arquivos de dados ==="

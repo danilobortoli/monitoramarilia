@@ -1,188 +1,139 @@
 /**
- * MonitoraMarília - Configuração de Gráficos
- * Utiliza Chart.js para visualização de dados integrados
+ * MonitoraMarília — Gráficos (estilo Tufte · Bortoli)
  *
- * Fontes: SICONFI, TCE-SP, Portal Federal
+ * Princípios: pouca tinta, sem grades pesadas, sem dados inventados.
+ * Quando não há dado real coletado, mostramos um estado vazio honesto
+ * em vez de números fabricados.
+ *
+ * Fontes: TCE-SP (execução e despesa por função).
  */
 
-// Cores do tema
-const CHART_COLORS = {
-    primary: '#1e3a5f',
-    secondary: '#2d5a87',
-    success: '#10b981',
-    warning: '#f59e0b',
-    danger: '#ef4444',
-    info: '#3b82f6',
-    purple: '#8b5cf6',
-    pink: '#ec4899',
-    gray: '#6b7280'
-};
+const INK   = '#141414';
+const MUTED  = '#767066';
+const RULE  = '#ece7da';
+const SERIES = { empenhado: '#2c3e50', liquidado: '#8a6d00', pago: '#2f6b3f' };
+const BAR    = '#3a4a59';
 
-// Paleta para gráficos
-const COLOR_PALETTE = [
-    '#1e3a5f', '#2d5a87', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899'
-];
+// Defaults sóbrios para todos os gráficos
+if (window.Chart) {
+    Chart.defaults.font.family = "'et-book','Iowan Old Style',Palatino,Georgia,serif";
+    Chart.defaults.font.size = 12;
+    Chart.defaults.color = MUTED;
+    Chart.defaults.plugins.legend.display = false; // legenda é feita em HTML
+    Chart.defaults.plugins.tooltip.backgroundColor = INK;
+    Chart.defaults.plugins.tooltip.cornerRadius = 0;
+    Chart.defaults.plugins.tooltip.displayColors = false;
+}
 
-/**
- * Inicializa o gráfico de despesas por órgão/categoria (Pizza/Doughnut)
- */
+/** Substitui o gráfico por uma nota honesta de "sem dados". */
+function renderEmpty(canvasId, mensagem) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const box = canvas.closest('.chart-box') || canvas.parentElement;
+    box.innerHTML = `<p class="chart-empty">${mensagem}</p>`;
+}
+
+function temDados(arr) { return Array.isArray(arr) && arr.length > 0; }
+
+/** Despesa por função — barras horizontais (Tufte prefere barra a pizza). */
 function initDespesasChart() {
     const ctx = document.getElementById('despesasChart');
     if (!ctx) return;
 
-    const data = DASHBOARD_DATA.graficos?.despesasPorOrgao || {
-        labels: ["Saúde", "Educação", "Administração", "Obras", "Assistência Social", "Outros"],
-        valores: [35, 28, 15, 10, 7, 5]
-    };
+    const data = DASHBOARD_DATA.graficos?.despesasPorOrgao;
+    if (!data || !temDados(data.labels) || !temDados(data.valores)) {
+        renderEmpty('despesasChart', 'Sem dados de despesa por função coletados ainda.');
+        return;
+    }
 
-    new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: data.labels,
-            datasets: [{
-                data: data.valores,
-                backgroundColor: COLOR_PALETTE,
-                borderColor: '#ffffff',
-                borderWidth: 2,
-                hoverOffset: 10
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            aspectRatio: 1.5,
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        padding: 15,
-                        usePointStyle: true,
-                        font: {
-                            size: 11
-                        }
-                    }
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            const label = context.label || '';
-                            const value = context.parsed || 0;
-                            return `${label}: ${value}%`;
-                        }
-                    }
-                }
-            }
-        }
-    });
-}
-
-/**
- * Inicializa o gráfico de evolução mensal de despesas (Barras)
- * Dados do TCE-SP
- */
-function initEvolucaoChart() {
-    const ctx = document.getElementById('evolucaoChart');
-    if (!ctx) return;
-
-    const data = DASHBOARD_DATA.graficos?.evolucaoMensal || {
-        labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
-        empenhado: [35.2, 32.1, 38.5, 36.8, 34.2, 37.9, 35.6, 33.8, 36.2, 38.1, 35.4, 42.3],
-        liquidado: [33.1, 30.5, 36.2, 35.1, 32.8, 35.6, 34.2, 32.1, 34.8, 36.5, 33.9, 40.1],
-        pago: [31.5, 29.8, 34.8, 33.9, 31.2, 34.2, 32.8, 30.9, 33.2, 35.1, 32.5, 38.5]
-    };
+    const emMilhoes = data.valores.map(v => v > 100000 ? v / 1e6 : v);
 
     new Chart(ctx, {
         type: 'bar',
         data: {
             labels: data.labels,
+            datasets: [{ data: emMilhoes, backgroundColor: BAR, borderWidth: 0, barPercentage: 0.7 }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                tooltip: { callbacks: { label: c => ` R$ ${c.parsed.x.toFixed(1)} mi` } }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    border: { display: false },
+                    grid: { color: RULE, drawTicks: false },
+                    ticks: { callback: v => `${v}` }
+                },
+                y: { border: { display: false }, grid: { display: false } }
+            }
+        }
+    });
+}
+
+/** Execução mensal — linhas finas (empenhado / liquidado / pago). */
+function initEvolucaoChart() {
+    const ctx = document.getElementById('evolucaoChart');
+    if (!ctx) return;
+
+    const data = DASHBOARD_DATA.graficos?.evolucaoMensal;
+    if (!data || !temDados(data.labels)) {
+        renderEmpty('evolucaoChart', 'Sem série mensal de execução coletada ainda.');
+        return;
+    }
+
+    const linha = (chave, cor) => ({
+        label: chave,
+        data: data[chave] || [],
+        borderColor: cor,
+        backgroundColor: cor,
+        borderWidth: 1.5,
+        pointRadius: 0,
+        pointHoverRadius: 3,
+        tension: 0.15,
+        spanGaps: true
+    });
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: data.labels,
             datasets: [
-                {
-                    label: 'Empenhado',
-                    data: data.empenhado,
-                    backgroundColor: CHART_COLORS.info,
-                    borderRadius: 4
-                },
-                {
-                    label: 'Liquidado',
-                    data: data.liquidado,
-                    backgroundColor: CHART_COLORS.warning,
-                    borderRadius: 4
-                },
-                {
-                    label: 'Pago',
-                    data: data.pago,
-                    backgroundColor: CHART_COLORS.success,
-                    borderRadius: 4
-                }
+                linha('empenhado', SERIES.empenhado),
+                linha('liquidado', SERIES.liquidado),
+                linha('pago', SERIES.pago)
             ]
         },
         options: {
             responsive: true,
-            maintainAspectRatio: true,
-            aspectRatio: 2,
+            maintainAspectRatio: false,
+            interaction: { mode: 'index', intersect: false },
             plugins: {
-                legend: {
-                    position: 'top',
-                    labels: {
-                        padding: 10,
-                        usePointStyle: true,
-                        font: {
-                            size: 11
-                        }
-                    }
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            return `${context.dataset.label}: R$ ${context.parsed.y.toFixed(1)}M`;
-                        }
-                    }
-                }
+                tooltip: { callbacks: { label: c => ` ${c.dataset.label}: R$ ${Number(c.parsed.y).toFixed(1)} mi` } }
             },
             scales: {
-                x: {
-                    grid: {
-                        display: false
-                    },
-                    ticks: {
-                        font: {
-                            size: 10
-                        }
-                    }
-                },
+                x: { border: { display: false }, grid: { display: false } },
                 y: {
                     beginAtZero: true,
-                    grid: {
-                        color: '#f3f4f6'
-                    },
-                    ticks: {
-                        callback: function(value) {
-                            return 'R$ ' + value + 'M';
-                        },
-                        font: {
-                            size: 10
-                        }
-                    }
+                    border: { display: false },
+                    grid: { color: RULE, drawTicks: false },
+                    ticks: { callback: v => `${v}` }
                 }
             }
         }
     });
 }
 
-/**
- * Inicializa todos os gráficos
- */
 function initAllCharts() {
     initDespesasChart();
     initEvolucaoChart();
 }
 
-// Inicializar quando o DOM estiver pronto
-document.addEventListener('DOMContentLoaded', function() {
-    // Aguarda os dados carregarem
-    setTimeout(function() {
-        if (typeof DASHBOARD_DATA !== 'undefined') {
-            initAllCharts();
-        }
+document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(function () {
+        if (typeof DASHBOARD_DATA !== 'undefined') initAllCharts();
     }, 150);
 });
