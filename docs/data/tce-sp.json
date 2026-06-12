@@ -1,1 +1,111 @@
-{}
+{
+  "fonte": "TCE-SP",
+  "ano": 2026,
+  "ultima_atualizacao": "2026-06-12T12:12:23.719143",
+  "periodo": "Ano 2026",
+  "totais": {
+    "empenhado": 813799107.5700006,
+    "liquidado": 561414039.8899996,
+    "pago": 397455601.19999915,
+    "empenhado_fmt": "R$ 813.8M",
+    "liquidado_fmt": "R$ 561.4M",
+    "pago_fmt": "R$ 397.5M"
+  },
+  "fornecedores": [
+    {
+      "fornecedor": "PREFEITURA MUNICIPAL DE MARILIA",
+      "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 44477909000100",
+      "valor_total": 117898983.31999998,
+      "qtd_pagamentos": 1504,
+      "percentual": 29.663434850091182
+    },
+    {
+      "fornecedor": "IPREMM   INSTITUTO DE PREVIDENCIA MUN  MARILIA",
+      "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 59989830000136",
+      "valor_total": 51637206.580000035,
+      "qtd_pagamentos": 102,
+      "percentual": 12.991943357722679
+    },
+    {
+      "fornecedor": "IPREMM INST PREVIDENCIA DO MUNICIPIO DE MARILIA",
+      "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 59989830000136",
+      "valor_total": 32784057.790000003,
+      "qtd_pagamentos": 411,
+      "percentual": 8.24848302326556
+    },
+    {
+      "fornecedor": "IRMANDADE DA SANTA CASA MISERICORDIA DE MARILIA",
+      "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 52049244000162",
+      "valor_total": 30746938.07,
+      "qtd_pagamentos": 51,
+      "percentual": 7.735942826612269
+    },
+    {
+      "fornecedor": "ASSOCIACAO FEMININA DE MARILIA MATERNIDADE GOTA LEITE",
+      "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 52050911000127",
+      "valor_total": 20017921.74,
+      "qtd_pagamentos": 63,
+      "percentual": 5.036517709037645
+    },
+    {
+      "fornecedor": "ASSOCIACAO BENEFICENTE HOSPITAL UNIVERSITARIO",
+      "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 09528436000122",
+      "valor_total": 19293455.93999999,
+      "qtd_pagamentos": 48,
+      "percentual": 4.854241802543259
+    },
+    {
+      "fornecedor": "CAMARA MUNICIPAL DE MARILIA",
+      "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 44478196000108",
+      "valor_total": 7864718.359999997,
+      "qtd_pagamentos": 208,
+      "percentual": 1.9787665178839637
+    },
+    {
+      "fornecedor": "FUNDACAO MUNICIPAL DE ENSINO SUPERIOR  DE MARILIA",
+      "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 52052420000115",
+      "valor_total": 6579410.780000001,
+      "qtd_pagamentos": 87,
+      "percentual": 1.6553825786164353
+    },
+    {
+      "fornecedor": "SECRETARIA DA RECEITA FEDERAL DO BRASIL",
+      "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 00394460036170",
+      "valor_total": 6231032.159999998,
+      "qtd_pagamentos": 55,
+      "percentual": 1.5677303681687331
+    },
+    {
+      "fornecedor": "SAO PAULO TRIBUNAL DE JUSTICA",
+      "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 51174001000193",
+      "valor_total": 6036481.279999998,
+      "qtd_pagamentos": 79,
+      "percentual": 1.5187812831860052
+    }
+  ],
+  "alertas_concentracao": [
+    {
+      "tipo": "alerta",
+      "categoria": "concentracao",
+      "titulo": "Alta concentração: PREFEITURA MUNICIPAL DE MARILI",
+      "descricao": "Fornecedor recebeu 29.7% do total pago (R$ 117.90 milhões)",
+      "fornecedor": "PREFEITURA MUNICIPAL DE MARILIA",
+      "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 44477909000100",
+      "valor": 117898983.31999998,
+      "percentual": 29.663434850091182,
+      "data": "2026-06-12"
+    },
+    {
+      "tipo": "alerta",
+      "categoria": "concentracao",
+      "titulo": "Alta concentração: IPREMM   INSTITUTO DE PREVIDEN",
+      "descricao": "Fornecedor recebeu 13.0% do total pago (R$ 51.64 milhões)",
+      "fornecedor": "IPREMM   INSTITUTO DE PREVIDENCIA MUN  MARILIA",
+      "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 59989830000136",
+      "valor": 51637206.580000035,
+      "percentual": 12.991943357722679,
+      "data": "2026-06-12"
+    }
+  ],
+  "qtd_despesas": 31371
+}
