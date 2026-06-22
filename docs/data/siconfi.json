@@ -1,24 +1,24 @@
 {
   "fonte": "SICONFI",
   "ano": 2026,
-  "ultima_atualizacao": "2026-06-20T11:07:58.220950",
+  "ultima_atualizacao": "2026-06-22T14:26:12.074722",
   "resumo": {
     "municipio": "Marília",
     "codigo_ibge": "3529005",
     "ano": 2026,
-    "data_consulta": "2026-06-20T11:07:58.175018",
+    "data_consulta": "2026-06-22T14:26:07.180133",
     "fonte": "SICONFI - Tesouro Nacional",
-    "indicadores": {
-      "rcl": {
-        "valor": 1436085117.62,
-        "formatado": "R$ 1436.1 milhões"
-      }
-    }
+    "indicadores": {}
   },
-  "alertas_lrf": [],
+  "alertas_lrf": [
+    {
+      "tipo": "warning",
+      "mensagem": "RCL não disponível para cálculo"
+    }
+  ],
   "kpis": {
-    "rcl": "R$ 1436.1 milhões",
-    "alertas_count": 0,
+    "rcl": "N/D",
+    "alertas_count": 1,
     "alertas_criticos": 0
   }
 }

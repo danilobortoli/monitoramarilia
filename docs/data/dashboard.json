@@ -1,12 +1,12 @@
 {
-  "lastUpdate": "2026-06-20T11:08:15.291583",
+  "lastUpdate": "2026-06-22T14:26:30.041337",
   "ano": 2026,
   "municipio": "Marília",
   "codigoIBGE": "3529005",
   "fiscal": {
     "fonte": "SICONFI - Tesouro Nacional",
-    "rcl": 1436085117.62,
-    "rclFormatado": "R$ 1436.1M",
+    "rcl": 0,
+    "rclFormatado": "N/D",
     "despesaPessoal": {
       "valor": null,
       "percentual": null,
@@ -21,7 +21,12 @@
       "limite": 120,
       "status": null
     },
-    "alertasLRF": []
+    "alertasLRF": [
+      {
+        "tipo": "warning",
+        "mensagem": "RCL não disponível para cálculo"
+      }
+    ]
   },
   "execucao": {
     "fonte": "TCE-SP",
@@ -148,8 +153,13 @@
     "porAutor": []
   },
   "alertas": {
-    "total": 2,
-    "lrf": [],
+    "total": 3,
+    "lrf": [
+      {
+        "tipo": "warning",
+        "mensagem": "RCL não disponível para cálculo"
+      }
+    ],
     "fornecedores": [
       {
         "tipo": "alerta",
@@ -160,7 +170,7 @@
         "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 44477909000100",
         "valor": 117898983.31999998,
         "percentual": 29.663434850091182,
-        "data": "2026-06-20"
+        "data": "2026-06-22"
       },
       {
         "tipo": "alerta",
@@ -171,7 +181,7 @@
         "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 59989830000136",
         "valor": 51637206.580000035,
         "percentual": 12.991943357722679,
-        "data": "2026-06-20"
+        "data": "2026-06-22"
       }
     ],
     "outros": []
