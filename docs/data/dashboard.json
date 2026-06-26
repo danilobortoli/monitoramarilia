@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-06-24T11:38:54.993129",
+  "lastUpdate": "2026-06-26T11:39:57.117357",
   "ano": 2026,
   "municipio": "Marília",
   "codigoIBGE": "3529005",
@@ -26,13 +26,13 @@
   "execucao": {
     "fonte": "TCE-SP",
     "periodo": "Ano 2026",
-    "empenhado": 813799107.5700006,
-    "empenhadoFmt": "R$ 813.8M",
-    "liquidado": 561414039.8899996,
-    "liquidadoFmt": "R$ 561.4M",
-    "pago": 397455601.19999915,
-    "pagoFmt": "R$ 397.5M",
-    "qtdDespesas": 31371
+    "empenhado": 997014531.7499976,
+    "empenhadoFmt": "R$ 997.0M",
+    "liquidado": 717134662.7499958,
+    "liquidadoFmt": "R$ 717.1M",
+    "pago": 533168072.6799995,
+    "pagoFmt": "R$ 533.2M",
+    "qtdDespesas": 40920
   },
   "fornecedores": {
     "fonte": "TCE-SP + Portal Federal",
@@ -41,81 +41,81 @@
       {
         "cnpj": "CNPJ - PESSOA JURÍDICA - 44477909000100",
         "nome": "PREFEITURA MUNICIPAL DE MARILIA",
-        "valor": 117898983.31999998,
-        "valorFmt": "R$ 117.90M",
-        "qtdPagamentos": 1504,
+        "valor": 158832271.1200001,
+        "valorFmt": "R$ 158.83M",
+        "qtdPagamentos": 1960,
         "situacaoSancoes": "REGULAR"
       },
       {
         "cnpj": "CNPJ - PESSOA JURÍDICA - 59989830000136",
         "nome": "IPREMM   INSTITUTO DE PREVIDENCIA MUN  MARILIA",
-        "valor": 51637206.580000035,
-        "valorFmt": "R$ 51.64M",
-        "qtdPagamentos": 102,
+        "valor": 69689948.94000004,
+        "valorFmt": "R$ 69.69M",
+        "qtdPagamentos": 140,
         "situacaoSancoes": "REGULAR"
       },
       {
         "cnpj": "CNPJ - PESSOA JURÍDICA - 59989830000136",
         "nome": "IPREMM INST PREVIDENCIA DO MUNICIPIO DE MARILIA",
-        "valor": 32784057.790000003,
-        "valorFmt": "R$ 32.78M",
-        "qtdPagamentos": 411,
+        "valor": 44325987.299999975,
+        "valorFmt": "R$ 44.33M",
+        "qtdPagamentos": 582,
         "situacaoSancoes": "REGULAR"
       },
       {
         "cnpj": "CNPJ - PESSOA JURÍDICA - 52049244000162",
         "nome": "IRMANDADE DA SANTA CASA MISERICORDIA DE MARILIA",
-        "valor": 30746938.07,
-        "valorFmt": "R$ 30.75M",
-        "qtdPagamentos": 51,
+        "valor": 38972942.34,
+        "valorFmt": "R$ 38.97M",
+        "qtdPagamentos": 65,
         "situacaoSancoes": "REGULAR"
       },
       {
         "cnpj": "CNPJ - PESSOA JURÍDICA - 52050911000127",
         "nome": "ASSOCIACAO FEMININA DE MARILIA MATERNIDADE GOTA LEITE",
-        "valor": 20017921.74,
-        "valorFmt": "R$ 20.02M",
-        "qtdPagamentos": 63,
+        "valor": 25196979.779999994,
+        "valorFmt": "R$ 25.20M",
+        "qtdPagamentos": 83,
         "situacaoSancoes": "REGULAR"
       },
       {
         "cnpj": "CNPJ - PESSOA JURÍDICA - 09528436000122",
         "nome": "ASSOCIACAO BENEFICENTE HOSPITAL UNIVERSITARIO",
-        "valor": 19293455.93999999,
-        "valorFmt": "R$ 19.29M",
-        "qtdPagamentos": 48,
+        "valor": 24197002.65999999,
+        "valorFmt": "R$ 24.20M",
+        "qtdPagamentos": 61,
         "situacaoSancoes": "REGULAR"
       },
       {
         "cnpj": "CNPJ - PESSOA JURÍDICA - 44478196000108",
         "nome": "CAMARA MUNICIPAL DE MARILIA",
-        "valor": 7864718.359999997,
-        "valorFmt": "R$ 7.86M",
-        "qtdPagamentos": 208,
-        "situacaoSancoes": "REGULAR"
-      },
-      {
-        "cnpj": "CNPJ - PESSOA JURÍDICA - 52052420000115",
-        "nome": "FUNDACAO MUNICIPAL DE ENSINO SUPERIOR  DE MARILIA",
-        "valor": 6579410.780000001,
-        "valorFmt": "R$ 6.58M",
-        "qtdPagamentos": 87,
-        "situacaoSancoes": "REGULAR"
-      },
-      {
-        "cnpj": "CNPJ - PESSOA JURÍDICA - 00394460036170",
-        "nome": "SECRETARIA DA RECEITA FEDERAL DO BRASIL",
-        "valor": 6231032.159999998,
-        "valorFmt": "R$ 6.23M",
-        "qtdPagamentos": 55,
+        "valor": 9869308.69,
+        "valorFmt": "R$ 9.87M",
+        "qtdPagamentos": 272,
         "situacaoSancoes": "REGULAR"
       },
       {
         "cnpj": "CNPJ - PESSOA JURÍDICA - 51174001000193",
         "nome": "SAO PAULO TRIBUNAL DE JUSTICA",
-        "valor": 6036481.279999998,
-        "valorFmt": "R$ 6.04M",
-        "qtdPagamentos": 79,
+        "valor": 9282048.279999997,
+        "valorFmt": "R$ 9.28M",
+        "qtdPagamentos": 96,
+        "situacaoSancoes": "REGULAR"
+      },
+      {
+        "cnpj": "CNPJ - PESSOA JURÍDICA - 52052420000115",
+        "nome": "FUNDACAO MUNICIPAL DE ENSINO SUPERIOR  DE MARILIA",
+        "valor": 8527808.700000001,
+        "valorFmt": "R$ 8.53M",
+        "qtdPagamentos": 104,
+        "situacaoSancoes": "REGULAR"
+      },
+      {
+        "cnpj": "CNPJ - PESSOA JURÍDICA - 42509583000120",
+        "nome": "POLLY RECURSOS HUMANOS E TRANSPORTES LTDA",
+        "valor": 8203209.599999998,
+        "valorFmt": "R$ 8.20M",
+        "qtdPagamentos": 32,
         "situacaoSancoes": "REGULAR"
       }
     ],
@@ -155,23 +155,23 @@
         "tipo": "alerta",
         "categoria": "concentracao",
         "titulo": "Alta concentração: PREFEITURA MUNICIPAL DE MARILI",
-        "descricao": "Fornecedor recebeu 29.7% do total pago (R$ 117.90 milhões)",
+        "descricao": "Fornecedor recebeu 29.8% do total pago (R$ 158.83 milhões)",
         "fornecedor": "PREFEITURA MUNICIPAL DE MARILIA",
         "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 44477909000100",
-        "valor": 117898983.31999998,
-        "percentual": 29.663434850091182,
-        "data": "2026-06-24"
+        "valor": 158832271.1200001,
+        "percentual": 29.79028176267583,
+        "data": "2026-06-26"
       },
       {
         "tipo": "alerta",
         "categoria": "concentracao",
         "titulo": "Alta concentração: IPREMM   INSTITUTO DE PREVIDEN",
-        "descricao": "Fornecedor recebeu 13.0% do total pago (R$ 51.64 milhões)",
+        "descricao": "Fornecedor recebeu 13.1% do total pago (R$ 69.69 milhões)",
         "fornecedor": "IPREMM   INSTITUTO DE PREVIDENCIA MUN  MARILIA",
         "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 59989830000136",
-        "valor": 51637206.580000035,
-        "percentual": 12.991943357722679,
-        "data": "2026-06-24"
+        "valor": 69689948.94000004,
+        "percentual": 13.07091562885594,
+        "data": "2026-06-26"
       }
     ],
     "outros": []
@@ -187,12 +187,12 @@
         "AGENCIA MUNICIPAL DE AGUA E ESGOTO DE MARILIA-AMAE"
       ],
       "valores": [
-        317856645.68,
-        52010203.17,
-        10319007.88,
-        8818762.47,
-        6009298.89,
-        2441683.11
+        426633312.47,
+        70202139.86,
+        13112850.39,
+        11468112.6,
+        8297096.81,
+        3454560.55
       ]
     },
     "evolucaoMensal": {
@@ -200,25 +200,29 @@
         "Jan",
         "Fev",
         "Mar",
-        "Abr"
+        "Abr",
+        "Mai"
       ],
       "empenhado": [
         328.6,
         183.49,
         160.78,
-        140.93
+        140.93,
+        183.22
       ],
       "liquidado": [
         116.55,
         140.25,
         161.39,
-        143.23
+        143.23,
+        155.72
       ],
       "pago": [
         40.72,
         107.85,
         121.78,
-        127.11
+        127.11,
+        135.71
       ]
     }
   },
