@@ -1,7 +1,7 @@
 {
   "fonte": "TCE-SP",
   "ano": 2026,
-  "ultima_atualizacao": "2026-08-15T09:16:38.294183",
+  "ultima_atualizacao": "2026-08-16T09:18:12.231851",
   "periodo": "Ano 2026",
   "totais": {
     "empenhado": 1142658131.0299942,
@@ -93,7 +93,7 @@
       "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 44477909000100",
       "valor": 200095003.34,
       "percentual": 29.722534968022874,
-      "data": "2026-08-15"
+      "data": "2026-08-16"
     },
     {
       "tipo": "alerta",
@@ -104,7 +104,7 @@
       "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 59989830000136",
       "valor": 87873079.34000006,
       "percentual": 13.052853043976464,
-      "data": "2026-08-15"
+      "data": "2026-08-16"
     }
   ],
   "qtd_despesas": 50046
