@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-25T09:24:43.676903",
+  "lastUpdate": "2026-08-26T09:30:49.405204",
   "ano": 2026,
   "municipio": "Marília",
   "codigoIBGE": "3529005",
@@ -25,22 +25,103 @@
   },
   "execucao": {
     "fonte": "TCE-SP",
-    "periodo": "",
-    "empenhado": 0,
-    "empenhadoFmt": "N/D",
-    "liquidado": 0,
-    "liquidadoFmt": "N/D",
-    "pago": 0,
-    "pagoFmt": "N/D",
-    "qtdDespesas": 0
+    "periodo": "Ano 2026",
+    "empenhado": 1314238989.1899977,
+    "empenhadoFmt": "R$ 1314.2M",
+    "liquidado": 1037334998.429991,
+    "liquidadoFmt": "R$ 1037.3M",
+    "pago": 819221942.9599967,
+    "pagoFmt": "R$ 819.2M",
+    "qtdDespesas": 59361
   },
   "fornecedores": {
     "fonte": "TCE-SP + Portal Federal",
-    "totalAnalisados": 0,
-    "top10": [],
+    "totalAnalisados": 10,
+    "top10": [
+      {
+        "cnpj": "CNPJ - PESSOA JURÍDICA - 44477909000100",
+        "nome": "PREFEITURA MUNICIPAL DE MARILIA",
+        "valor": 242008439.45000026,
+        "valorFmt": "R$ 242.01M",
+        "qtdPagamentos": 2866,
+        "situacaoSancoes": "REGULAR"
+      },
+      {
+        "cnpj": "CNPJ - PESSOA JURÍDICA - 59989830000136",
+        "nome": "IPREMM   INSTITUTO DE PREVIDENCIA MUN  MARILIA",
+        "valor": 106128624.63000005,
+        "valorFmt": "R$ 106.13M",
+        "qtdPagamentos": 213,
+        "situacaoSancoes": "REGULAR"
+      },
+      {
+        "cnpj": "CNPJ - PESSOA JURÍDICA - 59989830000136",
+        "nome": "IPREMM INST PREVIDENCIA DO MUNICIPIO DE MARILIA",
+        "valor": 66512180.639999904,
+        "valorFmt": "R$ 66.51M",
+        "qtdPagamentos": 835,
+        "situacaoSancoes": "REGULAR"
+      },
+      {
+        "cnpj": "CNPJ - PESSOA JURÍDICA - 52049244000162",
+        "nome": "IRMANDADE DA SANTA CASA MISERICORDIA DE MARILIA",
+        "valor": 56461571.50000001,
+        "valorFmt": "R$ 56.46M",
+        "qtdPagamentos": 101,
+        "situacaoSancoes": "REGULAR"
+      },
+      {
+        "cnpj": "CNPJ - PESSOA JURÍDICA - 09528436000122",
+        "nome": "ASSOCIACAO BENEFICENTE HOSPITAL UNIVERSITARIO",
+        "valor": 38521726.87999998,
+        "valorFmt": "R$ 38.52M",
+        "qtdPagamentos": 109,
+        "situacaoSancoes": "REGULAR"
+      },
+      {
+        "cnpj": "CNPJ - PESSOA JURÍDICA - 52050911000127",
+        "nome": "ASSOCIACAO FEMININA DE MARILIA MATERNIDADE GOTA LEITE",
+        "valor": 35908327.19999998,
+        "valorFmt": "R$ 35.91M",
+        "qtdPagamentos": 117,
+        "situacaoSancoes": "REGULAR"
+      },
+      {
+        "cnpj": "CNPJ - PESSOA JURÍDICA - 44478196000108",
+        "nome": "CAMARA MUNICIPAL DE MARILIA",
+        "valor": 13968131.720000006,
+        "valorFmt": "R$ 13.97M",
+        "qtdPagamentos": 441,
+        "situacaoSancoes": "REGULAR"
+      },
+      {
+        "cnpj": "CNPJ - PESSOA JURÍDICA - 52052420000115",
+        "nome": "FUNDACAO MUNICIPAL DE ENSINO SUPERIOR  DE MARILIA",
+        "valor": 12799190.959999997,
+        "valorFmt": "R$ 12.80M",
+        "qtdPagamentos": 155,
+        "situacaoSancoes": "REGULAR"
+      },
+      {
+        "cnpj": "CNPJ - PESSOA JURÍDICA - 42509583000120",
+        "nome": "POLLY RECURSOS HUMANOS E TRANSPORTES LTDA",
+        "valor": 12692388.459999997,
+        "valorFmt": "R$ 12.69M",
+        "qtdPagamentos": 49,
+        "situacaoSancoes": "REGULAR"
+      },
+      {
+        "cnpj": "CNPJ - PESSOA JURÍDICA - 00394460036170",
+        "nome": "SECRETARIA DA RECEITA FEDERAL DO BRASIL",
+        "valor": 11056837.429999994,
+        "valorFmt": "R$ 11.06M",
+        "qtdPagamentos": 106,
+        "situacaoSancoes": "REGULAR"
+      }
+    ],
     "sancoesVerificadas": {
-      "total": 0,
-      "regulares": 0,
+      "total": 10,
+      "regulares": 10,
       "irregulares": 0,
       "alertas": []
     }
@@ -67,21 +148,90 @@
     "porAutor": []
   },
   "alertas": {
-    "total": 0,
+    "total": 2,
     "lrf": [],
-    "fornecedores": [],
+    "fornecedores": [
+      {
+        "tipo": "alerta",
+        "categoria": "concentracao",
+        "titulo": "Alta concentração: PREFEITURA MUNICIPAL DE MARILI",
+        "descricao": "Fornecedor recebeu 29.5% do total pago (R$ 242.01 milhões)",
+        "fornecedor": "PREFEITURA MUNICIPAL DE MARILIA",
+        "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 44477909000100",
+        "valor": 242008439.45000026,
+        "percentual": 29.54125454398598,
+        "data": "2026-08-26"
+      },
+      {
+        "tipo": "alerta",
+        "categoria": "concentracao",
+        "titulo": "Alta concentração: IPREMM   INSTITUTO DE PREVIDEN",
+        "descricao": "Fornecedor recebeu 13.0% do total pago (R$ 106.13 milhões)",
+        "fornecedor": "IPREMM   INSTITUTO DE PREVIDENCIA MUN  MARILIA",
+        "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 59989830000136",
+        "valor": 106128624.63000005,
+        "percentual": 12.95480736838398,
+        "data": "2026-08-26"
+      }
+    ],
     "outros": []
   },
   "graficos": {
     "despesasPorOrgao": {
-      "labels": [],
-      "valores": []
+      "labels": [
+        "PREFEITURA MUNICIPAL DE MARÍLIA",
+        "IPREMM - INSTITUTO DE PREVIDÊNCIA DO MUNIC. MARÍLIA",
+        "CÂMARA MUNICIPAL DE MARÍLIA",
+        "FUMES - FUNDAÇÃO MUNICIPAL DE ENSINO SUPERIOR",
+        "EMPRESA MUNICIPAL DE MOBILIDADE URBANA DE MARILIA EMDURB",
+        "AGENCIA MUNICIPAL DE AGUA E ESGOTO DE MARILIA-AMAE"
+      ],
+      "valores": [
+        658339549.6,
+        107098729.0,
+        18702188.78,
+        17126124.45,
+        12505774.41,
+        5449576.72
+      ]
     },
     "evolucaoMensal": {
-      "labels": [],
-      "empenhado": [],
-      "liquidado": [],
-      "pago": []
+      "labels": [
+        "Jan",
+        "Fev",
+        "Mar",
+        "Abr",
+        "Mai",
+        "Jun",
+        "Jul"
+      ],
+      "empenhado": [
+        328.6,
+        183.49,
+        160.78,
+        140.93,
+        183.22,
+        145.64,
+        171.58
+      ],
+      "liquidado": [
+        116.55,
+        140.25,
+        161.39,
+        143.23,
+        155.72,
+        170.87,
+        149.33
+      ],
+      "pago": [
+        40.72,
+        107.85,
+        121.78,
+        127.11,
+        135.71,
+        140.04,
+        146.01
+      ]
     }
   },
   "fontes": {
