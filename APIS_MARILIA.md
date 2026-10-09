@@ -101,8 +101,9 @@ Um conjunto vazio vem como `{"dados": ["Nenhum registro encontrado."]}`.
 ## Radar do Observatório
 
 `python -m src.main observatorio --ano 2026` coleta as duas fontes e grava
-`docs/data/observatorio.json` (cerca de 35 kB) com os totais do painel e as oito regras do radar
-(`src/analyzers/radar.py`). Leva cerca de 1 minuto. Resultado de 09.10.2026:
+`docs/data/observatorio.json` com os totais do painel, as oito regras do radar
+(`src/analyzers/radar.py`) e os dados das demais páginas (`src/analyzers/paineis.py`). Leva
+cerca de 40 s com o cache de fornecedores em dia. Resultado de 09.10.2026:
 
 | # | Regra | Base | Resultado |
 |---|---|---|---:|
@@ -117,3 +118,26 @@ Um conjunto vazio vem como `{"dados": ["Nenhum registro encontrado."]}`.
 
 Os itens de cada regra são registros que pedem leitura, não constatação de irregularidade. CPFs
 de pessoas físicas saem mascarados (`***.456.789-**`).
+
+## Histórico entre coletas
+
+O portal só mostra o estado atual. Para saber o que apareceu, mudou ou sumiu, cada coleta grava em
+`historico/` (`src/analyzers/acervo.py`):
+
+| Arquivo | Conteúdo |
+|---|---|
+| `estado/{compra-direta,contratos,licitacoes,obras}.json` | Registros da coleta, em ordem estável |
+| `estado/diario-oficial.json` | Número, data e impressão digital do texto de cada edição |
+| `estado/despesas.json` | IDs dos lançamentos de Despesas e Investimentos |
+| `mudancas/AAAA-MM-DD.json` | Novos, alterados (com os campos que mudaram) e removidos |
+| `radar.jsonl` | Uma linha por coleta: totais e resultado de cada regra |
+| `cache/fornecedores_conhecidos.json` | Fornecedores dos dois anos anteriores, renovado a cada 30 dias |
+
+Os arquivos de estado são sobrescritos a cada coleta; as versões anteriores ficam no histórico do
+git. Os conjuntos não têm chave única (há registros repetidos por completo), por isso a comparação
+usa uma impressão digital do conteúdo de cada registro, sem `dataAtualizacao`. Uma saída e uma
+entrada com o mesmo tipo, número e processo contam como alteração.
+
+O cache guarda CNPJs por extenso. De CPFs, guarda só os seis dígitos que a máscara deixa à vista,
+junto com o nome normalizado. Dados brutos de despesas não entram no repositório: os anos
+anteriores podem ser recoletados no portal quando for preciso (`--renovar-cache`).

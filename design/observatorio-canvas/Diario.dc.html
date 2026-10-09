@@ -35,8 +35,8 @@ a{color:#1b67b2;text-decoration:none}a:hover{color:#223463;text-decoration:under
 
 <main>
 <div style="padding: 56px 0 30px; max-width: 900px">
-<p style="margin: 0 0 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Diário Oficial do Município · 196 edições em 2026, 6 delas extras</p>
-<h1 style="margin: 0 0 20px; font-style: italic; font-weight: 400; font-size: 46px; line-height: 1.12; color: #111111">A mesma justificativa, em 105 de 196 edições</h1>
+<p style="margin: 0 0 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Diário Oficial do Município · {{ txt.contagem }}</p>
+<h1 style="margin: 0 0 20px; font-style: italic; font-weight: 400; font-size: 46px; line-height: 1.12; color: #111111">{{ txt.titulo }}</h1>
 <p style="margin: 0; font-size: 21px; line-height: 1.5; color: #222222"><span style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-variant-caps: all-small-caps; letter-spacing: 0.08em; font-weight: 500; color: #111111">A busca percorre</span> o texto integral de todas as edições do ano, e não só as já analisadas. Cada traço abaixo é uma edição; os altos e escuros trazem a frase procurada.</p>
 </div>
 
@@ -48,14 +48,14 @@ a{color:#1b67b2;text-decoration:none}a:hover{color:#223463;text-decoration:under
 <button type="button" style="min-height: 44px; padding: 0 22px; background: #223463; border: 1px solid #223463; cursor: pointer; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #ffffff">Buscar</button>
 </div>
 
-<div role="img" aria-label="Faixa com as 196 edições de 2026, da nº 4103 à nº 4298; 105 delas trazem a frase procurada" style="display: flex; align-items: flex-end; gap: 1px; height: 30px; padding-bottom: 6px; border-bottom: 1px solid #cccccc">
+<div role="img" aria-label="{{ txt.faixa_aria }}" style="display: flex; align-items: flex-end; gap: 1px; height: 30px; padding-bottom: 6px; border-bottom: 1px solid #cccccc">
 <sc-for list="{{ faixa }}" as="t" hint-placeholder-count="196">
-<span style="flex: 1 1 0; min-width: 1px; height: {{ t.h }}; background: {{ t.cor }}"></span>
+<span style="flex: 1 1 0; min-width: 0; height: {{ t.h }}; background: {{ t.cor }}"></span>
 </sc-for>
 </div>
 <div style="display: flex; justify-content: space-between; padding-top: 4px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; color: #6b6b6b">
-<span>nº 4103 · janeiro</span>
-<span>nº 4298 · 9 de outubro</span>
+<span>{{ txt.faixa_inicio }}</span>
+<span>{{ txt.faixa_fim }}</span>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 44px 64px; padding-top: 44px">
@@ -63,21 +63,21 @@ a{color:#1b67b2;text-decoration:none}a:hover{color:#223463;text-decoration:under
 <div style="flex: 62 1 540px; min-width: 0">
 
 <section>
-<p style="margin: 0 0 6px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">I. Edição 4298, de 9 de outubro de 2026</p>
+<p style="margin: 0 0 6px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">I. {{ txt.trecho_titulo }}</p>
 <h2 style="margin: 0 0 16px; font-style: italic; font-weight: 400; font-size: 31px; line-height: 1.15; color: #111111">O trecho encontrado</h2>
 <blockquote style="margin: 0; padding: 0 0 0 22px; border-left: 2px solid #1b67b2; font-size: 19px; line-height: 1.55; color: #222222">
-<p style="margin: 0 0 10px">Risco de Descontinuidade Operacional. <mark style="background: #d9e6f3; color: #111111">A interrupção de serviços contratados pode gerar impactos diretos à população.</mark> A ausência de pagamentos tempestivos pode levar à suspensão de contratos […].</p>
-<p style="margin: 0">Fundamentação Legal. A quebra da ordem cronológica de pagamentos encontra amparo no artigo 141, §1º, inciso III e V […].</p>
+<p style="margin: 0 0 10px">{{ txt.trecho_antes }} <mark style="background: #d9e6f3; color: #111111">{{ txt.trecho_frase }}</mark> {{ txt.trecho_depois }}</p>
+<p style="margin: 0">{{ txt.trecho_seguinte }}</p>
 </blockquote>
 <div style="display: flex; flex-wrap: wrap; gap: 0 26px; margin-top: 8px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase">
-<a href="https://www.marilia.sp.gov.br/portal/diario-oficial/ver/4451" style="display: inline-flex; align-items: center; min-height: 44px">Abrir o PDF da edição</a>
+<a href="{{ txt.edicao_link }}" style="display: inline-flex; align-items: center; min-height: 44px">{{ txt.edicao_rotulo }}</a>
 <a href="Radar.dc.html" style="display: inline-flex; align-items: center; min-height: 44px">Ver o alerta no radar</a>
 </div>
 </section>
 
 <section style="margin-top: 40px">
 <p style="margin: 0 0 6px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">II. Edições recentes</p>
-<h2 style="margin: 0 0 16px; font-style: italic; font-weight: 400; font-size: 31px; line-height: 1.15; color: #111111">O que cada edição de outubro traz</h2>
+<h2 style="margin: 0 0 16px; font-style: italic; font-weight: 400; font-size: 31px; line-height: 1.15; color: #111111">{{ txt.recentes_titulo }}</h2>
 <div style="overflow-x: auto">
 <table style="width: 100%; min-width: 580px; border-collapse: collapse; font-size: 17px; line-height: 1.4">
 <thead>
@@ -123,7 +123,7 @@ a{color:#1b67b2;text-decoration:none}a:hover{color:#223463;text-decoration:under
 <span style="flex: 0 0 62px; text-align: right; font-size: 17px; color: #111111">{{ m.valor }}</span>
 </div>
 </sc-for>
-<p style="margin: 10px 0 34px; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">Edições com a frase sobre o total do mês. Outubro vai até o dia 9.</p>
+<p style="margin: 10px 0 34px; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">{{ txt.nota_meses }}</p>
 
 <p style="margin: 0 0 8px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Serialidade</p>
 <p style="margin: 0 0 34px; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">A ordem cronológica é a regra, e a quebra, a exceção que pede justificativa prévia (Lei 14.133/2021, art. 141, §1º). Fórmula repetida a cada edição esvazia a excepcionalidade; a repetição se prova comparando os textos.</p>
@@ -138,7 +138,7 @@ a{color:#1b67b2;text-decoration:none}a:hover{color:#223463;text-decoration:under
 </div>
 </main>
 
-<footer style="margin-top: 56px; padding-top: 14px; border-top: 1px solid #cccccc; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; line-height: 1.6; letter-spacing: 0.04em; color: #6b6b6b">Fonte: dados abertos do site da Prefeitura, conjunto diário oficial, exercício de 2026 · coleta de 09.10.2026 · matra.org.br</footer>
+<footer style="margin-top: 56px; padding-top: 14px; border-top: 1px solid #cccccc; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; line-height: 1.6; letter-spacing: 0.04em; color: #6b6b6b">Fonte: dados abertos do site da Prefeitura, conjunto diário oficial, exercício de {{ txt.exercicio }} · coleta de {{ txt.coleta }} · matra.org.br</footer>
 
 </div>
 </x-dc>
@@ -164,7 +164,25 @@ edicoes: [
 { n: '4294', data: '03.10.2026', chars: '19.734', cnpjs: '4', disp: '4', port: '6', quebra: 'Não', cor: '#6b6b6b' },
 { n: '4293', data: '02.10.2026', chars: '12.561', cnpjs: '3', disp: '3', port: '17', quebra: 'Não', cor: '#6b6b6b' },
 { n: '4292', data: '01.10.2026', chars: '45.795', cnpjs: '3', disp: '9', port: '21', quebra: 'Sim', cor: '#111111' }
-]
+],
+txt: {
+contagem: '196 edições em 2026, 6 delas extras',
+titulo: 'A mesma justificativa, em 105 de 196 edições',
+faixa_aria: 'Faixa com as 196 edições de 2026, da nº 4103 à nº 4298; 105 delas trazem a frase procurada',
+faixa_inicio: 'nº 4103 · janeiro',
+faixa_fim: 'nº 4298 · 9 de outubro',
+trecho_titulo: 'Edição 4298, de 9 de outubro de 2026',
+trecho_antes: 'Risco de Descontinuidade Operacional.',
+trecho_frase: 'A interrupção de serviços contratados pode gerar impactos diretos à população.',
+trecho_depois: 'A ausência de pagamentos tempestivos pode levar à suspensão de contratos […].',
+trecho_seguinte: 'Fundamentação Legal. A quebra da ordem cronológica de pagamentos encontra amparo no artigo 141, §1º, inciso III e V […].',
+edicao_link: 'https://www.marilia.sp.gov.br/portal/diario-oficial/ver/4451',
+edicao_rotulo: 'Abrir o PDF da edição',
+recentes_titulo: 'O que cada edição de outubro traz',
+nota_meses: 'Edições com a frase sobre o total do mês. Outubro vai até o dia 9.',
+exercicio: '2026',
+coleta: '09.10.2026'
+}
 };
 }
 }
