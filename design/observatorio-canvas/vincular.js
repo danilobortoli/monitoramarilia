@@ -60,6 +60,21 @@ function Main(vals, d, config) {
   };
 }
 
+const reais = (v) => 'R$ ' + new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(Number(v) || 0);
+
+// Cada registro do radar vira um título e uma linha de detalhe. Nas diárias, o nome do
+// servidor fica de fora: a lista indica onde olhar, não acusa ninguém.
+const ITENS = {
+  compra_direta_aberta: (i) => ({ titulo: `${i.modalidade} nº ${i.processo}: ${i.titulo}`, detalhe: `Publicada em ${dataBR(i.data)}${i.sem_valor_estimado ? ' · sem valor estimado' : ''}` }),
+  contrato_sem_contratada: (i) => ({ titulo: `${i.tipo} nº ${i.numero}, processo ${i.processo}`, detalhe: `Assinado em ${dataBR(i.assinatura)} · ${reais(i.valor)}` }),
+  licitacao_sem_valor: (i) => ({ titulo: `${i.modalidade}, processo ${i.processo}: ${i.titulo}`, detalhe: `${i.situacao || 'Situação não informada'} · ${dataBR(i.data)}` }),
+  quebra_ordem_cronologica: (i) => ({ titulo: `Edição ${i.edicao}`, detalhe: dataExtenso(i.data) }),
+  fornecedor_novo_valor_alto: (i) => ({ titulo: i.fornecedor, detalhe: `${i.documento} · ${reais(i.empenhado)} empenhados em ${plural(i.lancamentos, 'lançamento', 'lançamentos')}` }),
+  diarias_atipicas: (i) => ({ titulo: `${i.cargo}, ${i.secretaria}`, detalhe: `${reais(i.total)} em ${plural(i.registros, 'registro', 'registros')}; o corte do cargo é ${reais(i.corte_do_cargo)}` }),
+  obra_parada_ou_cancelada: (i) => ({ titulo: i.obra, detalhe: `${i.situacao} · ${i.categoria} · ${reais(i.valor)}` }),
+  contrato_a_vencer: (i) => ({ titulo: `${i.tipo} nº ${i.numero}`, detalhe: `Termina em ${dataBR(i.fim)} · ${reais(i.valor)} · ${i.contratada || 'sem o nome da contratada'}` }),
+};
+
 function Radar(vals, d) {
   const porNumero = Object.fromEntries(d.regras.map((r) => [String(r.n), r]));
   const ligar = (item) => {
@@ -68,11 +83,29 @@ function Radar(vals, d) {
     const base = typeof r.base === 'number' ? `${numero(r.base)} ${UNIDADE_BASE[r.id] || 'registros'}` : r.base;
     return { ...item, regra: r.regra, fonte: r.fonte, base, resultado: `${numero(r.resultado)} ${r.unidade}`, fato: r.fato || item.fato };
   };
+  const regras = vals.regras.map(ligar);
   return {
     ...vals,
-    regras: vals.regras.map(ligar),
+    regras,
     sel: ligar(vals.sel),
-    txt: { ...vals.txt, exercicio: String(d.exercicio), coleta: dataBR(d.coleta.data) },
+    txt: {
+      ...vals.txt,
+      exercicio: String(d.exercicio),
+      coleta: dataBR(d.coleta.data),
+      nota_regras: 'Clique numa regra para ver o fato e os registros que ela aponta.',
+    },
+    // Dados que a página usa no navegador para trocar o alerta selecionado.
+    __cliente: {
+      regras: regras.map((r) => {
+        const original = porNumero[r.n] || {};
+        const formatar = ITENS[original.id] || (() => null);
+        return {
+          n: r.n, familia: r.familia, regra: r.regra, norma: r.norma, fato: r.fato, falta: r.falta,
+          total: original.resultado || 0,
+          itens: (original.itens || []).map(formatar).filter(Boolean),
+        };
+      }),
+    },
   };
 }
 

@@ -86,7 +86,7 @@ def novidades(
             "titulo": f"{c.get('modalidade')} nº {c.get('numeroProcesso')}: {_curto(c.get('titulo'))}",
             "detalhe": detalhe,
             "fonte": "Dados abertos · compra direta",
-            "acao": "Ver no radar", "link": "radar.html",
+            "acao": "Ver no radar", "link": "radar.html#1",
         })
 
     sem_nome = [c for c in novos_contratos if _vazio(c.get("nomeContratada"))]
@@ -104,7 +104,7 @@ def novidades(
                 f"Somam {moeda(soma)}."
             ),
             "fonte": "Dados abertos · contratos",
-            "acao": "Ver no radar", "link": "radar.html",
+            "acao": "Ver no radar", "link": "radar.html#2",
         })
 
     frase = frase_diario.lower()
@@ -156,7 +156,7 @@ def novidades(
             "titulo": f"{r.get('tipo')} nº {r.get('numeroContrato')}, processo {r.get('numeroProcesso')}",
             "detalhe": f"Campos alterados desde a coleta anterior: {campos}.",
             "fonte": "Dados abertos · contratos",
-            "acao": "Ver no radar", "link": "radar.html",
+            "acao": "Ver no radar", "link": "radar.html#2",
         })
 
     itens = itens[:MAX_NOVIDADES]
