@@ -101,6 +101,13 @@ jobs:
           python -m src.main portal-federal --tipo convenios --ano $ANO \
             -o docs/data/federal_convenios_${ANO}.json || echo "Portal Federal convênios: indisponível"
 
+      - name: Calcular Radar do Observatório (Prefeitura de Marília)
+        run: |
+          ANO=$(date +%Y)
+          echo "Coletando portal e dados abertos da Prefeitura e calculando o radar..."
+          python -m src.main observatorio --ano $ANO \
+            -o docs/data/observatorio.json || echo "Observatório: indisponível"
+
       - name: Atualizar dashboard
         run: |
           echo "Gerando dados para o dashboard..."
@@ -147,7 +154,7 @@ jobs:
           git commit -m "chore: atualização automática de dados e relatórios
 
           Data: $(date +'%Y-%m-%d %H:%M:%S')
-          Fontes: SICONFI, TCE-SP, Portal Federal"
+          Fontes: SICONFI, TCE-SP, Portal Federal, Prefeitura de Marília"
           git push
 
       - name: Resumo da execução
@@ -160,6 +167,7 @@ jobs:
           echo "- SICONFI (Tesouro Nacional): Indicadores fiscais e LRF" >> $GITHUB_STEP_SUMMARY
           echo "- TCE-SP: Despesas e fornecedores municipais" >> $GITHUB_STEP_SUMMARY
           echo "- Portal Federal: Transferências, convênios, sanções" >> $GITHUB_STEP_SUMMARY
+          echo "- Prefeitura de Marília: portal da transparência e dados abertos (radar)" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Arquivos Gerados" >> $GITHUB_STEP_SUMMARY
           if [ -f docs/data/dashboard.json ]; then

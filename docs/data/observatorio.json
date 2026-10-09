@@ -1,0 +1,931 @@
+{
+  "gerado_em": "2026-10-09T18:04:02",
+  "exercicio": 2026,
+  "fontes": {
+    "portal": "https://transparencia.marilia.sp.gov.br",
+    "dados_abertos": "https://www.marilia.sp.gov.br/portal/dados-abertos"
+  },
+  "totais": {
+    "compras_diretas": 673,
+    "dispensas": 490,
+    "inexigibilidades": 175,
+    "licitacoes": 163,
+    "licitacoes_abertas": 46,
+    "contratos": 1151,
+    "contratos_vigentes": 1040,
+    "obras": 38,
+    "obras_em_andamento": 22,
+    "obras_concluidas": 9,
+    "obras_canceladas": 7,
+    "empenhos": 20839,
+    "anulacoes": 1737,
+    "empenhado_liquido": 1350234459.9
+  },
+  "regras": [
+    {
+      "id": "compra_direta_aberta",
+      "familia": "Contratação direta",
+      "regra": "Nova dispensa ou inexigibilidade",
+      "fonte": "Dados abertos · compra direta",
+      "base": 673,
+      "resultado": 58,
+      "itens": [
+        {
+          "processo": 555,
+          "modalidade": "Dispensa",
+          "titulo": "Prestação de serviços de apresentação de DJ, incluindo fornecimento de equipamentos de sonorização e iluminação necessários à realização do evento apoiado pela Secretaria Municipal da Cultura.",
+          "data": "2026-10-09",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 153,
+          "modalidade": "Inexigibilidade",
+          "titulo": "Cadastro para fins de PNCP do CHAMAMENTO PÚBLICO Nº 010/2026, com o intuito de firmar TERMO DE COLABORAÇÃO, objetivando a Seleção de Entidade e Organizações da Sociedade Civil (OSCs), para Execução Indireta do Serviço de Acolhimento em Família Acolhedora para crianças e adolescentes no município de Marília/SP.",
+          "data": "2026-10-07",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 540,
+          "modalidade": "Dispensa",
+          "titulo": "LICENCIAMENTO DE SOTFWARE DE BACKUP E RECOVERY (COPIA DE SEGURANÇA) PARA MAQUINAS VIRTUAIS DO DATACENTER (Licenciamento de software de backup e recovery para proteção de 32 (trinta e duas) máquinas virtuais do Datacenter municipal, com suporte a armazenamento híbrido em repositório local e em nuvem, com capacidade de até 15 TB (quinze terabytes) de dados em nuvem), destinado à",
+          "data": "2026-10-06",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 535,
+          "modalidade": "Dispensa",
+          "titulo": "Aquisição de macacão de segurança destinado à Secretaria Municipal da Saúde.",
+          "data": "2026-09-24",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 505,
+          "modalidade": "Dispensa",
+          "titulo": "Aquisição de 01 (uma) mesa térmica com 8 cubas, 220V, e 01 (uma) panela de pressão profissional, capacidade de 22 litros, destinadas à utilização nos Jogos Regionais e Jogos Abertos, no atendimento à delegação e aos atletas, pela Secretaria Municipal de Esportes, Lazer e Juventude.",
+          "data": "2026-09-22",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 526,
+          "modalidade": "Dispensa",
+          "titulo": "Aquisição de 23 Wind Banners para o 12º Festival Gastronômico de Marília, apoiado pela Secretaria Municipal do Trabalho, Turismo e Desenvolvimento Econômico",
+          "data": "2026-09-17",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 96,
+          "modalidade": "Inexigibilidade",
+          "titulo": "CHAMADA PÚBLICA 001 DE 2026, PARA CREDENCIAMENTO DE FORNECEDORES PARA AQUISIÇÃO PARCELADA EM ENTREGAS SEMANAIS DE HORTIFRUTIS DA AGRICULTURA FAMILIAR E DO EMPREENDEDOR FAMILIAR PARA COMPOR O CARDÁPIO DA MERENDA ESCOLAR, ATRAVÉS DE INEXIGIBILIDADE DE LICITAÇÃO nº 096-2026, CONFORME A LEI FEDERAL Nº 11.947, DE 16/06/09, Resolução FNDE/CD nº 6, de 8 de maio de 2020, com suas alter",
+          "data": "2026-07-20",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 442,
+          "modalidade": "Dispensa",
+          "titulo": "Aquisição de Certificado digital e-CPF destinado a Secretaria Municipal de Finanças e Planejamento Econômico.",
+          "data": "2026-07-18",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 438,
+          "modalidade": "Dispensa",
+          "titulo": "Confecção de painéis destinados às galerias de fotografias e de destaque dos atiradores do Tiro de Guerra, vinculado a Secretaria Municipal da Administração",
+          "data": "2026-07-17",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 439,
+          "modalidade": "Dispensa",
+          "titulo": "Aquisição de cadeira de rodas postural monobloco sob medida, destinado à Secretaria Municipal da Saúde.",
+          "data": "2026-07-17",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 415,
+          "modalidade": "Dispensa",
+          "titulo": "Aquisição de materiais a serem utilizados no Controle Entomológico de Vetores no combate ao mosquito Aedes Aegypti, destinado à Divisão de Zoonoses, vinculado à Secretaria Municipal da Saúde",
+          "data": "2026-07-06",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 98,
+          "modalidade": "Inexigibilidade",
+          "titulo": "Inexigibilidade nº 98/2026 - Termo de Colaboração com a entidade: PROJETO SEMEAR MARILIA, contemplada com recursos provenientes da Emenda Parlamentar Federal 2026.316.00011 – via FNAS – Fundo Nacional de Assistência Social, na modalidade GND.3 – Custeio, destinado a Secretaria Municipal de Assistência Social e Cidadania",
+          "data": "2026-07-06",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 266,
+          "modalidade": "Dispensa",
+          "titulo": "Aquisição de tatame 1x1x30mm, destinado à Secretaria Municipal da Assistência Social e Cidadania.",
+          "data": "2026-07-04",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 102,
+          "modalidade": "Inexigibilidade",
+          "titulo": "Termo de Colaboração com a entidade: ASSOCIACAO DE PAIS E AMIGOS DO AUTISTA - ESPACO POTENCIAL MARILIA (APA - ESPACO POTENCIAL), CNPJ 11.911.681/0001-66, contemplada com recursos provenientes da Emenda Individuais Impositivas nos 231, 77, 96 e 146, relacionadas ao Projeto de Lei 186/2025, na modalidade custeio, embasados nos Artigos 29 e 31 da Lei Federal nº 13019/2014",
+          "data": "2026-07-01",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 394,
+          "modalidade": "Dispensa",
+          "titulo": "Conserto de autoclave da USF Padre Nóbrega, vinculado à Secretaria Municipal da Saúde.",
+          "data": "2026-06-23",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 398,
+          "modalidade": "Dispensa",
+          "titulo": "Aquisição de brinquedos diversos, destinados à Secretaria Municipal de Assistência Social e Cidadania.",
+          "data": "2026-06-23",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 95,
+          "modalidade": "Inexigibilidade",
+          "titulo": "Apresentação Teatral Café com Bom Humor, destinada à Secretaria Municipal de Assistência Social e Cidadania.",
+          "data": "2026-06-20",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 349,
+          "modalidade": "Dispensa",
+          "titulo": "Aquisição de uniformes para a equipe de coreografia com a finalidade de disputar o JOMI e os Jogos Regionais, destinada à Secretaria Municipal de Esportes, Lazer e Juventude.",
+          "data": "2026-06-17",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 355,
+          "modalidade": "Dispensa",
+          "titulo": "Aquisição de bexigas, destinada à Secretaria Municipal de Assistência Social e Cidadania",
+          "data": "2026-06-04",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 75,
+          "modalidade": "Inexigibilidade",
+          "titulo": "Termo de Colaboração com a entidade: INSTITUTO STUDIO MOVE ART DANCA, CNPJ 58.144.300/0001-24, contemplada com recursos provenientes da Emenda Parlamentar nº 234 ao Projeto de Lei nº 118/2026, na modalidade custeio, embasados nos Artigos 29 e 31 da Lei Federal nº 13019/2014.",
+          "data": "2026-06-04",
+          "sem_valor_estimado": true
+        }
+      ],
+      "n": 1
+    },
+    {
+      "id": "contrato_sem_contratada",
+      "familia": "Contratos",
+      "regra": "Contrato ou ata sem nome da contratada",
+      "fonte": "Dados abertos · contratos",
+      "base": 1151,
+      "resultado": 473,
+      "itens": [
+        {
+          "numero": 200,
+          "processo": "91",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 6024,
+          "assinatura": "2026-10-07"
+        },
+        {
+          "numero": 199,
+          "processo": "91",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 3660,
+          "assinatura": "2026-10-07"
+        },
+        {
+          "numero": 198,
+          "processo": "91",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 983.16,
+          "assinatura": "2026-10-07"
+        },
+        {
+          "numero": 197,
+          "processo": "91",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 5400,
+          "assinatura": "2026-10-07"
+        },
+        {
+          "numero": 196,
+          "processo": "91",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 63820.7,
+          "assinatura": "2026-10-07"
+        },
+        {
+          "numero": 194,
+          "processo": "94",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 8084,
+          "assinatura": "2026-09-30"
+        },
+        {
+          "numero": 195,
+          "processo": "84",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 573573283.96,
+          "assinatura": "2026-09-29"
+        },
+        {
+          "numero": 195,
+          "processo": "84",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 573573283.96,
+          "assinatura": "2026-09-29"
+        },
+        {
+          "numero": 193,
+          "processo": "79",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 65600,
+          "assinatura": "2026-09-16"
+        },
+        {
+          "numero": 192,
+          "processo": "79",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 3560,
+          "assinatura": "2026-09-16"
+        },
+        {
+          "numero": 191,
+          "processo": "79",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 3000,
+          "assinatura": "2026-09-16"
+        },
+        {
+          "numero": 187,
+          "processo": "87",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 175064,
+          "assinatura": "2026-09-10"
+        },
+        {
+          "numero": 185,
+          "processo": "51",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 249899.76,
+          "assinatura": "2026-09-08"
+        },
+        {
+          "numero": 184,
+          "processo": "51",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 68137.8,
+          "assinatura": "2026-09-08"
+        },
+        {
+          "numero": 183,
+          "processo": "51",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 10662.61,
+          "assinatura": "2026-09-08"
+        },
+        {
+          "numero": 182,
+          "processo": "51",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 2157.3,
+          "assinatura": "2026-09-08"
+        },
+        {
+          "numero": 181,
+          "processo": "51",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 19042,
+          "assinatura": "2026-09-08"
+        },
+        {
+          "numero": 180,
+          "processo": "51",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 4096,
+          "assinatura": "2026-09-08"
+        },
+        {
+          "numero": 179,
+          "processo": "51",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 50804.92,
+          "assinatura": "2026-09-08"
+        },
+        {
+          "numero": 178,
+          "processo": "51",
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 31560.5,
+          "assinatura": "2026-09-08"
+        }
+      ],
+      "n": 2
+    },
+    {
+      "id": "licitacao_sem_valor",
+      "familia": "Licitações",
+      "regra": "Licitação sem valor estimado",
+      "fonte": "Dados abertos · licitações",
+      "base": 163,
+      "resultado": 163,
+      "itens": [
+        {
+          "processo": 10,
+          "modalidade": "Chamamento Público",
+          "situacao": "Aberto",
+          "titulo": "CHAMAMENTO PÚBLICO Nº 010/2026, com o intuito de firmar TERMO DE COLABORAÇÃO, objetivando a Seleção de Entidade e Organizações da Sociedade Civil (OSCs), para Execução Indireta do Serviço de Acolhimento em Família Acolhedora para crianças e adolescentes no município de Marília/SP.",
+          "data": "2026-10-07"
+        },
+        {
+          "processo": 106,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Aberto",
+          "titulo": "Contratação de Empresa Visando o Fornecimento de Material e Mão de Obra para Reforma da Praça Dr. João Neves Camargo, destinados à Secretaria Municipal de Trabalho, Turismo e Desenvolvimento Econômico.",
+          "data": "2026-10-07"
+        },
+        {
+          "processo": 105,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Aberto",
+          "titulo": "Contratação de empresa para fornecimento de Carnes Diversas, destinadas ao 10º Grupamento de Bombeiros de Marília - Secretaria Municipal da Administração.",
+          "data": "2026-10-07"
+        },
+        {
+          "processo": 104,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Aberto",
+          "titulo": "Aquisição de um 01 (um) micro-ônibus ADAPTADO destinado à Secretaria Municipal de Assistência Social e Cidadania - Conselho Municipal dos Direitos da Pessoa Idosa – COMDIM, conforme condições, quantidades e exigências estabelecidas neste Edital e seus anexos.",
+          "data": "2026-10-05"
+        },
+        {
+          "processo": 103,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Aberto",
+          "titulo": "Aquisição de um 01 (um) ÔNIBUS RODOVIÁRIO ADAPTADO destinado à Secretaria Municipal de Assistência Social e Cidadania - Conselho Municipal dos Direitos da Criança e do Adolescente (CMDCA), conforme condições, quantidades e exigências estabelecidas no Edital e seus anexos.",
+          "data": "2026-10-05"
+        },
+        {
+          "processo": 102,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Aberto",
+          "titulo": "CONTRATAÇÃO PARA FORNECIMENTO DE OXIGÊNIO MEDICINAL",
+          "data": "2026-09-28"
+        },
+        {
+          "processo": 8,
+          "modalidade": "Chamamento Público",
+          "situacao": "Aberto",
+          "titulo": "Pré Qualificação de produtos/marcas para eventual aquisição de alimentação oral e enteral, nas futuras compras desta municipalidade.",
+          "data": "2026-09-25"
+        },
+        {
+          "processo": 101,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Aberto",
+          "titulo": "PE 101/2026  Registro de preços, pelo prazo de 12 meses, visando eventual execução de serviço de retirada, manutenção, limpeza e eventual aquisição de calhas e rufos, destinados a diversas secretarias, conforme condições, quantidades e exigências estabelecidas neste Edital e seus anexos.",
+          "data": "2026-09-25"
+        },
+        {
+          "processo": 1,
+          "modalidade": "Leilão - Eletrônico",
+          "situacao": "Aberto",
+          "titulo": "Alienação dos bens imóveis constantes do ANEXO I deste Edital.",
+          "data": "2026-09-24"
+        },
+        {
+          "processo": 100,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Aberto",
+          "titulo": "Registro de preços, pelo prazo de 12 meses, visando eventual prestação de serviços de Locação de Caminhão Trio Elétrico com Som, Iluminação Cênica e Gerador de Energia, destinados à Secretaria Municipal da Cultura.",
+          "data": "2026-09-22"
+        },
+        {
+          "processo": 97,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Aberto",
+          "titulo": "Registro de preços, pelo prazo de 12 meses, visando eventual fornecimento, preparo e organização de Coffee Breaks, Brunchs e Locação de Sala para Eventos, destinados às diversas Secretarias.",
+          "data": "2026-09-18"
+        },
+        {
+          "processo": 99,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Aberto",
+          "titulo": "Registro de preços visando eventual aquisição de MATERIAIS ODONTOLÓGICOS destinados à Secretaria Municipal da Saúde - Prazo 12 meses",
+          "data": "2026-09-18"
+        },
+        {
+          "processo": 14,
+          "modalidade": "Concorrência Eletrônica",
+          "situacao": "Aberto",
+          "titulo": "CP 14/2026-Contratação integrada de empresa especializada para execução das obras de construção e adequação do Sistema de Drenagem – Canal Assad Haddad.",
+          "data": "2026-09-04"
+        },
+        {
+          "processo": 98,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Homologado",
+          "titulo": "PE 098/2026-Aquisição de Unidade Odontológica Portátil, destinado a Secretaria Municipal da Saúde, conforme condições, quantidades e exigências estabelecidas neste Edital e seus anexos.",
+          "data": "2026-08-28"
+        },
+        {
+          "processo": 72,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Aberto",
+          "titulo": "Contratação de Empresa visando o Fornecimento de Material e Mão de Obra para modernização do Banco de Alimentos, destinado à Secretaria Municipal de Assistência Social e Cidadania.",
+          "data": "2026-08-28"
+        },
+        {
+          "processo": 95,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Suspenso",
+          "titulo": "Registro de Preços, pelo prazo de 12 meses, visando eventual execução de serviço de pintura predial com fornecimento de materiais, destinados às diversas secretarias municipais, conforme condições, quantidades e exigências estabelecidas no Edital e seus anexos.",
+          "data": "2026-08-25"
+        },
+        {
+          "processo": 96,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Homologado",
+          "titulo": "Aquisição de MATERIAIS PERMANENTES E MATERIAIS DE CONSUMO DESTINADOS À MANUTENÇÃO E QUALIFICAÇÃO DOS ATENDIMENTOS GINECOLÓGICOS, destinados à Secretaria Municipal da Saúde",
+          "data": "2026-08-21"
+        },
+        {
+          "processo": 94,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Homologado",
+          "titulo": "Registro de preços, pelo prazo de 12 meses, visando eventual aquisição de insumos para Auriculoterapia e Aromaterapia, destinados à Secretaria Municipal da Saúde, conforme condições, quantidades e exigências estabelecidas neste Edital e seus anexos.",
+          "data": "2026-08-21"
+        },
+        {
+          "processo": 86,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Homologado",
+          "titulo": "PE 086/2026-Contratação de serviços de transporte de alunos residentes na zona rural, destinado a Secretaria da Educação, conforme condições, quantidades e exigências estabelecidas neste Edital e seus anexos.",
+          "data": "2026-08-17"
+        },
+        {
+          "processo": 93,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Homologado",
+          "titulo": "Registro de preços, pelo prazo de 12 meses, visando eventual aquisição de faca, lâmina e fio de nylon para roçadeiras costais, correntes e sabres para motosserra e motopoda, destinados às Secretarias Municipais do Meio Ambiente e Serviços Públicos e da Educação.",
+          "data": "2026-08-11"
+        }
+      ],
+      "n": 3
+    },
+    {
+      "id": "quebra_ordem_cronologica",
+      "familia": "Pagamentos",
+      "regra": "Quebra da ordem cronológica",
+      "fonte": "Diário Oficial",
+      "base": 196,
+      "resultado": 105,
+      "itens": [
+        {
+          "edicao": "4298",
+          "data": "2026-10-09"
+        },
+        {
+          "edicao": "4297",
+          "data": "2026-10-08"
+        },
+        {
+          "edicao": "4295",
+          "data": "2026-10-06"
+        },
+        {
+          "edicao": "4292",
+          "data": "2026-10-01"
+        },
+        {
+          "edicao": "4291",
+          "data": "2026-09-30"
+        },
+        {
+          "edicao": "4290",
+          "data": "2026-09-29"
+        },
+        {
+          "edicao": "4289",
+          "data": "2026-09-29"
+        },
+        {
+          "edicao": "4288",
+          "data": "2026-09-26"
+        },
+        {
+          "edicao": "4287",
+          "data": "2026-09-25"
+        },
+        {
+          "edicao": "4286",
+          "data": "2026-09-24"
+        },
+        {
+          "edicao": "4285",
+          "data": "2026-09-23"
+        },
+        {
+          "edicao": "4284",
+          "data": "2026-09-22"
+        },
+        {
+          "edicao": "4281",
+          "data": "2026-09-17"
+        },
+        {
+          "edicao": "4279",
+          "data": "2026-09-15"
+        },
+        {
+          "edicao": "4278",
+          "data": "2026-09-12"
+        },
+        {
+          "edicao": "4273",
+          "data": "2026-09-04"
+        },
+        {
+          "edicao": "4272",
+          "data": "2026-09-03"
+        },
+        {
+          "edicao": "4268",
+          "data": "2026-08-28"
+        },
+        {
+          "edicao": "4267",
+          "data": "2026-08-27"
+        },
+        {
+          "edicao": "4266",
+          "data": "2026-08-26"
+        }
+      ],
+      "n": 4
+    },
+    {
+      "id": "fornecedor_novo_valor_alto",
+      "familia": "Fornecedores",
+      "regra": "Fornecedor novo com valor alto",
+      "fonte": "Portal · despesas e investimentos",
+      "base": "1974 fornecedores no ano, comparados com 2024–2025",
+      "resultado": 53,
+      "itens": [
+        {
+          "fornecedor": "CONSORCIO PARQUE DA CRIANCA",
+          "documento": "68.395.240/0001-76",
+          "empenhado": 19112795.49,
+          "lancamentos": 1
+        },
+        {
+          "fornecedor": "PLANETA EDUCACAO, GRAFICA E EDITORA LTDA.",
+          "documento": "03.829.424/0001-51",
+          "empenhado": 18031796.19,
+          "lancamentos": 13
+        },
+        {
+          "fornecedor": "ULRIK COMERCIO E SERVICOS LTDA",
+          "documento": "21.479.037/0001-14",
+          "empenhado": 16888486.88,
+          "lancamentos": 14
+        },
+        {
+          "fornecedor": "MOLISE SERVICOS E CONSTRUCOES LTDA.",
+          "documento": "60.109.576/0001-13",
+          "empenhado": 10630790.75,
+          "lancamentos": 2
+        },
+        {
+          "fornecedor": "CONSORCIO MDH PARQUE DO POVO",
+          "documento": "67.729.768/0001-71",
+          "empenhado": 8557775.89,
+          "lancamentos": 2
+        },
+        {
+          "fornecedor": "CONSORCIO MDH CICLOVIA CASCATA",
+          "documento": "67.729.844/0001-49",
+          "empenhado": 6315000.0,
+          "lancamentos": 2
+        },
+        {
+          "fornecedor": "PUBLICAÇÕES BRASIL CULTURAL LTDA",
+          "documento": "05.641.768/0001-68",
+          "empenhado": 4939880.0,
+          "lancamentos": 1
+        },
+        {
+          "fornecedor": "2F DISTRIBUIDORA LTDA",
+          "documento": "47.363.416/0001-38",
+          "empenhado": 3633958.24,
+          "lancamentos": 129
+        },
+        {
+          "fornecedor": "BRASIL COMÉRCIO E DISTRIBUIDORA LTDA",
+          "documento": "11.210.951/0001-01",
+          "empenhado": 2785490.0,
+          "lancamentos": 2
+        },
+        {
+          "fornecedor": "TRES LAGOAS COMERCIO DE SACARIAS E EMBALAGENS LTDA - EPP",
+          "documento": "08.212.263/0001-76",
+          "empenhado": 1893342.56,
+          "lancamentos": 51
+        },
+        {
+          "fornecedor": "EKAMARO ENGENHARIA LTDA",
+          "documento": "10.744.215/0001-70",
+          "empenhado": 1642162.88,
+          "lancamentos": 8
+        },
+        {
+          "fornecedor": "A3 TERRAPLENAGEM E ENGENHARIA LTDA",
+          "documento": "05.326.068/0001-89",
+          "empenhado": 1521851.8,
+          "lancamentos": 10
+        },
+        {
+          "fornecedor": "BALADA EVENTOS E PRODUCOES LTDA",
+          "documento": "21.363.253/0001-08",
+          "empenhado": 1500000.0,
+          "lancamentos": 1
+        },
+        {
+          "fornecedor": "LIPPEL ENGENHARIA E EQUIPAMENTOS LTDA",
+          "documento": "23.691.899/0001-31",
+          "empenhado": 1498000.0,
+          "lancamentos": 3
+        },
+        {
+          "fornecedor": "TR2 COMERCIO E SERVICOS DE PAPELARIA LTDA",
+          "documento": "08.610.916/0001-75",
+          "empenhado": 1338913.26,
+          "lancamentos": 50
+        },
+        {
+          "fornecedor": "BRU SEG SEGURANCA LTDA",
+          "documento": "57.428.940/0001-01",
+          "empenhado": 1234373.12,
+          "lancamentos": 10
+        },
+        {
+          "fornecedor": "NOROMIX CONCRETO LTDA",
+          "documento": "10.558.895/0001-38",
+          "empenhado": 810771.63,
+          "lancamentos": 2
+        },
+        {
+          "fornecedor": "ASSOCIAÇÃO DOS BANANICULTORES DO MUNICÍPIO DE MIRACATU",
+          "documento": "44.306.157/0001-15",
+          "empenhado": 806194.8,
+          "lancamentos": 3
+        },
+        {
+          "fornecedor": "SHOW COMPLETO PRODUCOES ARTISTICAS LTDA",
+          "documento": "26.636.436/0001-65",
+          "empenhado": 754000.0,
+          "lancamentos": 1
+        },
+        {
+          "fornecedor": "HY CONSTRUTORA LTDA",
+          "documento": "31.339.236/0001-80",
+          "empenhado": 504377.15,
+          "lancamentos": 2
+        }
+      ],
+      "n": 5
+    },
+    {
+      "id": "diarias_atipicas",
+      "familia": "Pessoal",
+      "regra": "Diárias atípicas",
+      "fonte": "Portal · diárias",
+      "base": "4537 registros, 15 cargos comparáveis",
+      "resultado": 1,
+      "itens": [
+        {
+          "beneficiario": "LUIZ ANTONIO BISSOLI",
+          "cargo": "Assistente Administrativo",
+          "secretaria": "Secr Mun da Agric, Pecuaria e Abastecim",
+          "total": 14346.68,
+          "registros": 12,
+          "corte_do_cargo": 2833.31
+        }
+      ],
+      "n": 6
+    },
+    {
+      "id": "obra_parada_ou_cancelada",
+      "familia": "Obras",
+      "regra": "Obra parada ou cancelada",
+      "fonte": "Dados abertos · obras",
+      "base": 38,
+      "resultado": 7,
+      "itens": [
+        {
+          "obra": "Pavimentação Rua Romildo Marconato",
+          "categoria": "Pavimentação",
+          "situacao": "Cancelada",
+          "valor": 1430000,
+          "inicio": null
+        },
+        {
+          "obra": "Reforma Terminal Urbano",
+          "categoria": "Mobilidade Urbana",
+          "situacao": "Cancelada",
+          "valor": 1197153.06,
+          "inicio": "2022-08-16"
+        },
+        {
+          "obra": "Construção da Casa da Mulher",
+          "categoria": "Assistência e Desenvolvimento Social",
+          "situacao": "Cancelada",
+          "valor": 891924.34,
+          "inicio": "2023-09-18"
+        },
+        {
+          "obra": "EMEI Drº Fernando Mauro",
+          "categoria": "Escolas",
+          "situacao": "Cancelada",
+          "valor": 801632,
+          "inicio": "2022-05-19"
+        },
+        {
+          "obra": "Reforma e ampliação da EMEI Estrelinha Dourada",
+          "categoria": "Escolas",
+          "situacao": "Cancelada",
+          "valor": 487128.44,
+          "inicio": null
+        },
+        {
+          "obra": "Incremento do bosque municipal",
+          "categoria": "Bosque Municipal",
+          "situacao": "Cancelada",
+          "valor": 464254.59,
+          "inicio": "2023-09-13"
+        },
+        {
+          "obra": "Construção de muro EMEI Clara Luz",
+          "categoria": "Escolas",
+          "situacao": "Cancelada",
+          "valor": 232162.46,
+          "inicio": null
+        }
+      ],
+      "n": 7
+    },
+    {
+      "id": "contrato_a_vencer",
+      "familia": "Contratos",
+      "regra": "Contrato a vencer em 60 dias",
+      "fonte": "Dados abertos · contratos",
+      "base": "1040 vigentes",
+      "resultado": 71,
+      "itens": [
+        {
+          "numero": 200,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 73535,
+          "fim": "2026-10-09"
+        },
+        {
+          "numero": 205,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 98646,
+          "fim": "2026-10-09"
+        },
+        {
+          "numero": 204,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 4570,
+          "fim": "2026-10-09"
+        },
+        {
+          "numero": 203,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 62350,
+          "fim": "2026-10-09"
+        },
+        {
+          "numero": 202,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 120556,
+          "fim": "2026-10-09"
+        },
+        {
+          "numero": 201,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 42500,
+          "fim": "2026-10-09"
+        },
+        {
+          "numero": 199,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 10920,
+          "fim": "2026-10-09"
+        },
+        {
+          "numero": 198,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 2875,
+          "fim": "2026-10-09"
+        },
+        {
+          "numero": 197,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 11376,
+          "fim": "2026-10-09"
+        },
+        {
+          "numero": 196,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 22000,
+          "fim": "2026-10-09"
+        },
+        {
+          "numero": 195,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 121704,
+          "fim": "2026-10-09"
+        },
+        {
+          "numero": 194,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 16200,
+          "fim": "2026-10-09"
+        },
+        {
+          "numero": 193,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 63386.5,
+          "fim": "2026-10-09"
+        },
+        {
+          "numero": 1644,
+          "contratada": "SÃO PAULO SECRETARIA DA EDUCAÇÃO",
+          "tipo": "CG - Contratos Gerais/Outros",
+          "valor": 230000,
+          "fim": "2026-10-10"
+        },
+        {
+          "numero": 1842,
+          "contratada": "LEAL CONSULTORES E ASSOCIADOS LTDA",
+          "tipo": "CST - Contrato de Serviços de Terceiros",
+          "valor": 64500,
+          "fim": "2026-10-13"
+        },
+        {
+          "numero": 306,
+          "contratada": "AMAR – ASSOCIAÇÃO MARILIENSE DE APOIO E ASSISTÊNCIA AO RENAL CRÔNICO",
+          "tipo": "TC - Termo de Colaboração",
+          "valor": 30000,
+          "fim": "2026-10-15"
+        },
+        {
+          "numero": 212,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 265200,
+          "fim": "2026-10-20"
+        },
+        {
+          "numero": 1614,
+          "contratada": "INFRATUBOS ARTEFATOS DE CONCRETO EIRELI",
+          "tipo": "CG - Contratos Gerais/Outros",
+          "valor": 176345.86,
+          "fim": "2026-10-29"
+        },
+        {
+          "numero": 1645,
+          "contratada": "BOEHRINGER INGELHEIM DO BRASIL QUÍMICA E FARMACÊUTICA LTDA",
+          "tipo": "CG - Contratos Gerais/Outros",
+          "valor": 1,
+          "fim": "2026-10-31"
+        },
+        {
+          "numero": 1815,
+          "contratada": "FUTURA TRANSPORTES GERAIS LTDA",
+          "tipo": "CST - Contrato de Serviços de Terceiros",
+          "valor": 4004418,
+          "fim": "2026-11-03"
+        }
+      ],
+      "n": 8
+    }
+  ]
+}

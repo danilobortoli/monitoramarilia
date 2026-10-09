@@ -9,6 +9,7 @@ Fontes de dados abertas:
 - SICONFI (Tesouro Nacional): Dados fiscais (RGF, RREO, DCA)
 - TCE-SP: Despesas e receitas detalhadas
 - Portal Federal: Transferências, convênios, sanções (CEIS/CNEP)
+- Prefeitura de Marília: portal da transparência e dados abertos (ver APIS_MARILIA.md)
 
 Funcionalidades:
 - Coleta de dados de APIs oficiais
@@ -167,6 +168,99 @@ def cmd_portal_federal(args):
         _save_json(args.output, data)
     else:
         print(json.dumps(data, indent=2, ensure_ascii=False))
+
+
+def cmd_marilia(args):
+    """Consulta o portal e os dados abertos da Prefeitura de Marília."""
+    from collectors.portal_marilia import PortalMariliaCollector
+    from collectors.dados_abertos_marilia import DadosAbertosMariliaCollector
+
+    ano = args.ano or datetime.now().year
+
+    if args.fonte == "portal":
+        collector = PortalMariliaCollector()
+        if not args.conjunto:
+            for v in collector.listar_visoes():
+                nome = next((n for n, mv in collector.VISOES.items()
+                             if mv == (v["modulo"], v["visao"])), "")
+                print(f"{nome:24} {v['modulo']}/{v['visao']:28} {v['caminho']}")
+            return
+        log(f"Consultando portal de Marília: {args.conjunto} {ano}...", "info")
+        data = collector.get_visao(args.conjunto, ano)
+    else:
+        collector = DadosAbertosMariliaCollector()
+        if not args.conjunto:
+            print("\n".join(collector.CONJUNTOS))
+            return
+        log(f"Consultando dados abertos de Marília: {args.conjunto} {ano}...", "info")
+        data = collector.get_conjunto(args.conjunto, ano)
+
+    log(f"{len(data)} registros", "success")
+    if args.output:
+        _save_json(args.output, data)
+    else:
+        for item in data[:5]:
+            print(json.dumps(item, indent=2, ensure_ascii=False))
+
+
+def cmd_observatorio(args):
+    """Coleta as fontes de Marília e calcula o Radar do Observatório."""
+    from collectors.portal_marilia import PortalMariliaCollector
+    from collectors.dados_abertos_marilia import DadosAbertosMariliaCollector
+    from analyzers import radar
+
+    ano = args.ano or datetime.now().year
+    portal = PortalMariliaCollector()
+    abertos = DadosAbertosMariliaCollector()
+
+    log(f"Coletando dados abertos de {ano}...", "info")
+    compras = abertos.get_conjunto("compra-direta", ano)
+    contratos = abertos.get_conjunto("contratos", ano)
+    licitacoes = abertos.get_conjunto("licitacoes", ano)
+    obras = abertos.get_conjunto("obras", ano)
+    diario = abertos.get_conjunto("diario-oficial", ano)
+
+    log(f"Coletando despesas e diárias do portal ({ano})...", "info")
+    despesas = portal.get_visao("despesas_investimentos", ano)
+    diarias = portal.get_visao("diarias", ano)
+
+    anos_anteriores = list(range(ano - max(1, args.anos_comparacao), ano))
+    log(f"Coletando despesas de {anos_anteriores[0]}–{anos_anteriores[-1]} para comparação...", "info")
+    despesas_anteriores = []
+    for a in anos_anteriores:
+        despesas_anteriores.extend(portal.get_visao("despesas_investimentos", a))
+
+    regras = [
+        radar.compra_direta_aberta(compras),
+        radar.contrato_sem_contratada(contratos),
+        radar.licitacao_sem_valor(licitacoes),
+        radar.quebra_ordem_cronologica(diario),
+        radar.fornecedor_novo_valor_alto(
+            despesas, despesas_anteriores, limite=args.limite_fornecedor,
+            anos_anteriores=f"{anos_anteriores[0]}–{anos_anteriores[-1]}",
+        ),
+        radar.diarias_atipicas(diarias),
+        radar.obra_parada_ou_cancelada(obras),
+        radar.contrato_a_vencer(contratos),
+    ]
+    for n, regra in enumerate(regras, 1):
+        regra["n"] = n
+
+    data = {
+        "gerado_em": datetime.now().isoformat(timespec="seconds"),
+        "exercicio": ano,
+        "fontes": {
+            "portal": PortalMariliaCollector.PORTAL_URL,
+            "dados_abertos": DadosAbertosMariliaCollector.BASE_URL,
+        },
+        "totais": radar.totais(compras, licitacoes, contratos, obras, despesas),
+        "regras": regras,
+    }
+
+    for regra in regras:
+        log(f"{regra['n']}. {regra['regra']}: {regra['resultado']} (base: {regra['base']})", "info")
+
+    _save_json(args.output or "docs/data/observatorio.json", data)
 
 
 def cmd_integrado(args):
@@ -898,6 +992,27 @@ Exemplos de uso:
     federal_parser.add_argument("--cnpj", help="CNPJ para verificação de sanções")
     federal_parser.add_argument("-o", "--output", help="Arquivo de saída (JSON)")
 
+    # Comando: marilia
+    marilia_parser = subparsers.add_parser(
+        "marilia", help="Consultar portal e dados abertos da Prefeitura de Marília")
+    marilia_parser.add_argument("--fonte", required=True, choices=["portal", "dados-abertos"],
+                                help="portal (transparencia.marilia.sp.gov.br) ou dados abertos do site")
+    marilia_parser.add_argument("--conjunto",
+                                help="Visão do portal ou conjunto de dados abertos (sem ele, lista as opções)")
+    marilia_parser.add_argument("--ano", type=int, help="Exercício")
+    marilia_parser.add_argument("-o", "--output", help="Arquivo de saída (JSON)")
+
+    # Comando: observatorio
+    observatorio_parser = subparsers.add_parser(
+        "observatorio", help="Calcular o Radar do Observatório (fontes de Marília)")
+    observatorio_parser.add_argument("--ano", type=int, help="Exercício")
+    observatorio_parser.add_argument("--anos-comparacao", type=int, default=2,
+                                     help="Exercícios anteriores para achar fornecedor novo (default: 2)")
+    observatorio_parser.add_argument("--limite-fornecedor", type=float, default=100_000.0,
+                                     help="Empenhado mínimo de fornecedor novo (default: 100000)")
+    observatorio_parser.add_argument("-o", "--output",
+                                     help="Arquivo de saída (default: docs/data/observatorio.json)")
+
     # Comando: integrado
     integrado_parser = subparsers.add_parser("integrado", help="Gerar relatório integrado")
     integrado_parser.add_argument("--tipo", required=True,
@@ -947,6 +1062,10 @@ Exemplos de uso:
         cmd_tce_sp(args)
     elif args.command == "portal-federal":
         cmd_portal_federal(args)
+    elif args.command == "marilia":
+        cmd_marilia(args)
+    elif args.command == "observatorio":
+        cmd_observatorio(args)
     elif args.command == "integrado":
         cmd_integrado(args)
     elif args.command == "update-dashboard":

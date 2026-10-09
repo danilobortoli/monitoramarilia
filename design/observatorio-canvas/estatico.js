@@ -13,7 +13,7 @@ function render(tpl, escopo) {
     (m, lista, nome, miolo) => (busca(escopo, lista) || []).map((item) => preencher(miolo, { ...escopo, [nome]: item })).join('\n'));
   return preencher(tpl, escopo);
 }
-const AVISO = '<div style="box-sizing: border-box; padding: 8px 5%; background: #223463; color: #ffffff; font-family: \'Fira Sans\', -apple-system, \'Segoe UI\', sans-serif; font-size: 12px; letter-spacing: 0.06em; line-height: 1.5">Mock-up de interface · proposta de redesenho, não é o painel em produção · números da coleta de 09.10.2026 · filtros e botões não funcionam nesta versão estática</div>';
+const AVISO = '<div style="box-sizing: border-box; padding: 8px 5%; background: #223463; color: #ffffff; font-family: \'Fira Sans\', -apple-system, \'Segoe UI\', sans-serif; font-size: 12px; letter-spacing: 0.06em; line-height: 1.5">Versão estática · números da coleta de 09.10.2026 · filtros e botões ainda não funcionam</div>';
 for (const [arq, destino] of Object.entries(NOMES)) {
   const h = fs.readFileSync(path.join(src, arq), 'utf8');
   const titulo = h.match(/<title>([\s\S]*?)<\/title>/)[1];
@@ -22,7 +22,7 @@ for (const [arq, destino] of Object.entries(NOMES)) {
   const codigo = h.match(/<script type="text\/x-dc"[^>]*>([\s\S]*?)<\/script>/)[1];
   const vals = vm.runInNewContext('class DCLogic { constructor(p) { this.props = p || {}; this.state = {}; } setState() {} }\n' + codigo + '\nnew Component({}).renderVals()');
   corpo = render(corpo, vals);
-  let pagina = `<!doctype html>\n<html lang="pt-BR">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="robots" content="noindex">\n<title>${titulo} (mock-up)</title>\n${helmet}\n</head>\n<body>\n${AVISO}\n${corpo}\n</body>\n</html>\n`;
+  let pagina = `<!doctype html>\n<html lang="pt-BR">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<title>${titulo}</title>\n${helmet}\n</head>\n<body>\n${AVISO}\n${corpo}\n</body>\n</html>\n`;
   for (const [de, para] of Object.entries(NOMES)) pagina = pagina.split(de).join(para);
   pagina = pagina.split('ds/tufte-bortoli/fonts/').join('fonts/');
   if (/\{\{|<sc-|<x-dc|dc\.html/.test(pagina)) throw new Error('sobrou marcação do canvas em ' + destino);
