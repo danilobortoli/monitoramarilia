@@ -6,8 +6,11 @@ const [src, out, dadosPath, configPath] = process.argv.slice(2);
 const dados = dadosPath ? JSON.parse(fs.readFileSync(dadosPath, 'utf8')) : null;
 const config = configPath ? JSON.parse(fs.readFileSync(configPath, 'utf8')) : {};
 const vincular = dados ? require('./vincular.js') : {};
+// Índice dos boletins, gravado pelo comando `boletim` ao lado do JSON da coleta.
+const relatoriosPath = dadosPath ? path.join(path.dirname(dadosPath), 'relatorios.json') : null;
+if (dados) dados.relatorios = relatoriosPath && fs.existsSync(relatoriosPath) ? JSON.parse(fs.readFileSync(relatoriosPath, 'utf8')).relatorios : [];
 const dataColeta = dados ? dados.coleta.data.split('-').reverse().join('.') : '09.10.2026';
-const NOMES = { 'Main.dc.html': 'index.html', 'Radar.dc.html': 'radar.html', 'Fornecedor.dc.html': 'fornecedor.html', 'Diario.dc.html': 'diario.html', 'Transparencia.dc.html': 'transparencia.html' };
+const NOMES = { 'Main.dc.html': 'index.html', 'Radar.dc.html': 'radar.html', 'Fornecedor.dc.html': 'fornecedor.html', 'Diario.dc.html': 'diario.html', 'Transparencia.dc.html': 'transparencia.html', 'Boletins.dc.html': 'boletins.html' };
 const esc = (v) => String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const busca = (escopo, caminho) => caminho.split('.').reduce((o, k) => (o == null ? undefined : o[k]), escopo);
 function preencher(tpl, escopo) {

@@ -141,3 +141,28 @@ entrada com o mesmo tipo, número e processo contam como alteração.
 O cache guarda CNPJs por extenso. De CPFs, guarda só os seis dígitos que a máscara deixa à vista,
 junto com o nome normalizado. Dados brutos de despesas não entram no repositório: os anos
 anteriores podem ser recoletados no portal quando for preciso (`--renovar-cache`).
+
+## 3. Acompanhamento da MATRA no Notion (somente leitura)
+
+A rotina "DOMM na nuvem" grava no Notion as edições do Diário Oficial analisadas, os achados e os
+casos. O Observatório só lê essas bases (`src/collectors/notion_matra.py`) e publica números
+agregados; nada é gravado no Notion. Os IDs das bases ficam em `config/observatorio.json`; a chave
+da integração, no segredo `NOTION_TOKEN` do repositório. Sem a chave, o site segue sem esses dados.
+
+| Base | Uso no site |
+|---|---|
+| Edições DOMM | Diário Oficial · "Relatório DOMM": situação, atos e irregularidades da última edição |
+| Achados DOMM | Achados em aberto nas duas últimas edições e no acumulado (irregularidades separadas dos pontos de atenção); achados da semana no boletim |
+| Casos | Painel · "Casos acompanhados": só casos com Frente = MATRA, Status = Ativo e a caixa **No Observatório** marcada |
+
+Sem a caixa "No Observatório" na base Casos, nenhum caso do Notion é publicado e o painel usa a lista
+de `config/observatorio.json`.
+
+## 4. Boletim semanal
+
+`python -m src.main boletim [--fim AAAA-MM-DD]` (`src/reports/boletim.py`) reúne as sete coletas que
+terminam na data: registros novos e alterados (`historico/mudancas`), a variação de cada regra do
+radar (`historico/radar.jsonl`), as edições do Diário e, se houver, os achados da semana no Notion.
+Gera um PDF no visual do site em `docs/relatorios/boletim-AAAA-MM-DD.pdf`, com um JSON de metadados
+ao lado, e atualiza `docs/data/relatorios.json`, lido pela página Boletins. O workflow diário roda o
+boletim às segundas-feiras; o disparo manual tem a opção `gerar_boletim`.

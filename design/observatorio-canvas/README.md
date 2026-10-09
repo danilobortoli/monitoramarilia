@@ -9,6 +9,7 @@ Fonte das cinco telas publicadas em `docs/` (GitHub Pages):
 | `Fornecedor.dc.html` | `fornecedor.html` | Ficha do fornecedor |
 | `Diario.dc.html` | `diario.html` | Diário Oficial |
 | `Transparencia.dc.html` | `transparencia.html` | Transparência ativa |
+| `Boletins.dc.html` | `boletins.html` | Boletins semanais (lista `docs/data/relatorios.json`) |
 
 ## Sobre os dados
 

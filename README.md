@@ -49,7 +49,7 @@ monitoramarilia/
 ├── src/
 │   ├── collectors/      # Módulos de coleta de dados
 │   ├── analyzers/       # Analisadores de conformidade e anomalias
-│   ├── reporters/       # Geradores de relatórios
+│   ├── reports/         # Boletim semanal em PDF
 │   ├── database/        # Modelos e conexão com banco
 │   ├── alerts/          # Sistema de alertas
 │   └── utils/           # Utilitários comuns

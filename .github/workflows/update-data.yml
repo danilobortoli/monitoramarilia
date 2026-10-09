@@ -6,10 +6,10 @@ on:
     - cron: '0 9 * * *'
   workflow_dispatch:
     inputs:
-      generate_reports:
-        description: 'Gerar relatórios PDF'
+      gerar_boletim:
+        description: 'Gerar o boletim semanal agora (fora da segunda-feira)'
         required: false
-        default: 'true'
+        default: false
         type: boolean
 
 # Necessário para o passo de commit/push devolver os dados ao repositório
@@ -20,6 +20,8 @@ env:
   PYTHONPATH: ${{ github.workspace }}
   # Disponibiliza a chave para os passos e para a condição `if` do Portal Federal
   PORTAL_TRANSPARENCIA_KEY: ${{ secrets.PORTAL_TRANSPARENCIA_KEY }}
+  # Leitura do acompanhamento da MATRA no Notion (opcional; sem ela o site segue sem esses dados)
+  NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
 
 jobs:
   collect-data:
@@ -108,6 +110,18 @@ jobs:
           python -m src.main observatorio --ano $ANO \
             -o docs/data/observatorio.json || echo "Observatório: indisponível"
 
+      # Boletim semanal: às segundas-feiras (ou no disparo manual com gerar_boletim),
+      # cobrindo as sete coletas que terminam no dia. Grava o PDF em docs/relatorios
+      # e atualiza docs/data/relatorios.json, lido pela página Boletins.
+      - name: Gerar boletim semanal
+        if: ${{ github.event.inputs.gerar_boletim == 'true' || github.event_name == 'schedule' }}
+        run: |
+          if [ "$(date +%u)" = "1" ] || [ "${{ github.event.inputs.gerar_boletim }}" = "true" ]; then
+            python -m src.main boletim || echo "Boletim: não gerado"
+          else
+            echo "Boletim só às segundas-feiras."
+          fi
+
       # Regera as páginas do site a partir dos quadros do canvas com os dados do dia.
       # Se a coleta falhar, as páginas continuam com o observatorio.json anterior.
       - name: Gerar páginas do Observatório
@@ -119,13 +133,6 @@ jobs:
         run: |
           echo "Gerando dados para o dashboard..."
           python -m src.main update-dashboard --output docs/data/
-
-      - name: Gerar relatórios PDF
-        if: ${{ github.event.inputs.generate_reports == 'true' || github.event_name == 'schedule' }}
-        run: |
-          echo "Gerando relatórios PDF..."
-          python -m src.main generate-report --tipo fiscal --output docs/relatorios/ || echo "Relatório fiscal não gerado"
-          python -m src.main generate-report --tipo fornecedores --output docs/relatorios/ || echo "Relatório fornecedores não gerado"
 
       - name: Indexar relatórios para o site
         run: |

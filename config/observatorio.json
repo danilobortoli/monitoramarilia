@@ -1,5 +1,5 @@
 {
-  "_leia": "Conteúdo editado à mão que entra nas páginas do Observatório. 'casos' aparece no painel do dia (Casos acompanhados); 'secoes_manuais' entra na lista de seções sem dado da página de transparência ativa.",
+  "_leia": "Conteúdo editado à mão e ligações externas do Observatório. 'casos' aparece no painel do dia (Casos acompanhados) quando o Notion não estiver ligado ou não tiver casos marcados como públicos; 'secoes_manuais' entra na lista de seções sem dado; 'notion' guarda os IDs das bases lidas pela integração (a chave fica no segredo NOTION_TOKEN do repositório).",
   "casos": [
     "CIP: 34 lançamentos de arrecadação em 2026, na natureza 1.2.4.",
     "Parque da Criança, CP 012/2026: [situação da licitação]."
@@ -9,5 +9,10 @@
       "nome": "Parcerias com o terceiro setor",
       "fato": "A página traz só texto e links; não há dado estruturado sobre os termos celebrados."
     }
-  ]
+  ],
+  "notion": {
+    "edicoes": "c77085168a5a406591a52352fb9794f4",
+    "achados": "12840d470b3a40f5b60ce1795e6e84d7",
+    "casos": "0867df9021e848ecb2c0b4d2632bf09c"
+  }
 }

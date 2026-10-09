@@ -42,7 +42,7 @@ function Main(vals, d, config) {
       largura: Math.round((100 * s.pct_direta) / maior) + '%',
       cor: s.ano === ano ? '#1b67b2' : '#222222',
     })),
-    casos: (config.casos || []).map((texto) => ({ texto })),
+    casos: casosDoNotion(d.notion) || (config.casos || []).map((texto) => ({ texto })),
     txt: {
       ...vals.txt,
       novidades_titulo: d.novidades.itens.length === 0
@@ -74,6 +74,12 @@ const ITENS = {
   obra_parada_ou_cancelada: (i) => ({ titulo: i.obra, detalhe: `${i.situacao} · ${i.categoria} · ${reais(i.valor)}` }),
   contrato_a_vencer: (i) => ({ titulo: `${i.tipo} nº ${i.numero}`, detalhe: `Termina em ${dataBR(i.fim)} · ${reais(i.valor)} · ${i.contratada || 'sem o nome da contratada'}` }),
 };
+
+// Casos ativos que estão marcados "No Observatório" na base Casos do Notion.
+function casosDoNotion(n) {
+  if (!n || !n.casos || !n.casos.length) return null;
+  return n.casos.map((c) => ({ texto: c.fase ? `${c.caso}: ${c.fase.length > 140 ? c.fase.slice(0, 140).replace(/\s+\S*$/, '') + '…' : c.fase}` : c.caso }));
+}
 
 function Radar(vals, d) {
   const porNumero = Object.fromEntries(d.regras.map((r) => [String(r.n), r]));
@@ -150,8 +156,22 @@ function Diario(vals, d) {
       nota_meses: `Edições com a frase sobre o total do mês. ${MESES[fimColeta.getUTCMonth()].replace(/^./, (c) => c.toUpperCase())} vai até o dia ${fimColeta.getUTCDate()}.`,
       exercicio: String(ano),
       coleta: dataBR(coleta),
+      domm: textoDomm(d.notion),
     },
   };
+}
+
+// Situação da última edição na base Edições DOMM e achados em aberto, só em números.
+function textoDomm(n) {
+  if (!n || !n.edicoes || !n.edicoes.length) return 'A situação das edições entra aqui quando a leitura do Notion estiver ligada.';
+  const e = n.edicoes[0];
+  const partes = [`Edição ${e.numero}: ${(e.situacao || 'sem situação').toLowerCase()}`];
+  if (e.atos != null) partes.push(plural(e.atos, 'ato', 'atos'));
+  if (e.irregularidades != null) partes.push(plural(e.irregularidades, 'irregularidade', 'irregularidades'));
+  const a = n.achados;
+  const eds = a.ultimas_edicoes.join(' e ');
+  const irregulares = (a.em_aberto_por_tipo || {}).Irregularidade || 0;
+  return `${partes.join(', ')}. Achados em aberto nas edições ${eds}: ${numero(a.em_aberto_ultimas_edicoes)}, ${plural(a.graves_ultimas_edicoes, 'grave', 'graves')}. No acumulado, ${plural(irregulares, 'irregularidade segue', 'irregularidades seguem')} em aberto.`;
 }
 
 function Transparencia(vals, d, config) {
@@ -187,4 +207,23 @@ function Transparencia(vals, d, config) {
   };
 }
 
-module.exports = { 'Main.dc.html': Main, 'Radar.dc.html': Radar, 'Diario.dc.html': Diario, 'Transparencia.dc.html': Transparencia };
+function Boletins(vals, d) {
+  const boletins = (d.relatorios || []).filter((r) => r.tipo === 'boletim');
+  return {
+    ...vals,
+    boletins: boletins.map((r) => ({
+      periodo: r.periodo,
+      titulo: r.titulo,
+      resumo: r.resumo,
+      arquivo: r.arquivo,
+      formato: `PDF · ${numero(Math.max(1, Math.round(r.tamanho / 1024)))} kB`,
+    })),
+    txt: {
+      ...vals.txt,
+      vazio: boletins.length ? '' : 'Ainda não há boletim publicado. O primeiro sai na segunda-feira seguinte à primeira semana de coletas com histórico.',
+      quando: 'Toda segunda-feira, junto com a coleta do dia, cobrindo as sete coletas que terminam nela.',
+    },
+  };
+}
+
+module.exports = { 'Boletins.dc.html': Boletins, 'Main.dc.html': Main, 'Radar.dc.html': Radar, 'Diario.dc.html': Diario, 'Transparencia.dc.html': Transparencia };
