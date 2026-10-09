@@ -21,7 +21,7 @@ Funcionalidades:
 import argparse
 import json
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 # Garante que os pacotes internos (collectors, reports, database) sejam
@@ -293,6 +293,22 @@ def cmd_observatorio(args):
     if not primeira_coleta:
         acervo.gravar_mudancas(hoje, mudancas)
 
+    # Acompanhamento no Notion (somente leitura; inativo sem NOTION_TOKEN).
+    notion = None
+    config = json.loads(Path(args.config).read_text(encoding="utf-8")) if Path(args.config).exists() else {}
+    if config.get("notion"):
+        from collectors.notion_matra import NotionMatraCollector
+        leitor = NotionMatraCollector(config["notion"])
+        if leitor.ativo:
+            try:
+                notion = leitor.resumo(inicio_semana=(hoje - timedelta(days=6)).isoformat())
+                notion["lido_em"] = datetime.now().isoformat(timespec="seconds")
+                log(f"Notion: {len(notion['edicoes'])} edições, {notion['achados']['em_aberto']} achados em aberto", "info")
+            except Exception as erro:  # o site segue sem o Notion
+                log(f"Notion indisponível: {erro}", "warning")
+        else:
+            log("NOTION_TOKEN não configurado: o site segue sem o acompanhamento do Notion", "info")
+
     regras = [
         radar.compra_direta_aberta(compras),
         radar.contrato_sem_contratada(contratos),
@@ -348,6 +364,7 @@ def cmd_observatorio(args):
             ),
         },
         "historico": acervo.serie()[-90:],
+        "notion": notion,
     }
 
     for regra in regras:
@@ -355,6 +372,24 @@ def cmd_observatorio(args):
     log(f"Novidades: {data['novidades']['resumo']}", "info")
 
     _save_json(args.output or "docs/data/observatorio.json", data)
+
+
+def cmd_boletim(args):
+    """Gera o boletim semanal em PDF a partir do histórico e da última coleta."""
+    from reports import boletim
+
+    fim = datetime.strptime(args.fim, "%Y-%m-%d").date() if args.fim else datetime.now().date()
+    dados_path = Path(args.dados)
+    if not dados_path.exists():
+        log(f"Sem {dados_path}: rode 'observatorio' antes do boletim", "error")
+        sys.exit(1)
+    observatorio = json.loads(dados_path.read_text(encoding="utf-8"))
+    dados = boletim.montar(Path(args.historico), observatorio, fim)
+    pdf = boletim.gerar_pdf(dados, Path(args.output), Path(args.fontes))
+    log(f"Boletim de {dados['inicio']} a {dados['fim']}: {boletim.resumo(dados)}", "info")
+    log(f"PDF salvo em: {pdf}", "success")
+    manifest = _build_reports_manifest(Path(args.output), Path(args.indice))
+    log(f"Índice atualizado: {manifest['total']} relatório(s)", "success")
 
 
 def cmd_integrado(args):
@@ -771,51 +806,33 @@ def _save_json(path: str, data):
     log(f"Dados salvos em: {output_path}", "success")
 
 
-# Metadados por tipo de relatório (nome de arquivo: "{tipo}-{ano}-{data}.pdf")
-_REPORT_META = {
-    "fiscal": ("Indicadores Fiscais (LRF)",
-               "Indicadores fiscais e limites da LRF: RCL, despesa com pessoal e dívida."),
-    "fornecedores": ("Análise de Fornecedores",
-                     "Ranking de fornecedores e concentração de pagamentos no exercício."),
-    "transferencias": ("Transferências Federais",
-                       "Transferências, convênios e emendas parlamentares recebidos."),
-    "consolidado": ("Relatório Consolidado",
-                    "Panorama fiscal e orçamentário consolidado do exercício."),
-}
-
-
 def _build_reports_manifest(reports_dir, output_path) -> dict:
     """
-    Varre a pasta de PDFs e gera um índice JSON para a página de relatórios.
+    Gera o índice JSON dos relatórios publicados em docs/relatorios.
 
-    Mantém o site honesto: lista apenas os relatórios que de fato existem,
-    com data e tamanho reais, em vez de cards fixos com links quebrados.
+    Cada PDF vem acompanhado de um JSON com o mesmo nome (título, período e resumo),
+    gravado por quem o gerou. PDFs sem esse arquivo entram só com nome e tamanho.
     """
     reports_dir = Path(reports_dir)
     relatorios = []
 
     if reports_dir.exists():
-        pdfs = sorted(reports_dir.glob("*.pdf"),
-                      key=lambda p: p.stat().st_mtime, reverse=True)
-        for pdf in pdfs:
-            partes = pdf.stem.split("-")
-            tipo = partes[0].lower()
-            ano = partes[1] if len(partes) >= 2 and partes[1].isdigit() else None
-            titulo, descricao = _REPORT_META.get(tipo, (pdf.stem, ""))
-            stat = pdf.stat()
+        for pdf in sorted(reports_dir.glob("*.pdf"), reverse=True):
+            meta_path = pdf.with_suffix(".json")
+            meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
             relatorios.append({
-                "tipo": tipo if tipo in _REPORT_META else "consolidado",
-                "titulo": f"{titulo}{f' — {ano}' if ano else ''}",
-                "descricao": descricao,
+                "tipo": meta.get("tipo", pdf.stem.split("-")[0]),
+                "titulo": meta.get("titulo", pdf.stem),
+                "periodo": meta.get("periodo", ""),
+                "resumo": meta.get("resumo", ""),
                 "arquivo": f"relatorios/{pdf.name}",
-                "periodo": f"Ano {ano}" if ano else "",
-                "data": datetime.fromtimestamp(stat.st_mtime).isoformat(),
-                "tamanho": stat.st_size,
+                "data": meta.get("gerado_em", ""),
+                "tamanho": pdf.stat().st_size,
                 "formato": "PDF",
             })
 
     manifest = {
-        "lastUpdate": datetime.now().isoformat(),
+        "lastUpdate": datetime.now().isoformat(timespec="seconds"),
         "total": len(relatorios),
         "relatorios": relatorios,
     }
@@ -866,132 +883,6 @@ def cmd_db_stats(args):
         print(f"  Alertas ativos: {stats.get('alertas_ativos', 0)}")
         print(f"  Relatórios gerados: {stats.get('total_relatorios', 0)}")
         print(f"  Última coleta: {stats.get('ultima_coleta', 'Nunca') or 'Nunca'}")
-
-
-def cmd_generate_report(args):
-    """Gera relatórios PDF."""
-    from reports.generator import FiscalReport, SupplierReport, TransferReport, ConsolidatedReport
-    from database import DatabaseManager
-
-    log(f"Gerando relatório: {args.tipo}...", "info")
-
-    ano = args.ano or datetime.now().year
-    output_dir = Path(args.output) if args.output else Path("docs/relatorios")
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    # Coletar dados atuais das APIs
-    dados_fiscal = {}
-    dados_fornecedores = {}
-    dados_transferencias = {}
-
-    if args.tipo in ["fiscal", "consolidado"]:
-        try:
-            from collectors.siconfi import SiconfiCollector
-            siconfi = SiconfiCollector()
-            dados_fiscal = siconfi.get_dados_para_dashboard(ano)
-            log("Dados fiscais carregados", "success")
-        except Exception as e:
-            log(f"Erro ao carregar dados fiscais: {e}", "warning")
-
-    if args.tipo in ["fornecedores", "consolidado"]:
-        try:
-            from collectors.tce_sp import TCESPCollector
-            tce = TCESPCollector()
-            dados_fornecedores = tce.get_dados_para_dashboard(ano)
-            log("Dados de fornecedores carregados", "success")
-        except Exception as e:
-            log(f"Erro ao carregar dados de fornecedores: {e}", "warning")
-
-    if args.tipo in ["transferencias", "consolidado"]:
-        try:
-            from collectors.portal_federal import PortalFederalCollector
-            federal = PortalFederalCollector()
-            if federal.api_key:
-                dados_transferencias = federal.get_dados_para_dashboard(ano)
-                log("Dados de transferências carregados", "success")
-            else:
-                log("API Key do Portal Federal não configurada", "warning")
-        except Exception as e:
-            log(f"Erro ao carregar dados de transferências: {e}", "warning")
-
-    # Gerar relatório
-    pdf_path = None
-
-    if args.tipo == "fiscal":
-        generator = FiscalReport(output_dir)
-        pdf_path = generator.generate(dados_fiscal.get("resumo", {}).get("indicadores", dados_fiscal), ano)
-
-    elif args.tipo == "fornecedores":
-        generator = SupplierReport(output_dir)
-        pdf_path = generator.generate(dados_fornecedores, ano)
-
-    elif args.tipo == "transferencias":
-        generator = TransferReport(output_dir)
-        pdf_path = generator.generate(dados_transferencias, ano)
-
-    elif args.tipo == "consolidado":
-        generator = ConsolidatedReport(output_dir)
-        pdf_path = generator.generate(
-            dados_fiscal.get("resumo", {}).get("indicadores", dados_fiscal),
-            dados_fornecedores,
-            dados_transferencias,
-            ano
-        )
-
-    if pdf_path:
-        log(f"Relatório gerado: {pdf_path}", "success")
-
-        # Registrar no banco de dados
-        try:
-            db = DatabaseManager()
-            db.registrar_relatorio(
-                tipo=args.tipo,
-                titulo=f"Relatório {args.tipo.title()} {ano}",
-                arquivo_path=str(pdf_path),
-                periodo=f"Ano {ano}",
-                tamanho_bytes=pdf_path.stat().st_size if pdf_path.exists() else 0
-            )
-        except Exception as e:
-            log(f"Erro ao registrar relatório no banco: {e}", "warning")
-    else:
-        log("Falha ao gerar relatório", "error")
-
-
-def cmd_list_reports(args):
-    """Lista relatórios gerados."""
-    from database import DatabaseManager
-
-    log("Listando relatórios...", "info")
-
-    db = DatabaseManager()
-    relatorios = db.get_relatorios(tipo=args.tipo, limite=args.limite or 20)
-
-    if not relatorios:
-        log("Nenhum relatório encontrado", "info")
-        return
-
-    if RICH_AVAILABLE:
-        table = Table(title="Relatórios Gerados")
-        table.add_column("ID", style="cyan")
-        table.add_column("Tipo", style="green")
-        table.add_column("Título", style="white")
-        table.add_column("Data", style="yellow")
-        table.add_column("Arquivo", style="blue")
-
-        for r in relatorios:
-            table.add_row(
-                str(r.get("id", "")),
-                r.get("tipo", ""),
-                r.get("titulo", "")[:30],
-                r.get("data_geracao", "")[:10],
-                Path(r.get("arquivo_path", "")).name if r.get("arquivo_path") else ""
-            )
-
-        console.print(table)
-    else:
-        print("\nRelatórios Gerados:")
-        for r in relatorios:
-            print(f"  [{r.get('id')}] {r.get('tipo')}: {r.get('titulo')} ({r.get('data_geracao', '')[:10]})")
 
 
 def cmd_alertas(args):
@@ -1106,10 +997,22 @@ Exemplos de uso:
                                      help="Empenhado mínimo de fornecedor novo (default: 100000)")
     observatorio_parser.add_argument("--historico", default="historico",
                                      help="Diretório do histórico entre coletas (default: historico)")
+    observatorio_parser.add_argument("--config", default="config/observatorio.json",
+                                     help="Configuração do Observatório (default: config/observatorio.json)")
     observatorio_parser.add_argument("--renovar-cache", action="store_true",
                                      help="Recoletar os fornecedores dos anos anteriores")
     observatorio_parser.add_argument("-o", "--output",
                                      help="Arquivo de saída (default: docs/data/observatorio.json)")
+
+    # Comando: boletim
+    boletim_parser = subparsers.add_parser("boletim", help="Gerar o boletim semanal em PDF")
+    boletim_parser.add_argument("--fim", help="Último dia da semana do boletim, AAAA-MM-DD (default: hoje)")
+    boletim_parser.add_argument("--historico", default="historico", help="Diretório do histórico")
+    boletim_parser.add_argument("--dados", default="docs/data/observatorio.json", help="JSON da última coleta")
+    boletim_parser.add_argument("--fontes", default="docs", help="Diretório que contém fonts/")
+    boletim_parser.add_argument("-o", "--output", default="docs/relatorios", help="Diretório de saída")
+    boletim_parser.add_argument("--indice", default="docs/data/relatorios.json",
+                                help="Índice dos relatórios para o site")
 
     # Comando: integrado
     integrado_parser = subparsers.add_parser("integrado", help="Gerar relatório integrado")
@@ -1128,19 +1031,6 @@ Exemplos de uso:
 
     # Comando: db-stats
     db_parser = subparsers.add_parser("db-stats", help="Mostrar estatísticas do banco de dados")
-
-    # Comando: generate-report
-    report_parser = subparsers.add_parser("generate-report", help="Gerar relatório PDF")
-    report_parser.add_argument("--tipo", required=True,
-                               choices=["fiscal", "fornecedores", "transferencias", "consolidado"],
-                               help="Tipo de relatório")
-    report_parser.add_argument("--ano", type=int, help="Ano de referência")
-    report_parser.add_argument("-o", "--output", help="Diretório de saída")
-
-    # Comando: list-reports
-    list_reports_parser = subparsers.add_parser("list-reports", help="Listar relatórios gerados")
-    list_reports_parser.add_argument("--tipo", help="Filtrar por tipo")
-    list_reports_parser.add_argument("--limite", type=int, default=20, help="Limite de resultados")
 
     # Comando: alertas
     alertas_parser = subparsers.add_parser("alertas", help="Listar alertas ativos")
@@ -1164,16 +1054,14 @@ Exemplos de uso:
         cmd_marilia(args)
     elif args.command == "observatorio":
         cmd_observatorio(args)
+    elif args.command == "boletim":
+        cmd_boletim(args)
     elif args.command == "integrado":
         cmd_integrado(args)
     elif args.command == "update-dashboard":
         cmd_update_dashboard(args)
     elif args.command == "db-stats":
         cmd_db_stats(args)
-    elif args.command == "generate-report":
-        cmd_generate_report(args)
-    elif args.command == "list-reports":
-        cmd_list_reports(args)
     elif args.command == "alertas":
         cmd_alertas(args)
     elif args.command == "index-reports":
