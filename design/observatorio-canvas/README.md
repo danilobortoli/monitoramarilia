@@ -1,14 +1,14 @@
-# Mock-ups do portal — Observatório MATRA
+# Observatório MATRA — quadros de design
 
-Proposta de redesenho do painel, em cinco telas estáticas. Não é o painel em produção.
+Fonte das cinco telas publicadas em `docs/` (GitHub Pages):
 
-| Arquivo | Tela |
-|---|---|
-| `index.html` | Painel do dia |
-| `radar.html` | Radar de alertas |
-| `fornecedor.html` | Ficha do fornecedor |
-| `diario.html` | Diário Oficial |
-| `transparencia.html` | Transparência ativa |
+| Quadro | Página | Tela |
+|---|---|---|
+| `Main.dc.html` | `index.html` | Painel do dia |
+| `Radar.dc.html` | `radar.html` | Radar de alertas |
+| `Fornecedor.dc.html` | `fornecedor.html` | Ficha do fornecedor |
+| `Diario.dc.html` | `diario.html` | Diário Oficial |
+| `Transparencia.dc.html` | `transparencia.html` | Transparência ativa |
 
 ## Sobre os dados
 
@@ -22,11 +22,10 @@ calculado. A ficha do fornecedor é descritiva e não aponta irregularidade.
 Sistema Tufte-Bortoli no modo Spiekermann (ET Book e Fira Sans, títulos em itálico, notas à
 margem), com o azul institucional da MATRA `#1B67B2` como acento e o marinho `#223463` do logotipo.
 
-As páginas são geradas a partir dos quadros do canvas de design, guardados em
-`design/observatorio-canvas/`. Para regerar:
+Para regerar as páginas a partir dos quadros:
 
 ```bash
-node design/observatorio-canvas/estatico.js design/observatorio-canvas docs/mockups/observatorio
+node design/observatorio-canvas/estatico.js design/observatorio-canvas docs
 ```
 
 Nesta versão estática os filtros e botões não funcionam; a navegação entre as telas, sim.

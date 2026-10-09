@@ -1,238 +1,216 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MonitoraMarília — Controle social dos recursos públicos</title>
-    <meta name="description" content="Painel de monitoramento fiscal de Marília a partir de fontes oficiais abertas (SICONFI, TCE-SP, Portal da Transparência). MATRA — Marília Transparente.">
-
-    <link rel="stylesheet" href="css/tufte-bortoli.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel do dia — Observatório MATRA</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"et-book";src:url("fonts/et-book-roman.woff") format("woff");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"et-book";src:url("fonts/et-book-italic.woff") format("woff");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"et-book";src:url("fonts/et-book-bold.woff") format("woff");font-weight:700;font-style:normal;font-display:swap}
+body{margin:0}
+a{color:#1b67b2;text-decoration:none}a:hover{color:#223463;text-decoration:underline}
+</style>
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header class="masthead">
-        <div class="masthead__inner">
-            <div class="wordmark">
-                <span class="wordmark__title"><a href="index.html">MonitoraMarília</a></span>
-                <span class="wordmark__kicker">Controle social · MATRA</span>
-            </div>
-            <nav class="menu">
-                <a href="index.html" aria-current="page">Painel</a>
-                <a href="relatorios.html">Relatórios</a>
-                <a href="metodologia.html">Metodologia</a>
-                <a href="sobre.html">Sobre</a>
-            </nav>
-        </div>
-    </header>
+<div style="box-sizing: border-box; padding: 8px 5%; background: #223463; color: #ffffff; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; letter-spacing: 0.06em; line-height: 1.5">Versão estática · números da coleta de 09.10.2026 · filtros e botões ainda não funcionam</div>
+<div style="box-sizing: border-box; max-width: 1440px; margin: 0 auto; padding: 0 5% 56px; background: #ffffff; color: #222222; font-family: 'et-book', Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, serif; font-size: 18px; line-height: 1.55">
 
-    <!-- Procedência dos dados -->
-    <div class="sourcestrip">
-        <span><span class="dot"></span>Última atualização: <time id="last-update">—</time></span>
-        <span class="sources">
-            <span>SICONFI</span><span>TCE&#8209;SP</span><span>Portal&nbsp;Federal</span>
-        </span>
-    </div>
+<header style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 40px; padding: 22px 0 10px; border-bottom: 1px solid #cccccc">
+<a href="index.html" style="display: flex; flex-direction: column; justify-content: center; min-height: 48px; text-decoration: none">
+<span style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #1b67b2">Marília Transparente</span>
+<span style="font-style: italic; font-size: 26px; line-height: 1.1; color: #111111">Observatório</span>
+</a>
+<nav aria-label="Seções do portal" style="display: flex; flex-wrap: wrap; gap: 0 30px">
+<a href="index.html" aria-current="page" style="display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; border-bottom: 2px solid #111111; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #111111">Painel</a>
+<a href="radar.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Radar</a>
+<a href="fornecedor.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Fornecedores</a>
+<a href="diario.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Diário Oficial</a>
+<a href="transparencia.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Transparência ativa</a>
+</nav>
+</header>
 
-    <main class="wrap">
+<main>
+<div style="padding: 56px 0 36px; max-width: 900px">
+<p style="margin: 0 0 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Painel do dia · sexta-feira, 9 de outubro de 2026</p>
+<h1 style="margin: 0 0 20px; font-style: italic; font-weight: 400; font-size: 46px; line-height: 1.12; color: #111111">O que mudou em Marília desde ontem</h1>
+<p style="margin: 0; font-size: 21px; line-height: 1.5; color: #222222"><span style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-variant-caps: all-small-caps; letter-spacing: 0.08em; font-weight: 500; color: #111111">Na coleta de hoje,</span> uma dispensa nova sem valor estimado, quatro atas de registro de preço publicadas sem o nome da contratada e, no Diário Oficial nº 4298, a justificativa de quebra da ordem cronológica que aparece em 105 das 196 edições do ano.</p>
+</div>
 
-        <!-- 1. Indicadores fiscais (SICONFI / LRF) -->
-        <section id="dashboard">
-            <div class="section-head">
-                <h2>Indicadores fiscais</h2>
-                <span class="src">Fonte: SICONFI — Tesouro Nacional · limites da LRF</span>
-            </div>
-            <div class="stats">
-                <div class="stat">
-                    <p class="stat__label">Receita Corrente Líquida</p>
-                    <div class="stat__value" id="rcl-valor">—</div>
-                    <p class="stat__note">base de cálculo dos limites</p>
-                </div>
+<div style="display: flex; flex-wrap: wrap; gap: 28px 48px; padding: 26px 0 28px; border-top: 2px solid #111111; border-bottom: 1px solid #cccccc">
 
-                <div class="stat" id="pessoal-card">
-                    <p class="stat__label">Despesa com pessoal</p>
-                    <div class="stat__value" id="pessoal-percentual">—</div>
-                    <p class="stat__note" id="pessoal-status">teto 54% da RCL</p>
-                    <div class="bullet">
-                        <span class="bullet__fill" id="pessoal-bar"></span>
-                        <span class="bullet__mark" style="left:95%" title="limite prudencial 51,3%"></span>
-                    </div>
-                </div>
+<div style="flex: 1 1 170px; min-width: 0">
+<div style="font-size: 44px; line-height: 1; color: #111111">34.692</div>
+<div style="margin-top: 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #222222">Empenhos em 2026</div>
+<div style="margin-top: 2px; font-style: italic; font-size: 15px; line-height: 1.4; color: #666666">268 mil desde 2020</div>
+</div>
 
-                <div class="stat" id="divida-card">
-                    <p class="stat__label">Dívida consolidada</p>
-                    <div class="stat__value" id="divida-percentual">—</div>
-                    <p class="stat__note" id="divida-status">teto 120% da RCL</p>
-                    <div class="bullet">
-                        <span class="bullet__fill" id="divida-bar"></span>
-                        <span class="bullet__mark" style="left:90%" title="limite prudencial 108%"></span>
-                    </div>
-                </div>
 
-                <div class="stat">
-                    <p class="stat__label">Alertas LRF</p>
-                    <div class="stat__value" id="alertas-lrf-count">—</div>
-                    <p class="stat__note"><span id="alertas-criticos">—</span> críticos</p>
-                </div>
-            </div>
-        </section>
+<div style="flex: 1 1 170px; min-width: 0">
+<div style="font-size: 44px; line-height: 1; color: #111111">673</div>
+<div style="margin-top: 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #222222">Compras diretas</div>
+<div style="margin-top: 2px; font-style: italic; font-size: 15px; line-height: 1.4; color: #666666">490 dispensas e 175 inexigibilidades</div>
+</div>
 
-        <!-- 2. Execução orçamentária (TCE-SP) -->
-        <section id="execucao">
-            <div class="section-head">
-                <h2>Execução orçamentária</h2>
-                <span class="src">Fonte: TCE&#8209;SP · empenho, liquidação e pagamento</span>
-            </div>
-            <div class="stats cols-3">
-                <div class="stat">
-                    <p class="stat__label">Empenhado</p>
-                    <div class="stat__value" id="tce-empenhado">—</div>
-                </div>
-                <div class="stat">
-                    <p class="stat__label">Liquidado</p>
-                    <div class="stat__value" id="tce-liquidado">—</div>
-                </div>
-                <div class="stat">
-                    <p class="stat__label">Pago</p>
-                    <div class="stat__value" id="tce-pago">—</div>
-                </div>
-            </div>
 
-            <figure style="margin-top:1.6rem">
-                <div class="legend" style="margin-bottom:.6rem">
-                    <span><i style="background:#2c3e50"></i>Empenhado</span>
-                    <span><i style="background:#8a6d00"></i>Liquidado</span>
-                    <span><i style="background:#2f6b3f"></i>Pago</span>
-                </div>
-                <div class="chart-box"><canvas id="evolucaoChart" height="160"></canvas></div>
-                <figcaption>Evolução mensal da despesa, em R$ milhões. Dados do TCE&#8209;SP.</figcaption>
-            </figure>
-        </section>
+<div style="flex: 1 1 170px; min-width: 0">
+<div style="font-size: 44px; line-height: 1; color: #111111">46</div>
+<div style="margin-top: 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #222222">Licitações abertas</div>
+<div style="margin-top: 2px; font-style: italic; font-size: 15px; line-height: 1.4; color: #666666">de 163 publicadas no ano</div>
+</div>
 
-        <!-- 3. Despesa por função + Recursos federais -->
-        <div class="grid-2">
-            <section id="por-funcao">
-                <div class="section-head">
-                    <h2>Despesa por função</h2>
-                    <span class="src">TCE&#8209;SP</span>
-                </div>
-                <figure>
-                    <div class="chart-box"><canvas id="despesasChart" height="220"></canvas></div>
-                    <figcaption>Participação das maiores funções no total pago no ano.</figcaption>
-                </figure>
-            </section>
 
-            <section id="federais">
-                <div class="section-head">
-                    <h2>Recursos federais</h2>
-                    <span class="src">Portal da Transparência</span>
-                </div>
-                <div class="stats cols-3" style="grid-template-columns:1fr">
-                    <div class="stat" style="border-right:0">
-                        <p class="stat__label">Transferências recebidas</p>
-                        <div class="stat__value" id="transf-total">—</div>
-                        <p class="stat__note">ano corrente</p>
-                    </div>
-                    <div class="stat" style="border-right:0">
-                        <p class="stat__label">Convênios</p>
-                        <div class="stat__value"><span id="convenios-count">—</span></div>
-                        <p class="stat__note" id="convenios-valor">—</p>
-                    </div>
-                    <div class="stat" style="border-right:0">
-                        <p class="stat__label">Emendas parlamentares</p>
-                        <div class="stat__value" id="emendas-valor">—</div>
-                        <p class="stat__note" id="emendas-count">—</p>
-                    </div>
-                </div>
-            </section>
-        </div>
+<div style="flex: 1 1 170px; min-width: 0">
+<div style="font-size: 44px; line-height: 1; color: #111111">1.040</div>
+<div style="margin-top: 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #222222">Contratos vigentes</div>
+<div style="margin-top: 2px; font-style: italic; font-size: 15px; line-height: 1.4; color: #666666">de 1.151 registrados</div>
+</div>
 
-        <!-- 4. Alertas e anomalias -->
-        <section id="alertas">
-            <div class="section-head">
-                <h2>Alertas e anomalias</h2>
-                <a href="relatorios.html" class="src" style="border:0">ver relatórios →</a>
-            </div>
-            <div id="alerts-list"></div>
-        </section>
 
-        <!-- 5. Fornecedores e sanções -->
-        <div class="grid-2">
-            <section id="fornecedores">
-                <div class="section-head">
-                    <h2>Maiores fornecedores</h2>
-                    <span class="src">TCE&#8209;SP</span>
-                </div>
-                <div id="fornecedores-list"></div>
-            </section>
+<div style="flex: 1 1 170px; min-width: 0">
+<div style="font-size: 44px; line-height: 1; color: #111111">22</div>
+<div style="margin-top: 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #222222">Obras em andamento</div>
+<div style="margin-top: 2px; font-style: italic; font-size: 15px; line-height: 1.4; color: #666666">7 canceladas, 9 concluídas</div>
+</div>
 
-            <section id="sancoes">
-                <div class="section-head">
-                    <h2>Verificação de sanções</h2>
-                    <span class="src">CEIS / CNEP — Portal Federal</span>
-                </div>
-                <div class="stats cols-3" style="grid-template-columns:1fr 1fr">
-                    <div class="stat">
-                        <p class="stat__label">Verificados</p>
-                        <div class="stat__value" id="sancoes-verificados">—</div>
-                    </div>
-                    <div class="stat" style="border-right:0">
-                        <p class="stat__label">Com irregularidade</p>
-                        <div class="stat__value" id="sancoes-irregulares">—</div>
-                    </div>
-                </div>
-                <div id="sancoes-list" style="margin-top:1rem">
-                    <p class="empty" id="sancoes-empty">Nenhuma irregularidade detectada entre os fornecedores verificados.</p>
-                </div>
-            </section>
-        </div>
+</div>
 
-        <!-- 6. Como os dados se conectam -->
-        <section id="conexoes">
-            <div class="section-head"><h2>Como os dados se conectam</h2></div>
-            <table>
-                <thead>
-                    <tr><th>Cruzamento</th><th>O que revela</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Despesas → Fornecedores</td><td>Pagamentos do TCE&#8209;SP agrupados por favorecido</td></tr>
-                    <tr><td>Fornecedores → Sanções</td><td>Verificação cruzada com CEIS/CNEP</td></tr>
-                    <tr><td>Transferências → Despesas</td><td>Rastreamento de recursos federais aplicados</td></tr>
-                    <tr><td>RCL → Limites LRF</td><td>Cálculo automático de conformidade fiscal</td></tr>
-                </tbody>
-            </table>
-        </section>
-    </main>
+<div style="display: flex; flex-wrap: wrap; gap: 44px 64px; padding-top: 44px">
 
-    <!-- Rodapé -->
-    <footer class="site">
-        <div class="wrap cols">
-            <div>
-                <h4>MonitoraMarília</h4>
-                <p>Monitoramento fiscal do município de Marília a partir de fontes oficiais
-                   abertas, para fortalecer o controle social. Código aberto.</p>
-            </div>
-            <div>
-                <h4>Fontes</h4>
-                <ul>
-                    <li><a href="https://siconfi.tesouro.gov.br" target="_blank" rel="noopener">SICONFI — Tesouro Nacional</a></li>
-                    <li><a href="https://transparencia.tce.sp.gov.br" target="_blank" rel="noopener">TCE&#8209;SP</a></li>
-                    <li><a href="https://portaldatransparencia.gov.br" target="_blank" rel="noopener">Portal da Transparência</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>MATRA</h4>
-                <p>Marília Transparente — OSCIP de controle social e cidadania ativa.</p>
-            </div>
-        </div>
-        <div class="wrap colophon">
-            <span>© 2026 MATRA — Marília Transparente · projeto de código aberto</span>
-            <span class="signature">desenho <b>Tufte · Bortoli</b></span>
-        </div>
-    </footer>
+<section style="flex: 62 1 520px; min-width: 0">
+<p style="margin: 0 0 6px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">I. Novidades desde a última coleta</p>
+<h2 style="margin: 0 0 18px; font-style: italic; font-weight: 400; font-size: 31px; line-height: 1.15; color: #111111">Cinco registros que pedem leitura</h2>
 
-    <script src="js/data.js"></script>
-    <script src="js/charts.js"></script>
-    <script src="js/main.js"></script>
+<article style="display: flex; gap: 20px; padding: 18px 0; border-top: 1px solid #cccccc">
+<div style="flex: 0 0 28px; padding-top: 3px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; color: #1b67b2">1</div>
+<div style="flex: 1 1 0; min-width: 0">
+<div style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">Compra direta · 09.10.2026</div>
+<h3 style="margin: 4px 0 6px; font-style: normal; font-weight: 400; font-size: 22px; line-height: 1.25; color: #111111">Dispensa nº 555: apresentação de DJ para evento apoiado pela Secretaria da Cultura</h3>
+<p style="margin: 0 0 6px; font-size: 17px; line-height: 1.5; color: #222222">Aberta hoje. O registro não informa valor estimado nem fornecedor.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 0 18px; align-items: center; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; color: #6b6b6b">
+<span>Dados abertos · compra direta</span>
+<a href="radar.html" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase">Ver no radar</a>
+</div>
+</div>
+</article>
+
+
+<article style="display: flex; gap: 20px; padding: 18px 0; border-top: 1px solid #cccccc">
+<div style="flex: 0 0 28px; padding-top: 3px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; color: #1b67b2">2</div>
+<div style="flex: 1 1 0; min-width: 0">
+<div style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">Contratos · 07.10.2026</div>
+<h3 style="margin: 4px 0 6px; font-style: normal; font-weight: 400; font-size: 22px; line-height: 1.25; color: #111111">Quatro atas de registro de preço sem o nome da contratada</h3>
+<p style="margin: 0 0 6px; font-size: 17px; line-height: 1.5; color: #222222">ARP nº 197 a 200, processo 91, pregão eletrônico. Somam R$ 16.067,16 e vigoram até 08.10.2027.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 0 18px; align-items: center; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; color: #6b6b6b">
+<span>Dados abertos · contratos</span>
+<a href="radar.html" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase">Ver no radar</a>
+</div>
+</div>
+</article>
+
+
+<article style="display: flex; gap: 20px; padding: 18px 0; border-top: 1px solid #cccccc">
+<div style="flex: 0 0 28px; padding-top: 3px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; color: #1b67b2">3</div>
+<div style="flex: 1 1 0; min-width: 0">
+<div style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">Diário Oficial · edição 4298</div>
+<h3 style="margin: 4px 0 6px; font-style: normal; font-weight: 400; font-size: 22px; line-height: 1.25; color: #111111">Justificativa de quebra da ordem cronológica de pagamentos</h3>
+<p style="margin: 0 0 6px; font-size: 17px; line-height: 1.5; color: #222222">Invoca o art. 141, §1º, III e V, da Lei 14.133/2021. A mesma frase consta de 105 das 196 edições de 2026.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 0 18px; align-items: center; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; color: #6b6b6b">
+<span>Dados abertos · diário oficial</span>
+<a href="diario.html" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase">Ler a edição</a>
+</div>
+</div>
+</article>
+
+
+<article style="display: flex; gap: 20px; padding: 18px 0; border-top: 1px solid #cccccc">
+<div style="flex: 0 0 28px; padding-top: 3px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; color: #1b67b2">4</div>
+<div style="flex: 1 1 0; min-width: 0">
+<div style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">Licitação · aberta</div>
+<h3 style="margin: 4px 0 6px; font-style: normal; font-weight: 400; font-size: 22px; line-height: 1.25; color: #111111">CP 14/2026: contratação integrada das obras de drenagem do Canal Assad Haddad</h3>
+<p style="margin: 0 0 6px; font-size: 17px; line-height: 1.5; color: #222222">Concorrência eletrônica. O conjunto de dados não traz valor estimado.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 0 18px; align-items: center; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; color: #6b6b6b">
+<span>Dados abertos · licitações</span>
+<a href="transparencia.html" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase">Ver lacunas</a>
+</div>
+</div>
+</article>
+
+
+<article style="display: flex; gap: 20px; padding: 18px 0; border-top: 1px solid #cccccc">
+<div style="flex: 0 0 28px; padding-top: 3px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; color: #1b67b2">5</div>
+<div style="flex: 1 1 0; min-width: 0">
+<div style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">Empenho · 01.09.2026</div>
+<h3 style="margin: 4px 0 6px; font-style: normal; font-weight: 400; font-size: 22px; line-height: 1.25; color: #111111">Quatro empenhos de emenda parlamentar à AADEF, no processo 127/2026</h3>
+<p style="margin: 0 0 6px; font-size: 17px; line-height: 1.5; color: #222222">Somam R$ 45.188,00 em emendas individuais, ainda sem pagamento registrado.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 0 18px; align-items: center; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; color: #6b6b6b">
+<span>Portal · empenho analítico</span>
+<a href="fornecedor.html" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase">Abrir a ficha</a>
+</div>
+</div>
+</article>
+
+</section>
+
+<aside aria-label="Notas à margem" style="flex: 38 1 300px; min-width: 0; box-sizing: border-box; padding-left: 28px; border-left: 1px solid #cccccc">
+
+<p style="margin: 0 0 12px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Contratação direta sobre o empenhado</p>
+
+<div style="display: flex; align-items: center; gap: 12px; padding: 5px 0">
+<span style="flex: 0 0 38px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; color: #666666">2023</span>
+<span style="flex: 1 1 0; height: 10px; background: #eef1f5">
+<span style="display: block; height: 10px; width: 51%; background: #222222"></span>
+</span>
+<span style="flex: 0 0 52px; text-align: right; font-size: 17px; color: #111111">5,2%</span>
+</div>
+
+
+<div style="display: flex; align-items: center; gap: 12px; padding: 5px 0">
+<span style="flex: 0 0 38px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; color: #666666">2024</span>
+<span style="flex: 1 1 0; height: 10px; background: #eef1f5">
+<span style="display: block; height: 10px; width: 64%; background: #222222"></span>
+</span>
+<span style="flex: 0 0 52px; text-align: right; font-size: 17px; color: #111111">6,5%</span>
+</div>
+
+
+<div style="display: flex; align-items: center; gap: 12px; padding: 5px 0">
+<span style="flex: 0 0 38px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; color: #666666">2025</span>
+<span style="flex: 1 1 0; height: 10px; background: #eef1f5">
+<span style="display: block; height: 10px; width: 65%; background: #222222"></span>
+</span>
+<span style="flex: 0 0 52px; text-align: right; font-size: 17px; color: #111111">6,6%</span>
+</div>
+
+
+<div style="display: flex; align-items: center; gap: 12px; padding: 5px 0">
+<span style="flex: 0 0 38px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; color: #666666">2026</span>
+<span style="flex: 1 1 0; height: 10px; background: #eef1f5">
+<span style="display: block; height: 10px; width: 100%; background: #1b67b2"></span>
+</span>
+<span style="flex: 0 0 52px; text-align: right; font-size: 17px; color: #111111">10,2%</span>
+</div>
+
+<p style="margin: 10px 0 34px; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">Dispensa e inexigibilidade somadas, sobre o total empenhado. O ano de 2026 vai até outubro, e 62% do empenhado não traz modalidade informada.</p>
+
+<p style="margin: 0 0 8px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Saúde hoje</p>
+<p style="margin: 0 0 4px; font-size: 17px; line-height: 1.45">Medicamentos em falta: lista de 07.10.2026.</p>
+<p style="margin: 0 0 34px; font-size: 17px; line-height: 1.45">Fila de leitos nas UPAs: lista de 08.10.2026.</p>
+
+<p style="margin: 0 0 8px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Casos acompanhados</p>
+<p style="margin: 0 0 4px; font-size: 17px; line-height: 1.45">CIP: 34 lançamentos de arrecadação em 2026, na natureza 1.2.4.</p>
+<p style="margin: 0 0 34px; font-size: 17px; line-height: 1.45">Parque da Criança, CP 012/2026: [situação da licitação].</p>
+
+<p style="margin: 0 0 8px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Estado da coleta</p>
+<p style="margin: 0; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">17 de 17 módulos do portal sincronizados em 09.10.2026. Diário Oficial coletado até a edição 4298.</p>
+</aside>
+
+</div>
+</main>
+
+<footer style="margin-top: 56px; padding-top: 14px; border-top: 1px solid #cccccc; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; line-height: 1.6; letter-spacing: 0.04em; color: #6b6b6b">Fontes: Portal da Transparência de Marília e dados abertos do site da Prefeitura · CPFs de pessoas físicas são mascarados antes da exibição · matra.org.br</footer>
+
+</div>
 </body>
 </html>
