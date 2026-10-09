@@ -19,7 +19,7 @@ function render(tpl, escopo) {
     (m, lista, nome, miolo) => (busca(escopo, lista) || []).map((item) => preencher(miolo, { ...escopo, [nome]: item })).join('\n'));
   return preencher(tpl, escopo);
 }
-const aviso = (destino) => '<div style="box-sizing: border-box; padding: 8px 5%; background: #223463; color: #ffffff; font-family: \'Fira Sans\', -apple-system, \'Segoe UI\', sans-serif; font-size: 12px; letter-spacing: 0.06em; line-height: 1.5">Versão estática · números da coleta de ' + dataColeta + ' · filtros e botões ainda não funcionam' + (dados && destino === 'fornecedor.html' ? ' · a ficha do fornecedor ainda é um exemplo' : '') + '</div>';
+const aviso = (destino) => '<div style="box-sizing: border-box; padding: 8px 5%; background: #223463; color: #ffffff; font-family: \'Fira Sans\', -apple-system, \'Segoe UI\', sans-serif; font-size: 12px; letter-spacing: 0.06em; line-height: 1.5">Versão estática · números da coleta de ' + dataColeta + ' · a busca do Diário e os botões de minuta e de fila ainda não funcionam' + (dados && destino === 'fornecedor.html' ? ' · a ficha do fornecedor ainda é um exemplo' : '') + '</div>';
 for (const [arq, destino] of Object.entries(NOMES)) {
   const h = fs.readFileSync(path.join(src, arq), 'utf8');
   const titulo = h.match(/<title>([\s\S]*?)<\/title>/)[1];
@@ -28,7 +28,14 @@ for (const [arq, destino] of Object.entries(NOMES)) {
   const codigo = h.match(/<script type="text\/x-dc"[^>]*>([\s\S]*?)<\/script>/)[1];
   let vals = vm.runInNewContext('class DCLogic { constructor(p) { this.props = p || {}; this.state = {}; } setState() {} }\n' + codigo + '\nnew Component({}).renderVals()');
   const ligar = vincular[arq];
-  corpo = render(corpo, ligar ? ligar(vals, dados, config) : vals);
+  const valores = ligar ? ligar(vals, dados, config) : vals;
+  corpo = render(corpo, valores);
+  // Páginas com interação no navegador recebem os dados e o script de interacao/.
+  const script = path.join(src, 'interacao', destino.replace('.html', '.js'));
+  if (valores.__cliente && fs.existsSync(script)) {
+    const json = JSON.stringify(valores.__cliente).replace(/</g, '\\u003c');
+    corpo += `\n<script type="application/json" id="dados-pagina">${json}</script>\n<script>\n${fs.readFileSync(script, 'utf8')}</script>`;
+  }
   let pagina = `<!doctype html>\n<html lang="pt-BR">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<title>${titulo}</title>\n${helmet}\n</head>\n<body>\n${aviso(destino)}\n${corpo}\n</body>\n</html>\n`;
   for (const [de, para] of Object.entries(NOMES)) pagina = pagina.split(de).join(para);
   pagina = pagina.split('ds/tufte-bortoli/fonts/').join('fonts/');

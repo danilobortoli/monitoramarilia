@@ -34,4 +34,12 @@ Sem os dois últimos argumentos, o script gera as páginas com os dados de exemp
 Sistema Tufte-Bortoli no modo Spiekermann (ET Book e Fira Sans, títulos em itálico, notas à
 margem), com o azul institucional da MATRA `#1B67B2` como acento e o marinho `#223463` do logotipo.
 
-Nesta versão estática os filtros e botões não funcionam; a navegação entre as telas, sim.
+## Interação no navegador
+
+Páginas que precisam de interação têm um script em `interacao/{página}.js`. O gerador o embute
+na página junto com os dados que `vincular.js` devolve em `__cliente`. Hoje só o Radar tem script:
+clicar numa regra mostra o fato e os registros que ela aponta (até 20 por regra), os filtros por
+família funcionam, e `radar.html#2` abre direto no alerta 2. Nas diárias, a lista mostra cargo e
+secretaria, sem o nome do servidor.
+
+A busca do Diário e os botões de minuta e de fila ainda não funcionam.
