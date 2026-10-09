@@ -108,6 +108,13 @@ jobs:
           python -m src.main observatorio --ano $ANO \
             -o docs/data/observatorio.json || echo "Observatório: indisponível"
 
+      # Regera as páginas do site a partir dos quadros do canvas com os dados do dia.
+      # Se a coleta falhar, as páginas continuam com o observatorio.json anterior.
+      - name: Gerar páginas do Observatório
+        run: |
+          node design/observatorio-canvas/estatico.js design/observatorio-canvas docs \
+            docs/data/observatorio.json config/observatorio.json
+
       - name: Atualizar dashboard
         run: |
           echo "Gerando dados para o dashboard..."

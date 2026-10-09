@@ -1,9 +1,35 @@
 {
-  "gerado_em": "2026-10-09T18:04:02",
+  "gerado_em": "2026-10-09T18:32:25",
   "exercicio": 2026,
   "fontes": {
     "portal": "https://transparencia.marilia.sp.gov.br",
     "dados_abertos": "https://www.marilia.sp.gov.br/portal/dados-abertos"
+  },
+  "coleta": {
+    "data": "2026-10-09",
+    "visoes_portal": {
+      "responderam": 17,
+      "total": 17
+    },
+    "registros_por_visao": {
+      "empenho_analitico": 34692,
+      "despesas_investimentos": 22576,
+      "movimento_empenho": 24287,
+      "despesa_sintetica": 17795,
+      "empenho_modalidade": 9,
+      "restos_a_pagar": 2345,
+      "diarias": 4537,
+      "passagens": 499,
+      "subvencoes": 0,
+      "publicidade": 3,
+      "publicidade_digital": 335,
+      "emendas": 131,
+      "receita_analitica": 64895,
+      "arrecadacao_mes": 385,
+      "pagamento_servidores": 52456,
+      "patrimonio": 153211,
+      "transferencias_educacao": 2012
+    }
   },
   "totais": {
     "compras_diretas": 673,
@@ -29,6 +55,8 @@
       "fonte": "Dados abertos · compra direta",
       "base": 673,
       "resultado": 58,
+      "unidade": "abertas",
+      "fato": "São 490 dispensas e 175 inexigibilidades no ano. 673 dos 673 registros não trazem valor estimado.",
       "itens": [
         {
           "processo": 555,
@@ -180,6 +208,8 @@
       "fonte": "Dados abertos · contratos",
       "base": 1151,
       "resultado": 473,
+      "unidade": "sem nome",
+      "fato": "473 dos 1.151 registros do ano não identificam o fornecedor. Os mais recentes, assinados em 07.10.2026, são 5 e somam R$ 79.887,86.",
       "itens": [
         {
           "numero": 200,
@@ -331,6 +361,8 @@
       "fonte": "Dados abertos · licitações",
       "base": 163,
       "resultado": 163,
+      "unidade": "sem valor",
+      "fato": "163 das 163 licitações do ano não trazem valor estimado no conjunto de dados; 46 estão abertas.",
       "itens": [
         {
           "processo": 10,
@@ -482,6 +514,8 @@
       "fonte": "Diário Oficial",
       "base": 196,
       "resultado": 105,
+      "unidade": "com a justificativa",
+      "fato": "A justificativa com base no art. 141, §1º, consta de 105 das 196 edições do ano, desde a nº 4107.",
       "itens": [
         {
           "edicao": "4298",
@@ -571,8 +605,10 @@
       "familia": "Fornecedores",
       "regra": "Fornecedor novo com valor alto",
       "fonte": "Portal · despesas e investimentos",
-      "base": "1974 fornecedores no ano, comparados com 2024–2025",
+      "base": "1.974 fornecedores no ano, comparados com 2024–2025",
       "resultado": 53,
+      "unidade": "novos",
+      "fato": "53 fornecedores sem empenho em 2024–2025 receberam ao menos R$ 100.000,00 em empenhos no ano, somando R$ 111.721.693,06. O maior é CONSORCIO PARQUE DA CRIANCA, com R$ 19.112.795,49.",
       "itens": [
         {
           "fornecedor": "CONSORCIO PARQUE DA CRIANCA",
@@ -702,8 +738,10 @@
       "familia": "Pessoal",
       "regra": "Diárias atípicas",
       "fonte": "Portal · diárias",
-      "base": "4537 registros, 15 cargos comparáveis",
+      "base": "4.537 registros, 15 cargos comparáveis",
       "resultado": 1,
+      "unidade": "acima do cargo",
+      "fato": "Cada beneficiário é comparado com colegas do mesmo cargo; 15 cargos têm ao menos 5 beneficiários. O maior desvio é de assistente administrativo, com R$ 14.346,68 no ano, para um corte de R$ 2.833,31 no cargo.",
       "itens": [
         {
           "beneficiario": "LUIZ ANTONIO BISSOLI",
@@ -723,6 +761,8 @@
       "fonte": "Dados abertos · obras",
       "base": 38,
       "resultado": 7,
+      "unidade": "paradas ou canceladas",
+      "fato": "Das 38 obras, 22 em andamento, 9 concluídas, 7 canceladas. A de maior valor entre as paradas ou canceladas é Pavimentação Rua Romildo Marconato, de R$ 1.430.000,00.",
       "itens": [
         {
           "obra": "Pavimentação Rua Romildo Marconato",
@@ -781,8 +821,10 @@
       "familia": "Contratos",
       "regra": "Contrato a vencer em 60 dias",
       "fonte": "Dados abertos · contratos",
-      "base": "1040 vigentes",
+      "base": "1.040 vigentes",
       "resultado": 71,
+      "unidade": "a vencer",
+      "fato": "71 contratos e atas vigentes terminam até 08.12.2026, somando R$ 17.084.234,73; 54 deles não identificam a contratada.",
       "itens": [
         {
           "numero": 200,
@@ -926,6 +968,565 @@
         }
       ],
       "n": 8
+    }
+  ],
+  "novidades": {
+    "linha_de_base": true,
+    "resumo": "que abre o histórico do Observatório, entram abaixo os registros mais recentes de cada conjunto. A partir da próxima coleta, o painel mostra só o que mudou.",
+    "itens": [
+      {
+        "tipo": "Compra direta · 09.10.2026",
+        "titulo": "Dispensa nº 555: Prestação de serviços de apresentação de DJ, incluindo fornecimento de equipamentos de sonorização e…",
+        "detalhe": "Situação: aberto. O registro não informa valor estimado.",
+        "fonte": "Dados abertos · compra direta",
+        "acao": "Ver no radar",
+        "link": "radar.html",
+        "n": "1"
+      },
+      {
+        "tipo": "Contratos · 07.10.2026",
+        "titulo": "5 contratos ou atas sem o nome da contratada",
+        "detalhe": "Nº 196, 197, 198, 199, 200; processo 91. Somam R$ 79.887,86.",
+        "fonte": "Dados abertos · contratos",
+        "acao": "Ver no radar",
+        "link": "radar.html",
+        "n": "2"
+      },
+      {
+        "tipo": "Diário Oficial · edição 4298",
+        "titulo": "Justificativa de quebra da ordem cronológica de pagamentos",
+        "detalhe": "Invoca o art. 141, §1º, III e V, da Lei 14.133/2021. A mesma frase consta de 105 das 196 edições do ano.",
+        "fonte": "Dados abertos · diário oficial",
+        "acao": "Ler a edição",
+        "link": "diario.html",
+        "n": "3"
+      },
+      {
+        "tipo": "Licitação · aberta",
+        "titulo": "Edital 10: CHAMAMENTO PÚBLICO Nº 010/2026, com o intuito de firmar TERMO DE COLABORAÇÃO, objetivando a Seleção de…",
+        "detalhe": "Chamamento Público. O conjunto de dados não traz valor estimado.",
+        "fonte": "Dados abertos · licitações",
+        "acao": "Ver lacunas",
+        "link": "transparencia.html",
+        "n": "4"
+      }
+    ]
+  },
+  "serie_contratacao_direta": [
+    {
+      "ano": 2023,
+      "direta": 65314226.77,
+      "total": 1248401643.89,
+      "pct_direta": 5.2,
+      "pct_sem_modalidade": 73.1
+    },
+    {
+      "ano": 2024,
+      "direta": 87633182.43,
+      "total": 1344896190.38,
+      "pct_direta": 6.5,
+      "pct_sem_modalidade": 72.5
+    },
+    {
+      "ano": 2025,
+      "direta": 91293922.73,
+      "total": 1382196640.69,
+      "pct_direta": 6.6,
+      "pct_sem_modalidade": 73.6
+    },
+    {
+      "ano": 2026,
+      "direta": 146824141.63,
+      "total": 1434270050.58,
+      "pct_direta": 10.2,
+      "pct_sem_modalidade": 62.3
+    }
+  ],
+  "saude": {
+    "medicamentos_em_falta": "2026-10-07",
+    "fila_de_leitos": "2026-10-09"
+  },
+  "diario": {
+    "frase": "A interrupção de serviços contratados pode gerar impactos diretos à população",
+    "edicoes": 196,
+    "extras": 6,
+    "com_frase": 105,
+    "primeira_edicao": "4103",
+    "primeira_data": "2026-01-06",
+    "ultima_edicao": "4298",
+    "ultima_data": "2026-10-09",
+    "primeira_com_frase": "4107",
+    "faixa": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    "meses": [
+      {
+        "mes": "jan",
+        "com": 9,
+        "total": 20
+      },
+      {
+        "mes": "fev",
+        "com": 12,
+        "total": 19
+      },
+      {
+        "mes": "mar",
+        "com": 9,
+        "total": 22
+      },
+      {
+        "mes": "abr",
+        "com": 8,
+        "total": 20
+      },
+      {
+        "mes": "mai",
+        "com": 9,
+        "total": 23
+      },
+      {
+        "mes": "jun",
+        "com": 10,
+        "total": 20
+      },
+      {
+        "mes": "jul",
+        "com": 15,
+        "total": 22
+      },
+      {
+        "mes": "ago",
+        "com": 16,
+        "total": 21
+      },
+      {
+        "mes": "set",
+        "com": 13,
+        "total": 22
+      },
+      {
+        "mes": "out",
+        "com": 4,
+        "total": 7
+      }
+    ],
+    "recentes": [
+      {
+        "edicao": "4298",
+        "data": "2026-10-09",
+        "extra": false,
+        "caracteres": 19444,
+        "cnpjs": 3,
+        "dispensa": 4,
+        "portarias": 4,
+        "frase": true
+      },
+      {
+        "edicao": "4297",
+        "data": "2026-10-08",
+        "extra": false,
+        "caracteres": 35606,
+        "cnpjs": 1,
+        "dispensa": 0,
+        "portarias": 5,
+        "frase": true
+      },
+      {
+        "edicao": "4296",
+        "data": "2026-10-07",
+        "extra": false,
+        "caracteres": 16300,
+        "cnpjs": 3,
+        "dispensa": 2,
+        "portarias": 2,
+        "frase": false
+      },
+      {
+        "edicao": "4295",
+        "data": "2026-10-06",
+        "extra": false,
+        "caracteres": 26320,
+        "cnpjs": 4,
+        "dispensa": 2,
+        "portarias": 3,
+        "frase": true
+      },
+      {
+        "edicao": "4294",
+        "data": "2026-10-03",
+        "extra": false,
+        "caracteres": 19694,
+        "cnpjs": 4,
+        "dispensa": 4,
+        "portarias": 6,
+        "frase": false
+      },
+      {
+        "edicao": "4293",
+        "data": "2026-10-02",
+        "extra": false,
+        "caracteres": 12541,
+        "cnpjs": 3,
+        "dispensa": 3,
+        "portarias": 17,
+        "frase": false
+      },
+      {
+        "edicao": "4292",
+        "data": "2026-10-01",
+        "extra": false,
+        "caracteres": 45765,
+        "cnpjs": 3,
+        "dispensa": 9,
+        "portarias": 20,
+        "frase": true
+      }
+    ],
+    "trecho": {
+      "edicao": "4298",
+      "data": "2026-10-09",
+      "antes": "Risco de Descontinuidade Operacional.",
+      "frase": "A interrupção de serviços contratados pode gerar impactos diretos à população",
+      "depois": ". A ausência de pagamentos tempestivos pode levar à suspensão de contratos, ao comprometimento de atividades estratégicas e até mesmo à rescisão unilateral por…",
+      "seguinte": "Fundamentação Legal. A quebra da ordem cronológica de pagamentos encontra amparo no artigo 141, §1º, inciso III e V, da Lei nº 14.133/2021, que permite a…"
+    }
+  },
+  "transparencia": {
+    "campos": [
+      {
+        "conjunto": "Compras diretas",
+        "campo": "Valor estimado",
+        "vazios": 673,
+        "total": 673,
+        "pct": 100
+      },
+      {
+        "conjunto": "Compras diretas",
+        "campo": "Valor homologado",
+        "vazios": 673,
+        "total": 673,
+        "pct": 100
+      },
+      {
+        "conjunto": "Licitações",
+        "campo": "Valor estimado",
+        "vazios": 163,
+        "total": 163,
+        "pct": 100
+      },
+      {
+        "conjunto": "Licitações",
+        "campo": "Valor homologado",
+        "vazios": 163,
+        "total": 163,
+        "pct": 100
+      },
+      {
+        "conjunto": "Obras",
+        "campo": "Fim da execução",
+        "vazios": 27,
+        "total": 38,
+        "pct": 71
+      },
+      {
+        "conjunto": "Contratos e atas",
+        "campo": "Nome da contratada",
+        "vazios": 473,
+        "total": 1151,
+        "pct": 41
+      },
+      {
+        "conjunto": "Contratos e atas",
+        "campo": "Tipo de licitação",
+        "vazios": 128,
+        "total": 1151,
+        "pct": 11
+      },
+      {
+        "conjunto": "Contratos e atas",
+        "campo": "Situação",
+        "vazios": 107,
+        "total": 1151,
+        "pct": 9
+      },
+      {
+        "conjunto": "Obras",
+        "campo": "Início da execução",
+        "vazios": 3,
+        "total": 38,
+        "pct": 8
+      },
+      {
+        "conjunto": "Contratos e atas",
+        "campo": "Número do contrato",
+        "vazios": 66,
+        "total": 1151,
+        "pct": 6
+      },
+      {
+        "conjunto": "Contratos e atas",
+        "campo": "Valor do contrato",
+        "vazios": 19,
+        "total": 1151,
+        "pct": 2
+      },
+      {
+        "conjunto": "Contratos e atas",
+        "campo": "Fim da vigência",
+        "vazios": 1,
+        "total": 1151,
+        "pct": 0
+      }
+    ],
+    "secoes": [
+      {
+        "nome": "Despesas · Subvenções",
+        "fato": "A visão do portal não tem nenhum registro em 2026."
+      },
+      {
+        "nome": "SIC e Ouvidoria",
+        "fato": "Os conjuntos de dados abertos vêm zerados; o atendimento corre em outro sistema."
+      },
+      {
+        "nome": "Contas públicas",
+        "fato": "O conjunto de 2026 responde “Nenhum registro encontrado”."
+      },
+      {
+        "nome": "Relatório de viagens",
+        "fato": "O conjunto de 2026 responde “Nenhum registro encontrado”."
+      },
+      {
+        "nome": "Editais de concurso",
+        "fato": "O conjunto de 2026 responde “Nenhum registro encontrado”."
+      }
+    ]
+  },
+  "historico": [
+    {
+      "data": "2026-10-09",
+      "exercicio": 2026,
+      "totais": {
+        "compras_diretas": 673,
+        "dispensas": 490,
+        "inexigibilidades": 175,
+        "licitacoes": 163,
+        "licitacoes_abertas": 46,
+        "contratos": 1151,
+        "contratos_vigentes": 1040,
+        "obras": 38,
+        "obras_em_andamento": 22,
+        "obras_concluidas": 9,
+        "obras_canceladas": 7,
+        "empenhos": 20839,
+        "anulacoes": 1737,
+        "empenhado_liquido": 1350234459.9
+      },
+      "radar": {
+        "compra_direta_aberta": 58,
+        "contrato_sem_contratada": 473,
+        "licitacao_sem_valor": 163,
+        "quebra_ordem_cronologica": 105,
+        "fornecedor_novo_valor_alto": 53,
+        "diarias_atipicas": 1,
+        "obra_parada_ou_cancelada": 7,
+        "contrato_a_vencer": 71
+      }
     }
   ]
 }

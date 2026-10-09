@@ -12,20 +12,26 @@ Fonte das cinco telas publicadas em `docs/` (GitHub Pages):
 
 ## Sobre os dados
 
-Os números vêm de uma coleta feita em 09.10.2026 no Portal da Transparência de Marília
-(`transparencia.marilia.sp.gov.br`) e nos dados abertos do site da Prefeitura
-(`www.marilia.sp.gov.br/portal/dados-abertos`). O que aparece entre colchetes ainda não foi
-calculado. A ficha do fornecedor é descritiva e não aponta irregularidade.
+As páginas publicadas saem dos quadros com os números da última coleta. O workflow diário
+roda `python -m src.main observatorio` (que grava `docs/data/observatorio.json`) e depois
+regera as páginas:
+
+```bash
+node design/observatorio-canvas/estatico.js design/observatorio-canvas docs \
+  docs/data/observatorio.json config/observatorio.json
+```
+
+`vincular.js` troca, em cada quadro, os valores de exemplo pelos dados do dia: números, datas,
+listas e o fato de cada regra do radar. Os textos editoriais (norma, o que falta, notas à margem)
+continuam vindo dos quadros. `config/observatorio.json` guarda o que é editado à mão: os casos
+acompanhados do painel e as seções sem dado que não se medem automaticamente.
+
+Sem os dois últimos argumentos, o script gera as páginas com os dados de exemplo dos quadros
+(coleta de 09.10.2026), como no mock-up original. A ficha do fornecedor ainda é um exemplo fixo.
 
 ## Sobre o desenho
 
 Sistema Tufte-Bortoli no modo Spiekermann (ET Book e Fira Sans, títulos em itálico, notas à
 margem), com o azul institucional da MATRA `#1B67B2` como acento e o marinho `#223463` do logotipo.
-
-Para regerar as páginas a partir dos quadros:
-
-```bash
-node design/observatorio-canvas/estatico.js design/observatorio-canvas docs
-```
 
 Nesta versão estática os filtros e botões não funcionam; a navegação entre as telas, sim.

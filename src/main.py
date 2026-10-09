@@ -204,31 +204,94 @@ def cmd_marilia(args):
 
 
 def cmd_observatorio(args):
-    """Coleta as fontes de Marília e calcula o Radar do Observatório."""
+    """Coleta as fontes de Marília, registra o que mudou e calcula o Radar do Observatório."""
     from collectors.portal_marilia import PortalMariliaCollector
     from collectors.dados_abertos_marilia import DadosAbertosMariliaCollector
-    from analyzers import radar
+    from analyzers import paineis, radar
+    from analyzers.acervo import CONJUNTOS_COMPARADOS, Acervo, comparar, impressao
 
-    ano = args.ano or datetime.now().year
+    hoje = datetime.now().date()
+    ano = args.ano or hoje.year
     portal = PortalMariliaCollector()
     abertos = DadosAbertosMariliaCollector()
+    acervo = Acervo(args.historico)
+    frase_diario = "A interrupção de serviços contratados pode gerar impactos diretos à população"
 
     log(f"Coletando dados abertos de {ano}...", "info")
-    compras = abertos.get_conjunto("compra-direta", ano)
-    contratos = abertos.get_conjunto("contratos", ano)
-    licitacoes = abertos.get_conjunto("licitacoes", ano)
-    obras = abertos.get_conjunto("obras", ano)
-    diario = abertos.get_conjunto("diario-oficial", ano)
+    conjuntos = {nome: abertos.get_conjunto(nome, ano) for nome in (
+        "compra-direta", "contratos", "licitacoes", "obras", "diario-oficial",
+        "contas-publicas", "relatorio-viagens", "concursos", "sic", "ouvidoria",
+    )}
+    compras = conjuntos["compra-direta"]
+    contratos = conjuntos["contratos"]
+    licitacoes = conjuntos["licitacoes"]
+    obras = conjuntos["obras"]
+    diario = conjuntos["diario-oficial"]
 
-    log(f"Coletando despesas e diárias do portal ({ano})...", "info")
+    log(f"Coletando despesas, diárias e modalidades do portal ({ano})...", "info")
     despesas = portal.get_visao("despesas_investimentos", ano)
     diarias = portal.get_visao("diarias", ano)
+    modalidades = {a: portal.get_visao("empenho_modalidade", a) for a in range(ano - 3, ano + 1)}
 
+    contagens = {}
+    for nome in portal.VISOES:
+        try:
+            contagens[nome] = portal.contar(nome, ano)
+        except Exception as erro:  # uma visão fora do ar não derruba a coleta
+            log(f"Visão {nome} não respondeu: {erro}", "warning")
+
+    saude = {}
+    for chave, (modulo, visao, secao) in {
+        "medicamentos_em_falta": ("relacaonominal", "medicamentosemfalta", "MEDICAMENTOS EM FALTA"),
+        "fila_de_leitos": ("58", "RelacaoPacientesesperandoporvagasinternacao", None),
+    }.items():
+        try:
+            saude[chave] = portal.ultima_data_arquivo(modulo, visao, secao)
+        except Exception as erro:
+            log(f"Página {modulo}/{visao} não respondeu: {erro}", "warning")
+
+    # Fornecedores de anos anteriores: lidos do cache, renovado a cada 30 dias.
     anos_anteriores = list(range(ano - max(1, args.anos_comparacao), ano))
-    log(f"Coletando despesas de {anos_anteriores[0]}–{anos_anteriores[-1]} para comparação...", "info")
-    despesas_anteriores = []
-    for a in anos_anteriores:
-        despesas_anteriores.extend(portal.get_visao("despesas_investimentos", a))
+    conhecidos = None if args.renovar_cache else acervo.ler_fornecedores_conhecidos(anos_anteriores)
+    if conhecidos is None:
+        log(f"Renovando cache de fornecedores de {anos_anteriores[0]}–{anos_anteriores[-1]}...", "info")
+        anteriores = []
+        for a in anos_anteriores:
+            anteriores.extend(portal.get_visao("despesas_investimentos", a))
+        conhecidos = radar.fornecedores_conhecidos(anteriores)
+        acervo.gravar_fornecedores_conhecidos(anos_anteriores, conhecidos)
+
+    # O que mudou desde a coleta anterior.
+    mudancas = {}
+    for nome in CONJUNTOS_COMPARADOS:
+        anterior = acervo.ler_estado(nome, ano)
+        mudancas[nome] = None if anterior is None else comparar(nome, anterior, conjuntos[nome])
+        acervo.gravar_estado(nome, ano, conjuntos[nome])
+
+    edicoes = [{"edicao": e.get("edicao"), "data": e.get("data"), "impressao": impressao(e)} for e in diario]
+    anterior = acervo.ler_estado("diario-oficial", ano)
+    if anterior is not None:
+        antes = {e["edicao"]: e["impressao"] for e in anterior}
+        mudancas["diario_oficial"] = {
+            "novas": [e["edicao"] for e in edicoes if e["edicao"] not in antes],
+            "alteradas": [e["edicao"] for e in edicoes
+                          if e["edicao"] in antes and antes[e["edicao"]] != e["impressao"]],
+        }
+    acervo.gravar_estado("diario-oficial", ano, edicoes, ordenar=lambda e: e["data"] or "")
+
+    ids = sorted({d.get("ID") for d in despesas if d.get("ID") is not None})
+    anterior = acervo.ler_estado("despesas", ano)
+    if anterior is not None:
+        antes = set(anterior)
+        mudancas["despesas"] = {
+            "novos": [i for i in ids if i not in antes],
+            "removidos": sorted(antes - set(ids)),
+        }
+    acervo.gravar_estado("despesas", ano, ids, ordenar=lambda i: i)
+
+    primeira_coleta = any(v is None for v in mudancas.values()) or len(mudancas) < len(CONJUNTOS_COMPARADOS) + 2
+    if not primeira_coleta:
+        acervo.gravar_mudancas(hoje, mudancas)
 
     regras = [
         radar.compra_direta_aberta(compras),
@@ -236,16 +299,25 @@ def cmd_observatorio(args):
         radar.licitacao_sem_valor(licitacoes),
         radar.quebra_ordem_cronologica(diario),
         radar.fornecedor_novo_valor_alto(
-            despesas, despesas_anteriores, limite=args.limite_fornecedor,
+            despesas, conhecidos, limite=args.limite_fornecedor,
             anos_anteriores=f"{anos_anteriores[0]}–{anos_anteriores[-1]}",
         ),
         radar.diarias_atipicas(diarias),
         radar.obra_parada_ou_cancelada(obras),
-        radar.contrato_a_vencer(contratos),
+        radar.contrato_a_vencer(contratos, hoje=hoje),
     ]
     for n, regra in enumerate(regras, 1):
         regra["n"] = n
 
+    totais = radar.totais(compras, licitacoes, contratos, obras, despesas)
+    acervo.registrar_coleta({
+        "data": hoje.isoformat(),
+        "exercicio": ano,
+        "totais": totais,
+        "radar": {r["id"]: r["resultado"] for r in regras},
+    })
+
+    vazias = [titulo for nome, titulo in (("subvencoes", "Subvenções"),) if contagens.get(nome) == 0]
     data = {
         "gerado_em": datetime.now().isoformat(timespec="seconds"),
         "exercicio": ano,
@@ -253,12 +325,34 @@ def cmd_observatorio(args):
             "portal": PortalMariliaCollector.PORTAL_URL,
             "dados_abertos": DadosAbertosMariliaCollector.BASE_URL,
         },
-        "totais": radar.totais(compras, licitacoes, contratos, obras, despesas),
+        "coleta": {
+            "data": hoje.isoformat(),
+            "visoes_portal": {"responderam": len(contagens), "total": len(portal.VISOES)},
+            "registros_por_visao": contagens,
+        },
+        "totais": totais,
         "regras": regras,
+        "novidades": paineis.novidades(
+            None if primeira_coleta else mudancas,
+            compras, contratos, licitacoes, diario, despesas, frase_diario,
+        ),
+        "serie_contratacao_direta": paineis.serie_contratacao_direta(modalidades),
+        "saude": saude,
+        "diario": paineis.diario(diario, frase_diario),
+        "transparencia": {
+            "campos": paineis.campos_vazios(conjuntos),
+            "secoes": paineis.secoes_sem_dado(
+                [c for c in ("contas-publicas", "relatorio-viagens", "concursos") if not conjuntos[c]],
+                {"sic": (conjuntos["sic"] or [None])[0], "ouvidoria": (conjuntos["ouvidoria"] or [None])[0]},
+                vazias, ano,
+            ),
+        },
+        "historico": acervo.serie()[-90:],
     }
 
     for regra in regras:
         log(f"{regra['n']}. {regra['regra']}: {regra['resultado']} (base: {regra['base']})", "info")
+    log(f"Novidades: {data['novidades']['resumo']}", "info")
 
     _save_json(args.output or "docs/data/observatorio.json", data)
 
@@ -1010,6 +1104,10 @@ Exemplos de uso:
                                      help="Exercícios anteriores para achar fornecedor novo (default: 2)")
     observatorio_parser.add_argument("--limite-fornecedor", type=float, default=100_000.0,
                                      help="Empenhado mínimo de fornecedor novo (default: 100000)")
+    observatorio_parser.add_argument("--historico", default="historico",
+                                     help="Diretório do histórico entre coletas (default: historico)")
+    observatorio_parser.add_argument("--renovar-cache", action="store_true",
+                                     help="Recoletar os fornecedores dos anos anteriores")
     observatorio_parser.add_argument("-o", "--output",
                                      help="Arquivo de saída (default: docs/data/observatorio.json)")
 

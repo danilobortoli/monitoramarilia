@@ -1,0 +1,13 @@
+{
+  "_leia": "Conteúdo editado à mão que entra nas páginas do Observatório. 'casos' aparece no painel do dia (Casos acompanhados); 'secoes_manuais' entra na lista de seções sem dado da página de transparência ativa.",
+  "casos": [
+    "CIP: 34 lançamentos de arrecadação em 2026, na natureza 1.2.4.",
+    "Parque da Criança, CP 012/2026: [situação da licitação]."
+  ],
+  "secoes_manuais": [
+    {
+      "nome": "Parcerias com o terceiro setor",
+      "fato": "A página traz só texto e links; não há dado estruturado sobre os termos celebrados."
+    }
+  ]
+}

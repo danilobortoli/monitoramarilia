@@ -35,9 +35,9 @@ a{color:#1b67b2;text-decoration:none}a:hover{color:#223463;text-decoration:under
 
 <main>
 <div style="padding: 56px 0 36px; max-width: 900px">
-<p style="margin: 0 0 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Painel do dia · sexta-feira, 9 de outubro de 2026</p>
+<p style="margin: 0 0 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Painel do dia · {{ txt.data_extenso }}</p>
 <h1 style="margin: 0 0 20px; font-style: italic; font-weight: 400; font-size: 46px; line-height: 1.12; color: #111111">O que mudou em Marília desde ontem</h1>
-<p style="margin: 0; font-size: 21px; line-height: 1.5; color: #222222"><span style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-variant-caps: all-small-caps; letter-spacing: 0.08em; font-weight: 500; color: #111111">Na coleta de hoje,</span> uma dispensa nova sem valor estimado, quatro atas de registro de preço publicadas sem o nome da contratada e, no Diário Oficial nº 4298, a justificativa de quebra da ordem cronológica que aparece em 105 das 196 edições do ano.</p>
+<p style="margin: 0; font-size: 21px; line-height: 1.5; color: #222222"><span style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-variant-caps: all-small-caps; letter-spacing: 0.08em; font-weight: 500; color: #111111">Na coleta de hoje,</span> {{ txt.lead }}</p>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 28px 48px; padding: 26px 0 28px; border-top: 2px solid #111111; border-bottom: 1px solid #cccccc">
@@ -54,7 +54,7 @@ a{color:#1b67b2;text-decoration:none}a:hover{color:#223463;text-decoration:under
 
 <section style="flex: 62 1 520px; min-width: 0">
 <p style="margin: 0 0 6px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">I. Novidades desde a última coleta</p>
-<h2 style="margin: 0 0 18px; font-style: italic; font-weight: 400; font-size: 31px; line-height: 1.15; color: #111111">Cinco registros que pedem leitura</h2>
+<h2 style="margin: 0 0 18px; font-style: italic; font-weight: 400; font-size: 31px; line-height: 1.15; color: #111111">{{ txt.novidades_titulo }}</h2>
 <sc-for list="{{ novidades }}" as="item" hint-placeholder-count="5">
 <article style="display: flex; gap: 20px; padding: 18px 0; border-top: 1px solid #cccccc">
 <div style="flex: 0 0 28px; padding-top: 3px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; color: #1b67b2">{{ item.n }}</div>
@@ -83,18 +83,20 @@ a{color:#1b67b2;text-decoration:none}a:hover{color:#223463;text-decoration:under
 <span style="flex: 0 0 52px; text-align: right; font-size: 17px; color: #111111">{{ s.valor }}</span>
 </div>
 </sc-for>
-<p style="margin: 10px 0 34px; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">Dispensa e inexigibilidade somadas, sobre o total empenhado. O ano de 2026 vai até outubro, e 62% do empenhado não traz modalidade informada.</p>
+<p style="margin: 10px 0 34px; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">{{ txt.nota_serie }}</p>
 
 <p style="margin: 0 0 8px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Saúde hoje</p>
-<p style="margin: 0 0 4px; font-size: 17px; line-height: 1.45">Medicamentos em falta: lista de 07.10.2026.</p>
-<p style="margin: 0 0 34px; font-size: 17px; line-height: 1.45">Fila de leitos nas UPAs: lista de 08.10.2026.</p>
+<p style="margin: 0 0 4px; font-size: 17px; line-height: 1.45">{{ txt.medicamentos }}</p>
+<p style="margin: 0 0 34px; font-size: 17px; line-height: 1.45">{{ txt.leitos }}</p>
 
 <p style="margin: 0 0 8px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Casos acompanhados</p>
-<p style="margin: 0 0 4px; font-size: 17px; line-height: 1.45">CIP: 34 lançamentos de arrecadação em 2026, na natureza 1.2.4.</p>
-<p style="margin: 0 0 34px; font-size: 17px; line-height: 1.45">Parque da Criança, CP 012/2026: [situação da licitação].</p>
+<sc-for list="{{ casos }}" as="c" hint-placeholder-count="2">
+<p style="margin: 0 0 4px; font-size: 17px; line-height: 1.45">{{ c.texto }}</p>
+</sc-for>
+<div style="height: 30px"></div>
 
 <p style="margin: 0 0 8px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Estado da coleta</p>
-<p style="margin: 0; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">17 de 17 módulos do portal sincronizados em 09.10.2026. Diário Oficial coletado até a edição 4298.</p>
+<p style="margin: 0; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">{{ txt.estado_coleta }}</p>
 </aside>
 
 </div>
@@ -127,6 +129,19 @@ serie: [
 { ano: '2024', valor: '6,5%', largura: '64%', cor: '#222222' },
 { ano: '2025', valor: '6,6%', largura: '65%', cor: '#222222' },
 { ano: '2026', valor: '10,2%', largura: '100%', cor: '#1b67b2' }
+],
+txt: {
+novidades_titulo: 'Cinco registros que pedem leitura',
+data_extenso: 'sexta-feira, 9 de outubro de 2026',
+lead: 'uma dispensa nova sem valor estimado, quatro atas de registro de preço publicadas sem o nome da contratada e, no Diário Oficial nº 4298, a justificativa de quebra da ordem cronológica que aparece em 105 das 196 edições do ano.',
+nota_serie: 'Dispensa e inexigibilidade somadas, sobre o total empenhado. O ano de 2026 vai até outubro, e 62% do empenhado não traz modalidade informada.',
+medicamentos: 'Medicamentos em falta: lista de 07.10.2026.',
+leitos: 'Fila de leitos nas UPAs: lista de 08.10.2026.',
+estado_coleta: '17 de 17 módulos do portal sincronizados em 09.10.2026. Diário Oficial coletado até a edição 4298.'
+},
+casos: [
+{ texto: 'CIP: 34 lançamentos de arrecadação em 2026, na natureza 1.2.4.' },
+{ texto: 'Parque da Criança, CP 012/2026: [situação da licitação].' }
 ]
 };
 }

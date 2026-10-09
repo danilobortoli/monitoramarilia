@@ -18,6 +18,7 @@ Mapa completo em APIS_MARILIA.md.
 """
 
 import logging
+import re
 import time
 from typing import Any, Dict, Iterator, List, Optional
 
@@ -215,3 +216,26 @@ class PortalMariliaCollector:
         modulo, visao = self.VISOES[nome]
         resultado = self.filtrar(modulo, visao, exercicio, por_pagina=1)
         return resultado.get("QuantidadeRegistros") or 0
+
+    def ultima_data_arquivo(self, modulo: str, visao: str, secao: Optional[str] = None) -> Optional[str]:
+        """
+        Data mais recente (AAAA-MM-DD) entre os arquivos de uma página fixa do portal.
+
+        As páginas de arquivos (/#/fixo/{modulo}/{visao}) listam documentos numa árvore
+        cujos títulos trazem a data, como "07/10/2026". `secao` limita a busca ao ramo
+        com esse título (ex.: "MEDICAMENTOS EM FALTA").
+        """
+        pagina = self._get(f"modulovisao/fixo/{modulo}/{visao}")
+        datas = []
+
+        def percorrer(itens, dentro):
+            for item in itens or []:
+                titulo = item.get("title") or ""
+                agora = dentro or (secao is not None and secao.lower() in titulo.lower())
+                if agora or secao is None:
+                    for d, m, a in re.findall(r"(\d{2})[/.-](\d{2})[/.-](\d{4})", titulo):
+                        datas.append(f"{a}-{m}-{d}")
+                percorrer(item.get("children"), agora)
+
+        percorrer(pagina.get("VisaoItens"), False)
+        return max(datas) if datas else None

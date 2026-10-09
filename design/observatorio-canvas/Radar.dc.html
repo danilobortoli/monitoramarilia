@@ -35,7 +35,7 @@ a{color:#1b67b2;text-decoration:none}a:hover{color:#223463;text-decoration:under
 
 <main>
 <div style="padding: 56px 0 30px; max-width: 900px">
-<p style="margin: 0 0 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Radar · oito regras sobre a base de 2026</p>
+<p style="margin: 0 0 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Radar · oito regras sobre a base de {{ txt.exercicio }}</p>
 <h1 style="margin: 0 0 20px; font-style: italic; font-weight: 400; font-size: 46px; line-height: 1.12; color: #111111">Cada alerta é uma regra, um fato e uma fonte</h1>
 <p style="margin: 0; font-size: 21px; line-height: 1.5; color: #222222"><span style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-variant-caps: all-small-caps; letter-spacing: 0.08em; font-weight: 500; color: #111111">O radar não acusa:</span> ele aponta o registro, cita a norma e diz qual consulta falta. O que depende de informação ainda não obtida fica como indício, com o pedido que vai obtê-la.</p>
 </div>
@@ -91,7 +91,7 @@ a{color:#1b67b2;text-decoration:none}a:hover{color:#223463;text-decoration:under
 </div>
 </main>
 
-<footer style="margin-top: 56px; padding-top: 14px; border-top: 1px solid #cccccc; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; line-height: 1.6; letter-spacing: 0.04em; color: #6b6b6b">Fontes: Portal da Transparência de Marília e dados abertos do site da Prefeitura · coleta de 09.10.2026 · matra.org.br</footer>
+<footer style="margin-top: 56px; padding-top: 14px; border-top: 1px solid #cccccc; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; line-height: 1.6; letter-spacing: 0.04em; color: #6b6b6b">Fontes: Portal da Transparência de Marília e dados abertos do site da Prefeitura · coleta de {{ txt.coleta }} · matra.org.br</footer>
 
 </div>
 </x-dc>
@@ -122,11 +122,11 @@ falta: 'Comparar vencimento e data de pagamento por empenho, para identificar os
 { n: '5', familia: 'Fornecedores', regra: 'Fornecedor novo com valor alto', fonte: 'Portal · empenho analítico', base: '34.692 empenhos', resultado: '[a calcular]',
 norma: 'Sem norma própria: é sinal de triagem, que leva aos testes de porte, CNAE e capital social.',
 fato: 'Regra ainda não executada sobre a base. [resultado da primeira execução]',
-falta: 'Definir o limiar de valor e a janela que caracteriza o fornecedor como novo.' },
+falta: 'Conferir porte, CNAE, capital social e data de abertura dos fornecedores listados, e o processo de cada empenho.' },
 { n: '6', familia: 'Pessoal', regra: 'Diárias atípicas', fonte: 'Portal · diárias', base: '4.537 registros', resultado: '[a calcular]',
 norma: '[norma municipal de diárias aplicável]',
 fato: 'Regra ainda não executada sobre a base. [resultado da primeira execução]',
-falta: 'Definir o que é atípico: valor, destino, fim de semana ou repetição por servidor.' },
+falta: 'Ler destino, motivo e datas das viagens de cada beneficiário listado, e a norma municipal que fixa os valores.' },
 { n: '7', familia: 'Obras', regra: 'Obra parada ou cancelada', fonte: 'Dados abertos · obras', base: '38 obras', resultado: '7 canceladas',
 norma: 'Lei 14.133/2021, art. 115, §6º: obra paralisada por mais de um mês exige aviso público com o motivo e a previsão de retomada.',
 fato: 'Das 38 obras, 22 estão em andamento, 9 concluídas e 7 canceladas, entre elas a reforma da EMEI Dr. Fernando Mauro, de R$ 801.632,00.',
@@ -145,7 +145,11 @@ filtros: nomes.map((nome) => ({ nome, ativo: nome === fam, cor: nome === fam ? '
 pick: () => this.setState({ familia: nome }) })),
 regras: visiveis.map((r) => ({ ...r, ativo: r.n === sel.n, fundo: r.n === sel.n ? '#eef1f5' : '#ffffff',
 pick: () => this.setState({ sel: r.n }) })),
-sel
+sel,
+txt: {
+exercicio: '2026',
+coleta: '09.10.2026'
+}
 };
 }
 }

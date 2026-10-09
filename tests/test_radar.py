@@ -65,11 +65,25 @@ def test_fornecedor_novo_valor_alto_ignora_conhecidos_e_desconta_anulacoes():
         {"CNPJ": "33.333.333/0001-33", "NomeFornecedor": "PEQUENA", "ValorEmpenhado": "5.000,00"},
     ]
     anteriores = [{"CNPJ": "22222222000122", "NomeFornecedor": "ANTIGA", "ValorEmpenhado": "1,00"}]
-    r = radar.fornecedor_novo_valor_alto(ano, anteriores, limite=100_000)
+    conhecidos = radar.fornecedores_conhecidos(anteriores)
+    r = radar.fornecedor_novo_valor_alto(ano, conhecidos, limite=100_000, anos_anteriores="2024–2025")
     assert r["resultado"] == 1
     assert r["itens"][0]["fornecedor"] == "NOVA"
     assert r["itens"][0]["empenhado"] == 140_000.0
     assert r["itens"][0]["lancamentos"] == 2
+    assert "R$ 140.000,00" in r["fato"]
+
+
+def test_chave_fornecedor_nao_guarda_cpf_por_extenso():
+    assert radar.chave_fornecedor("68.395.240/0001-76") == "68395240000176"
+    chave = radar.chave_fornecedor("004.716.258-92", "Libânio  Victor")
+    assert chave == "cpf:716258:LIBANIO VICTOR"
+    assert "00471625892" not in chave
+
+
+def test_moeda_e_numero():
+    assert radar.moeda(1234567.5) == "R$ 1.234.567,50"
+    assert radar.numero(20839) == "20.839"
 
 
 def test_diarias_atipicas_compara_dentro_do_cargo():

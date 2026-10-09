@@ -1,0 +1,985 @@
+{
+ "exercicio": 2026,
+ "registros": [
+  {
+   "edicao": "4103",
+   "data": "2026-01-06 00:01:00",
+   "impressao": "97f03b255a42b0d0"
+  },
+  {
+   "edicao": "4104",
+   "data": "2026-01-07 00:01:00",
+   "impressao": "505b1f655b712224"
+  },
+  {
+   "edicao": "4105",
+   "data": "2026-01-08 00:01:00",
+   "impressao": "1969951c1e3e6a76"
+  },
+  {
+   "edicao": "4106",
+   "data": "2026-01-09 00:01:00",
+   "impressao": "c73350c23779df06"
+  },
+  {
+   "edicao": "4107",
+   "data": "2026-01-10 00:01:00",
+   "impressao": "d14b3a3ba4ea7eac"
+  },
+  {
+   "edicao": "4108",
+   "data": "2026-01-13 00:01:00",
+   "impressao": "eda5941a43d37448"
+  },
+  {
+   "edicao": "4109",
+   "data": "2026-01-14 00:01:00",
+   "impressao": "b415b82420ca342f"
+  },
+  {
+   "edicao": "4110",
+   "data": "2026-01-15 00:01:00",
+   "impressao": "2f28e941a5178688"
+  },
+  {
+   "edicao": "4111",
+   "data": "2026-01-16 00:01:00",
+   "impressao": "5a7b1ad75b5e0f57"
+  },
+  {
+   "edicao": "4112",
+   "data": "2026-01-17 00:01:00",
+   "impressao": "4c449e5b0346b3ad"
+  },
+  {
+   "edicao": "4113",
+   "data": "2026-01-20 00:01:00",
+   "impressao": "6a5cd018d914f067"
+  },
+  {
+   "edicao": "4114",
+   "data": "2026-01-21 00:01:00",
+   "impressao": "053935b6275e044a"
+  },
+  {
+   "edicao": "4115",
+   "data": "2026-01-22 00:01:00",
+   "impressao": "edd4efd76cc34372"
+  },
+  {
+   "edicao": "4116",
+   "data": "2026-01-23 00:01:00",
+   "impressao": "9e4ab447436548ec"
+  },
+  {
+   "edicao": "4117",
+   "data": "2026-01-24 00:01:00",
+   "impressao": "5e3d291cb7149a55"
+  },
+  {
+   "edicao": "4118",
+   "data": "2026-01-27 00:01:00",
+   "impressao": "b4c9e82cd5cf48f4"
+  },
+  {
+   "edicao": "4119",
+   "data": "2026-01-28 00:01:00",
+   "impressao": "523814d1fded5a56"
+  },
+  {
+   "edicao": "4120",
+   "data": "2026-01-29 00:01:00",
+   "impressao": "16ff9722515b6739"
+  },
+  {
+   "edicao": "4121",
+   "data": "2026-01-30 00:01:00",
+   "impressao": "26e9b78af03ec322"
+  },
+  {
+   "edicao": "4122",
+   "data": "2026-01-31 00:01:00",
+   "impressao": "dc78f059137a5383"
+  },
+  {
+   "edicao": "4123",
+   "data": "2026-02-03 00:01:00",
+   "impressao": "c892213f82120682"
+  },
+  {
+   "edicao": "4124",
+   "data": "2026-02-04 00:01:00",
+   "impressao": "48c0d98361ca40a7"
+  },
+  {
+   "edicao": "4125",
+   "data": "2026-02-05 00:01:00",
+   "impressao": "75e814356a33627f"
+  },
+  {
+   "edicao": "4126",
+   "data": "2026-02-06 00:01:00",
+   "impressao": "ca22002fe6d5eb7c"
+  },
+  {
+   "edicao": "4127",
+   "data": "2026-02-07 00:01:00",
+   "impressao": "9adb174786e86ae0"
+  },
+  {
+   "edicao": "4128",
+   "data": "2026-02-10 00:01:00",
+   "impressao": "a0257604121b8e0a"
+  },
+  {
+   "edicao": "4129",
+   "data": "2026-02-11 00:01:00",
+   "impressao": "73f26eea1e3ff205"
+  },
+  {
+   "edicao": "4130",
+   "data": "2026-02-12 00:01:00",
+   "impressao": "bdd839f9f27babff"
+  },
+  {
+   "edicao": "4131",
+   "data": "2026-02-13 00:01:00",
+   "impressao": "d62251bc80a82ba6"
+  },
+  {
+   "edicao": "4132",
+   "data": "2026-02-14 00:01:00",
+   "impressao": "adcf191bdb7d58ac"
+  },
+  {
+   "edicao": "4133",
+   "data": "2026-02-19 00:01:00",
+   "impressao": "e48e6c50517ebe2d"
+  },
+  {
+   "edicao": "4134",
+   "data": "2026-02-19 14:45:00",
+   "impressao": "5cc866a6f107598a"
+  },
+  {
+   "edicao": "4135",
+   "data": "2026-02-20 00:01:00",
+   "impressao": "dd5fdaa77144dbe5"
+  },
+  {
+   "edicao": "4136",
+   "data": "2026-02-21 00:01:00",
+   "impressao": "04f7d29df45df73b"
+  },
+  {
+   "edicao": "4137",
+   "data": "2026-02-24 00:01:00",
+   "impressao": "31157430d7f05c5f"
+  },
+  {
+   "edicao": "4138",
+   "data": "2026-02-25 00:01:00",
+   "impressao": "fe372129c19d71df"
+  },
+  {
+   "edicao": "4139",
+   "data": "2026-02-26 00:01:00",
+   "impressao": "bbfa0a64bf07d84e"
+  },
+  {
+   "edicao": "4140",
+   "data": "2026-02-27 00:01:00",
+   "impressao": "2fea93c60cb94b9a"
+  },
+  {
+   "edicao": "4141",
+   "data": "2026-02-28 00:01:00",
+   "impressao": "34f48ed2457871db"
+  },
+  {
+   "edicao": "4142",
+   "data": "2026-03-03 00:01:00",
+   "impressao": "34a207ae9b13251e"
+  },
+  {
+   "edicao": "4143",
+   "data": "2026-03-04 00:01:00",
+   "impressao": "cb35ace3c8e992ac"
+  },
+  {
+   "edicao": "4144",
+   "data": "2026-03-05 00:01:00",
+   "impressao": "bb00d1b9bce1adad"
+  },
+  {
+   "edicao": "4145",
+   "data": "2026-03-06 00:01:00",
+   "impressao": "9e7ca35f47b0664b"
+  },
+  {
+   "edicao": "4146",
+   "data": "2026-03-07 00:01:00",
+   "impressao": "e653d03cf17ac86e"
+  },
+  {
+   "edicao": "4147",
+   "data": "2026-03-10 00:01:00",
+   "impressao": "23204fe9fe636b04"
+  },
+  {
+   "edicao": "4148",
+   "data": "2026-03-11 00:01:00",
+   "impressao": "82ca2b711bf22208"
+  },
+  {
+   "edicao": "4149",
+   "data": "2026-03-12 00:01:00",
+   "impressao": "40e4a999d4a4a99a"
+  },
+  {
+   "edicao": "4150",
+   "data": "2026-03-12 11:58:00",
+   "impressao": "99f0c1d5b298a25f"
+  },
+  {
+   "edicao": "4151",
+   "data": "2026-03-13 00:01:00",
+   "impressao": "220c66fc08041ce1"
+  },
+  {
+   "edicao": "4152",
+   "data": "2026-03-14 00:01:00",
+   "impressao": "2a45403ba8eb027d"
+  },
+  {
+   "edicao": "4153",
+   "data": "2026-03-17 00:01:00",
+   "impressao": "618aa5d44bbacc97"
+  },
+  {
+   "edicao": "4154",
+   "data": "2026-03-18 00:01:00",
+   "impressao": "d25974ce229f1c0a"
+  },
+  {
+   "edicao": "4155",
+   "data": "2026-03-19 00:01:00",
+   "impressao": "3d3a7905d4adcbf1"
+  },
+  {
+   "edicao": "4156",
+   "data": "2026-03-20 00:01:00",
+   "impressao": "f89b6273d43476fb"
+  },
+  {
+   "edicao": "4157",
+   "data": "2026-03-21 00:01:00",
+   "impressao": "6fb2b6f40469380a"
+  },
+  {
+   "edicao": "4158",
+   "data": "2026-03-24 00:01:00",
+   "impressao": "355fbb854e534904"
+  },
+  {
+   "edicao": "4159",
+   "data": "2026-03-25 00:01:00",
+   "impressao": "08d6b9e6a092b46b"
+  },
+  {
+   "edicao": "4160",
+   "data": "2026-03-26 00:01:00",
+   "impressao": "bf99d0343d5615c4"
+  },
+  {
+   "edicao": "4161",
+   "data": "2026-03-27 00:01:00",
+   "impressao": "114d42ad82ea8a2a"
+  },
+  {
+   "edicao": "4162",
+   "data": "2026-03-28 00:01:00",
+   "impressao": "b8ba707c55204203"
+  },
+  {
+   "edicao": "4163",
+   "data": "2026-03-31 00:01:00",
+   "impressao": "2f576e9af000a706"
+  },
+  {
+   "edicao": "4164",
+   "data": "2026-04-01 00:01:00",
+   "impressao": "2c94b7f0e5586ba1"
+  },
+  {
+   "edicao": "4165",
+   "data": "2026-04-02 00:01:00",
+   "impressao": "e058592f78d21c12"
+  },
+  {
+   "edicao": "4166",
+   "data": "2026-04-03 00:01:00",
+   "impressao": "071cb92d5fb56156"
+  },
+  {
+   "edicao": "4167",
+   "data": "2026-04-07 00:01:00",
+   "impressao": "ccfdb7b80c0ada9e"
+  },
+  {
+   "edicao": "4168",
+   "data": "2026-04-07 09:05:00",
+   "impressao": "a911cb93e46035e0"
+  },
+  {
+   "edicao": "4169",
+   "data": "2026-04-08 00:01:00",
+   "impressao": "fb481d4f3b9226ee"
+  },
+  {
+   "edicao": "4170",
+   "data": "2026-04-09 00:01:00",
+   "impressao": "dc841bccf6e672f7"
+  },
+  {
+   "edicao": "4171",
+   "data": "2026-04-10 00:01:00",
+   "impressao": "76ad7cfd5c1e5dbd"
+  },
+  {
+   "edicao": "4172",
+   "data": "2026-04-11 00:01:00",
+   "impressao": "c5c7c4b4c47f9e0f"
+  },
+  {
+   "edicao": "4173",
+   "data": "2026-04-14 00:01:00",
+   "impressao": "b55e168ce2d3e469"
+  },
+  {
+   "edicao": "4174",
+   "data": "2026-04-15 00:01:00",
+   "impressao": "bbdac33738c01b81"
+  },
+  {
+   "edicao": "4175",
+   "data": "2026-04-16 00:01:00",
+   "impressao": "f0ba6e3ec981c400"
+  },
+  {
+   "edicao": "4176",
+   "data": "2026-04-17 00:01:00",
+   "impressao": "d7796582ab928333"
+  },
+  {
+   "edicao": "4177",
+   "data": "2026-04-18 00:01:00",
+   "impressao": "000af0277714e9f1"
+  },
+  {
+   "edicao": "4178",
+   "data": "2026-04-23 00:01:00",
+   "impressao": "b6e991e5451bfda4"
+  },
+  {
+   "edicao": "4179",
+   "data": "2026-04-24 00:01:00",
+   "impressao": "cf8710343fdacfe8"
+  },
+  {
+   "edicao": "4180",
+   "data": "2026-04-25 00:01:00",
+   "impressao": "24fe363baf0cf423"
+  },
+  {
+   "edicao": "4181",
+   "data": "2026-04-28 00:01:00",
+   "impressao": "666700633d79e894"
+  },
+  {
+   "edicao": "4182",
+   "data": "2026-04-29 00:01:00",
+   "impressao": "9854d1371e2f5d38"
+  },
+  {
+   "edicao": "4183",
+   "data": "2026-04-30 00:01:00",
+   "impressao": "05648fea6004cc90"
+  },
+  {
+   "edicao": "4184",
+   "data": "2026-05-01 00:01:00",
+   "impressao": "a481c8a956276ab3"
+  },
+  {
+   "edicao": "4185",
+   "data": "2026-05-05 00:01:00",
+   "impressao": "62ca9d59c78b8fe1"
+  },
+  {
+   "edicao": "4186",
+   "data": "2026-05-06 00:01:00",
+   "impressao": "91abbfb18c815ab4"
+  },
+  {
+   "edicao": "4187",
+   "data": "2026-05-07 00:01:00",
+   "impressao": "ba60f6a2044b0c4b"
+  },
+  {
+   "edicao": "4188",
+   "data": "2026-05-07 11:10:00",
+   "impressao": "e8f1902bc6b94176"
+  },
+  {
+   "edicao": "4189",
+   "data": "2026-05-08 00:01:00",
+   "impressao": "92a91fdbb70031ab"
+  },
+  {
+   "edicao": "4190",
+   "data": "2026-05-09 00:01:00",
+   "impressao": "6761a5cd42399642"
+  },
+  {
+   "edicao": "4191",
+   "data": "2026-05-12 00:01:00",
+   "impressao": "8f74ab12c9983e14"
+  },
+  {
+   "edicao": "4192",
+   "data": "2026-05-13 00:01:00",
+   "impressao": "191fe3ac6065dcc2"
+  },
+  {
+   "edicao": "4193",
+   "data": "2026-05-14 00:01:00",
+   "impressao": "336934ff441ac32f"
+  },
+  {
+   "edicao": "4194",
+   "data": "2026-05-15 00:01:00",
+   "impressao": "1a878c9e00d08e79"
+  },
+  {
+   "edicao": "4195",
+   "data": "2026-05-16 00:01:00",
+   "impressao": "2bbc0c9da65a903f"
+  },
+  {
+   "edicao": "4196",
+   "data": "2026-05-19 00:01:00",
+   "impressao": "410988bb728760f7"
+  },
+  {
+   "edicao": "4197",
+   "data": "2026-05-20 00:01:00",
+   "impressao": "a9f50c8b061eec63"
+  },
+  {
+   "edicao": "4198",
+   "data": "2026-05-21 00:01:00",
+   "impressao": "55085f0296227bb1"
+  },
+  {
+   "edicao": "4199",
+   "data": "2026-05-21 15:00:00",
+   "impressao": "9bde54bd8d588d84"
+  },
+  {
+   "edicao": "4200",
+   "data": "2026-05-22 00:01:00",
+   "impressao": "9726cf66aa2ce332"
+  },
+  {
+   "edicao": "4201",
+   "data": "2026-05-23 00:01:00",
+   "impressao": "3370121a74316242"
+  },
+  {
+   "edicao": "4202",
+   "data": "2026-05-26 00:01:00",
+   "impressao": "9924c3e4846116b0"
+  },
+  {
+   "edicao": "4203",
+   "data": "2026-05-27 00:01:00",
+   "impressao": "34277414d8839718"
+  },
+  {
+   "edicao": "4204",
+   "data": "2026-05-28 00:01:00",
+   "impressao": "793714f4be2bee87"
+  },
+  {
+   "edicao": "4205",
+   "data": "2026-05-29 00:01:00",
+   "impressao": "4c22e6884bbb4f1b"
+  },
+  {
+   "edicao": "4206",
+   "data": "2026-05-30 00:01:00",
+   "impressao": "cdca8be836a37ada"
+  },
+  {
+   "edicao": "4207",
+   "data": "2026-06-02 00:01:00",
+   "impressao": "e5567dc007f78655"
+  },
+  {
+   "edicao": "4208",
+   "data": "2026-06-03 00:01:00",
+   "impressao": "de1a3fe5a0140ed5"
+  },
+  {
+   "edicao": "4209",
+   "data": "2026-06-04 00:01:00",
+   "impressao": "631179b0601b269d"
+  },
+  {
+   "edicao": "4210",
+   "data": "2026-06-09 00:01:00",
+   "impressao": "0e56b22230094451"
+  },
+  {
+   "edicao": "4211",
+   "data": "2026-06-10 00:01:00",
+   "impressao": "5e501bbd9496ccf3"
+  },
+  {
+   "edicao": "4212",
+   "data": "2026-06-11 00:01:00",
+   "impressao": "5828807c17cb574a"
+  },
+  {
+   "edicao": "4213",
+   "data": "2026-06-11 14:05:00",
+   "impressao": "32da1218bb13fbf8"
+  },
+  {
+   "edicao": "4214",
+   "data": "2026-06-12 00:01:00",
+   "impressao": "c090d92f542c6bfe"
+  },
+  {
+   "edicao": "4215",
+   "data": "2026-06-13 00:01:00",
+   "impressao": "259a20961bf47e0f"
+  },
+  {
+   "edicao": "4216",
+   "data": "2026-06-16 00:01:00",
+   "impressao": "656aeb128a2024f3"
+  },
+  {
+   "edicao": "4217",
+   "data": "2026-06-17 00:01:00",
+   "impressao": "63dcb691b6487196"
+  },
+  {
+   "edicao": "4218",
+   "data": "2026-06-18 00:01:00",
+   "impressao": "effdbf9db46299de"
+  },
+  {
+   "edicao": "4219",
+   "data": "2026-06-19 00:01:00",
+   "impressao": "e42a851b066d181b"
+  },
+  {
+   "edicao": "4220",
+   "data": "2026-06-20 00:01:00",
+   "impressao": "94d4e97cf11ae3c9"
+  },
+  {
+   "edicao": "4221",
+   "data": "2026-06-23 00:01:00",
+   "impressao": "aec5059fb93fa3e0"
+  },
+  {
+   "edicao": "4222",
+   "data": "2026-06-24 00:01:00",
+   "impressao": "b0c221889d8b9f6c"
+  },
+  {
+   "edicao": "4223",
+   "data": "2026-06-25 00:01:00",
+   "impressao": "28d79635e4bfd0a1"
+  },
+  {
+   "edicao": "4224",
+   "data": "2026-06-26 00:01:00",
+   "impressao": "0ff2129a24e52525"
+  },
+  {
+   "edicao": "4225",
+   "data": "2026-06-27 00:01:00",
+   "impressao": "67989f4cac150a89"
+  },
+  {
+   "edicao": "4226",
+   "data": "2026-06-30 00:01:00",
+   "impressao": "d7fe66a82bbab9a3"
+  },
+  {
+   "edicao": "4227",
+   "data": "2026-07-01 00:01:00",
+   "impressao": "0e720f8d32cfeb25"
+  },
+  {
+   "edicao": "4228",
+   "data": "2026-07-02 00:01:00",
+   "impressao": "48814a1921ba2827"
+  },
+  {
+   "edicao": "4229",
+   "data": "2026-07-03 00:01:00",
+   "impressao": "03a852c3084a7604"
+  },
+  {
+   "edicao": "4230",
+   "data": "2026-07-04 00:01:00",
+   "impressao": "1c9c5ed680bd2597"
+  },
+  {
+   "edicao": "4231",
+   "data": "2026-07-07 00:01:00",
+   "impressao": "fb3e1ccfe1f7db39"
+  },
+  {
+   "edicao": "4232",
+   "data": "2026-07-07 14:30:00",
+   "impressao": "211c58c310d24da2"
+  },
+  {
+   "edicao": "4233",
+   "data": "2026-07-08 00:01:00",
+   "impressao": "c3c774579f1adc07"
+  },
+  {
+   "edicao": "4234",
+   "data": "2026-07-09 00:01:00",
+   "impressao": "f6c4e3496cd58dce"
+  },
+  {
+   "edicao": "4235",
+   "data": "2026-07-14 00:01:00",
+   "impressao": "abd5b7828d8f12b6"
+  },
+  {
+   "edicao": "4236",
+   "data": "2026-07-15 00:01:00",
+   "impressao": "2361a6d765bc3e32"
+  },
+  {
+   "edicao": "4237",
+   "data": "2026-07-16 00:01:00",
+   "impressao": "87edc5151c61d8ad"
+  },
+  {
+   "edicao": "4238",
+   "data": "2026-07-17 00:01:00",
+   "impressao": "c978fe882b535ed0"
+  },
+  {
+   "edicao": "4239",
+   "data": "2026-07-18 00:01:00",
+   "impressao": "793dbb062f989bb6"
+  },
+  {
+   "edicao": "4240",
+   "data": "2026-07-21 00:01:00",
+   "impressao": "793678a714599f71"
+  },
+  {
+   "edicao": "4241",
+   "data": "2026-07-22 00:01:00",
+   "impressao": "ba34cc8f862223f8"
+  },
+  {
+   "edicao": "4242",
+   "data": "2026-07-23 00:01:00",
+   "impressao": "61bebf30829c5819"
+  },
+  {
+   "edicao": "4243",
+   "data": "2026-07-24 00:01:00",
+   "impressao": "bd0af3f3cc402e10"
+  },
+  {
+   "edicao": "4244",
+   "data": "2026-07-25 00:01:00",
+   "impressao": "684db509331faffc"
+  },
+  {
+   "edicao": "4245",
+   "data": "2026-07-28 00:01:00",
+   "impressao": "a8a3b6c9ad9d7d67"
+  },
+  {
+   "edicao": "4246",
+   "data": "2026-07-29 00:01:00",
+   "impressao": "baa5a9b1cffa64d4"
+  },
+  {
+   "edicao": "4247",
+   "data": "2026-07-30 00:01:00",
+   "impressao": "1e59d697e658bb3d"
+  },
+  {
+   "edicao": "4248",
+   "data": "2026-07-31 00:01:00",
+   "impressao": "35abd93ae9f15dab"
+  },
+  {
+   "edicao": "4249",
+   "data": "2026-08-01 00:01:00",
+   "impressao": "04869eb220153a5c"
+  },
+  {
+   "edicao": "4250",
+   "data": "2026-08-04 00:01:00",
+   "impressao": "963104bf0c7101fb"
+  },
+  {
+   "edicao": "4251",
+   "data": "2026-08-05 00:01:00",
+   "impressao": "68c7a3f87418d53b"
+  },
+  {
+   "edicao": "4252",
+   "data": "2026-08-06 00:01:00",
+   "impressao": "2916a1728d73e27f"
+  },
+  {
+   "edicao": "4253",
+   "data": "2026-08-07 00:01:00",
+   "impressao": "fef1f936ad6a09b1"
+  },
+  {
+   "edicao": "4254",
+   "data": "2026-08-08 00:01:00",
+   "impressao": "c033a24bafebac0d"
+  },
+  {
+   "edicao": "4255",
+   "data": "2026-08-11 00:01:00",
+   "impressao": "9a1c7c0cb00616b7"
+  },
+  {
+   "edicao": "4256",
+   "data": "2026-08-12 00:01:00",
+   "impressao": "bbe7bfecece7adca"
+  },
+  {
+   "edicao": "4257",
+   "data": "2026-08-13 00:01:00",
+   "impressao": "2836ef9af221d2d9"
+  },
+  {
+   "edicao": "4258",
+   "data": "2026-08-14 00:01:00",
+   "impressao": "1857c8c82d253fa8"
+  },
+  {
+   "edicao": "4259",
+   "data": "2026-08-15 00:01:00",
+   "impressao": "f122798700990e3f"
+  },
+  {
+   "edicao": "4260",
+   "data": "2026-08-18 00:01:00",
+   "impressao": "300705febfe81e63"
+  },
+  {
+   "edicao": "4261",
+   "data": "2026-08-19 00:01:00",
+   "impressao": "3e27abdbdf937848"
+  },
+  {
+   "edicao": "4262",
+   "data": "2026-08-20 00:01:00",
+   "impressao": "067f8f4c3f078e6a"
+  },
+  {
+   "edicao": "4263",
+   "data": "2026-08-21 00:01:00",
+   "impressao": "9449ee00d43252ac"
+  },
+  {
+   "edicao": "4264",
+   "data": "2026-08-22 00:01:00",
+   "impressao": "710c8e8d289e4944"
+  },
+  {
+   "edicao": "4265",
+   "data": "2026-08-25 00:01:00",
+   "impressao": "2e49d40f98939dd9"
+  },
+  {
+   "edicao": "4266",
+   "data": "2026-08-26 00:01:00",
+   "impressao": "e7acda418cb842d2"
+  },
+  {
+   "edicao": "4267",
+   "data": "2026-08-27 00:01:00",
+   "impressao": "1fe4e80532473578"
+  },
+  {
+   "edicao": "4268",
+   "data": "2026-08-28 00:01:00",
+   "impressao": "4794460bb4354604"
+  },
+  {
+   "edicao": "4269",
+   "data": "2026-08-29 00:01:00",
+   "impressao": "c8ffbf6b78c95b73"
+  },
+  {
+   "edicao": "4270",
+   "data": "2026-09-01 00:01:00",
+   "impressao": "9c123d4e73e43c9c"
+  },
+  {
+   "edicao": "4271",
+   "data": "2026-09-02 00:01:00",
+   "impressao": "40bf06f8bac5e935"
+  },
+  {
+   "edicao": "4272",
+   "data": "2026-09-03 00:01:00",
+   "impressao": "730ad4d9b63ce707"
+  },
+  {
+   "edicao": "4273",
+   "data": "2026-09-04 00:01:00",
+   "impressao": "44bda84fb3d02e6e"
+  },
+  {
+   "edicao": "4274",
+   "data": "2026-09-05 00:01:00",
+   "impressao": "cfbea640d11c14c8"
+  },
+  {
+   "edicao": "4275",
+   "data": "2026-09-09 00:01:00",
+   "impressao": "dce3c46a5f4c3e4f"
+  },
+  {
+   "edicao": "4276",
+   "data": "2026-09-10 00:01:00",
+   "impressao": "98883e358a57bccf"
+  },
+  {
+   "edicao": "4277",
+   "data": "2026-09-11 00:01:00",
+   "impressao": "5b738f5aa97a0faf"
+  },
+  {
+   "edicao": "4278",
+   "data": "2026-09-12 00:01:00",
+   "impressao": "1fcd9373931ed5cb"
+  },
+  {
+   "edicao": "4279",
+   "data": "2026-09-15 00:01:00",
+   "impressao": "50f8a060a29c1587"
+  },
+  {
+   "edicao": "4280",
+   "data": "2026-09-16 00:01:00",
+   "impressao": "73251aaf4c5f3453"
+  },
+  {
+   "edicao": "4281",
+   "data": "2026-09-17 00:01:00",
+   "impressao": "44821057fb86149e"
+  },
+  {
+   "edicao": "4282",
+   "data": "2026-09-18 00:01:00",
+   "impressao": "5e10e720f71e8bac"
+  },
+  {
+   "edicao": "4283",
+   "data": "2026-09-19 00:01:00",
+   "impressao": "5591a487bd4f332d"
+  },
+  {
+   "edicao": "4284",
+   "data": "2026-09-22 00:01:00",
+   "impressao": "9b2cfe8ae157aab1"
+  },
+  {
+   "edicao": "4285",
+   "data": "2026-09-23 00:01:00",
+   "impressao": "c1497525c9868490"
+  },
+  {
+   "edicao": "4286",
+   "data": "2026-09-24 00:01:00",
+   "impressao": "6c2d1dbaef25b767"
+  },
+  {
+   "edicao": "4287",
+   "data": "2026-09-25 00:01:00",
+   "impressao": "14eb5f289b38551e"
+  },
+  {
+   "edicao": "4288",
+   "data": "2026-09-26 00:01:00",
+   "impressao": "795af034b4fbc391"
+  },
+  {
+   "edicao": "4289",
+   "data": "2026-09-29 00:01:00",
+   "impressao": "79e6dec22ff5bfba"
+  },
+  {
+   "edicao": "4290",
+   "data": "2026-09-29 14:00:00",
+   "impressao": "2c8078e5a33334a7"
+  },
+  {
+   "edicao": "4291",
+   "data": "2026-09-30 00:01:00",
+   "impressao": "272de84bc72031a1"
+  },
+  {
+   "edicao": "4292",
+   "data": "2026-10-01 00:01:00",
+   "impressao": "69975817d30986fc"
+  },
+  {
+   "edicao": "4293",
+   "data": "2026-10-02 00:01:00",
+   "impressao": "5fb7a39f984a100c"
+  },
+  {
+   "edicao": "4294",
+   "data": "2026-10-03 00:01:00",
+   "impressao": "9364b32bf33a6923"
+  },
+  {
+   "edicao": "4295",
+   "data": "2026-10-06 00:01:00",
+   "impressao": "2e8d3b2f90d50b8e"
+  },
+  {
+   "edicao": "4296",
+   "data": "2026-10-07 00:01:00",
+   "impressao": "7be02d7c07b4f897"
+  },
+  {
+   "edicao": "4297",
+   "data": "2026-10-08 00:01:00",
+   "impressao": "60e941cf3065973d"
+  },
+  {
+   "edicao": "4298",
+   "data": "2026-10-09 00:01:00",
+   "impressao": "6685284578a0f1e4"
+  }
+ ]
+}

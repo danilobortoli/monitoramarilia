@@ -1,0 +1,385 @@
+{
+ "exercicio": 2026,
+ "registros": [
+  {
+   "titulo": "Construção de muro EMEI Clara Luz",
+   "dataAtualizacao": "2026-05-19 09:33:32",
+   "dataExecucaoInicio": null,
+   "dataExecucaoFim": null,
+   "categoria": "Escolas",
+   "situacao": "Cancelada",
+   "valor": 232162.46,
+   "descricao": "Contratação de empresa especializada em fornecimento de material e mão de obra para construção de muro, quiosque e passeio de concreto na EMEI Clara Luz."
+  },
+  {
+   "titulo": "Reforma do Estádio Bento de Abreu - MAC",
+   "dataAtualizacao": "2026-10-05 13:10:55",
+   "dataExecucaoInicio": "2026-10-02",
+   "dataExecucaoFim": null,
+   "categoria": "Esportes e Lazer",
+   "situacao": "Em Andamento",
+   "valor": 574756.64,
+   "descricao": "Contrato que o MUNICÍPIO DE MARÍLIA firma com TERRAPLAM PLANEJAMENTO E OBRAS DE MARÍLIA LTDA para a execução de serviços comuns de engenharia, incluindo reparos e correções em prédios próprios, locados ou cedidos (reforma do Estádio Municipal Bento de Abreu), destinados à Secretaria Municipal de Esportes, Lazer e Juventude. "
+  },
+  {
+   "titulo": "Serviço de muretas, guias, pavimentação, muros de alambradros e outros",
+   "dataAtualizacao": "2026-10-09 11:57:11",
+   "dataExecucaoInicio": "2025-04-03",
+   "dataExecucaoFim": null,
+   "categoria": "Mobilidade Urbana",
+   "situacao": "Em Andamento",
+   "valor": 1185252.18,
+   "descricao": "Contrato que o MUNICÍPIO DE MARÍLIA celebra com TERRAPLAM PLANEJAMENTO E OBRAS DE MARÍLIA LTDA para a execução de serviços de muretas, guias, pavimentação, muros de alambrado, portões, sarjetas e sarjetões, destinados à Secretaria Municipal de Infraestrutura."
+  },
+  {
+   "titulo": "Construção EMEI Bairro Altos do Palmital",
+   "dataAtualizacao": "2026-09-17 10:59:48",
+   "dataExecucaoInicio": "2024-09-16",
+   "dataExecucaoFim": "2026-09-16",
+   "categoria": "Escolas",
+   "situacao": "Concluído",
+   "valor": 5907395.99,
+   "descricao": "Contratação de empresa especializada em fornecimento de material e mão de obra para construção da EMEI do Bairro Altos do Palmital, conforme Planilha Orçamentária, Memorial Descritivo, Projetos e arquivos anexos."
+  },
+  {
+   "titulo": "EMEI Drº Fernando Mauro",
+   "dataAtualizacao": "2026-05-19 09:22:29",
+   "dataExecucaoInicio": "2022-05-19",
+   "dataExecucaoFim": null,
+   "categoria": "Escolas",
+   "situacao": "Cancelada",
+   "valor": 801632,
+   "descricao": "Contratação de empresa especializada em fornecimento de material e mão de obra para reforma e ampliação da EMEI Dr. Fernando Mauro"
+  },
+  {
+   "titulo": "Troca de cobertura da EMEF Isaltino",
+   "dataAtualizacao": "2026-05-14 09:52:48",
+   "dataExecucaoInicio": "2025-03-11",
+   "dataExecucaoFim": "2026-02-18",
+   "categoria": "Escolas",
+   "situacao": "Concluído",
+   "valor": 541730.4,
+   "descricao": "Contratação de empresa especializada em fornecimento de material e mão de obra para Troca de Cobertura EMEF Isaltino de Campos\r\n"
+  },
+  {
+   "titulo": "Incremento do bosque municipal",
+   "dataAtualizacao": "2026-06-08 15:41:06",
+   "dataExecucaoInicio": "2023-09-13",
+   "dataExecucaoFim": "2024-06-14",
+   "categoria": "Bosque Municipal",
+   "situacao": "Cancelada",
+   "valor": 464254.59,
+   "descricao": "Contratação de empresa especializada em fornecimento de material e mão de obra para programa de incremento ao Bosque Municipal, conforme Edital e Anexos."
+  },
+  {
+   "titulo": "Pavimentação Rua Romildo Marconato",
+   "dataAtualizacao": "2026-05-05 13:52:17",
+   "dataExecucaoInicio": null,
+   "dataExecucaoFim": null,
+   "categoria": "Pavimentação",
+   "situacao": "Cancelada",
+   "valor": 1430000,
+   "descricao": "Contratação de empresa especializada em fornecimento de material e mão de obra para execução de pavimentação asfáltica na Rua Romildo Marconato, Jardim Santa Clara, na cidade de Marília, conforme este Edital e arquivos Anexos."
+  },
+  {
+   "titulo": "Recapeamento asfáltico de diversas ruas do Município de Marília/SP",
+   "dataAtualizacao": "2026-09-30 10:08:45",
+   "dataExecucaoInicio": "2026-06-24",
+   "dataExecucaoFim": null,
+   "categoria": "Pavimentação",
+   "situacao": "Em Andamento",
+   "valor": 504377.15,
+   "descricao": "Contrato que o MUNICÍPIO DE MARÍLIA firma com HY CONSTRUTORA LTDA para o fornecimento de material e mão de obra para recapeamento asfáltico de diversas ruas do Município de Marília/SP, destinados à Secretaria Municipal de Infraestrutura."
+  },
+  {
+   "titulo": "Reforma Terminal Urbano",
+   "dataAtualizacao": "2026-06-18 10:07:06",
+   "dataExecucaoInicio": "2022-08-16",
+   "dataExecucaoFim": "2023-12-28",
+   "categoria": "Mobilidade Urbana",
+   "situacao": "Cancelada",
+   "valor": 1197153.06,
+   "descricao": "Contratação de empresa especializada em fornecimento de material e mão de obra para reforma do Terminal Urbano, conforme Planilha de Custos, Memorial Descritivo e Projetos anexos."
+  },
+  {
+   "titulo": "Construção da Casa da Mulher",
+   "dataAtualizacao": "2026-05-05 14:14:11",
+   "dataExecucaoInicio": "2023-09-18",
+   "dataExecucaoFim": null,
+   "categoria": "Assistência e Desenvolvimento Social",
+   "situacao": "Cancelada",
+   "valor": 891924.34,
+   "descricao": "Contratação de empresa especializada em fornecimento de material e mão de obra para construção da Casa da Mulher."
+  },
+  {
+   "titulo": "Recapeamento asfáltico de diversas ruas",
+   "dataAtualizacao": "2026-09-04 13:06:58",
+   "dataExecucaoInicio": "2026-07-03",
+   "dataExecucaoFim": null,
+   "categoria": "Pavimentação",
+   "situacao": "Em Andamento",
+   "valor": 8299885.19,
+   "descricao": "Contrato que o MUNICÍPIO DE MARÍLIA firma com LUCANO INFRAESTRUTURA LTDA para o fornecimento de material e mão de obra para a execução de serviços de recapeamento asfáltico de diversas ruas do Município de Marília/SP, destinados à Secretaria Municipal de Infraestrutura."
+  },
+  {
+   "titulo": "Construção da EMEI do Bairro Marina Moretti",
+   "dataAtualizacao": "2026-09-28 13:48:31",
+   "dataExecucaoInicio": "2024-10-09",
+   "dataExecucaoFim": null,
+   "categoria": "Escolas",
+   "situacao": "Em Andamento",
+   "valor": 4982485.64,
+   "descricao": "Fornecimento de material e mão de obra para construção da EMEI do Bairro Marina Moretti, destinada à Secretaria Municipal da Educação."
+  },
+  {
+   "titulo": "Reforma e ampliação da EMEF Mário Covas",
+   "dataAtualizacao": "2026-04-28 10:47:52",
+   "dataExecucaoInicio": "2023-05-29",
+   "dataExecucaoFim": "2026-09-29",
+   "categoria": "Escolas",
+   "situacao": "Concluído",
+   "valor": 1962919.15,
+   "descricao": "Contratação de empresa especializada em fornecimento de material e mão de obra para reforma e ampliação da EMEF Governador Mário Covas, conforme Edital e arquivos anexos."
+  },
+  {
+   "titulo": " Construção de ponte na Estrada MAR 313 (PONTE DO PRATA) ",
+   "dataAtualizacao": "2026-09-01 08:58:45",
+   "dataExecucaoInicio": "2026-02-02",
+   "dataExecucaoFim": "2026-08-24",
+   "categoria": "Pontes",
+   "situacao": "Concluído",
+   "valor": 978500.37,
+   "descricao": "Fornecimento de material e mão de obra  para a construção de ponte na Estrada MAR 313 (PONTE DO PRATA) no Distrito de Avencas, destinados à Secretaria Municipal de Agricultura, Pecuária e Abastecimento. "
+  },
+  {
+   "titulo": "Reforma da Praça dos Bancários",
+   "dataAtualizacao": "2026-08-26 15:16:16",
+   "dataExecucaoInicio": "2026-06-23",
+   "dataExecucaoFim": null,
+   "categoria": "Praças",
+   "situacao": "Em Andamento",
+   "valor": 328000,
+   "descricao": "Contrato que o MUNICÍPIO DE MARÍLIA firma com TERRAPLAM PLANEJAMENTO E OBRAS DE MARÍLIA LTDA para o fornecimento de material e mão de obra para reforma da Praça dos Bancários, destinado às Secretarias Municipais de Trabalho, Turismo e Desenvolvimento Econômico e de Planejamento Urbano."
+  },
+  {
+   "titulo": "Reforma e ampliação da EMEI Estrelinha Dourada",
+   "dataAtualizacao": "2026-05-19 09:27:14",
+   "dataExecucaoInicio": null,
+   "dataExecucaoFim": null,
+   "categoria": "Escolas",
+   "situacao": "Cancelada",
+   "valor": 487128.44,
+   "descricao": "Contratação de empresa especializada em fornecimento de material e mão de obra para reforma e ampliação da EMEI Estrelinha Dourada"
+  },
+  {
+   "titulo": "Construção CAPS tipo III  ",
+   "dataAtualizacao": "2026-09-14 11:11:49",
+   "dataExecucaoInicio": "2025-06-02",
+   "dataExecucaoFim": null,
+   "categoria": "Unidades de  Saúde",
+   "situacao": "Em Andamento",
+   "valor": 2252542.99,
+   "descricao": "Fornecimento de material e mão de obra para desenvolvimento do projeto executivo, obra e serviços de engenharia, com execução de todas as etapas e ações necessárias, bem como cumprimento de todas as obrigações e condicionantes, requeridas para a construção do CAPS III, destinados à Secretaria Municipal da Saúde. "
+  },
+  {
+   "titulo": "Continuidade e término da construção da Casa da Mulher",
+   "dataAtualizacao": "2026-10-08 15:35:05",
+   "dataExecucaoInicio": "2025-10-16",
+   "dataExecucaoFim": null,
+   "categoria": "Assistência e Desenvolvimento Social",
+   "situacao": "Em Andamento",
+   "valor": 557536.55,
+   "descricao": " Fornecimento de material e mão de obra para continuidade e término da construção da “CASA DA MULHER”, destinada à Secretaria Municipal da Cidadania – Gestão de Recursos Humanos."
+  },
+  {
+   "titulo": "Reforma da Praça Maria Isabel em Padre Nóbrega",
+   "dataAtualizacao": "2026-07-02 11:48:22",
+   "dataExecucaoInicio": "2026-04-27",
+   "dataExecucaoFim": null,
+   "categoria": "Praças",
+   "situacao": "Em Andamento",
+   "valor": 298499.99,
+   "descricao": "Contrato que o MUNICÍPIO DE MARÍLIA firma com TERRAPLAM PLANEJAMENTO E OBRAS DE MARILIA LTDA para fornecimento de material e mão de obra para a reforma da Praça Maria Isabel no Distrito de Padre Nóbrega, destinados à Secretaria Municipal de Planejamento Urbano."
+  },
+  {
+   "titulo": "Execução de ciclovia Estrada Vicinal Danilo Gonzales - Marília/Avencas",
+   "dataAtualizacao": "2026-09-17 15:46:06",
+   "dataExecucaoInicio": "2025-06-02",
+   "dataExecucaoFim": null,
+   "categoria": "Mobilidade Urbana",
+   "situacao": "Em Andamento",
+   "valor": 5407302.47,
+   "descricao": "Fornecimento de material e mão de obra para execução de ciclovia na Estrada Vicinal Danilo Gonzales, que liga o Município de Marília ao Distrito de Avencas, destinados à Secretaria Municipal de Infraestrutura."
+  },
+  {
+   "titulo": "Construção da escola de educação infantil EMEI Firenze",
+   "dataAtualizacao": "2026-08-10 08:57:20",
+   "dataExecucaoInicio": "2025-06-16",
+   "dataExecucaoFim": null,
+   "categoria": "Escolas",
+   "situacao": "Em Andamento",
+   "valor": 5009019,
+   "descricao": "fornecimento de material e mão de obra para a construção de uma escola de educação infantil, EMEI Firenze, Marília/SP - FNDE - creche tipo 1, destinados à Secretaria Municipal da Educação. "
+  },
+  {
+   "titulo": "Reforma do Poliesportivo Octávio Barreto Prado “TATÁ”",
+   "dataAtualizacao": "2026-09-08 11:31:11",
+   "dataExecucaoInicio": "2026-06-03",
+   "dataExecucaoFim": null,
+   "categoria": "Esportes e Lazer",
+   "situacao": "Em Andamento",
+   "valor": 417500,
+   "descricao": "Contrato que o MUNICÍPIO DE MARÍLIA firma com TERRAPLAM PLANEJAMENTO E OBRAS DE MARÍLIA LTDA para fornecimento de material e mão de obra para a execução de Reforma do Poliesportivo Octávio Barreto Prado “TATÁ”, destinado às Secretarias Municipais de Trabalho, Turismo e Desenvolvimento Econômico e Secretaria Municipal de Esportes, Lazer e Juventude."
+  },
+  {
+   "titulo": " Reforço das fundações na EMEF PROFESSORA RENY PEREIRA CORDEIRO",
+   "dataAtualizacao": "2026-09-17 09:46:45",
+   "dataExecucaoInicio": "2026-07-28",
+   "dataExecucaoFim": null,
+   "categoria": "Escolas",
+   "situacao": "Em Andamento",
+   "valor": 680128.02,
+   "descricao": "Contrato que o MUNICÍPIO DE MARÍLIA firma com TERRAPLAM PLANEJAMENTO E OBRAS DE MARILIA LTDA para fornecimento de material, equipamentos e mão de obra para reforço das fundações na EMEF PROFESSORA RENY PEREIRA CORDEIRO, destinados à Secretaria Municipal da Educação."
+  },
+  {
+   "titulo": "Reforma da USF de Rosália",
+   "dataAtualizacao": "2026-05-04 09:05:23",
+   "dataExecucaoInicio": "2026-04-29",
+   "dataExecucaoFim": "2024-09-17",
+   "categoria": "Unidades de  Saúde",
+   "situacao": "Concluído",
+   "valor": 115290.74,
+   "descricao": "Contratação de empresa especializada em Fornecimento de material e mão de obra para Reforma da Unidade de Saúde da Família - USF Rosália, conforme planilha de custos, memorial descritivo e projetos anexos."
+  },
+  {
+   "titulo": "Construção da UBS – Porte III",
+   "dataAtualizacao": "2026-10-08 14:32:04",
+   "dataExecucaoInicio": "2025-06-02",
+   "dataExecucaoFim": null,
+   "categoria": "Unidades de  Saúde",
+   "situacao": "Em Andamento",
+   "valor": 2885449.4,
+   "descricao": "Fornecimento de material e mão de obra para desenvolvimento do projeto executivo, obra e serviços de engenharia, com execução de todas as etapas e ações necessárias, bem como cumprimento de todas as obrigações e condicionantes requeridas para a construção da UBS – Porte III, destinados à Secretaria Municipal da Saúde."
+  },
+  {
+   "titulo": "Construção de praça esportiva no Bairro Jardim Cavalari",
+   "dataAtualizacao": "2026-04-24 13:53:06",
+   "dataExecucaoInicio": "2025-10-20",
+   "dataExecucaoFim": "2026-04-16",
+   "categoria": "Praças",
+   "situacao": "Concluído",
+   "valor": 209944.91,
+   "descricao": "Construção de praça esportiva na área localizada entre as Ruas Maria Fernandes Cavalari, Hermínio Cavalari e a Avenida Doutor Pedro Marun, destinada à Secretaria Municipal de Planejamento Urbano (conforme aditivo 01)"
+  },
+  {
+   "titulo": "Construção de Unidade de Atenção Especializada – Policlínica",
+   "dataAtualizacao": "2026-09-09 14:07:17",
+   "dataExecucaoInicio": "2026-06-08",
+   "dataExecucaoFim": null,
+   "categoria": "Unidades de  Saúde",
+   "situacao": "Em Andamento",
+   "valor": 20064000,
+   "descricao": "Contrato que o MUNICÍPIO DE MARÍLIA firma com CONSTRUTORA ALPHAVITÓRIA LTDA, para fornecimento de material, mão de obra e equipamentos para a construção de Unidade de Atenção Especializada – Policlínica, destinada à Secretaria Municipal da Saúde."
+  },
+  {
+   "titulo": "Construção de área de contemplação ás margens do Lago do Bosque",
+   "dataAtualizacao": "2026-09-17 13:12:16",
+   "dataExecucaoInicio": "2025-07-07",
+   "dataExecucaoFim": null,
+   "categoria": "Bosque Municipal",
+   "situacao": "Em Andamento",
+   "valor": 388777.99,
+   "descricao": "Contrato que o MUNICÍPIO DE MARÍLIA firma com JGM ESTRUTURA E CONSTRUTORA LTDA para fornecimento de material e mão de obra para desenvolvimento de obra e serviços de engenharia, com execução de todas as etapas e ações necessárias, bem como cumprimento de todas as obrigações e condicionantes, requeridas para a construção de área de contemplação ás margens do Lago do Bosque e instalação de placas de sinalização, destinados à Secretaria Municipal do Trabalho, Turismo e Desenvolvimento Econômico."
+  },
+  {
+   "titulo": "Reforma do 2º andar do Paço Municipal",
+   "dataAtualizacao": "2026-10-08 15:14:26",
+   "dataExecucaoInicio": "2026-01-13",
+   "dataExecucaoFim": null,
+   "categoria": "Paço Municipal",
+   "situacao": "Em Andamento",
+   "valor": 639599.48,
+   "descricao": "Contrato que o MUNICÍPIO DE MARÍLIA firma com TERRAPLAM PLANEJAMENTO E OBRAS DE MARÍLIA LTDA para a execução de serviços de manutenção preventiva, corretiva, reparações, adaptações, modificações e serviços comuns de engenharia em prédios públicos próprios ou locados, destinados ao Gabinete do Prefeito."
+  },
+  {
+   "titulo": " EMEI Príncipe Mikasa",
+   "dataAtualizacao": "2026-05-20 14:40:32",
+   "dataExecucaoInicio": "2021-08-13",
+   "dataExecucaoFim": "2023-06-18",
+   "categoria": "Escolas",
+   "situacao": "Concluído",
+   "valor": 1148762.21,
+   "descricao": "Contrato CO-1212/21 Contratante Prefeitura Municipal de Marília Contratada CONSTRUMEDICI ENGENHARIA E COMÉRCIO LTDA Valor R$ 1.148.762,21 Assinatura 13/08/21 Objeto Fornecimento de material e mão de obra para a reforma e ampliação da EMEI Príncipe Mikasa, destinada à Secretaria Municipal da Educação Prazo de Execução 180 dias Processo Tomada de Preços n.º 003/21 - Edital n.º 003/21."
+  },
+  {
+   "titulo": "Contenção de erosão no loteamento Jd. Espanha (Terras da Fazenda)",
+   "dataAtualizacao": "2026-08-06 14:55:45",
+   "dataExecucaoInicio": "2026-04-13",
+   "dataExecucaoFim": null,
+   "categoria": "Saneamento Básico",
+   "situacao": "Em Andamento",
+   "valor": 792530.98,
+   "descricao": "CST 1835/2026 - Contrato que o MUNICÍPIO DE MARÍLIA firma com REPLAN - SANEAMENTO E OBRAS LTDA, para a prestação de serviços comuns de engenharia emergenciais para a contenção de processo erosivo progressivo em bacia de dissipação da rede de galerias pluviais, localizada na Avenida Antônio Borella, com prolongamento para o Loteamento Jardim Espanha (Terras da Fazenda) no Município de Marília/SP, destinados à Secretaria Municipal de Infraestrutura. \r\n"
+  },
+  {
+   "titulo": "Reforma em prédios públicos próprios ou locados da Secretaria da Saúde",
+   "dataAtualizacao": "2026-10-07 15:04:35",
+   "dataExecucaoInicio": "2025-09-10",
+   "dataExecucaoFim": null,
+   "categoria": "Unidades de  Saúde",
+   "situacao": "Em Andamento",
+   "valor": 5069937.45,
+   "descricao": "Contrato que o MUNICÍPIO DE MARÍLIA firma com TERRAPLAM PLANEJAMENTO E OBRAS DEMARÍLIA LTDA para a execução de serviços de manutenção preventiva, corretiva, reparações, adaptações, modificações e serviços comuns de engenharia em prédios públicos próprios ou locados, destinados à Secretaria Municipal da Saúde."
+  },
+  {
+   "titulo": "Serviços tapa buracos, reparos, conservação e manutenção de pavimentos",
+   "dataAtualizacao": "2026-06-22 15:04:27",
+   "dataExecucaoInicio": "2026-01-26",
+   "dataExecucaoFim": "2026-06-12",
+   "categoria": "Pavimentação",
+   "situacao": "Concluído",
+   "valor": 8504762,
+   "descricao": "Contrato que o MUNICÍPIO DE MARÍLIA firma com MOLISE SERVIÇOS E CONSTRUÇÕES LTDA para a execução de serviços de tapa buracos, reparos, conservação e manutenção em pavimentos com fornecimento de material e mão de obra, visando à manutenção das vias públicas do Município, destinados à Secretaria Municipal de Infraestrutura."
+  },
+  {
+   "titulo": "Construção de muro de arrimo na EMEI Primavera",
+   "dataAtualizacao": "2026-06-30 11:45:25",
+   "dataExecucaoInicio": "2026-04-27",
+   "dataExecucaoFim": null,
+   "categoria": "Escolas",
+   "situacao": "Em Andamento",
+   "valor": 169984.04,
+   "descricao": "Contrato que o MUNICÍPIO DE MARÍLIA firma com JGM ESTRUTURA E CONSTRUTORA LTDA para fornecimento de material e mão de obra para construção de muro de arrimo na EMEI Primavera, destinado à Secretaria Municipal da Educação."
+  },
+  {
+   "titulo": "Construção rede de galerias de águas pluviais na rua Aneliano da Silva",
+   "dataAtualizacao": "2026-10-01 11:59:20",
+   "dataExecucaoInicio": "2025-08-19",
+   "dataExecucaoFim": null,
+   "categoria": "Saneamento Básico",
+   "situacao": "Em Andamento",
+   "valor": 204000,
+   "descricao": "Contrato que o MUNICÍPIO DE MARÍLIA firma com ID CONSTRUTORA LTDA para fornecimento de material e mão de obra para construção de rede de galerias de águas pluviais na Rua Aneliano da Silva, Parque Serra Dourada, Marília-SP, destinados à Secretaria Municipal de Infraestrutura."
+  },
+  {
+   "titulo": "Reparos em pavimentos (tapa-buracos) em diversas ruas",
+   "dataAtualizacao": "2026-09-18 13:31:26",
+   "dataExecucaoInicio": "2026-06-16",
+   "dataExecucaoFim": null,
+   "categoria": "Pavimentação",
+   "situacao": "Em Andamento",
+   "valor": 6905500,
+   "descricao": "Contrato que o MUNICÍPIO DE MARÍLIA firma com MARIPAV PAVIMENTAÇÃO ECONSTRUÇÃO LTDA para a prestação de serviços emergenciais de reparos em pavimentos (tapa-buracos), com fornecimento de material e mão de obra, em diversas ruas no município de Marília/SP, destinados à Secretaria Municipal de Infraestrutura.\r\n"
+  },
+  {
+   "titulo": "Construção de muro de  arrimo na EMEI Colibri",
+   "dataAtualizacao": "2026-04-28 15:22:32",
+   "dataExecucaoInicio": "2025-05-12",
+   "dataExecucaoFim": "2026-03-23",
+   "categoria": "Escolas",
+   "situacao": "Concluído",
+   "valor": 427559.99,
+   "descricao": "Fornecimento de material e mão de obra para execução de reforço estrutural (construção de muro de arrimo) no imóvel localizado na Rua Salvador Salgueiro, s/n - EMEI Colibri, destinados à Secretaria Municipal da Educação. "
+  }
+ ]
+}
