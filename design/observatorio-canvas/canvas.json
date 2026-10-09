@@ -1,0 +1,21 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-10-09T17:45:00Z"},
+  "title": "Observatório MATRA — mock-ups do portal",
+  "launch": {"view": "canvas"},
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {"x": 0, "y": 0, "w": 1440, "h": 1560, "title": "1 · Painel do dia", "expand": "fill", "is_interactive": true},
+    "Radar.dc.html": {"x": 1520, "y": 0, "w": 1440, "h": 1480, "title": "2 · Radar de alertas", "expand": "fill", "is_interactive": true},
+    "Fornecedor.dc.html": {"x": 3040, "y": 0, "w": 1440, "h": 1620, "title": "3 · Ficha do fornecedor", "expand": "fill", "is_interactive": true},
+    "Diario.dc.html": {"x": 4560, "y": 0, "w": 1440, "h": 1500, "title": "4 · Diário Oficial", "expand": "fill", "is_interactive": true},
+    "Transparencia.dc.html": {"x": 6080, "y": 0, "w": 1440, "h": 1520, "title": "5 · Transparência ativa", "expand": "fill", "is_interactive": true}
+  },
+  "order": ["Main.dc.html", "Radar.dc.html", "Fornecedor.dc.html", "Diario.dc.html", "Transparencia.dc.html"],
+  "notes": {
+    "titulo": {"x": 0, "y": -300, "text": "Observatório MATRA — mock-ups do portal", "kind": "title1", "maxW": 7520}
+  },
+  "designSystems": [
+    {"title": "Tufte-Bortoli · cores MATRA", "namespace": "tufte-bortoli", "artifact": "https://claude.ai/artifact/M2VFFj37MCcDC6JLqypPqa", "version": "1790991084-7887", "copiedAt": "2026-10-09T17:45:00Z"}
+  ]
+}

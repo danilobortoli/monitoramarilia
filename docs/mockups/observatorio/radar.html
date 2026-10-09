@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Radar de alertas — Observatório MATRA (mock-up)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"et-book";src:url("fonts/et-book-roman.woff") format("woff");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"et-book";src:url("fonts/et-book-italic.woff") format("woff");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"et-book";src:url("fonts/et-book-bold.woff") format("woff");font-weight:700;font-style:normal;font-display:swap}
+body{margin:0}
+a{color:#1b67b2;text-decoration:none}a:hover{color:#223463;text-decoration:underline}
+</style>
+</head>
+<body>
+<div style="box-sizing: border-box; padding: 8px 5%; background: #223463; color: #ffffff; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; letter-spacing: 0.06em; line-height: 1.5">Mock-up de interface · proposta de redesenho, não é o painel em produção · números da coleta de 09.10.2026 · filtros e botões não funcionam nesta versão estática</div>
+<div style="box-sizing: border-box; max-width: 1440px; margin: 0 auto; padding: 0 5% 56px; background: #ffffff; color: #222222; font-family: 'et-book', Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, serif; font-size: 18px; line-height: 1.55">
+
+<header style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 40px; padding: 22px 0 10px; border-bottom: 1px solid #cccccc">
+<a href="index.html" style="display: flex; flex-direction: column; justify-content: center; min-height: 48px; text-decoration: none">
+<span style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #1b67b2">Marília Transparente</span>
+<span style="font-style: italic; font-size: 26px; line-height: 1.1; color: #111111">Observatório</span>
+</a>
+<nav aria-label="Seções do portal" style="display: flex; flex-wrap: wrap; gap: 0 30px">
+<a href="index.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Painel</a>
+<a href="radar.html" aria-current="page" style="display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; border-bottom: 2px solid #111111; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #111111">Radar</a>
+<a href="fornecedor.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Fornecedores</a>
+<a href="diario.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Diário Oficial</a>
+<a href="transparencia.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Transparência ativa</a>
+</nav>
+</header>
+
+<main>
+<div style="padding: 56px 0 30px; max-width: 900px">
+<p style="margin: 0 0 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Radar · oito regras sobre a base de 2026</p>
+<h1 style="margin: 0 0 20px; font-style: italic; font-weight: 400; font-size: 46px; line-height: 1.12; color: #111111">Cada alerta é uma regra, um fato e uma fonte</h1>
+<p style="margin: 0; font-size: 21px; line-height: 1.5; color: #222222"><span style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-variant-caps: all-small-caps; letter-spacing: 0.08em; font-weight: 500; color: #111111">O radar não acusa:</span> ele aponta o registro, cita a norma e diz qual consulta falta. O que depende de informação ainda não obtida fica como indício, com o pedido que vai obtê-la.</p>
+</div>
+
+<div role="group" aria-label="Filtrar por família" style="display: flex; flex-wrap: wrap; gap: 0 26px; padding: 4px 0; border-top: 2px solid #111111; border-bottom: 1px solid #cccccc">
+
+<button type="button" aria-pressed="true" style="min-height: 44px; padding: 0; background: none; border: 0; border-bottom: 2px solid #111111; cursor: pointer; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #111111">Todas</button>
+
+
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0; background: none; border: 0; border-bottom: 2px solid #ffffff; cursor: pointer; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #1b67b2">Contratação direta</button>
+
+
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0; background: none; border: 0; border-bottom: 2px solid #ffffff; cursor: pointer; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #1b67b2">Contratos</button>
+
+
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0; background: none; border: 0; border-bottom: 2px solid #ffffff; cursor: pointer; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #1b67b2">Licitações</button>
+
+
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0; background: none; border: 0; border-bottom: 2px solid #ffffff; cursor: pointer; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #1b67b2">Pagamentos</button>
+
+
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0; background: none; border: 0; border-bottom: 2px solid #ffffff; cursor: pointer; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #1b67b2">Fornecedores</button>
+
+
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0; background: none; border: 0; border-bottom: 2px solid #ffffff; cursor: pointer; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #1b67b2">Pessoal</button>
+
+
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0; background: none; border: 0; border-bottom: 2px solid #ffffff; cursor: pointer; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #1b67b2">Obras</button>
+
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px 64px; padding-top: 12px">
+
+<section aria-label="Regras do radar" style="flex: 62 1 540px; min-width: 0">
+<div style="display: flex; gap: 16px; padding: 12px 0 8px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">
+<span style="flex: 0 0 24px">Nº</span>
+<span style="flex: 1 1 0">Regra e fonte</span>
+<span style="flex: 0 0 170px; text-align: right">Resultado</span>
+</div>
+
+<button type="button" aria-pressed="false" style="display: flex; gap: 16px; width: 100%; min-height: 44px; box-sizing: border-box; padding: 14px 0; background: #ffffff; border: 0; border-top: 1px solid #cccccc; cursor: pointer; text-align: left; font-family: inherit; font-size: inherit; line-height: inherit; color: inherit">
+<span style="flex: 0 0 24px; padding-top: 3px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; color: #1b67b2">1</span>
+<span style="flex: 1 1 0; min-width: 0">
+<span style="display: block; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">Contratação direta</span>
+<span style="display: block; font-size: 21px; line-height: 1.25; color: #111111">Nova dispensa ou inexigibilidade</span>
+<span style="display: block; font-style: italic; font-size: 15px; color: #666666">Dados abertos · compra direta · 673 registros</span>
+</span>
+<span style="flex: 0 0 170px; text-align: right; font-size: 19px; line-height: 1.25; color: #111111">58 abertas</span>
+</button>
+
+
+<button type="button" aria-pressed="false" style="display: flex; gap: 16px; width: 100%; min-height: 44px; box-sizing: border-box; padding: 14px 0; background: #ffffff; border: 0; border-top: 1px solid #cccccc; cursor: pointer; text-align: left; font-family: inherit; font-size: inherit; line-height: inherit; color: inherit">
+<span style="flex: 0 0 24px; padding-top: 3px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; color: #1b67b2">2</span>
+<span style="flex: 1 1 0; min-width: 0">
+<span style="display: block; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">Contratos</span>
+<span style="display: block; font-size: 21px; line-height: 1.25; color: #111111">Contrato ou ata sem nome da contratada</span>
+<span style="display: block; font-style: italic; font-size: 15px; color: #666666">Dados abertos · contratos · 1.151 registros</span>
+</span>
+<span style="flex: 0 0 170px; text-align: right; font-size: 19px; line-height: 1.25; color: #111111">473 sem nome</span>
+</button>
+
+
+<button type="button" aria-pressed="false" style="display: flex; gap: 16px; width: 100%; min-height: 44px; box-sizing: border-box; padding: 14px 0; background: #ffffff; border: 0; border-top: 1px solid #cccccc; cursor: pointer; text-align: left; font-family: inherit; font-size: inherit; line-height: inherit; color: inherit">
+<span style="flex: 0 0 24px; padding-top: 3px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; color: #1b67b2">3</span>
+<span style="flex: 1 1 0; min-width: 0">
+<span style="display: block; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">Licitações</span>
+<span style="display: block; font-size: 21px; line-height: 1.25; color: #111111">Licitação sem valor estimado</span>
+<span style="display: block; font-style: italic; font-size: 15px; color: #666666">Dados abertos · licitações · 163 registros</span>
+</span>
+<span style="flex: 0 0 170px; text-align: right; font-size: 19px; line-height: 1.25; color: #111111">163 sem valor</span>
+</button>
+
+
+<button type="button" aria-pressed="true" style="display: flex; gap: 16px; width: 100%; min-height: 44px; box-sizing: border-box; padding: 14px 0; background: #eef1f5; border: 0; border-top: 1px solid #cccccc; cursor: pointer; text-align: left; font-family: inherit; font-size: inherit; line-height: inherit; color: inherit">
+<span style="flex: 0 0 24px; padding-top: 3px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; color: #1b67b2">4</span>
+<span style="flex: 1 1 0; min-width: 0">
+<span style="display: block; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">Pagamentos</span>
+<span style="display: block; font-size: 21px; line-height: 1.25; color: #111111">Quebra da ordem cronológica</span>
+<span style="display: block; font-style: italic; font-size: 15px; color: #666666">Diário Oficial · 196 edições</span>
+</span>
+<span style="flex: 0 0 170px; text-align: right; font-size: 19px; line-height: 1.25; color: #111111">105 com a mesma frase</span>
+</button>
+
+
+<button type="button" aria-pressed="false" style="display: flex; gap: 16px; width: 100%; min-height: 44px; box-sizing: border-box; padding: 14px 0; background: #ffffff; border: 0; border-top: 1px solid #cccccc; cursor: pointer; text-align: left; font-family: inherit; font-size: inherit; line-height: inherit; color: inherit">
+<span style="flex: 0 0 24px; padding-top: 3px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; color: #1b67b2">5</span>
+<span style="flex: 1 1 0; min-width: 0">
+<span style="display: block; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">Fornecedores</span>
+<span style="display: block; font-size: 21px; line-height: 1.25; color: #111111">Fornecedor novo com valor alto</span>
+<span style="display: block; font-style: italic; font-size: 15px; color: #666666">Portal · empenho analítico · 34.692 empenhos</span>
+</span>
+<span style="flex: 0 0 170px; text-align: right; font-size: 19px; line-height: 1.25; color: #111111">[a calcular]</span>
+</button>
+
+
+<button type="button" aria-pressed="false" style="display: flex; gap: 16px; width: 100%; min-height: 44px; box-sizing: border-box; padding: 14px 0; background: #ffffff; border: 0; border-top: 1px solid #cccccc; cursor: pointer; text-align: left; font-family: inherit; font-size: inherit; line-height: inherit; color: inherit">
+<span style="flex: 0 0 24px; padding-top: 3px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; color: #1b67b2">6</span>
+<span style="flex: 1 1 0; min-width: 0">
+<span style="display: block; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">Pessoal</span>
+<span style="display: block; font-size: 21px; line-height: 1.25; color: #111111">Diárias atípicas</span>
+<span style="display: block; font-style: italic; font-size: 15px; color: #666666">Portal · diárias · 4.537 registros</span>
+</span>
+<span style="flex: 0 0 170px; text-align: right; font-size: 19px; line-height: 1.25; color: #111111">[a calcular]</span>
+</button>
+
+
+<button type="button" aria-pressed="false" style="display: flex; gap: 16px; width: 100%; min-height: 44px; box-sizing: border-box; padding: 14px 0; background: #ffffff; border: 0; border-top: 1px solid #cccccc; cursor: pointer; text-align: left; font-family: inherit; font-size: inherit; line-height: inherit; color: inherit">
+<span style="flex: 0 0 24px; padding-top: 3px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; color: #1b67b2">7</span>
+<span style="flex: 1 1 0; min-width: 0">
+<span style="display: block; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">Obras</span>
+<span style="display: block; font-size: 21px; line-height: 1.25; color: #111111">Obra parada ou cancelada</span>
+<span style="display: block; font-style: italic; font-size: 15px; color: #666666">Dados abertos · obras · 38 obras</span>
+</span>
+<span style="flex: 0 0 170px; text-align: right; font-size: 19px; line-height: 1.25; color: #111111">7 canceladas</span>
+</button>
+
+
+<button type="button" aria-pressed="false" style="display: flex; gap: 16px; width: 100%; min-height: 44px; box-sizing: border-box; padding: 14px 0; background: #ffffff; border: 0; border-top: 1px solid #cccccc; cursor: pointer; text-align: left; font-family: inherit; font-size: inherit; line-height: inherit; color: inherit">
+<span style="flex: 0 0 24px; padding-top: 3px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; color: #1b67b2">8</span>
+<span style="flex: 1 1 0; min-width: 0">
+<span style="display: block; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">Contratos</span>
+<span style="display: block; font-size: 21px; line-height: 1.25; color: #111111">Contrato a vencer em 60 dias</span>
+<span style="display: block; font-style: italic; font-size: 15px; color: #666666">Dados abertos · contratos · 1.040 vigentes</span>
+</span>
+<span style="flex: 0 0 170px; text-align: right; font-size: 19px; line-height: 1.25; color: #111111">[a calcular]</span>
+</button>
+
+<p style="margin: 14px 0 0; padding-top: 12px; border-top: 1px solid #cccccc; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">Os colchetes marcam regras ainda não executadas sobre a base: o número entra quando o coletor rodar.</p>
+</section>
+
+<aside aria-label="Alerta selecionado" style="flex: 38 1 320px; min-width: 0; box-sizing: border-box; padding: 12px 0 0 28px; border-left: 1px solid #cccccc">
+<p style="margin: 0 0 6px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Alerta 4 · Pagamentos</p>
+<h2 style="margin: 0 0 22px; font-style: italic; font-weight: 400; font-size: 30px; line-height: 1.15; color: #111111">Quebra da ordem cronológica</h2>
+
+<p style="margin: 0 0 2px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">Regra</p>
+<p style="margin: 0 0 18px; font-size: 17px; line-height: 1.5">Lei 14.133/2021, art. 141, §1º: a alteração da ordem exige prévia justificativa da autoridade e comunicação ao controle interno e ao tribunal de contas.</p>
+
+<p style="margin: 0 0 2px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">Fato</p>
+<p style="margin: 0 0 18px; font-size: 17px; line-height: 1.5">A frase “A interrupção de serviços contratados pode gerar impactos diretos à população” consta de 105 das 196 edições de 2026, desde a nº 4107.</p>
+
+<p style="margin: 0 0 2px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">O que falta</p>
+<p style="margin: 0 0 26px; font-size: 17px; line-height: 1.5">Comparar vencimento e data de pagamento por empenho, para identificar os credores preteridos.</p>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px 16px; padding-top: 18px; border-top: 1px solid #cccccc">
+<button type="button" style="min-height: 44px; padding: 0 20px; background: #223463; border: 1px solid #223463; cursor: pointer; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #ffffff">Gerar minuta de LAI</button>
+<button type="button" style="min-height: 44px; padding: 0 20px; background: #ffffff; border: 1px solid #223463; cursor: pointer; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #223463">Enviar à fila</button>
+</div>
+<p style="margin: 16px 0 0; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">A minuta nasce pronta e vai como proposta à fila; o protocolo continua sendo decisão de quem assina.</p>
+</aside>
+
+</div>
+</main>
+
+<footer style="margin-top: 56px; padding-top: 14px; border-top: 1px solid #cccccc; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; line-height: 1.6; letter-spacing: 0.04em; color: #6b6b6b">Fontes: Portal da Transparência de Marília e dados abertos do site da Prefeitura · coleta de 09.10.2026 · matra.org.br</footer>
+
+</div>
+</body>
+</html>

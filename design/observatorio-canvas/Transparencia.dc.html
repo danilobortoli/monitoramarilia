@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Transparência ativa — Observatório MATRA</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"et-book";src:url("ds/tufte-bortoli/fonts/et-book-roman.woff") format("woff");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"et-book";src:url("ds/tufte-bortoli/fonts/et-book-italic.woff") format("woff");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"et-book";src:url("ds/tufte-bortoli/fonts/et-book-bold.woff") format("woff");font-weight:700;font-style:normal;font-display:swap}
+body{margin:0}
+a{color:#1b67b2;text-decoration:none}a:hover{color:#223463;text-decoration:underline}
+</style>
+</helmet>
+<div style="box-sizing: border-box; max-width: 1440px; margin: 0 auto; padding: 0 5% 56px; background: #ffffff; color: #222222; font-family: 'et-book', Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, serif; font-size: 18px; line-height: 1.55">
+
+<header style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 40px; padding: 22px 0 10px; border-bottom: 1px solid #cccccc">
+<a href="Main.dc.html" style="display: flex; flex-direction: column; justify-content: center; min-height: 48px; text-decoration: none">
+<span style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #1b67b2">Marília Transparente</span>
+<span style="font-style: italic; font-size: 26px; line-height: 1.1; color: #111111">Observatório</span>
+</a>
+<nav aria-label="Seções do portal" style="display: flex; flex-wrap: wrap; gap: 0 30px">
+<a href="Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Painel</a>
+<a href="Radar.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Radar</a>
+<a href="Fornecedor.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Fornecedores</a>
+<a href="Diario.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Diário Oficial</a>
+<a href="Transparencia.dc.html" aria-current="page" style="display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; border-bottom: 2px solid #111111; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #111111">Transparência ativa</a>
+</nav>
+</header>
+
+<main>
+<div style="padding: 56px 0 36px; max-width: 900px">
+<p style="margin: 0 0 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Transparência ativa · auditoria do próprio portal</p>
+<h1 style="margin: 0 0 20px; font-style: italic; font-weight: 400; font-size: 46px; line-height: 1.12; color: #111111">O que o portal publica e o que deixa em branco</h1>
+<p style="margin: 0; font-size: 21px; line-height: 1.5; color: #222222"><span style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-variant-caps: all-small-caps; letter-spacing: 0.08em; font-weight: 500; color: #111111">A omissão é o achado.</span> O Observatório mede, a cada coleta, quantos registros chegam sem o campo que permitiria controlá-los, e transforma a lacuna em pedido de acesso à informação.</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 28px 48px; padding: 26px 0 28px; border-top: 2px solid #111111; border-bottom: 1px solid #cccccc">
+<sc-for list="{{ numeros }}" as="n" hint-placeholder-count="4">
+<div style="flex: 1 1 200px; min-width: 0">
+<div style="font-size: 44px; line-height: 1; color: #111111">{{ n.valor }}</div>
+<div style="margin-top: 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #222222">{{ n.rotulo }}</div>
+<div style="margin-top: 2px; font-style: italic; font-size: 15px; line-height: 1.4; color: #666666">{{ n.nota }}</div>
+</div>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 44px 64px; padding-top: 44px">
+
+<div style="flex: 62 1 540px; min-width: 0">
+
+<section>
+<p style="margin: 0 0 6px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">I. Campos vazios em 2026</p>
+<h2 style="margin: 0 0 16px; font-style: italic; font-weight: 400; font-size: 31px; line-height: 1.15; color: #111111">Registros publicados sem o dado essencial</h2>
+<div style="display: flex; gap: 16px; padding-bottom: 6px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">
+<span style="flex: 1 1 0">Conjunto e campo</span>
+<span style="flex: 0 0 34%">Parcela vazia</span>
+<span style="flex: 0 0 118px; text-align: right">Vazios</span>
+</div>
+<sc-for list="{{ campos }}" as="c" hint-placeholder-count="8">
+<div style="display: flex; align-items: center; gap: 16px; padding: 10px 0; border-top: 1px solid #cccccc">
+<span style="flex: 1 1 0; min-width: 0">
+<span style="display: block; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">{{ c.conjunto }}</span>
+<span style="display: block; font-size: 20px; line-height: 1.25; color: #111111">{{ c.campo }}</span>
+</span>
+<span style="flex: 0 0 34%; display: flex; align-items: center; gap: 10px">
+<span style="flex: 1 1 0; height: 10px; background: #eef1f5">
+<span style="display: block; height: 10px; width: {{ c.largura }}; background: #223463"></span>
+</span>
+<span style="flex: 0 0 44px; text-align: right; font-size: 17px; color: #111111">{{ c.pct }}</span>
+</span>
+<span style="flex: 0 0 118px; text-align: right; font-size: 17px; color: #222222">{{ c.vazios }}</span>
+</div>
+</sc-for>
+<p style="margin: 10px 0 0; padding-top: 10px; border-top: 1px solid #cccccc; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">Contagem sobre os conjuntos de dados abertos do site da Prefeitura, exercício de 2026, na coleta de 09.10.2026.</p>
+</section>
+
+<section style="margin-top: 48px">
+<p style="margin: 0 0 6px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">II. Seções sem dado</p>
+<h2 style="margin: 0 0 16px; font-style: italic; font-weight: 400; font-size: 31px; line-height: 1.15; color: #111111">O que existe no menu e não entrega informação</h2>
+<sc-for list="{{ secoes }}" as="s" hint-placeholder-count="5">
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #cccccc">
+<span style="flex: 0 0 230px; font-size: 20px; line-height: 1.3; color: #111111">{{ s.nome }}</span>
+<span style="flex: 1 1 280px; min-width: 0; font-size: 17px; line-height: 1.5">{{ s.fato }}</span>
+</div>
+</sc-for>
+</section>
+
+</div>
+
+<aside aria-label="Notas à margem" style="flex: 38 1 300px; min-width: 0; box-sizing: border-box; padding-left: 28px; border-left: 1px solid #cccccc">
+
+<div style="margin: 0 0 34px; padding: 30px 28px; background: #223463">
+<p style="margin: 0 0 18px; font-style: italic; font-size: 24px; line-height: 1.35; color: #ffffff">possibilitar o acesso automatizado por sistemas externos em formatos abertos, estruturados e legíveis por máquina</p>
+<p style="margin: 0; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #8fd3f0">Lei 12.527/2011 · art. 8º, §3º, III</p>
+</div>
+
+<p style="margin: 0 0 8px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Fundamento</p>
+<p style="margin: 0 0 34px; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">O art. 8º, §1º, IV, da mesma lei manda divulgar os procedimentos licitatórios, seus editais e resultados, e todos os contratos celebrados. Valor e contratada são o mínimo para que a divulgação sirva ao controle.</p>
+
+<p style="margin: 0 0 8px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Dados pessoais</p>
+<p style="margin: 0 0 34px; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">O portal entrega CPFs de pessoas físicas sem máscara nos empenhos e no texto do Diário Oficial. O Observatório mascara antes de exibir e registra o ponto como lacuna de proteção de dados.</p>
+
+<p style="margin: 0 0 8px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Providência</p>
+<p style="margin: 0 0 16px; font-size: 17px; line-height: 1.45">Um pedido único reúne as oito lacunas de campo e as cinco seções sem dado, com a contagem de cada uma.</p>
+<button type="button" style="min-height: 44px; padding: 0 20px; background: #223463; border: 1px solid #223463; cursor: pointer; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #ffffff">Gerar minuta de LAI</button>
+<p style="margin: 16px 0 0; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">A minuta vai como proposta à fila. [série histórica do índice, a partir da segunda coleta]</p>
+</aside>
+
+</div>
+</main>
+
+<footer style="margin-top: 56px; padding-top: 14px; border-top: 1px solid #cccccc; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; line-height: 1.6; letter-spacing: 0.04em; color: #6b6b6b">Fontes: Portal da Transparência de Marília e dados abertos do site da Prefeitura · coleta de 09.10.2026 · matra.org.br</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1520}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+numeros: [
+{ valor: '4', rotulo: 'Campos 100% vazios', nota: 'valores de licitações e compras diretas' },
+{ valor: '473', rotulo: 'Contratos sem contratada', nota: '41% dos 1.151 de 2026' },
+{ valor: '5', rotulo: 'Seções sem dado', nota: 'no menu, sem conteúdo utilizável' },
+{ valor: '17 de 17', rotulo: 'Módulos em dia', nota: 'sincronizados em 09.10.2026' }
+],
+campos: [
+{ conjunto: 'Licitações', campo: 'Valor estimado', pct: '100%', largura: '100%', vazios: '163 de 163' },
+{ conjunto: 'Licitações', campo: 'Valor homologado', pct: '100%', largura: '100%', vazios: '163 de 163' },
+{ conjunto: 'Compras diretas', campo: 'Valor estimado', pct: '100%', largura: '100%', vazios: '673 de 673' },
+{ conjunto: 'Compras diretas', campo: 'Valor homologado', pct: '100%', largura: '100%', vazios: '673 de 673' },
+{ conjunto: 'Contratos e atas', campo: 'Nome da contratada', pct: '41%', largura: '41%', vazios: '473 de 1.151' },
+{ conjunto: 'Contratos e atas', campo: 'Tipo de licitação', pct: '11%', largura: '11%', vazios: '128 de 1.151' },
+{ conjunto: 'Contratos e atas', campo: 'Situação', pct: '9%', largura: '9%', vazios: '107 de 1.151' },
+{ conjunto: 'Contratos e atas', campo: 'Número do contrato', pct: '6%', largura: '6%', vazios: '66 de 1.151' }
+],
+secoes: [
+{ nome: 'Despesas com subvenções', fato: 'O módulo cobre de 2013 a 2021 e não tem nenhum registro em 2026.' },
+{ nome: 'Parcerias com o terceiro setor', fato: 'A página traz só texto e links; não há dado estruturado sobre os termos celebrados.' },
+{ nome: 'SIC e ouvidoria', fato: 'Os conjuntos de dados abertos vêm zerados; o atendimento corre em outro sistema.' },
+{ nome: 'Contas públicas', fato: 'O conjunto de 2026 responde “Nenhum registro encontrado”.' },
+{ nome: 'Relatório de viagens', fato: 'O conjunto de 2026 responde “Nenhum registro encontrado”.' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

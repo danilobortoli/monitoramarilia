@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Radar de alertas — Observatório MATRA</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"et-book";src:url("ds/tufte-bortoli/fonts/et-book-roman.woff") format("woff");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"et-book";src:url("ds/tufte-bortoli/fonts/et-book-italic.woff") format("woff");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"et-book";src:url("ds/tufte-bortoli/fonts/et-book-bold.woff") format("woff");font-weight:700;font-style:normal;font-display:swap}
+body{margin:0}
+a{color:#1b67b2;text-decoration:none}a:hover{color:#223463;text-decoration:underline}
+</style>
+</helmet>
+<div style="box-sizing: border-box; max-width: 1440px; margin: 0 auto; padding: 0 5% 56px; background: #ffffff; color: #222222; font-family: 'et-book', Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, serif; font-size: 18px; line-height: 1.55">
+
+<header style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 40px; padding: 22px 0 10px; border-bottom: 1px solid #cccccc">
+<a href="Main.dc.html" style="display: flex; flex-direction: column; justify-content: center; min-height: 48px; text-decoration: none">
+<span style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #1b67b2">Marília Transparente</span>
+<span style="font-style: italic; font-size: 26px; line-height: 1.1; color: #111111">Observatório</span>
+</a>
+<nav aria-label="Seções do portal" style="display: flex; flex-wrap: wrap; gap: 0 30px">
+<a href="Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Painel</a>
+<a href="Radar.dc.html" aria-current="page" style="display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; border-bottom: 2px solid #111111; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #111111">Radar</a>
+<a href="Fornecedor.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Fornecedores</a>
+<a href="Diario.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Diário Oficial</a>
+<a href="Transparencia.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Transparência ativa</a>
+</nav>
+</header>
+
+<main>
+<div style="padding: 56px 0 30px; max-width: 900px">
+<p style="margin: 0 0 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Radar · oito regras sobre a base de 2026</p>
+<h1 style="margin: 0 0 20px; font-style: italic; font-weight: 400; font-size: 46px; line-height: 1.12; color: #111111">Cada alerta é uma regra, um fato e uma fonte</h1>
+<p style="margin: 0; font-size: 21px; line-height: 1.5; color: #222222"><span style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-variant-caps: all-small-caps; letter-spacing: 0.08em; font-weight: 500; color: #111111">O radar não acusa:</span> ele aponta o registro, cita a norma e diz qual consulta falta. O que depende de informação ainda não obtida fica como indício, com o pedido que vai obtê-la.</p>
+</div>
+
+<div role="group" aria-label="Filtrar por família" style="display: flex; flex-wrap: wrap; gap: 0 26px; padding: 4px 0; border-top: 2px solid #111111; border-bottom: 1px solid #cccccc">
+<sc-for list="{{ filtros }}" as="f" hint-placeholder-count="6">
+<button type="button" aria-pressed="{{ f.ativo }}" onClick="{{ f.pick }}" style="min-height: 44px; padding: 0; background: none; border: 0; border-bottom: 2px solid {{ f.traco }}; cursor: pointer; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: {{ f.cor }}">{{ f.nome }}</button>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px 64px; padding-top: 12px">
+
+<section aria-label="Regras do radar" style="flex: 62 1 540px; min-width: 0">
+<div style="display: flex; gap: 16px; padding: 12px 0 8px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">
+<span style="flex: 0 0 24px">Nº</span>
+<span style="flex: 1 1 0">Regra e fonte</span>
+<span style="flex: 0 0 170px; text-align: right">Resultado</span>
+</div>
+<sc-for list="{{ regras }}" as="r" hint-placeholder-count="8">
+<button type="button" aria-pressed="{{ r.ativo }}" onClick="{{ r.pick }}" style="display: flex; gap: 16px; width: 100%; min-height: 44px; box-sizing: border-box; padding: 14px 0; background: {{ r.fundo }}; border: 0; border-top: 1px solid #cccccc; cursor: pointer; text-align: left; font-family: inherit; font-size: inherit; line-height: inherit; color: inherit">
+<span style="flex: 0 0 24px; padding-top: 3px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; color: #1b67b2">{{ r.n }}</span>
+<span style="flex: 1 1 0; min-width: 0">
+<span style="display: block; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">{{ r.familia }}</span>
+<span style="display: block; font-size: 21px; line-height: 1.25; color: #111111">{{ r.regra }}</span>
+<span style="display: block; font-style: italic; font-size: 15px; color: #666666">{{ r.fonte }} · {{ r.base }}</span>
+</span>
+<span style="flex: 0 0 170px; text-align: right; font-size: 19px; line-height: 1.25; color: #111111">{{ r.resultado }}</span>
+</button>
+</sc-for>
+<p style="margin: 14px 0 0; padding-top: 12px; border-top: 1px solid #cccccc; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">Os colchetes marcam regras ainda não executadas sobre a base: o número entra quando o coletor rodar.</p>
+</section>
+
+<aside aria-label="Alerta selecionado" style="flex: 38 1 320px; min-width: 0; box-sizing: border-box; padding: 12px 0 0 28px; border-left: 1px solid #cccccc">
+<p style="margin: 0 0 6px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Alerta {{ sel.n }} · {{ sel.familia }}</p>
+<h2 style="margin: 0 0 22px; font-style: italic; font-weight: 400; font-size: 30px; line-height: 1.15; color: #111111">{{ sel.regra }}</h2>
+
+<p style="margin: 0 0 2px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">Regra</p>
+<p style="margin: 0 0 18px; font-size: 17px; line-height: 1.5">{{ sel.norma }}</p>
+
+<p style="margin: 0 0 2px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">Fato</p>
+<p style="margin: 0 0 18px; font-size: 17px; line-height: 1.5">{{ sel.fato }}</p>
+
+<p style="margin: 0 0 2px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">O que falta</p>
+<p style="margin: 0 0 26px; font-size: 17px; line-height: 1.5">{{ sel.falta }}</p>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px 16px; padding-top: 18px; border-top: 1px solid #cccccc">
+<button type="button" style="min-height: 44px; padding: 0 20px; background: #223463; border: 1px solid #223463; cursor: pointer; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #ffffff">Gerar minuta de LAI</button>
+<button type="button" style="min-height: 44px; padding: 0 20px; background: #ffffff; border: 1px solid #223463; cursor: pointer; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #223463">Enviar à fila</button>
+</div>
+<p style="margin: 16px 0 0; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">A minuta nasce pronta e vai como proposta à fila; o protocolo continua sendo decisão de quem assina.</p>
+</aside>
+
+</div>
+</main>
+
+<footer style="margin-top: 56px; padding-top: 14px; border-top: 1px solid #cccccc; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; line-height: 1.6; letter-spacing: 0.04em; color: #6b6b6b">Fontes: Portal da Transparência de Marília e dados abertos do site da Prefeitura · coleta de 09.10.2026 · matra.org.br</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1480}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { familia: 'Todas', sel: '4' };
+}
+renderVals() {
+const base = [
+{ n: '1', familia: 'Contratação direta', regra: 'Nova dispensa ou inexigibilidade', fonte: 'Dados abertos · compra direta', base: '673 registros', resultado: '58 abertas',
+norma: 'Lei 14.133/2021, arts. 74 e 75. Teto de 2026 para compras e serviços (art. 75, II): R$ 65.492,11.',
+fato: 'São 490 dispensas, 175 inexigibilidades e 8 adesões a ata no ano. Nenhum dos 673 registros traz valor estimado.',
+falta: 'Buscar o valor no PNCP e somar por fornecedor e por evento, para testar fracionamento.' },
+{ n: '2', familia: 'Contratos', regra: 'Contrato ou ata sem nome da contratada', fonte: 'Dados abertos · contratos', base: '1.151 registros', resultado: '473 sem nome',
+norma: 'Lei 12.527/2011, art. 8º, §1º, IV: divulgação de todos os contratos celebrados.',
+fato: 'As ARP nº 197 a 200, do processo 91, assinadas em 07.10.2026, somam R$ 16.067,16 e não identificam o fornecedor.',
+falta: 'Cruzar com o PNCP pelo número do processo. Persistindo a omissão, pedido de acesso à informação.' },
+{ n: '3', familia: 'Licitações', regra: 'Licitação sem valor estimado', fonte: 'Dados abertos · licitações', base: '163 registros', resultado: '163 sem valor',
+norma: 'Lei 12.527/2011, art. 8º, §1º, IV: informações sobre os procedimentos licitatórios, editais e resultados.',
+fato: 'Nenhuma das 163 licitações de 2026 traz valor estimado ou homologado no conjunto de dados; 46 estão abertas.',
+falta: 'Recuperar os valores no PNCP e registrar a omissão no índice de transparência.' },
+{ n: '4', familia: 'Pagamentos', regra: 'Quebra da ordem cronológica', fonte: 'Diário Oficial', base: '196 edições', resultado: '105 com a mesma frase',
+norma: 'Lei 14.133/2021, art. 141, §1º: a alteração da ordem exige prévia justificativa da autoridade e comunicação ao controle interno e ao tribunal de contas.',
+fato: 'A frase “A interrupção de serviços contratados pode gerar impactos diretos à população” consta de 105 das 196 edições de 2026, desde a nº 4107.',
+falta: 'Comparar vencimento e data de pagamento por empenho, para identificar os credores preteridos.' },
+{ n: '5', familia: 'Fornecedores', regra: 'Fornecedor novo com valor alto', fonte: 'Portal · empenho analítico', base: '34.692 empenhos', resultado: '[a calcular]',
+norma: 'Sem norma própria: é sinal de triagem, que leva aos testes de porte, CNAE e capital social.',
+fato: 'Regra ainda não executada sobre a base. [resultado da primeira execução]',
+falta: 'Definir o limiar de valor e a janela que caracteriza o fornecedor como novo.' },
+{ n: '6', familia: 'Pessoal', regra: 'Diárias atípicas', fonte: 'Portal · diárias', base: '4.537 registros', resultado: '[a calcular]',
+norma: '[norma municipal de diárias aplicável]',
+fato: 'Regra ainda não executada sobre a base. [resultado da primeira execução]',
+falta: 'Definir o que é atípico: valor, destino, fim de semana ou repetição por servidor.' },
+{ n: '7', familia: 'Obras', regra: 'Obra parada ou cancelada', fonte: 'Dados abertos · obras', base: '38 obras', resultado: '7 canceladas',
+norma: 'Lei 14.133/2021, art. 115, §6º: obra paralisada por mais de um mês exige aviso público com o motivo e a previsão de retomada.',
+fato: 'Das 38 obras, 22 estão em andamento, 9 concluídas e 7 canceladas, entre elas a reforma da EMEI Dr. Fernando Mauro, de R$ 801.632,00.',
+falta: 'Cruzar cada obra com os empenhos e pagamentos do contrato correspondente.' },
+{ n: '8', familia: 'Contratos', regra: 'Contrato a vencer em 60 dias', fonte: 'Dados abertos · contratos', base: '1.040 vigentes', resultado: '[a calcular]',
+norma: 'Sem norma própria: antecipa prorrogações e contratações emergenciais por falta de planejamento.',
+fato: 'Regra ainda não executada sobre a base. [resultado da primeira execução]',
+falta: 'Listar por data de término e marcar os que não têm licitação substituta aberta.' }
+];
+const fam = this.state.familia;
+const nomes = ['Todas', 'Contratação direta', 'Contratos', 'Licitações', 'Pagamentos', 'Fornecedores', 'Pessoal', 'Obras'];
+const visiveis = base.filter((r) => fam === 'Todas' || r.familia === fam);
+const sel = base.find((r) => r.n === this.state.sel) || base[0];
+return {
+filtros: nomes.map((nome) => ({ nome, ativo: nome === fam, cor: nome === fam ? '#111111' : '#1b67b2', traco: nome === fam ? '#111111' : '#ffffff',
+pick: () => this.setState({ familia: nome }) })),
+regras: visiveis.map((r) => ({ ...r, ativo: r.n === sel.n, fundo: r.n === sel.n ? '#eef1f5' : '#ffffff',
+pick: () => this.setState({ sel: r.n }) })),
+sel
+};
+}
+}
+</script>
+</body>
+</html>

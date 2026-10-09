@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Painel do dia — Observatório MATRA</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"et-book";src:url("ds/tufte-bortoli/fonts/et-book-roman.woff") format("woff");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"et-book";src:url("ds/tufte-bortoli/fonts/et-book-italic.woff") format("woff");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"et-book";src:url("ds/tufte-bortoli/fonts/et-book-bold.woff") format("woff");font-weight:700;font-style:normal;font-display:swap}
+body{margin:0}
+a{color:#1b67b2;text-decoration:none}a:hover{color:#223463;text-decoration:underline}
+</style>
+</helmet>
+<div style="box-sizing: border-box; max-width: 1440px; margin: 0 auto; padding: 0 5% 56px; background: #ffffff; color: #222222; font-family: 'et-book', Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, serif; font-size: 18px; line-height: 1.55">
+
+<header style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 40px; padding: 22px 0 10px; border-bottom: 1px solid #cccccc">
+<a href="Main.dc.html" style="display: flex; flex-direction: column; justify-content: center; min-height: 48px; text-decoration: none">
+<span style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #1b67b2">Marília Transparente</span>
+<span style="font-style: italic; font-size: 26px; line-height: 1.1; color: #111111">Observatório</span>
+</a>
+<nav aria-label="Seções do portal" style="display: flex; flex-wrap: wrap; gap: 0 30px">
+<a href="Main.dc.html" aria-current="page" style="display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; border-bottom: 2px solid #111111; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #111111">Painel</a>
+<a href="Radar.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Radar</a>
+<a href="Fornecedor.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Fornecedores</a>
+<a href="Diario.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Diário Oficial</a>
+<a href="Transparencia.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase">Transparência ativa</a>
+</nav>
+</header>
+
+<main>
+<div style="padding: 56px 0 36px; max-width: 900px">
+<p style="margin: 0 0 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Painel do dia · sexta-feira, 9 de outubro de 2026</p>
+<h1 style="margin: 0 0 20px; font-style: italic; font-weight: 400; font-size: 46px; line-height: 1.12; color: #111111">O que mudou em Marília desde ontem</h1>
+<p style="margin: 0; font-size: 21px; line-height: 1.5; color: #222222"><span style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-variant-caps: all-small-caps; letter-spacing: 0.08em; font-weight: 500; color: #111111">Na coleta de hoje,</span> uma dispensa nova sem valor estimado, quatro atas de registro de preço publicadas sem o nome da contratada e, no Diário Oficial nº 4298, a justificativa de quebra da ordem cronológica que aparece em 105 das 196 edições do ano.</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 28px 48px; padding: 26px 0 28px; border-top: 2px solid #111111; border-bottom: 1px solid #cccccc">
+<sc-for list="{{ numeros }}" as="n" hint-placeholder-count="5">
+<div style="flex: 1 1 170px; min-width: 0">
+<div style="font-size: 44px; line-height: 1; color: #111111">{{ n.valor }}</div>
+<div style="margin-top: 10px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #222222">{{ n.rotulo }}</div>
+<div style="margin-top: 2px; font-style: italic; font-size: 15px; line-height: 1.4; color: #666666">{{ n.nota }}</div>
+</div>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 44px 64px; padding-top: 44px">
+
+<section style="flex: 62 1 520px; min-width: 0">
+<p style="margin: 0 0 6px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">I. Novidades desde a última coleta</p>
+<h2 style="margin: 0 0 18px; font-style: italic; font-weight: 400; font-size: 31px; line-height: 1.15; color: #111111">Cinco registros que pedem leitura</h2>
+<sc-for list="{{ novidades }}" as="item" hint-placeholder-count="5">
+<article style="display: flex; gap: 20px; padding: 18px 0; border-top: 1px solid #cccccc">
+<div style="flex: 0 0 28px; padding-top: 3px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; color: #1b67b2">{{ item.n }}</div>
+<div style="flex: 1 1 0; min-width: 0">
+<div style="font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #666666">{{ item.tipo }}</div>
+<h3 style="margin: 4px 0 6px; font-style: normal; font-weight: 400; font-size: 22px; line-height: 1.25; color: #111111">{{ item.titulo }}</h3>
+<p style="margin: 0 0 6px; font-size: 17px; line-height: 1.5; color: #222222">{{ item.detalhe }}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 0 18px; align-items: center; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; color: #6b6b6b">
+<span>{{ item.fonte }}</span>
+<a href="{{ item.link }}" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase">{{ item.acao }}</a>
+</div>
+</div>
+</article>
+</sc-for>
+</section>
+
+<aside aria-label="Notas à margem" style="flex: 38 1 300px; min-width: 0; box-sizing: border-box; padding-left: 28px; border-left: 1px solid #cccccc">
+
+<p style="margin: 0 0 12px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Contratação direta sobre o empenhado</p>
+<sc-for list="{{ serie }}" as="s" hint-placeholder-count="4">
+<div style="display: flex; align-items: center; gap: 12px; padding: 5px 0">
+<span style="flex: 0 0 38px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 13px; color: #666666">{{ s.ano }}</span>
+<span style="flex: 1 1 0; height: 10px; background: #eef1f5">
+<span style="display: block; height: 10px; width: {{ s.largura }}; background: {{ s.cor }}"></span>
+</span>
+<span style="flex: 0 0 52px; text-align: right; font-size: 17px; color: #111111">{{ s.valor }}</span>
+</div>
+</sc-for>
+<p style="margin: 10px 0 34px; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">Dispensa e inexigibilidade somadas, sobre o total empenhado. O ano de 2026 vai até outubro, e 62% do empenhado não traz modalidade informada.</p>
+
+<p style="margin: 0 0 8px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Saúde hoje</p>
+<p style="margin: 0 0 4px; font-size: 17px; line-height: 1.45">Medicamentos em falta: lista de 07.10.2026.</p>
+<p style="margin: 0 0 34px; font-size: 17px; line-height: 1.45">Fila de leitos nas UPAs: lista de 08.10.2026.</p>
+
+<p style="margin: 0 0 8px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Casos acompanhados</p>
+<p style="margin: 0 0 4px; font-size: 17px; line-height: 1.45">CIP: 34 lançamentos de arrecadação em 2026, na natureza 1.2.4.</p>
+<p style="margin: 0 0 34px; font-size: 17px; line-height: 1.45">Parque da Criança, CP 012/2026: [situação da licitação].</p>
+
+<p style="margin: 0 0 8px; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1b67b2">Estado da coleta</p>
+<p style="margin: 0; font-style: italic; font-size: 15px; line-height: 1.45; color: #666666">17 de 17 módulos do portal sincronizados em 09.10.2026. Diário Oficial coletado até a edição 4298.</p>
+</aside>
+
+</div>
+</main>
+
+<footer style="margin-top: 56px; padding-top: 14px; border-top: 1px solid #cccccc; font-family: 'Fira Sans', -apple-system, 'Segoe UI', sans-serif; font-size: 12px; line-height: 1.6; letter-spacing: 0.04em; color: #6b6b6b">Fontes: Portal da Transparência de Marília e dados abertos do site da Prefeitura · CPFs de pessoas físicas são mascarados antes da exibição · matra.org.br</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1560}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+numeros: [
+{ valor: '34.692', rotulo: 'Empenhos em 2026', nota: '268 mil desde 2020' },
+{ valor: '673', rotulo: 'Compras diretas', nota: '490 dispensas e 175 inexigibilidades' },
+{ valor: '46', rotulo: 'Licitações abertas', nota: 'de 163 publicadas no ano' },
+{ valor: '1.040', rotulo: 'Contratos vigentes', nota: 'de 1.151 registrados' },
+{ valor: '22', rotulo: 'Obras em andamento', nota: '7 canceladas, 9 concluídas' }
+],
+novidades: [
+{ n: '1', tipo: 'Compra direta · 09.10.2026', titulo: 'Dispensa nº 555: apresentação de DJ para evento apoiado pela Secretaria da Cultura', detalhe: 'Aberta hoje. O registro não informa valor estimado nem fornecedor.', fonte: 'Dados abertos · compra direta', acao: 'Ver no radar', link: 'Radar.dc.html' },
+{ n: '2', tipo: 'Contratos · 07.10.2026', titulo: 'Quatro atas de registro de preço sem o nome da contratada', detalhe: 'ARP nº 197 a 200, processo 91, pregão eletrônico. Somam R$ 16.067,16 e vigoram até 08.10.2027.', fonte: 'Dados abertos · contratos', acao: 'Ver no radar', link: 'Radar.dc.html' },
+{ n: '3', tipo: 'Diário Oficial · edição 4298', titulo: 'Justificativa de quebra da ordem cronológica de pagamentos', detalhe: 'Invoca o art. 141, §1º, III e V, da Lei 14.133/2021. A mesma frase consta de 105 das 196 edições de 2026.', fonte: 'Dados abertos · diário oficial', acao: 'Ler a edição', link: 'Diario.dc.html' },
+{ n: '4', tipo: 'Licitação · aberta', titulo: 'CP 14/2026: contratação integrada das obras de drenagem do Canal Assad Haddad', detalhe: 'Concorrência eletrônica. O conjunto de dados não traz valor estimado.', fonte: 'Dados abertos · licitações', acao: 'Ver lacunas', link: 'Transparencia.dc.html' },
+{ n: '5', tipo: 'Empenho · 01.09.2026', titulo: 'Quatro empenhos de emenda parlamentar à AADEF, no processo 127/2026', detalhe: 'Somam R$ 45.188,00 em emendas individuais, ainda sem pagamento registrado.', fonte: 'Portal · empenho analítico', acao: 'Abrir a ficha', link: 'Fornecedor.dc.html' }
+],
+serie: [
+{ ano: '2023', valor: '5,2%', largura: '51%', cor: '#222222' },
+{ ano: '2024', valor: '6,5%', largura: '64%', cor: '#222222' },
+{ ano: '2025', valor: '6,6%', largura: '65%', cor: '#222222' },
+{ ano: '2026', valor: '10,2%', largura: '100%', cor: '#1b67b2' }
+]
+};
+}
+}
+</script>
+</body>
+</html>
