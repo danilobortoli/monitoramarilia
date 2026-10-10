@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-10-09T15:40:32.094607",
+  "lastUpdate": "2026-10-10T14:55:57.086172",
   "ano": 2026,
   "municipio": "Marília",
   "codigoIBGE": "3529005",
@@ -160,7 +160,7 @@
         "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 44477909000100",
         "valor": 284071717.96000075,
         "percentual": 29.47734223531983,
-        "data": "2026-10-09"
+        "data": "2026-10-10"
       },
       {
         "tipo": "alerta",
@@ -171,7 +171,7 @@
         "cnpj_parcial": "CNPJ - PESSOA JURÍDICA - 59989830000136",
         "valor": 124476517.51000005,
         "percentual": 12.916586463632774,
-        "data": "2026-10-09"
+        "data": "2026-10-10"
       }
     ],
     "outros": []

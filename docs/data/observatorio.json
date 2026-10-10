@@ -1,39 +1,39 @@
 {
-  "gerado_em": "2026-10-09T18:32:25",
+  "gerado_em": "2026-10-10T14:55:17",
   "exercicio": 2026,
   "fontes": {
     "portal": "https://transparencia.marilia.sp.gov.br",
     "dados_abertos": "https://www.marilia.sp.gov.br/portal/dados-abertos"
   },
   "coleta": {
-    "data": "2026-10-09",
+    "data": "2026-10-10",
     "visoes_portal": {
       "responderam": 17,
       "total": 17
     },
     "registros_por_visao": {
-      "empenho_analitico": 34692,
-      "despesas_investimentos": 22576,
-      "movimento_empenho": 24287,
-      "despesa_sintetica": 17795,
+      "empenho_analitico": 35202,
+      "despesas_investimentos": 22684,
+      "movimento_empenho": 24388,
+      "despesa_sintetica": 18887,
       "empenho_modalidade": 9,
       "restos_a_pagar": 2345,
-      "diarias": 4537,
-      "passagens": 499,
+      "diarias": 4588,
+      "passagens": 502,
       "subvencoes": 0,
       "publicidade": 3,
       "publicidade_digital": 335,
       "emendas": 131,
-      "receita_analitica": 64895,
+      "receita_analitica": 65395,
       "arrecadacao_mes": 385,
       "pagamento_servidores": 52456,
       "patrimonio": 153211,
-      "transferencias_educacao": 2012
+      "transferencias_educacao": 2014
     }
   },
   "totais": {
-    "compras_diretas": 673,
-    "dispensas": 490,
+    "compras_diretas": 674,
+    "dispensas": 491,
     "inexigibilidades": 175,
     "licitacoes": 163,
     "licitacoes_abertas": 46,
@@ -43,9 +43,9 @@
     "obras_em_andamento": 22,
     "obras_concluidas": 9,
     "obras_canceladas": 7,
-    "empenhos": 20839,
-    "anulacoes": 1737,
-    "empenhado_liquido": 1350234459.9
+    "empenhos": 20934,
+    "anulacoes": 1750,
+    "empenhado_liquido": 1352915143.93
   },
   "regras": [
     {
@@ -53,11 +53,18 @@
       "familia": "Contratação direta",
       "regra": "Nova dispensa ou inexigibilidade",
       "fonte": "Dados abertos · compra direta",
-      "base": 673,
-      "resultado": 58,
+      "base": 674,
+      "resultado": 59,
       "unidade": "abertas",
-      "fato": "São 490 dispensas e 175 inexigibilidades no ano. 673 dos 673 registros não trazem valor estimado.",
+      "fato": "São 491 dispensas e 175 inexigibilidades no ano. 674 dos 674 registros não trazem valor estimado.",
       "itens": [
+        {
+          "processo": 553,
+          "modalidade": "Dispensa",
+          "titulo": "Contratação de empresa especializada para elaboração de Projeto de Segurança Contra Incêndio em conformidade com a legislação e as normas técnicas vigentes, visando a obtenção do Auto de Vistoria do Corpo de Bombeiros (AVCB) temporário, necessário à realização do evento “Festival do Café”, a ser realizado nos dias 28 e 29 de novembro na Fazenda Cascata, destinada à Secretaria d",
+          "data": "2026-10-15",
+          "sem_valor_estimado": true
+        },
         {
           "processo": 555,
           "modalidade": "Dispensa",
@@ -188,13 +195,6 @@
           "processo": 355,
           "modalidade": "Dispensa",
           "titulo": "Aquisição de bexigas, destinada à Secretaria Municipal de Assistência Social e Cidadania",
-          "data": "2026-06-04",
-          "sem_valor_estimado": true
-        },
-        {
-          "processo": 75,
-          "modalidade": "Inexigibilidade",
-          "titulo": "Termo de Colaboração com a entidade: INSTITUTO STUDIO MOVE ART DANCA, CNPJ 58.144.300/0001-24, contemplada com recursos provenientes da Emenda Parlamentar nº 234 ao Projeto de Lei nº 118/2026, na modalidade custeio, embasados nos Artigos 29 e 31 da Lei Federal nº 13019/2014.",
           "data": "2026-06-04",
           "sem_valor_estimado": true
         }
@@ -512,11 +512,15 @@
       "familia": "Pagamentos",
       "regra": "Quebra da ordem cronológica",
       "fonte": "Diário Oficial",
-      "base": 196,
-      "resultado": 105,
+      "base": 197,
+      "resultado": 106,
       "unidade": "com a justificativa",
-      "fato": "A justificativa com base no art. 141, §1º, consta de 105 das 196 edições do ano, desde a nº 4107.",
+      "fato": "A justificativa com base no art. 141, §1º, consta de 106 das 197 edições do ano, desde a nº 4107.",
       "itens": [
+        {
+          "edicao": "4299",
+          "data": "2026-10-10"
+        },
         {
           "edicao": "4298",
           "data": "2026-10-09"
@@ -592,10 +596,6 @@
         {
           "edicao": "4267",
           "data": "2026-08-27"
-        },
-        {
-          "edicao": "4266",
-          "data": "2026-08-26"
         }
       ],
       "n": 4
@@ -605,7 +605,7 @@
       "familia": "Fornecedores",
       "regra": "Fornecedor novo com valor alto",
       "fonte": "Portal · despesas e investimentos",
-      "base": "1.974 fornecedores no ano, comparados com 2024–2025",
+      "base": "1.986 fornecedores no ano, comparados com 2024–2025",
       "resultado": 53,
       "unidade": "novos",
       "fato": "53 fornecedores sem empenho em 2024–2025 receberam ao menos R$ 100.000,00 em empenhos no ano, somando R$ 111.721.693,06. O maior é CONSORCIO PARQUE DA CRIANCA, com R$ 19.112.795,49.",
@@ -738,7 +738,7 @@
       "familia": "Pessoal",
       "regra": "Diárias atípicas",
       "fonte": "Portal · diárias",
-      "base": "4.537 registros, 15 cargos comparáveis",
+      "base": "4.588 registros, 15 cargos comparáveis",
       "resultado": 1,
       "unidade": "acima do cargo",
       "fato": "Cada beneficiário é comparado com colegas do mesmo cargo; 15 cargos têm ao menos 5 beneficiários. O maior desvio é de assistente administrativo, com R$ 14.346,68 no ano, para um corte de R$ 2.833,31 no cargo.",
@@ -822,101 +822,10 @@
       "regra": "Contrato a vencer em 60 dias",
       "fonte": "Dados abertos · contratos",
       "base": "1.040 vigentes",
-      "resultado": 71,
+      "resultado": 60,
       "unidade": "a vencer",
-      "fato": "71 contratos e atas vigentes terminam até 08.12.2026, somando R$ 17.084.234,73; 54 deles não identificam a contratada.",
+      "fato": "60 contratos e atas vigentes terminam até 09.12.2026, somando R$ 16.458.943,23; 42 deles não identificam a contratada.",
       "itens": [
-        {
-          "numero": 200,
-          "contratada": null,
-          "tipo": "ARP - Ata de Registro de Preço",
-          "valor": 73535,
-          "fim": "2026-10-09"
-        },
-        {
-          "numero": 205,
-          "contratada": null,
-          "tipo": "ARP - Ata de Registro de Preço",
-          "valor": 98646,
-          "fim": "2026-10-09"
-        },
-        {
-          "numero": 204,
-          "contratada": null,
-          "tipo": "ARP - Ata de Registro de Preço",
-          "valor": 4570,
-          "fim": "2026-10-09"
-        },
-        {
-          "numero": 203,
-          "contratada": null,
-          "tipo": "ARP - Ata de Registro de Preço",
-          "valor": 62350,
-          "fim": "2026-10-09"
-        },
-        {
-          "numero": 202,
-          "contratada": null,
-          "tipo": "ARP - Ata de Registro de Preço",
-          "valor": 120556,
-          "fim": "2026-10-09"
-        },
-        {
-          "numero": 201,
-          "contratada": null,
-          "tipo": "ARP - Ata de Registro de Preço",
-          "valor": 42500,
-          "fim": "2026-10-09"
-        },
-        {
-          "numero": 199,
-          "contratada": null,
-          "tipo": "ARP - Ata de Registro de Preço",
-          "valor": 10920,
-          "fim": "2026-10-09"
-        },
-        {
-          "numero": 198,
-          "contratada": null,
-          "tipo": "ARP - Ata de Registro de Preço",
-          "valor": 2875,
-          "fim": "2026-10-09"
-        },
-        {
-          "numero": 197,
-          "contratada": null,
-          "tipo": "ARP - Ata de Registro de Preço",
-          "valor": 11376,
-          "fim": "2026-10-09"
-        },
-        {
-          "numero": 196,
-          "contratada": null,
-          "tipo": "ARP - Ata de Registro de Preço",
-          "valor": 22000,
-          "fim": "2026-10-09"
-        },
-        {
-          "numero": 195,
-          "contratada": null,
-          "tipo": "ARP - Ata de Registro de Preço",
-          "valor": 121704,
-          "fim": "2026-10-09"
-        },
-        {
-          "numero": 194,
-          "contratada": null,
-          "tipo": "ARP - Ata de Registro de Preço",
-          "valor": 16200,
-          "fim": "2026-10-09"
-        },
-        {
-          "numero": 193,
-          "contratada": null,
-          "tipo": "ARP - Ata de Registro de Preço",
-          "valor": 63386.5,
-          "fim": "2026-10-09"
-        },
         {
           "numero": 1644,
           "contratada": "SÃO PAULO SECRETARIA DA EDUCAÇÃO",
@@ -965,18 +874,109 @@
           "tipo": "CST - Contrato de Serviços de Terceiros",
           "valor": 4004418,
           "fim": "2026-11-03"
+        },
+        {
+          "numero": 1816,
+          "contratada": "SIGCORP GESTÃO E TECNOLOGIA LTDA",
+          "tipo": "CST - Contrato de Serviços de Terceiros",
+          "valor": 1301459.95,
+          "fim": "2026-11-05"
+        },
+        {
+          "numero": 222,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 600,
+          "fim": "2026-11-06"
+        },
+        {
+          "numero": 221,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 6000,
+          "fim": "2026-11-06"
+        },
+        {
+          "numero": 220,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 148760,
+          "fim": "2026-11-06"
+        },
+        {
+          "numero": 219,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 30750,
+          "fim": "2026-11-06"
+        },
+        {
+          "numero": 218,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 8950,
+          "fim": "2026-11-06"
+        },
+        {
+          "numero": 217,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 3250,
+          "fim": "2026-11-06"
+        },
+        {
+          "numero": 216,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 5920.25,
+          "fim": "2026-11-06"
+        },
+        {
+          "numero": 215,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 18048.78,
+          "fim": "2026-11-06"
+        },
+        {
+          "numero": 214,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 52780,
+          "fim": "2026-11-06"
+        },
+        {
+          "numero": 213,
+          "contratada": null,
+          "tipo": "ARP - Ata de Registro de Preço",
+          "valor": 10500,
+          "fim": "2026-11-06"
+        },
+        {
+          "numero": 1304,
+          "contratada": "ECOPONTES – SISTEMAS ESTRUTURAIS SUSTENTÁVEIS LTDA",
+          "tipo": "CO - Contrato de Obra",
+          "valor": 982164.21,
+          "fim": "2026-11-07"
+        },
+        {
+          "numero": 1817,
+          "contratada": "AME AUDIOLOGIA, CALIBRAÇÃO E MANUTENÇÃO EM EQUIPAMENTOS AUDIOLÓGICOS LTDA",
+          "tipo": "CST - Contrato de Serviços de Terceiros",
+          "valor": 4070,
+          "fim": "2026-11-14"
         }
       ],
       "n": 8
     }
   ],
   "novidades": {
-    "linha_de_base": true,
-    "resumo": "que abre o histórico do Observatório, entram abaixo os registros mais recentes de cada conjunto. A partir da próxima coleta, o painel mostra só o que mudou.",
+    "linha_de_base": false,
+    "resumo": "entraram 1 compra direta nova; 1 edição do Diário Oficial e 81 empenhos novos.",
     "itens": [
       {
-        "tipo": "Compra direta · 09.10.2026",
-        "titulo": "Dispensa nº 555: Prestação de serviços de apresentação de DJ, incluindo fornecimento de equipamentos de sonorização e…",
+        "tipo": "Compra direta · 15.10.2026",
+        "titulo": "Dispensa nº 553: Contratação de empresa especializada para elaboração de Projeto de Segurança Contra Incêndio em conformidade…",
         "detalhe": "Situação: aberto. O registro não informa valor estimado.",
         "fonte": "Dados abertos · compra direta",
         "acao": "Ver no radar",
@@ -984,31 +984,22 @@
         "n": "1"
       },
       {
-        "tipo": "Contratos · 07.10.2026",
-        "titulo": "5 contratos ou atas sem o nome da contratada",
-        "detalhe": "Nº 196, 197, 198, 199, 200; processo 91. Somam R$ 79.887,86.",
-        "fonte": "Dados abertos · contratos",
-        "acao": "Ver no radar",
-        "link": "radar.html#2",
-        "n": "2"
-      },
-      {
-        "tipo": "Diário Oficial · edição 4298",
+        "tipo": "Diário Oficial · edição 4299",
         "titulo": "Justificativa de quebra da ordem cronológica de pagamentos",
-        "detalhe": "Invoca o art. 141, §1º, III e V, da Lei 14.133/2021. A mesma frase consta de 105 das 196 edições do ano.",
+        "detalhe": "Invoca o art. 141, §1º, III e V, da Lei 14.133/2021. A mesma frase consta de 106 das 197 edições do ano.",
         "fonte": "Dados abertos · diário oficial",
         "acao": "Ler a edição",
         "link": "diario.html",
-        "n": "3"
+        "n": "2"
       },
       {
-        "tipo": "Licitação · aberta",
-        "titulo": "Edital 10: CHAMAMENTO PÚBLICO Nº 010/2026, com o intuito de firmar TERMO DE COLABORAÇÃO, objetivando a Seleção de…",
-        "detalhe": "Chamamento Público. O conjunto de dados não traz valor estimado.",
-        "fonte": "Dados abertos · licitações",
-        "acao": "Ver lacunas",
-        "link": "transparencia.html",
-        "n": "4"
+        "tipo": "Empenho · 09.10.2026",
+        "titulo": "Empenho nº 19541 a BANDEIRANTES COMERCIO DE MEDICAMENTOS E PRODUTOS PARA SAUDE LTDA",
+        "detalhe": "R$ 620.595,02, prefeitura municipal de marília.",
+        "fonte": "Portal · despesas e investimentos",
+        "acao": "Ver no radar",
+        "link": "radar.html",
+        "n": "3"
       }
     ]
   },
@@ -1036,8 +1027,8 @@
     },
     {
       "ano": 2026,
-      "direta": 146824141.63,
-      "total": 1434270050.58,
+      "direta": 146799983.41,
+      "total": 1436951367.56,
       "pct_direta": 10.2,
       "pct_sem_modalidade": 62.3
     }
@@ -1048,13 +1039,13 @@
   },
   "diario": {
     "frase": "A interrupção de serviços contratados pode gerar impactos diretos à população",
-    "edicoes": 196,
+    "edicoes": 197,
     "extras": 6,
-    "com_frase": 105,
+    "com_frase": 106,
     "primeira_edicao": "4103",
     "primeira_data": "2026-01-06",
-    "ultima_edicao": "4298",
-    "ultima_data": "2026-10-09",
+    "ultima_edicao": "4299",
+    "ultima_data": "2026-10-10",
     "primeira_com_frase": "4107",
     "faixa": [
       0,
@@ -1252,6 +1243,7 @@
       1,
       0,
       1,
+      1,
       1
     ],
     "meses": [
@@ -1302,11 +1294,21 @@
       },
       {
         "mes": "out",
-        "com": 4,
-        "total": 7
+        "com": 5,
+        "total": 8
       }
     ],
     "recentes": [
+      {
+        "edicao": "4299",
+        "data": "2026-10-10",
+        "extra": false,
+        "caracteres": 32304,
+        "cnpjs": 1,
+        "dispensa": 4,
+        "portarias": 2,
+        "frase": true
+      },
       {
         "edicao": "4298",
         "data": "2026-10-09",
@@ -1366,25 +1368,15 @@
         "dispensa": 3,
         "portarias": 17,
         "frase": false
-      },
-      {
-        "edicao": "4292",
-        "data": "2026-10-01",
-        "extra": false,
-        "caracteres": 45765,
-        "cnpjs": 3,
-        "dispensa": 9,
-        "portarias": 20,
-        "frase": true
       }
     ],
     "trecho": {
-      "edicao": "4298",
-      "data": "2026-10-09",
+      "edicao": "4299",
+      "data": "2026-10-10",
       "antes": "Risco de Descontinuidade Operacional.",
       "frase": "A interrupção de serviços contratados pode gerar impactos diretos à população",
       "depois": ". A ausência de pagamentos tempestivos pode levar à suspensão de contratos, ao comprometimento de atividades estratégicas e até mesmo à rescisão unilateral por…",
-      "seguinte": "Fundamentação Legal. A quebra da ordem cronológica de pagamentos encontra amparo no artigo 141, §1º, inciso III e V, da Lei nº 14.133/2021, que permite a…"
+      "seguinte": "Fundamentação Legal. A quebra da ordem cronológica de pagamentos encontra amparo no artigo 141, §1º, inciso V, da Lei nº 14.133/2021, que permite a…"
     }
   },
   "transparencia": {
@@ -1392,15 +1384,15 @@
       {
         "conjunto": "Compras diretas",
         "campo": "Valor estimado",
-        "vazios": 673,
-        "total": 673,
+        "vazios": 674,
+        "total": 674,
         "pct": 100
       },
       {
         "conjunto": "Compras diretas",
         "campo": "Valor homologado",
-        "vazios": 673,
-        "total": 673,
+        "vazios": 674,
+        "total": 674,
         "pct": 100
       },
       {
@@ -1526,6 +1518,36 @@
         "diarias_atipicas": 1,
         "obra_parada_ou_cancelada": 7,
         "contrato_a_vencer": 71
+      }
+    },
+    {
+      "data": "2026-10-10",
+      "exercicio": 2026,
+      "totais": {
+        "compras_diretas": 674,
+        "dispensas": 491,
+        "inexigibilidades": 175,
+        "licitacoes": 163,
+        "licitacoes_abertas": 46,
+        "contratos": 1151,
+        "contratos_vigentes": 1040,
+        "obras": 38,
+        "obras_em_andamento": 22,
+        "obras_concluidas": 9,
+        "obras_canceladas": 7,
+        "empenhos": 20934,
+        "anulacoes": 1750,
+        "empenhado_liquido": 1352915143.93
+      },
+      "radar": {
+        "compra_direta_aberta": 59,
+        "contrato_sem_contratada": 473,
+        "licitacao_sem_valor": 163,
+        "quebra_ordem_cronologica": 106,
+        "fornecedor_novo_valor_alto": 53,
+        "diarias_atipicas": 1,
+        "obra_parada_ou_cancelada": 7,
+        "contrato_a_vencer": 60
       }
     }
   ]
