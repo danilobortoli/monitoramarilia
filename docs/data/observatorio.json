@@ -1,12 +1,12 @@
 {
-  "gerado_em": "2026-10-10T14:55:17",
+  "gerado_em": "2026-10-11T15:12:26",
   "exercicio": 2026,
   "fontes": {
     "portal": "https://transparencia.marilia.sp.gov.br",
     "dados_abertos": "https://www.marilia.sp.gov.br/portal/dados-abertos"
   },
   "coleta": {
-    "data": "2026-10-10",
+    "data": "2026-10-11",
     "visoes_portal": {
       "responderam": 17,
       "total": 17
@@ -824,15 +824,8 @@
       "base": "1.040 vigentes",
       "resultado": 60,
       "unidade": "a vencer",
-      "fato": "60 contratos e atas vigentes terminam até 09.12.2026, somando R$ 16.458.943,23; 42 deles não identificam a contratada.",
+      "fato": "60 contratos e atas vigentes terminam até 10.12.2026, somando R$ 16.353.025,23; 43 deles não identificam a contratada.",
       "itens": [
-        {
-          "numero": 1644,
-          "contratada": "SÃO PAULO SECRETARIA DA EDUCAÇÃO",
-          "tipo": "CG - Contratos Gerais/Outros",
-          "valor": 230000,
-          "fim": "2026-10-10"
-        },
         {
           "numero": 1842,
           "contratada": "LEAL CONSULTORES E ASSOCIADOS LTDA",
@@ -965,6 +958,13 @@
           "tipo": "CST - Contrato de Serviços de Terceiros",
           "valor": 4070,
           "fim": "2026-11-14"
+        },
+        {
+          "numero": 2022,
+          "contratada": "L&amp;C COMÉRCIO DE PAPELARIA LTDA",
+          "tipo": "CF - Contrato de Fornecimento",
+          "valor": 390197,
+          "fim": "2026-11-14"
         }
       ],
       "n": 8
@@ -972,36 +972,8 @@
   ],
   "novidades": {
     "linha_de_base": false,
-    "resumo": "entraram 1 compra direta nova; 1 edição do Diário Oficial e 81 empenhos novos.",
-    "itens": [
-      {
-        "tipo": "Compra direta · 15.10.2026",
-        "titulo": "Dispensa nº 553: Contratação de empresa especializada para elaboração de Projeto de Segurança Contra Incêndio em conformidade…",
-        "detalhe": "Situação: aberto. O registro não informa valor estimado.",
-        "fonte": "Dados abertos · compra direta",
-        "acao": "Ver no radar",
-        "link": "radar.html#1",
-        "n": "1"
-      },
-      {
-        "tipo": "Diário Oficial · edição 4299",
-        "titulo": "Justificativa de quebra da ordem cronológica de pagamentos",
-        "detalhe": "Invoca o art. 141, §1º, III e V, da Lei 14.133/2021. A mesma frase consta de 106 das 197 edições do ano.",
-        "fonte": "Dados abertos · diário oficial",
-        "acao": "Ler a edição",
-        "link": "diario.html",
-        "n": "2"
-      },
-      {
-        "tipo": "Empenho · 09.10.2026",
-        "titulo": "Empenho nº 19541 a BANDEIRANTES COMERCIO DE MEDICAMENTOS E PRODUTOS PARA SAUDE LTDA",
-        "detalhe": "R$ 620.595,02, prefeitura municipal de marília.",
-        "fonte": "Portal · despesas e investimentos",
-        "acao": "Ver no radar",
-        "link": "radar.html",
-        "n": "3"
-      }
-    ]
+    "resumo": "nenhum registro novo nos conjuntos acompanhados.",
+    "itens": []
   },
   "serie_contratacao_direta": [
     {
@@ -1522,6 +1494,36 @@
     },
     {
       "data": "2026-10-10",
+      "exercicio": 2026,
+      "totais": {
+        "compras_diretas": 674,
+        "dispensas": 491,
+        "inexigibilidades": 175,
+        "licitacoes": 163,
+        "licitacoes_abertas": 46,
+        "contratos": 1151,
+        "contratos_vigentes": 1040,
+        "obras": 38,
+        "obras_em_andamento": 22,
+        "obras_concluidas": 9,
+        "obras_canceladas": 7,
+        "empenhos": 20934,
+        "anulacoes": 1750,
+        "empenhado_liquido": 1352915143.93
+      },
+      "radar": {
+        "compra_direta_aberta": 59,
+        "contrato_sem_contratada": 473,
+        "licitacao_sem_valor": 163,
+        "quebra_ordem_cronologica": 106,
+        "fornecedor_novo_valor_alto": 53,
+        "diarias_atipicas": 1,
+        "obra_parada_ou_cancelada": 7,
+        "contrato_a_vencer": 60
+      }
+    },
+    {
+      "data": "2026-10-11",
       "exercicio": 2026,
       "totais": {
         "compras_diretas": 674,
