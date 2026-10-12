@@ -1,12 +1,12 @@
 {
-  "gerado_em": "2026-10-11T15:12:26",
+  "gerado_em": "2026-10-12T18:22:02",
   "exercicio": 2026,
   "fontes": {
     "portal": "https://transparencia.marilia.sp.gov.br",
     "dados_abertos": "https://www.marilia.sp.gov.br/portal/dados-abertos"
   },
   "coleta": {
-    "data": "2026-10-11",
+    "data": "2026-10-12",
     "visoes_portal": {
       "responderam": 17,
       "total": 17
@@ -18,7 +18,7 @@
       "despesa_sintetica": 18887,
       "empenho_modalidade": 9,
       "restos_a_pagar": 2345,
-      "diarias": 4588,
+      "diarias": 4598,
       "passagens": 502,
       "subvencoes": 0,
       "publicidade": 3,
@@ -738,7 +738,7 @@
       "familia": "Pessoal",
       "regra": "Diárias atípicas",
       "fonte": "Portal · diárias",
-      "base": "4.588 registros, 15 cargos comparáveis",
+      "base": "4.598 registros, 15 cargos comparáveis",
       "resultado": 1,
       "unidade": "acima do cargo",
       "fato": "Cada beneficiário é comparado com colegas do mesmo cargo; 15 cargos têm ao menos 5 beneficiários. O maior desvio é de assistente administrativo, com R$ 14.346,68 no ano, para um corte de R$ 2.833,31 no cargo.",
@@ -822,9 +822,9 @@
       "regra": "Contrato a vencer em 60 dias",
       "fonte": "Dados abertos · contratos",
       "base": "1.040 vigentes",
-      "resultado": 60,
+      "resultado": 65,
       "unidade": "a vencer",
-      "fato": "60 contratos e atas vigentes terminam até 10.12.2026, somando R$ 16.353.025,23; 43 deles não identificam a contratada.",
+      "fato": "65 contratos e atas vigentes terminam até 11.12.2026, somando R$ 19.430.827,92; 47 deles não identificam a contratada.",
       "itens": [
         {
           "numero": 1842,
@@ -1550,6 +1550,36 @@
         "diarias_atipicas": 1,
         "obra_parada_ou_cancelada": 7,
         "contrato_a_vencer": 60
+      }
+    },
+    {
+      "data": "2026-10-12",
+      "exercicio": 2026,
+      "totais": {
+        "compras_diretas": 674,
+        "dispensas": 491,
+        "inexigibilidades": 175,
+        "licitacoes": 163,
+        "licitacoes_abertas": 46,
+        "contratos": 1151,
+        "contratos_vigentes": 1040,
+        "obras": 38,
+        "obras_em_andamento": 22,
+        "obras_concluidas": 9,
+        "obras_canceladas": 7,
+        "empenhos": 20934,
+        "anulacoes": 1750,
+        "empenhado_liquido": 1352915143.93
+      },
+      "radar": {
+        "compra_direta_aberta": 59,
+        "contrato_sem_contratada": 473,
+        "licitacao_sem_valor": 163,
+        "quebra_ordem_cronologica": 106,
+        "fornecedor_novo_valor_alto": 53,
+        "diarias_atipicas": 1,
+        "obra_parada_ou_cancelada": 7,
+        "contrato_a_vencer": 65
       }
     }
   ]
