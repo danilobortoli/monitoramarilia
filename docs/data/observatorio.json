@@ -1,12 +1,12 @@
 {
-  "gerado_em": "2026-10-12T18:22:02",
+  "gerado_em": "2026-10-13T16:36:10",
   "exercicio": 2026,
   "fontes": {
     "portal": "https://transparencia.marilia.sp.gov.br",
     "dados_abertos": "https://www.marilia.sp.gov.br/portal/dados-abertos"
   },
   "coleta": {
-    "data": "2026-10-12",
+    "data": "2026-10-13",
     "visoes_portal": {
       "responderam": 17,
       "total": 17
@@ -32,13 +32,13 @@
     }
   },
   "totais": {
-    "compras_diretas": 674,
-    "dispensas": 491,
+    "compras_diretas": 675,
+    "dispensas": 492,
     "inexigibilidades": 175,
     "licitacoes": 163,
-    "licitacoes_abertas": 46,
-    "contratos": 1151,
-    "contratos_vigentes": 1040,
+    "licitacoes_abertas": 45,
+    "contratos": 1152,
+    "contratos_vigentes": 1041,
     "obras": 38,
     "obras_em_andamento": 22,
     "obras_concluidas": 9,
@@ -53,10 +53,10 @@
       "familia": "Contratação direta",
       "regra": "Nova dispensa ou inexigibilidade",
       "fonte": "Dados abertos · compra direta",
-      "base": 674,
+      "base": 675,
       "resultado": 59,
       "unidade": "abertas",
-      "fato": "São 491 dispensas e 175 inexigibilidades no ano. 674 dos 674 registros não trazem valor estimado.",
+      "fato": "São 492 dispensas e 175 inexigibilidades no ano. 675 dos 675 registros não trazem valor estimado.",
       "itens": [
         {
           "processo": 553,
@@ -206,10 +206,10 @@
       "familia": "Contratos",
       "regra": "Contrato ou ata sem nome da contratada",
       "fonte": "Dados abertos · contratos",
-      "base": 1151,
+      "base": 1152,
       "resultado": 473,
       "unidade": "sem nome",
-      "fato": "473 dos 1.151 registros do ano não identificam o fornecedor. Os mais recentes, assinados em 07.10.2026, são 5 e somam R$ 79.887,86.",
+      "fato": "473 dos 1.152 registros do ano não identificam o fornecedor. Os mais recentes, assinados em 07.10.2026, são 5 e somam R$ 79.887,86.",
       "itens": [
         {
           "numero": 200,
@@ -362,7 +362,7 @@
       "base": 163,
       "resultado": 163,
       "unidade": "sem valor",
-      "fato": "163 das 163 licitações do ano não trazem valor estimado no conjunto de dados; 46 estão abertas.",
+      "fato": "163 das 163 licitações do ano não trazem valor estimado no conjunto de dados; 45 estão abertas.",
       "itens": [
         {
           "processo": 10,
@@ -821,10 +821,10 @@
       "familia": "Contratos",
       "regra": "Contrato a vencer em 60 dias",
       "fonte": "Dados abertos · contratos",
-      "base": "1.040 vigentes",
-      "resultado": 65,
+      "base": "1.041 vigentes",
+      "resultado": 67,
       "unidade": "a vencer",
-      "fato": "65 contratos e atas vigentes terminam até 11.12.2026, somando R$ 19.430.827,92; 47 deles não identificam a contratada.",
+      "fato": "67 contratos e atas vigentes terminam até 12.12.2026, somando R$ 26.349.791,92; 47 deles não identificam a contratada.",
       "itens": [
         {
           "numero": 1842,
@@ -972,8 +972,18 @@
   ],
   "novidades": {
     "linha_de_base": false,
-    "resumo": "nenhum registro novo nos conjuntos acompanhados.",
-    "itens": []
+    "resumo": "entraram 1 compra direta nova e 1 contrato ou ata novo.",
+    "itens": [
+      {
+        "tipo": "Compra direta · 13.10.2026",
+        "titulo": "Dispensa nº 546: Para a prestação de serviços técnicos de operação de sonorização e iluminação para atendimento às atividades…",
+        "detalhe": "Situação: homologado. O registro não informa valor estimado.",
+        "fonte": "Dados abertos · compra direta",
+        "acao": "Ver no radar",
+        "link": "radar.html#1",
+        "n": "1"
+      }
+    ]
   },
   "serie_contratacao_direta": [
     {
@@ -1006,7 +1016,7 @@
     }
   ],
   "saude": {
-    "medicamentos_em_falta": "2026-10-07",
+    "medicamentos_em_falta": "2026-10-09",
     "fila_de_leitos": "2026-10-09"
   },
   "diario": {
@@ -1356,15 +1366,15 @@
       {
         "conjunto": "Compras diretas",
         "campo": "Valor estimado",
-        "vazios": 674,
-        "total": 674,
+        "vazios": 675,
+        "total": 675,
         "pct": 100
       },
       {
         "conjunto": "Compras diretas",
         "campo": "Valor homologado",
-        "vazios": 674,
-        "total": 674,
+        "vazios": 675,
+        "total": 675,
         "pct": 100
       },
       {
@@ -1392,21 +1402,21 @@
         "conjunto": "Contratos e atas",
         "campo": "Nome da contratada",
         "vazios": 473,
-        "total": 1151,
+        "total": 1152,
         "pct": 41
       },
       {
         "conjunto": "Contratos e atas",
         "campo": "Tipo de licitação",
         "vazios": 128,
-        "total": 1151,
+        "total": 1152,
         "pct": 11
       },
       {
         "conjunto": "Contratos e atas",
         "campo": "Situação",
         "vazios": 107,
-        "total": 1151,
+        "total": 1152,
         "pct": 9
       },
       {
@@ -1420,21 +1430,21 @@
         "conjunto": "Contratos e atas",
         "campo": "Número do contrato",
         "vazios": 66,
-        "total": 1151,
+        "total": 1152,
         "pct": 6
       },
       {
         "conjunto": "Contratos e atas",
         "campo": "Valor do contrato",
         "vazios": 19,
-        "total": 1151,
+        "total": 1152,
         "pct": 2
       },
       {
         "conjunto": "Contratos e atas",
         "campo": "Fim da vigência",
         "vazios": 1,
-        "total": 1151,
+        "total": 1152,
         "pct": 0
       }
     ],
@@ -1580,6 +1590,36 @@
         "diarias_atipicas": 1,
         "obra_parada_ou_cancelada": 7,
         "contrato_a_vencer": 65
+      }
+    },
+    {
+      "data": "2026-10-13",
+      "exercicio": 2026,
+      "totais": {
+        "compras_diretas": 675,
+        "dispensas": 492,
+        "inexigibilidades": 175,
+        "licitacoes": 163,
+        "licitacoes_abertas": 45,
+        "contratos": 1152,
+        "contratos_vigentes": 1041,
+        "obras": 38,
+        "obras_em_andamento": 22,
+        "obras_concluidas": 9,
+        "obras_canceladas": 7,
+        "empenhos": 20934,
+        "anulacoes": 1750,
+        "empenhado_liquido": 1352915143.93
+      },
+      "radar": {
+        "compra_direta_aberta": 59,
+        "contrato_sem_contratada": 473,
+        "licitacao_sem_valor": 163,
+        "quebra_ordem_cronologica": 106,
+        "fornecedor_novo_valor_alto": 53,
+        "diarias_atipicas": 1,
+        "obra_parada_ou_cancelada": 7,
+        "contrato_a_vencer": 67
       }
     }
   ]

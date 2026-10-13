@@ -3083,6 +3083,19 @@
    "tipo": "CST - Contrato de Serviços de Terceiros"
   },
   {
+   "nomeContratada": "ASSOCIAÇÃO MARILIENSE DE ESPORTES INCLUSIVOS – AMEI",
+   "dataAssinatura": "2026-10-09",
+   "dataInicioVigencia": "2026-10-09",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2026-12-31",
+   "valorContrato": 50000,
+   "numeroContrato": 385,
+   "numeroProcesso": "150",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
+  },
+  {
    "nomeContratada": null,
    "dataAssinatura": "2025-10-08",
    "dataInicioVigencia": "2025-10-10",

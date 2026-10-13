@@ -1,0 +1,101 @@
+{
+ "compra-direta": {
+  "novos": [
+   {
+    "titulo": "Para a prestação de serviços técnicos de operação de sonorização e iluminação para atendimento às atividades do Teatro Municipal de Marília, destinado a Secretaria Municipal da Cultura",
+    "dataAtualizacao": "2026-10-13 09:20:49",
+    "dataPostagem": "2026-10-13 08:00:00",
+    "dataRealizacao": "2026-10-13 08:00:00",
+    "numeroEdital": 546,
+    "numeroProcesso": 546,
+    "modalidade": "Dispensa",
+    "situacao": "Homologado",
+    "descricao": "Para a prestação de serviços técnicos de operação de sonorização e iluminação para atendimento às atividades do Teatro Municipal de Marília, destinado a Secretaria Municipal da Cultura",
+    "valorEstimado": "",
+    "valorHomologado": ""
+   }
+  ],
+  "alterados": [],
+  "removidos": []
+ },
+ "contratos": {
+  "novos": [
+   {
+    "nomeContratada": "ASSOCIAÇÃO MARILIENSE DE ESPORTES INCLUSIVOS – AMEI",
+    "dataAssinatura": "2026-10-09",
+    "dataInicioVigencia": "2026-10-09",
+    "dataFimVigencia": "2026-12-31",
+    "dataVigencia": "2026-12-31",
+    "valorContrato": 50000,
+    "numeroContrato": 385,
+    "numeroProcesso": "150",
+    "tipoLicitacao": "Inexigibilidade",
+    "situacao": "Vigente",
+    "tipo": "TC - Termo de Colaboração"
+   }
+  ],
+  "alterados": [],
+  "removidos": []
+ },
+ "licitacoes": {
+  "novos": [],
+  "alterados": [
+   {
+    "registro": {
+     "titulo": "CONCESSÃO ADMINISTRATIVA DESTINADA À MODERNIZAÇÃO, EFICIENTIZAÇÃO,  EXPANSÃO, OPERAÇÃO, MANUTENÇÃO E GESTÃO INTEGRADA DA INFRAESTRUTURA  DE ILUMINAÇÃO PÚBLICA, BEM COMO À IMPLANTAÇÃO, OPERAÇÃO E  MANUTENÇÃO DE SOLUÇÃO INTEGRADA DE MONITORAMENTO URBANO, CENTRO  DE CONTROLE OPERACIONAL – CCO/COI E INFRAESTRUTURA TECNOLÓGICA  ASSOCIADA PARA O MUNICÍPIO DE MARÍLIA/SP",
+     "dataAtualizacao": "2026-10-13 09:27:05",
+     "dataPostagem": "2026-12-07 09:00:00",
+     "dataRealizacao": "2026-05-06 08:00:00",
+     "numeroEdital": 13,
+     "numeroProcesso": 13,
+     "modalidade": "Concorrência Presencial",
+     "situacao": "Aberto",
+     "descricao": "CONCESSÃO ADMINISTRATIVA DESTINADA À MODERNIZAÇÃO, EFICIENTIZAÇÃO, EXPANSÃO, OPERAÇÃO, MANUTENÇÃO E GESTÃO INTEGRADA DA INFRAESTRUTURA DE ILUMINAÇÃO PÚBLICA, BEM COMO À IMPLANTAÇÃO, OPERAÇÃO E MANUTENÇÃO DE SOLUÇÃO INTEGRADA DE MONITORAMENTO URBANO, CENTRO DE CONTROLE OPERACIONAL – CCO/COI E INFRAESTRUTURA TECNOLÓGICA ASSOCIADA PARA O MUNICÍPIO DE MARÍLIA/SP",
+     "valorEstimado": "",
+     "valorHomologado": ""
+    },
+    "campos": {
+     "dataPostagem": [
+      "2026-06-06 08:00:00",
+      "2026-12-07 09:00:00"
+     ]
+    }
+   },
+   {
+    "registro": {
+     "titulo": "Aquisição de diversos Móveis para o Gabinete do Prefeito",
+     "dataAtualizacao": "2026-10-13 13:26:07",
+     "dataPostagem": "2026-08-12 09:00:00",
+     "dataRealizacao": "2026-07-30 09:00:00",
+     "numeroEdital": 92,
+     "numeroProcesso": 92,
+     "modalidade": "Pregão Eletrônico",
+     "situacao": "Homologado",
+     "descricao": "Aquisição de diversos Móveis para o Gabinete do Prefeito.",
+     "valorEstimado": "",
+     "valorHomologado": ""
+    },
+    "campos": {
+     "situacao": [
+      "Aberto",
+      "Homologado"
+     ]
+    }
+   }
+  ],
+  "removidos": []
+ },
+ "obras": {
+  "novos": [],
+  "alterados": [],
+  "removidos": []
+ },
+ "diario_oficial": {
+  "novas": [],
+  "alteradas": []
+ },
+ "despesas": {
+  "novos": [],
+  "removidos": []
+ }
+}
