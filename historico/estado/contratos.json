@@ -600,19 +600,6 @@
    "tipo": "TC - Termo de Colaboração"
   },
   {
-   "nomeContratada": "ASSOCIAÇÃO DOS DEFICIENTES VISUAIS DE MARÍLIA - ADEVIMARI",
-   "dataAssinatura": "2026-08-31",
-   "dataInicioVigencia": "2026-08-31",
-   "dataFimVigencia": "2026-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 20000,
-   "numeroContrato": 377,
-   "numeroProcesso": "129",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
-  },
-  {
    "nomeContratada": null,
    "dataAssinatura": "2025-09-05",
    "dataInicioVigencia": "2025-09-08",
@@ -1014,19 +1001,6 @@
    "tipoLicitacao": "Dispensa de Licitação",
    "situacao": "",
    "tipo": "CL - Contrato de Locação"
-  },
-  {
-   "nomeContratada": "SIGCORP GESTÃO E TECNOLOGIA LTDA",
-   "dataAssinatura": "2024-10-09",
-   "dataInicioVigencia": "2024-10-09",
-   "dataFimVigencia": "2025-10-09",
-   "dataVigencia": "2026-10-09",
-   "valorContrato": 2328649.1,
-   "numeroContrato": 1748,
-   "numeroProcesso": "58",
-   "tipoLicitacao": "Pregão Eletrônico",
-   "situacao": "Vigente",
-   "tipo": "CST - Contrato de Serviços de Terceiros"
   },
   {
    "nomeContratada": "F A CONFECCAO DE UNIFORMES LTDA",
@@ -3031,6 +3005,19 @@
    "tipo": "ARP - Ata de Registro de Preço"
   },
   {
+   "nomeContratada": "CLÁUDIO DA ROCHA DOS SANTOS EMPREENDIMENTOS – ME",
+   "dataAssinatura": "2025-10-07",
+   "dataInicioVigencia": "2025-10-07",
+   "dataFimVigencia": "2026-12-07",
+   "dataVigencia": "2027-03-17",
+   "valorContrato": 557536.55,
+   "numeroContrato": 1303,
+   "numeroProcesso": "2",
+   "tipoLicitacao": "Concorrência Eletrônica",
+   "situacao": "Vigente",
+   "tipo": "CO - Contrato de Obra"
+  },
+  {
    "nomeContratada": null,
    "dataAssinatura": "2026-09-08",
    "dataInicioVigencia": "2026-09-10",
@@ -4053,6 +4040,19 @@
    "valorContrato": 100000,
    "numeroContrato": 364,
    "numeroProcesso": "99",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
+  },
+  {
+   "nomeContratada": "ASSOCIAÇÃO N9V - MISSÃO NOVA VIDA",
+   "dataAssinatura": "2026-10-13",
+   "dataInicioVigencia": "2026-10-13",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2026-12-31",
+   "valorContrato": 37500,
+   "numeroContrato": 387,
+   "numeroProcesso": "149",
    "tipoLicitacao": "Inexigibilidade",
    "situacao": "Vigente",
    "tipo": "TC - Termo de Colaboração"
@@ -10922,6 +10922,19 @@
    "tipo": "ARP - Ata de Registro de Preço"
   },
   {
+   "nomeContratada": "ASSOCIAÇÃO DOS DEFICIENTES VISUAIS DE MARÍLIA - ADEVIMARI",
+   "dataAssinatura": "2026-08-31",
+   "dataInicioVigencia": "2026-08-31",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2027-12-31",
+   "valorContrato": 20000,
+   "numeroContrato": 377,
+   "numeroProcesso": "129",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
+  },
+  {
    "nomeContratada": null,
    "dataAssinatura": "2025-12-12",
    "dataInicioVigencia": "2025-12-15",
@@ -12987,19 +13000,6 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "ARP - Ata de Registro de Preço"
-  },
-  {
-   "nomeContratada": "CLÁUDIO DA ROCHA DOS SANTOS EMPREENDIMENTOS – ME",
-   "dataAssinatura": "2025-10-07",
-   "dataInicioVigencia": "2025-10-07",
-   "dataFimVigencia": "2026-12-07",
-   "dataVigencia": "2026-12-07",
-   "valorContrato": 557536.55,
-   "numeroContrato": 1303,
-   "numeroProcesso": "2",
-   "tipoLicitacao": "Concorrência Eletrônica",
-   "situacao": "Vigente",
-   "tipo": "CO - Contrato de Obra"
   },
   {
    "nomeContratada": null,

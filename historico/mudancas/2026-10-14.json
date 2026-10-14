@@ -1,0 +1,193 @@
+{
+ "compra-direta": {
+  "novos": [],
+  "alterados": [],
+  "removidos": []
+ },
+ "contratos": {
+  "novos": [
+   {
+    "nomeContratada": "ASSOCIAÇÃO N9V - MISSÃO NOVA VIDA",
+    "dataAssinatura": "2026-10-13",
+    "dataInicioVigencia": "2026-10-13",
+    "dataFimVigencia": "2026-12-31",
+    "dataVigencia": "2026-12-31",
+    "valorContrato": 37500,
+    "numeroContrato": 387,
+    "numeroProcesso": "149",
+    "tipoLicitacao": "Inexigibilidade",
+    "situacao": "Vigente",
+    "tipo": "TC - Termo de Colaboração"
+   }
+  ],
+  "alterados": [
+   {
+    "registro": {
+     "nomeContratada": "ASSOCIAÇÃO DOS DEFICIENTES VISUAIS DE MARÍLIA - ADEVIMARI",
+     "dataAssinatura": "2026-08-31",
+     "dataInicioVigencia": "2026-08-31",
+     "dataFimVigencia": "2026-12-31",
+     "dataVigencia": "2027-12-31",
+     "valorContrato": 20000,
+     "numeroContrato": 377,
+     "numeroProcesso": "129",
+     "tipoLicitacao": "Inexigibilidade",
+     "situacao": "Vigente",
+     "tipo": "TC - Termo de Colaboração"
+    },
+    "campos": {
+     "dataVigencia": [
+      "2026-12-31",
+      "2027-12-31"
+     ]
+    }
+   },
+   {
+    "registro": {
+     "nomeContratada": "CLÁUDIO DA ROCHA DOS SANTOS EMPREENDIMENTOS – ME",
+     "dataAssinatura": "2025-10-07",
+     "dataInicioVigencia": "2025-10-07",
+     "dataFimVigencia": "2026-12-07",
+     "dataVigencia": "2027-03-17",
+     "valorContrato": 557536.55,
+     "numeroContrato": 1303,
+     "numeroProcesso": "2",
+     "tipoLicitacao": "Concorrência Eletrônica",
+     "situacao": "Vigente",
+     "tipo": "CO - Contrato de Obra"
+    },
+    "campos": {
+     "dataVigencia": [
+      "2026-12-07",
+      "2027-03-17"
+     ]
+    }
+   }
+  ],
+  "removidos": [
+   {
+    "nomeContratada": "SIGCORP GESTÃO E TECNOLOGIA LTDA",
+    "dataAssinatura": "2024-10-09",
+    "dataInicioVigencia": "2024-10-09",
+    "dataFimVigencia": "2025-10-09",
+    "dataVigencia": "2026-10-09",
+    "valorContrato": 2328649.1,
+    "numeroContrato": 1748,
+    "numeroProcesso": "58",
+    "tipoLicitacao": "Pregão Eletrônico",
+    "situacao": "Vigente",
+    "tipo": "CST - Contrato de Serviços de Terceiros"
+   }
+  ]
+ },
+ "licitacoes": {
+  "novos": [
+   {
+    "titulo": "Contratação de empresa visando o fornecimento de material e mão de obra para execução de ILUMINAÇÃO E TATAME NO POLIESPORTIVO OCTÁVIO BARRETO PRADO “TATÁ” destinados à Secretaria Municipal de Esportes, Lazer e Juventude",
+    "dataAtualizacao": "2026-10-13 10:53:32",
+    "dataPostagem": "2026-11-03 09:00:00",
+    "dataRealizacao": "2026-10-14 08:00:00",
+    "numeroEdital": 107,
+    "numeroProcesso": 107,
+    "modalidade": "Pregão Eletrônico",
+    "situacao": "Aberto",
+    "descricao": "Contratação de empresa visando o fornecimento de material e mão de obra para execução de ILUMINAÇÃO E TATAME NO POLIESPORTIVO OCTÁVIO BARRETO PRADO “TATÁ” destinados à Secretaria Municipal de Esportes, Lazer e Juventude",
+    "valorEstimado": "",
+    "valorHomologado": ""
+   },
+   {
+    "titulo": "Contratação de empresa especializada para prestação dos serviços de decoração natalina do projeto “Natal Iluminado 2026”, compreendendo locação e disponibilização dos elementos, transporte, instalação, interligações elétricas temporárias, manutenção preventiva e corretiva, plantão técnico, desmontagem, retirada e recomposição dos espaços públicos, destinados à Secretaria Munici",
+    "dataAtualizacao": "2026-10-14 09:55:30",
+    "dataPostagem": "2026-10-29 09:00:00",
+    "dataRealizacao": "2026-10-14 08:00:00",
+    "numeroEdital": 110,
+    "numeroProcesso": 110,
+    "modalidade": "Pregão Presencial",
+    "situacao": "Aberto",
+    "descricao": "Contratação de empresa especializada para prestação dos serviços de decoração natalina do projeto “Natal Iluminado 2026”, compreendendo locação e disponibilização dos elementos, transporte, instalação, interligações elétricas temporárias, manutenção preventiva e corretiva, plantão técnico, desmontagem, retirada e recomposição dos espaços públicos, destinados à Secretaria Municipal da Cultura, conforme este instrumento e seus anexos, conforme condições, quantidades e exigências estabelecidas no Edital e seus anexos.",
+    "valorEstimado": "",
+    "valorHomologado": ""
+   }
+  ],
+  "alterados": [],
+  "removidos": []
+ },
+ "obras": {
+  "novos": [],
+  "alterados": [],
+  "removidos": []
+ },
+ "diario_oficial": {
+  "novas": [
+   "4300"
+  ],
+  "alteradas": []
+ },
+ "despesas": {
+  "novos": [
+   880324,
+   880327,
+   880330,
+   880331,
+   880333,
+   880334,
+   880335,
+   880336,
+   880348,
+   880357,
+   880358,
+   880359,
+   880360,
+   880362,
+   880363,
+   880365,
+   880366,
+   880367,
+   880368,
+   880369,
+   880370,
+   880371,
+   880372,
+   880373,
+   880375,
+   880376,
+   880377,
+   880378,
+   880380,
+   880382,
+   880383,
+   880384,
+   880385,
+   880386,
+   880387,
+   880388,
+   880389,
+   880390,
+   880392,
+   880394,
+   880395,
+   880396,
+   880397,
+   880398,
+   880399,
+   880400,
+   880401,
+   880402,
+   880403,
+   880404,
+   880405,
+   880406,
+   880407,
+   880408,
+   880409,
+   880410,
+   880412,
+   880413,
+   880414,
+   880415,
+   880416,
+   880420
+  ],
+  "removidos": []
+ }
+}
