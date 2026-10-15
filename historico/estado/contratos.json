@@ -275,19 +275,6 @@
    "tipo": "ARP - Ata de Registro de Preço"
   },
   {
-   "nomeContratada": "EDUCANDARIO BENTO DE ABREU SAMPAIO VIDAL",
-   "dataAssinatura": "2026-06-18",
-   "dataInicioVigencia": "2026-06-18",
-   "dataFimVigencia": "2026-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 50000,
-   "numeroContrato": 348,
-   "numeroProcesso": "90",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
-  },
-  {
    "nomeContratada": null,
    "dataAssinatura": "2025-11-19",
    "dataInicioVigencia": "2025-11-25",
@@ -1601,6 +1588,19 @@
    "tipo": "CG - Contratos Gerais/Outros"
   },
   {
+   "nomeContratada": "EDUCANDARIO BENTO DE ABREU SAMPAIO VIDAL",
+   "dataAssinatura": "2026-06-18",
+   "dataInicioVigencia": "2026-06-19",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2027-12-31",
+   "valorContrato": 20000,
+   "numeroContrato": 347,
+   "numeroProcesso": "88",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
+  },
+  {
    "nomeContratada": null,
    "dataAssinatura": "2025-12-12",
    "dataInicioVigencia": "2025-12-15",
@@ -1861,19 +1861,6 @@
    "tipo": "ARP - Ata de Registro de Preço"
   },
   {
-   "nomeContratada": "EDUCANDÁRIO BENTO DE ABREU SAMPAIO VIDAL",
-   "dataAssinatura": "2025-09-22",
-   "dataInicioVigencia": "2025-09-22",
-   "dataFimVigencia": "2025-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 20000,
-   "numeroContrato": 294,
-   "numeroProcesso": "125",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
-  },
-  {
    "nomeContratada": null,
    "dataAssinatura": "2025-10-08",
    "dataInicioVigencia": "2025-10-10",
@@ -2080,19 +2067,6 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "CST - Contrato de Serviços de Terceiros"
-  },
-  {
-   "nomeContratada": "EDUCANDÁRIO BENTO DE ABREU SAMPAIO VIDAL",
-   "dataAssinatura": "2024-05-28",
-   "dataInicioVigencia": "2024-05-30",
-   "dataFimVigencia": "2024-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 50000,
-   "numeroContrato": 198,
-   "numeroProcesso": "24",
-   "tipoLicitacao": null,
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
   },
   {
    "nomeContratada": "BG ZANGROSSI SERVICOS VETERINARIOS LTDA",
@@ -3187,6 +3161,19 @@
    "tipo": "CST - Contrato de Serviços de Terceiros"
   },
   {
+   "nomeContratada": "EDUCANDARIO BENTO DE ABREU SAMPAIO VIDAL",
+   "dataAssinatura": "2026-06-18",
+   "dataInicioVigencia": "2026-06-18",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2027-12-31",
+   "valorContrato": 10000,
+   "numeroContrato": 349,
+   "numeroProcesso": "89",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
+  },
+  {
    "nomeContratada": null,
    "dataAssinatura": "2026-02-13",
    "dataInicioVigencia": "2026-02-20",
@@ -3783,19 +3770,6 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "ARP - Ata de Registro de Preço"
-  },
-  {
-   "nomeContratada": "INSTITUTO ÂME DE MARÍLIA",
-   "dataAssinatura": "2026-07-08",
-   "dataInicioVigencia": "2026-07-08",
-   "dataFimVigencia": "2026-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 100000,
-   "numeroContrato": 360,
-   "numeroProcesso": "97",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
   },
   {
    "nomeContratada": "WZ PARTICIPAÇÕES LTDA",
@@ -5059,19 +5033,6 @@
    "tipo": "TC - Termo de Colaboração"
   },
   {
-   "nomeContratada": "EDUCANDÁRIO BENTO DE ABREU SAMPAIO VIDAL",
-   "dataAssinatura": "2025-09-22",
-   "dataInicioVigencia": "2025-09-22",
-   "dataFimVigencia": "2025-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 20000,
-   "numeroContrato": 292,
-   "numeroProcesso": "123",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
-  },
-  {
    "nomeContratada": "SERVIÇO FEDERAL DE PROCESSAMENTO DE DADOS – SERPRO",
    "dataAssinatura": "2025-05-29",
    "dataInicioVigencia": "2025-05-29",
@@ -5681,19 +5642,6 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "ARP - Ata de Registro de Preço"
-  },
-  {
-   "nomeContratada": "EDUCANDÁRIO BENTO DE ABREU SAMPAIO VIDAl",
-   "dataAssinatura": "2025-09-22",
-   "dataInicioVigencia": "2025-09-22",
-   "dataFimVigencia": "2025-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 60000,
-   "numeroContrato": 291,
-   "numeroProcesso": "113",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
   },
   {
    "nomeContratada": "EDUCANDÁRIO BENTO DE ABREU SAMPAIO VIDAl",
@@ -6619,6 +6567,19 @@
    "tipo": "CF - Contrato de Fornecimento"
   },
   {
+   "nomeContratada": "EDUCANDARIO BENTO DE ABREU SAMPAIO VIDAL",
+   "dataAssinatura": "2026-06-22",
+   "dataInicioVigencia": "2026-06-22",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2027-12-31",
+   "valorContrato": 20000,
+   "numeroContrato": 350,
+   "numeroProcesso": "76",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
+  },
+  {
    "nomeContratada": null,
    "dataAssinatura": "2025-11-19",
    "dataInicioVigencia": "2025-11-25",
@@ -7384,6 +7345,19 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "ARP - Ata de Registro de Preço"
+  },
+  {
+   "nomeContratada": "ABRACE – ASSOCIAÇÃO BRASILEIRA DE INCLUSÃO A CULTURA E ESPORTE",
+   "dataAssinatura": "2026-07-01",
+   "dataInicioVigencia": "2026-07-01",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2027-12-31",
+   "valorContrato": 40000,
+   "numeroContrato": 357,
+   "numeroProcesso": "92",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
   },
   {
    "nomeContratada": null,
@@ -8710,19 +8684,6 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "CF - Contrato de Fornecimento"
-  },
-  {
-   "nomeContratada": "EDUCANDARIO BENTO DE ABREU SAMPAIO VIDAL",
-   "dataAssinatura": "2026-06-18",
-   "dataInicioVigencia": "2026-06-18",
-   "dataFimVigencia": "2026-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 10000,
-   "numeroContrato": 349,
-   "numeroProcesso": "89",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
   },
   {
    "nomeContratada": null,
@@ -10077,6 +10038,19 @@
    "tipo": "ARP - Ata de Registro de Preço"
   },
   {
+   "nomeContratada": "EDUCANDÁRIO BENTO DE ABREU SAMPAIO VIDAL",
+   "dataAssinatura": "2026-06-26",
+   "dataInicioVigencia": "2026-06-26",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2027-12-31",
+   "valorContrato": 10000,
+   "numeroContrato": 355,
+   "numeroProcesso": "78",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
+  },
+  {
    "nomeContratada": null,
    "dataAssinatura": "2025-06-16",
    "dataInicioVigencia": "2025-06-17",
@@ -10712,19 +10686,6 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "ARP - Ata de Registro de Preço"
-  },
-  {
-   "nomeContratada": "EDUCANDARIO BENTO DE ABREU SAMPAIO VIDAL",
-   "dataAssinatura": "2026-06-18",
-   "dataInicioVigencia": "2026-06-19",
-   "dataFimVigencia": "2026-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 20000,
-   "numeroContrato": 347,
-   "numeroProcesso": "88",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
   },
   {
    "nomeContratada": null,
@@ -12053,6 +12014,19 @@
    "tipo": "CF - Contrato de Fornecimento"
   },
   {
+   "nomeContratada": "EDUCANDARIO BENTO DE ABREU SAMPAIO VIDAL",
+   "dataAssinatura": "2026-06-18",
+   "dataInicioVigencia": "2026-06-18",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2027-12-31",
+   "valorContrato": 12000,
+   "numeroContrato": 346,
+   "numeroProcesso": "87",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
+  },
+  {
    "nomeContratada": "DIONÍSIO ROLDAM ME",
    "dataAssinatura": "2019-08-02",
    "dataInicioVigencia": "2019-08-02",
@@ -12456,6 +12430,19 @@
    "tipo": "CF - Contrato de Fornecimento"
   },
   {
+   "nomeContratada": "INSTITUTO ÂME DE MARÍLIA",
+   "dataAssinatura": "2026-07-08",
+   "dataInicioVigencia": "2026-07-08",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2027-12-31",
+   "valorContrato": 100000,
+   "numeroContrato": 360,
+   "numeroProcesso": "97",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
+  },
+  {
    "nomeContratada": null,
    "dataAssinatura": "2025-05-14",
    "dataInicioVigencia": "2025-05-16",
@@ -12519,19 +12506,6 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "ARP - Ata de Registro de Preço"
-  },
-  {
-   "nomeContratada": "EDUCANDARIO BENTO DE ABREU SAMPAIO VIDAL",
-   "dataAssinatura": "2026-06-22",
-   "dataInicioVigencia": "2026-06-22",
-   "dataFimVigencia": "2026-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 20000,
-   "numeroContrato": 350,
-   "numeroProcesso": "76",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
   },
   {
    "nomeContratada": "CONSÓRCIO MDH CICLOVIA CASCATA",
@@ -12924,19 +12898,6 @@
    "tipo": "ARP - Ata de Registro de Preço"
   },
   {
-   "nomeContratada": "EDUCANDARIO BENTO DE ABREU SAMPAIO VIDAL",
-   "dataAssinatura": "2026-06-18",
-   "dataInicioVigencia": "2026-06-18",
-   "dataFimVigencia": "2026-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 12000,
-   "numeroContrato": 346,
-   "numeroProcesso": "87",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
-  },
-  {
    "nomeContratada": null,
    "dataAssinatura": "2025-04-10",
    "dataInicioVigencia": "2025-04-14",
@@ -13067,19 +13028,6 @@
    "tipo": "CST - Contrato de Serviços de Terceiros"
   },
   {
-   "nomeContratada": "EDUCANDÁRIO BENTO DE ABREU SAMPAIO VIDAL",
-   "dataAssinatura": "2026-06-26",
-   "dataInicioVigencia": "2026-06-26",
-   "dataFimVigencia": "2026-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 10000,
-   "numeroContrato": 355,
-   "numeroProcesso": "78",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
-  },
-  {
    "nomeContratada": null,
    "dataAssinatura": "2025-12-10",
    "dataInicioVigencia": "2025-12-12",
@@ -13184,6 +13132,19 @@
    "tipo": "ARP - Ata de Registro de Preço"
   },
   {
+   "nomeContratada": "EDUCANDARIO BENTO DE ABREU SAMPAIO VIDAL",
+   "dataAssinatura": "2026-06-18",
+   "dataInicioVigencia": "2026-06-18",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2027-12-31",
+   "valorContrato": 50000,
+   "numeroContrato": 348,
+   "numeroProcesso": "90",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
+  },
+  {
    "nomeContratada": "ECOPONTES – SISTEMAS ESTRUTURAIS SUSTENTÁVEIS LTDA",
    "dataAssinatura": "2025-11-12",
    "dataInicioVigencia": "2025-11-12",
@@ -13273,19 +13234,6 @@
    "tipoLicitacao": "Inexigibilidade",
    "situacao": "Vigente",
    "tipo": "AC - Acordo de Cooperação"
-  },
-  {
-   "nomeContratada": "ABRACE – ASSOCIAÇÃO BRASILEIRA DE INCLUSÃO A CULTURA E ESPORTE",
-   "dataAssinatura": "2026-07-01",
-   "dataInicioVigencia": "2026-07-01",
-   "dataFimVigencia": "2026-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 40000,
-   "numeroContrato": 357,
-   "numeroProcesso": "92",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
   },
   {
    "nomeContratada": null,
@@ -13390,19 +13338,6 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "ARP - Ata de Registro de Preço"
-  },
-  {
-   "nomeContratada": "EDUCANDARIO BENTO DE ABREU SAMPAIO VIDAL",
-   "dataAssinatura": "2026-06-18",
-   "dataInicioVigencia": "2026-06-18",
-   "dataFimVigencia": "2026-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 15000,
-   "numeroContrato": 345,
-   "numeroProcesso": "77",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
   },
   {
    "nomeContratada": null,
@@ -14029,6 +13964,19 @@
    "tipo": "ARP - Ata de Registro de Preço"
   },
   {
+   "nomeContratada": "EDUCANDARIO BENTO DE ABREU SAMPAIO VIDAL",
+   "dataAssinatura": "2026-06-18",
+   "dataInicioVigencia": "2026-06-18",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2027-12-31",
+   "valorContrato": 15000,
+   "numeroContrato": 345,
+   "numeroProcesso": "77",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
+  },
+  {
    "nomeContratada": "CENTRO DE APOIO A CRIANÇA E ADOLESCENTE DE MARÍLIA - CACAM",
    "dataAssinatura": "2023-06-05",
    "dataInicioVigencia": "2023-06-05",
@@ -14380,19 +14328,6 @@
    "tipo": "CF - Contrato de Fornecimento"
   },
   {
-   "nomeContratada": "REGINA CELIA PINTO ROIM",
-   "dataAssinatura": "2022-10-10",
-   "dataInicioVigencia": "2022-10-10",
-   "dataFimVigencia": "2023-10-10",
-   "dataVigencia": "2026-10-10",
-   "valorContrato": 11600,
-   "numeroContrato": 379,
-   "numeroProcesso": "26",
-   "tipoLicitacao": "",
-   "situacao": "Vigente",
-   "tipo": "CL - Contrato de Locação"
-  },
-  {
    "nomeContratada": null,
    "dataAssinatura": "2025-08-15",
    "dataInicioVigencia": "2025-08-20",
@@ -14586,6 +14521,19 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "ARP - Ata de Registro de Preço"
+  },
+  {
+   "nomeContratada": "ASSOCIAÇÃO INFANTIL RECREATIVA E EDUCACIONAL A ESPERANÇA DA CRIANÇA",
+   "dataAssinatura": "2026-10-13",
+   "dataInicioVigencia": "2026-10-13",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2026-12-31",
+   "valorContrato": 35000,
+   "numeroContrato": 386,
+   "numeroProcesso": "152",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
   },
   {
    "nomeContratada": "A A Z SAÚDE COMÉRCIO DE PRODUTOS MÉDICOS E HOSPITALARES LTDA",

@@ -1,30 +1,30 @@
 {
-  "gerado_em": "2026-10-14T14:11:01",
+  "gerado_em": "2026-10-15T13:48:20",
   "exercicio": 2026,
   "fontes": {
     "portal": "https://transparencia.marilia.sp.gov.br",
     "dados_abertos": "https://www.marilia.sp.gov.br/portal/dados-abertos"
   },
   "coleta": {
-    "data": "2026-10-14",
+    "data": "2026-10-15",
     "visoes_portal": {
       "responderam": 17,
       "total": 17
     },
     "registros_por_visao": {
-      "empenho_analitico": 35303,
-      "despesas_investimentos": 22746,
-      "movimento_empenho": 24447,
+      "empenho_analitico": 35383,
+      "despesas_investimentos": 22819,
+      "movimento_empenho": 24517,
       "despesa_sintetica": 19932,
       "empenho_modalidade": 9,
-      "restos_a_pagar": 2345,
-      "diarias": 4631,
-      "passagens": 503,
+      "restos_a_pagar": 2346,
+      "diarias": 4676,
+      "passagens": 507,
       "subvencoes": 0,
       "publicidade": 3,
       "publicidade_digital": 335,
-      "emendas": 132,
-      "receita_analitica": 65451,
+      "emendas": 133,
+      "receita_analitica": 65693,
       "arrecadacao_mes": 385,
       "pagamento_servidores": 52456,
       "patrimonio": 153211,
@@ -32,20 +32,20 @@
     }
   },
   "totais": {
-    "compras_diretas": 675,
-    "dispensas": 492,
-    "inexigibilidades": 175,
-    "licitacoes": 165,
-    "licitacoes_abertas": 47,
-    "contratos": 1152,
-    "contratos_vigentes": 1041,
+    "compras_diretas": 681,
+    "dispensas": 497,
+    "inexigibilidades": 176,
+    "licitacoes": 168,
+    "licitacoes_abertas": 50,
+    "contratos": 1148,
+    "contratos_vigentes": 1037,
     "obras": 38,
     "obras_em_andamento": 22,
     "obras_concluidas": 9,
     "obras_canceladas": 7,
-    "empenhos": 20983,
-    "anulacoes": 1763,
-    "empenhado_liquido": 1353187190.58
+    "empenhos": 21050,
+    "anulacoes": 1769,
+    "empenhado_liquido": 1357710654.55
   },
   "regras": [
     {
@@ -53,10 +53,10 @@
       "familia": "Contratação direta",
       "regra": "Nova dispensa ou inexigibilidade",
       "fonte": "Dados abertos · compra direta",
-      "base": 675,
+      "base": 681,
       "resultado": 59,
       "unidade": "abertas",
-      "fato": "São 492 dispensas e 175 inexigibilidades no ano. 675 dos 675 registros não trazem valor estimado.",
+      "fato": "São 497 dispensas e 176 inexigibilidades no ano. 681 dos 681 registros não trazem valor estimado.",
       "itens": [
         {
           "processo": 553,
@@ -206,10 +206,10 @@
       "familia": "Contratos",
       "regra": "Contrato ou ata sem nome da contratada",
       "fonte": "Dados abertos · contratos",
-      "base": 1152,
+      "base": 1148,
       "resultado": 473,
       "unidade": "sem nome",
-      "fato": "473 dos 1.152 registros do ano não identificam o fornecedor. Os mais recentes, assinados em 07.10.2026, são 5 e somam R$ 79.887,86.",
+      "fato": "473 dos 1.148 registros do ano não identificam o fornecedor. Os mais recentes, assinados em 07.10.2026, são 5 e somam R$ 79.887,86.",
       "itens": [
         {
           "numero": 200,
@@ -359,11 +359,25 @@
       "familia": "Licitações",
       "regra": "Licitação sem valor estimado",
       "fonte": "Dados abertos · licitações",
-      "base": 165,
-      "resultado": 165,
+      "base": 168,
+      "resultado": 168,
       "unidade": "sem valor",
-      "fato": "165 das 165 licitações do ano não trazem valor estimado no conjunto de dados; 47 estão abertas.",
+      "fato": "168 das 168 licitações do ano não trazem valor estimado no conjunto de dados; 50 estão abertas.",
       "itens": [
+        {
+          "processo": 108,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Aberto",
+          "titulo": "Registro de preços, pelo prazo de 12 meses, visando eventual aquisição de ferragens, ferramentas e equipamentos, destinados à diversas Secretarias, conforme condições, quantidades e exigências estabelecidas neste Edital e seus anexos.",
+          "data": "2026-10-15"
+        },
+        {
+          "processo": 4,
+          "modalidade": "Concorrência Eletrônica",
+          "situacao": "Aberto",
+          "titulo": "Contratação de empresa especializada em fornecimento de material e mão de obra para construção de mirante e área de convivência no complexo turístico do Parque da Represa Cascata, conforme condições, quantidades e exigências estabelecidas no Edital e seus anexos.",
+          "data": "2026-10-14"
+        },
         {
           "processo": 107,
           "modalidade": "Pregão Eletrônico",
@@ -372,10 +386,17 @@
           "data": "2026-10-14"
         },
         {
+          "processo": 109,
+          "modalidade": "Pregão Eletrônico",
+          "situacao": "Aberto",
+          "titulo": "PE 109/2025-Registro de preços, pelo prazo de 12 meses, visando eventual Aquisição de vestuário e equipamento de proteção individual, destinados à Secretaria Municipal da Saúde, conforme condições, quantidades e exigências estabelecidas neste Edital e seus anexos.",
+          "data": "2026-10-14"
+        },
+        {
           "processo": 110,
           "modalidade": "Pregão Presencial",
           "situacao": "Aberto",
-          "titulo": "Contratação de empresa especializada para prestação dos serviços de decoração natalina do projeto “Natal Iluminado 2026”, compreendendo locação e disponibilização dos elementos, transporte, instalação, interligações elétricas temporárias, manutenção preventiva e corretiva, plantão técnico, desmontagem, retirada e recomposição dos espaços públicos, destinados à Secretaria Munici",
+          "titulo": "Contratação de empresa especializada para prestação dos serviços de decoração natalina do projeto “Natal Iluminado 2026”, compreendendo locação e disponibilização dos elementos, transporte, instalação, interligações elétricas temporárias, manutenção preventiva e corretiva, plantão técnico, desmontagem, retirada e recomposição dos espaços públicos.",
           "data": "2026-10-14"
         },
         {
@@ -482,27 +503,6 @@
           "situacao": "Aberto",
           "titulo": "Contratação de Empresa visando o Fornecimento de Material e Mão de Obra para modernização do Banco de Alimentos, destinado à Secretaria Municipal de Assistência Social e Cidadania.",
           "data": "2026-08-28"
-        },
-        {
-          "processo": 95,
-          "modalidade": "Pregão Eletrônico",
-          "situacao": "Suspenso",
-          "titulo": "Registro de Preços, pelo prazo de 12 meses, visando eventual execução de serviço de pintura predial com fornecimento de materiais, destinados às diversas secretarias municipais, conforme condições, quantidades e exigências estabelecidas no Edital e seus anexos.",
-          "data": "2026-08-25"
-        },
-        {
-          "processo": 96,
-          "modalidade": "Pregão Eletrônico",
-          "situacao": "Homologado",
-          "titulo": "Aquisição de MATERIAIS PERMANENTES E MATERIAIS DE CONSUMO DESTINADOS À MANUTENÇÃO E QUALIFICAÇÃO DOS ATENDIMENTOS GINECOLÓGICOS, destinados à Secretaria Municipal da Saúde",
-          "data": "2026-08-21"
-        },
-        {
-          "processo": 94,
-          "modalidade": "Pregão Eletrônico",
-          "situacao": "Homologado",
-          "titulo": "Registro de preços, pelo prazo de 12 meses, visando eventual aquisição de insumos para Auriculoterapia e Aromaterapia, destinados à Secretaria Municipal da Saúde, conforme condições, quantidades e exigências estabelecidas neste Edital e seus anexos.",
-          "data": "2026-08-21"
         }
       ],
       "n": 3
@@ -512,11 +512,15 @@
       "familia": "Pagamentos",
       "regra": "Quebra da ordem cronológica",
       "fonte": "Diário Oficial",
-      "base": 198,
-      "resultado": 107,
+      "base": 199,
+      "resultado": 108,
       "unidade": "com a justificativa",
-      "fato": "A justificativa com base no art. 141, §1º, consta de 107 das 198 edições do ano, desde a nº 4107.",
+      "fato": "A justificativa com base no art. 141, §1º, consta de 108 das 199 edições do ano, desde a nº 4107.",
       "itens": [
+        {
+          "edicao": "4301",
+          "data": "2026-10-15"
+        },
         {
           "edicao": "4300",
           "data": "2026-10-14"
@@ -592,10 +596,6 @@
         {
           "edicao": "4272",
           "data": "2026-09-03"
-        },
-        {
-          "edicao": "4268",
-          "data": "2026-08-28"
         }
       ],
       "n": 4
@@ -605,10 +605,10 @@
       "familia": "Fornecedores",
       "regra": "Fornecedor novo com valor alto",
       "fonte": "Portal · despesas e investimentos",
-      "base": "1.990 fornecedores no ano, comparados com 2024–2025",
-      "resultado": 53,
+      "base": "1.997 fornecedores no ano, comparados com 2024–2025",
+      "resultado": 54,
       "unidade": "novos",
-      "fato": "53 fornecedores sem empenho em 2024–2025 receberam ao menos R$ 100.000,00 em empenhos no ano, somando R$ 111.721.693,06. O maior é CONSORCIO PARQUE DA CRIANCA, com R$ 19.112.795,49.",
+      "fato": "54 fornecedores sem empenho em 2024–2025 receberam ao menos R$ 100.000,00 em empenhos no ano, somando R$ 111.836.278,06. O maior é CONSORCIO PARQUE DA CRIANCA, com R$ 19.112.795,49.",
       "itens": [
         {
           "fornecedor": "CONSORCIO PARQUE DA CRIANCA",
@@ -655,8 +655,8 @@
         {
           "fornecedor": "2F DISTRIBUIDORA LTDA",
           "documento": "47.363.416/0001-38",
-          "empenhado": 3633958.24,
-          "lancamentos": 129
+          "empenhado": 3645583.24,
+          "lancamentos": 130
         },
         {
           "fornecedor": "BRASIL COMÉRCIO E DISTRIBUIDORA LTDA",
@@ -738,17 +738,17 @@
       "familia": "Pessoal",
       "regra": "Diárias atípicas",
       "fonte": "Portal · diárias",
-      "base": "4.631 registros, 15 cargos comparáveis",
+      "base": "4.676 registros, 15 cargos comparáveis",
       "resultado": 1,
       "unidade": "acima do cargo",
-      "fato": "Cada beneficiário é comparado com colegas do mesmo cargo; 15 cargos têm ao menos 5 beneficiários. O maior desvio é de assistente administrativo, com R$ 14.346,68 no ano, para um corte de R$ 2.833,31 no cargo.",
+      "fato": "Cada beneficiário é comparado com colegas do mesmo cargo; 15 cargos têm ao menos 5 beneficiários. O maior desvio é de assistente administrativo, com R$ 15.996,68 no ano, para um corte de R$ 2.833,31 no cargo.",
       "itens": [
         {
           "beneficiario": "LUIZ ANTONIO BISSOLI",
           "cargo": "Assistente Administrativo",
           "secretaria": "Secr Mun da Agric, Pecuaria e Abastecim",
-          "total": 14346.68,
-          "registros": 12,
+          "total": 15996.68,
+          "registros": 13,
           "corte_do_cargo": 2833.31
         }
       ],
@@ -821,10 +821,10 @@
       "familia": "Contratos",
       "regra": "Contrato a vencer em 60 dias",
       "fonte": "Dados abertos · contratos",
-      "base": "1.041 vigentes",
-      "resultado": 67,
+      "base": "1.037 vigentes",
+      "resultado": 78,
       "unidade": "a vencer",
-      "fato": "67 contratos e atas vigentes terminam até 13.12.2026, somando R$ 26.285.291,92; 47 deles não identificam a contratada.",
+      "fato": "78 contratos e atas vigentes terminam até 14.12.2026, somando R$ 26.650.397,42; 58 deles não identificam a contratada.",
       "itens": [
         {
           "numero": 306,
@@ -972,43 +972,52 @@
   ],
   "novidades": {
     "linha_de_base": false,
-    "resumo": "entraram 1 contrato ou ata novo; 2 licitações novas; 1 edição do Diário Oficial; 26 empenhos novos e 2 contratos alterados.",
+    "resumo": "entraram 6 compras diretas novas; 1 contrato ou ata novo; 3 licitações novas; 1 edição do Diário Oficial; 41 empenhos novos e 9 contratos alterados.",
     "itens": [
       {
-        "tipo": "Diário Oficial · edição 4300",
-        "titulo": "Justificativa de quebra da ordem cronológica de pagamentos",
-        "detalhe": "Invoca o art. 141, §1º, III e V, da Lei 14.133/2021. A mesma frase consta de 107 das 198 edições do ano.",
-        "fonte": "Dados abertos · diário oficial",
-        "acao": "Ler a edição",
-        "link": "diario.html",
+        "tipo": "Compra direta · 14.10.2026",
+        "titulo": "Dispensa nº 556: Aquisição de 01 Painel de comando de revezamento Automático para Aparelho de ar Condicionado SPLITs de 60.000…",
+        "detalhe": "Situação: homologado. O registro não informa valor estimado.",
+        "fonte": "Dados abertos · compra direta",
+        "acao": "Ver no radar",
+        "link": "radar.html#1",
         "n": "1"
       },
       {
+        "tipo": "Compra direta · 14.10.2026",
+        "titulo": "Dispensa nº 513: Aquisição de materiais esportivos e equipamentos destinados à modalidade de Atletismo, oriundo de recurso da…",
+        "detalhe": "Situação: homologado. O registro não informa valor estimado.",
+        "fonte": "Dados abertos · compra direta",
+        "acao": "Ver no radar",
+        "link": "radar.html#1",
+        "n": "2"
+      },
+      {
+        "tipo": "Diário Oficial · edição 4301",
+        "titulo": "Justificativa de quebra da ordem cronológica de pagamentos",
+        "detalhe": "Invoca o art. 141, §1º, III e V, da Lei 14.133/2021. A mesma frase consta de 108 das 199 edições do ano.",
+        "fonte": "Dados abertos · diário oficial",
+        "acao": "Ler a edição",
+        "link": "diario.html",
+        "n": "3"
+      },
+      {
         "tipo": "Licitação · aberta",
-        "titulo": "Edital 107: Contratação de empresa visando o fornecimento de material e mão de obra para execução de ILUMINAÇÃO E TATAME…",
+        "titulo": "Edital 108: Registro de preços, pelo prazo de 12 meses, visando eventual aquisição de ferragens, ferramentas e…",
         "detalhe": "Pregão Eletrônico. O conjunto de dados não traz valor estimado.",
         "fonte": "Dados abertos · licitações",
         "acao": "Ver lacunas",
         "link": "transparencia.html",
-        "n": "2"
+        "n": "4"
       },
       {
-        "tipo": "Empenho · 13.10.2026",
-        "titulo": "Empenho nº 19645 a IRMANDADE DA SANTA CASA MISERICORDIA DE MARILIA",
-        "detalhe": "R$ 162.938,10, prefeitura municipal de marília.",
+        "tipo": "Empenho · 14.10.2026",
+        "titulo": "Empenho nº 19697 a IPREMM- INST. PREVIDENCIA DO MUNICIPIO DE MARILIA",
+        "detalhe": "R$ 1.745.169,93, prefeitura municipal de marília.",
         "fonte": "Portal · despesas e investimentos",
         "acao": "Ver no radar",
         "link": "radar.html",
-        "n": "3"
-      },
-      {
-        "tipo": "Contratos · alterado",
-        "titulo": "TC - Termo de Colaboração nº 377, processo 129",
-        "detalhe": "Campos alterados desde a coleta anterior: dataVigencia.",
-        "fonte": "Dados abertos · contratos",
-        "acao": "Ver no radar",
-        "link": "radar.html#2",
-        "n": "4"
+        "n": "5"
       }
     ]
   },
@@ -1036,25 +1045,25 @@
     },
     {
       "ano": 2026,
-      "direta": 146838585.13,
-      "total": 1437223414.21,
+      "direta": 146839223.13,
+      "total": 1441745610.31,
       "pct_direta": 10.2,
-      "pct_sem_modalidade": 62.3
+      "pct_sem_modalidade": 62.2
     }
   ],
   "saude": {
     "medicamentos_em_falta": "2026-10-09",
-    "fila_de_leitos": "2026-10-13"
+    "fila_de_leitos": "2026-10-14"
   },
   "diario": {
     "frase": "A interrupção de serviços contratados pode gerar impactos diretos à população",
-    "edicoes": 198,
+    "edicoes": 199,
     "extras": 6,
-    "com_frase": 107,
+    "com_frase": 108,
     "primeira_edicao": "4103",
     "primeira_data": "2026-01-06",
-    "ultima_edicao": "4300",
-    "ultima_data": "2026-10-14",
+    "ultima_edicao": "4301",
+    "ultima_data": "2026-10-15",
     "primeira_com_frase": "4107",
     "faixa": [
       0,
@@ -1254,6 +1263,7 @@
       1,
       1,
       1,
+      1,
       1
     ],
     "meses": [
@@ -1304,11 +1314,21 @@
       },
       {
         "mes": "out",
-        "com": 6,
-        "total": 9
+        "com": 7,
+        "total": 10
       }
     ],
     "recentes": [
+      {
+        "edicao": "4301",
+        "data": "2026-10-15",
+        "extra": false,
+        "caracteres": 29047,
+        "cnpjs": 1,
+        "dispensa": 3,
+        "portarias": 4,
+        "frase": true
+      },
       {
         "edicao": "4300",
         "data": "2026-10-14",
@@ -1368,21 +1388,11 @@
         "dispensa": 2,
         "portarias": 3,
         "frase": true
-      },
-      {
-        "edicao": "4294",
-        "data": "2026-10-03",
-        "extra": false,
-        "caracteres": 19694,
-        "cnpjs": 4,
-        "dispensa": 4,
-        "portarias": 6,
-        "frase": false
       }
     ],
     "trecho": {
-      "edicao": "4300",
-      "data": "2026-10-14",
+      "edicao": "4301",
+      "data": "2026-10-15",
       "antes": "Risco de Descontinuidade Operacional.",
       "frase": "A interrupção de serviços contratados pode gerar impactos diretos à população",
       "depois": ". A ausência de pagamentos tempestivos pode levar à suspensão de contratos, ao comprometimento de atividades estratégicas e até mesmo à rescisão unilateral por…",
@@ -1394,29 +1404,29 @@
       {
         "conjunto": "Compras diretas",
         "campo": "Valor estimado",
-        "vazios": 675,
-        "total": 675,
+        "vazios": 681,
+        "total": 681,
         "pct": 100
       },
       {
         "conjunto": "Compras diretas",
         "campo": "Valor homologado",
-        "vazios": 675,
-        "total": 675,
+        "vazios": 681,
+        "total": 681,
         "pct": 100
       },
       {
         "conjunto": "Licitações",
         "campo": "Valor estimado",
-        "vazios": 165,
-        "total": 165,
+        "vazios": 168,
+        "total": 168,
         "pct": 100
       },
       {
         "conjunto": "Licitações",
         "campo": "Valor homologado",
-        "vazios": 165,
-        "total": 165,
+        "vazios": 168,
+        "total": 168,
         "pct": 100
       },
       {
@@ -1430,21 +1440,21 @@
         "conjunto": "Contratos e atas",
         "campo": "Nome da contratada",
         "vazios": 473,
-        "total": 1152,
+        "total": 1148,
         "pct": 41
       },
       {
         "conjunto": "Contratos e atas",
         "campo": "Tipo de licitação",
-        "vazios": 128,
-        "total": 1152,
+        "vazios": 126,
+        "total": 1148,
         "pct": 11
       },
       {
         "conjunto": "Contratos e atas",
         "campo": "Situação",
         "vazios": 107,
-        "total": 1152,
+        "total": 1148,
         "pct": 9
       },
       {
@@ -1458,21 +1468,21 @@
         "conjunto": "Contratos e atas",
         "campo": "Número do contrato",
         "vazios": 66,
-        "total": 1152,
+        "total": 1148,
         "pct": 6
       },
       {
         "conjunto": "Contratos e atas",
         "campo": "Valor do contrato",
         "vazios": 19,
-        "total": 1152,
+        "total": 1148,
         "pct": 2
       },
       {
         "conjunto": "Contratos e atas",
         "campo": "Fim da vigência",
         "vazios": 1,
-        "total": 1152,
+        "total": 1148,
         "pct": 0
       }
     ],
@@ -1678,6 +1688,36 @@
         "diarias_atipicas": 1,
         "obra_parada_ou_cancelada": 7,
         "contrato_a_vencer": 67
+      }
+    },
+    {
+      "data": "2026-10-15",
+      "exercicio": 2026,
+      "totais": {
+        "compras_diretas": 681,
+        "dispensas": 497,
+        "inexigibilidades": 176,
+        "licitacoes": 168,
+        "licitacoes_abertas": 50,
+        "contratos": 1148,
+        "contratos_vigentes": 1037,
+        "obras": 38,
+        "obras_em_andamento": 22,
+        "obras_concluidas": 9,
+        "obras_canceladas": 7,
+        "empenhos": 21050,
+        "anulacoes": 1769,
+        "empenhado_liquido": 1357710654.55
+      },
+      "radar": {
+        "compra_direta_aberta": 59,
+        "contrato_sem_contratada": 473,
+        "licitacao_sem_valor": 168,
+        "quebra_ordem_cronologica": 108,
+        "fornecedor_novo_valor_alto": 54,
+        "diarias_atipicas": 1,
+        "obra_parada_ou_cancelada": 7,
+        "contrato_a_vencer": 78
       }
     }
   ]
