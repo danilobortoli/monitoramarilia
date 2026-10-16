@@ -5943,6 +5943,19 @@
    "tipo": "TC - Termo de Colaboração"
   },
   {
+   "nomeContratada": "CONSÓRCIO PARQUE DA CRIANÇA",
+   "dataAssinatura": "2026-10-14",
+   "dataInicioVigencia": "2026-10-14",
+   "dataFimVigencia": "2028-06-14",
+   "dataVigencia": "2028-06-14",
+   "valorContrato": 20947139.77,
+   "numeroContrato": 1310,
+   "numeroProcesso": "12",
+   "tipoLicitacao": "Concorrência Eletrônica",
+   "situacao": "Vigente",
+   "tipo": "CO - Contrato de Obra"
+  },
+  {
    "nomeContratada": null,
    "dataAssinatura": "2025-04-16",
    "dataInicioVigencia": "2025-04-17",
@@ -6318,19 +6331,6 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "ARP - Ata de Registro de Preço"
-  },
-  {
-   "nomeContratada": "M4 CONSTRUÇÕES LTDA",
-   "dataAssinatura": "2025-05-28",
-   "dataInicioVigencia": "2025-05-28",
-   "dataFimVigencia": "2025-03-28",
-   "dataVigencia": "2026-09-15",
-   "valorContrato": 5407302.47,
-   "numeroContrato": 1780,
-   "numeroProcesso": "8",
-   "tipoLicitacao": "Pregão Presencial",
-   "situacao": "Vigente",
-   "tipo": "CST - Contrato de Serviços de Terceiros"
   },
   {
    "nomeContratada": "ASSOCIAÇÃO DE PAIS E AMIGOS DO AUTISTA - ESPAÇO POTENCIAL MARÍLIA",
