@@ -1,0 +1,214 @@
+{
+ "compra-direta": {
+  "novos": [],
+  "alterados": [],
+  "removidos": []
+ },
+ "contratos": {
+  "novos": [
+   {
+    "nomeContratada": null,
+    "dataAssinatura": "2026-10-13",
+    "dataInicioVigencia": "2026-10-16",
+    "dataFimVigencia": "2027-10-15",
+    "dataVigencia": "2027-10-15",
+    "valorContrato": 4043.88,
+    "numeroContrato": 205,
+    "numeroProcesso": "93",
+    "tipoLicitacao": "Pregão Eletrônico",
+    "situacao": "Vigente",
+    "tipo": "ARP - Ata de Registro de Preço"
+   },
+   {
+    "nomeContratada": null,
+    "dataAssinatura": "2026-10-13",
+    "dataInicioVigencia": "2026-10-16",
+    "dataFimVigencia": "2027-10-15",
+    "dataVigencia": "2027-10-15",
+    "valorContrato": 21989.5,
+    "numeroContrato": 204,
+    "numeroProcesso": "93",
+    "tipoLicitacao": "Pregão Eletrônico",
+    "situacao": "Vigente",
+    "tipo": "ARP - Ata de Registro de Preço"
+   },
+   {
+    "nomeContratada": null,
+    "dataAssinatura": "2026-10-13",
+    "dataInicioVigencia": "2026-10-16",
+    "dataFimVigencia": "2027-10-15",
+    "dataVigencia": "2027-10-15",
+    "valorContrato": 938,
+    "numeroContrato": 203,
+    "numeroProcesso": "93",
+    "tipoLicitacao": "Pregão Eletrônico",
+    "situacao": "Vigente",
+    "tipo": "ARP - Ata de Registro de Preço"
+   },
+   {
+    "nomeContratada": null,
+    "dataAssinatura": "2026-10-13",
+    "dataInicioVigencia": "2026-10-16",
+    "dataFimVigencia": "2027-10-15",
+    "dataVigencia": "2027-10-15",
+    "valorContrato": 18208.5,
+    "numeroContrato": 202,
+    "numeroProcesso": "93",
+    "tipoLicitacao": "Pregão Eletrônico",
+    "situacao": "Vigente",
+    "tipo": "ARP - Ata de Registro de Preço"
+   },
+   {
+    "nomeContratada": null,
+    "dataAssinatura": "2026-10-13",
+    "dataInicioVigencia": "2026-10-16",
+    "dataFimVigencia": "2027-10-15",
+    "dataVigencia": "2027-10-15",
+    "valorContrato": 1572.6,
+    "numeroContrato": 201,
+    "numeroProcesso": "93",
+    "tipoLicitacao": "Pregão Eletrônico",
+    "situacao": "Vigente",
+    "tipo": "ARP - Ata de Registro de Preço"
+   }
+  ],
+  "alterados": [
+   {
+    "registro": {
+     "nomeContratada": null,
+     "dataAssinatura": "2025-12-01",
+     "dataInicioVigencia": "2025-12-02",
+     "dataFimVigencia": "2026-12-01",
+     "dataVigencia": "2027-12-01",
+     "valorContrato": 43750,
+     "numeroContrato": 248,
+     "numeroProcesso": "110",
+     "tipoLicitacao": "Pregão Eletrônico",
+     "situacao": "Vigente",
+     "tipo": "ARP - Ata de Registro de Preço"
+    },
+    "campos": {
+     "dataVigencia": [
+      "2026-12-01",
+      "2027-12-01"
+     ]
+    }
+   }
+  ],
+  "removidos": []
+ },
+ "licitacoes": {
+  "novos": [],
+  "alterados": [
+   {
+    "registro": {
+     "titulo": "Alienação dos bens imóveis constantes do ANEXO I deste Edital.",
+     "dataAtualizacao": "2026-10-16 15:17:01",
+     "dataPostagem": "2026-11-16 14:30:00",
+     "dataRealizacao": "2026-10-16 00:00:00",
+     "numeroEdital": 1,
+     "numeroProcesso": 1,
+     "modalidade": "Leilão - Eletrônico",
+     "situacao": "Aberto",
+     "descricao": "Alienação dos bens imóveis constantes do ANEXO I deste Edital.<br />\r\n ",
+     "valorEstimado": "",
+     "valorHomologado": ""
+    },
+    "campos": {
+     "dataPostagem": [
+      "2026-11-03 14:30:00",
+      "2026-11-16 14:30:00"
+     ],
+     "dataRealizacao": [
+      "2026-09-24 00:00:00",
+      "2026-10-16 00:00:00"
+     ]
+    }
+   }
+  ],
+  "removidos": []
+ },
+ "obras": {
+  "novos": [],
+  "alterados": [],
+  "removidos": []
+ },
+ "diario_oficial": {
+  "novas": [
+   "4303"
+  ],
+  "alteradas": []
+ },
+ "despesas": {
+  "novos": [
+   880687,
+   880688,
+   880689,
+   880690,
+   880691,
+   880692,
+   880693,
+   880694,
+   880695,
+   880696,
+   880698,
+   880699,
+   880701,
+   880702,
+   880703,
+   880705,
+   880706,
+   880707,
+   880708,
+   880709,
+   880710,
+   880711,
+   880712,
+   880713,
+   880714,
+   880715,
+   880716,
+   880717,
+   880718,
+   880719,
+   880720,
+   880721,
+   880722,
+   880723,
+   880724,
+   880725,
+   880726,
+   880727,
+   880728,
+   880729,
+   880730,
+   880731,
+   880732,
+   880733,
+   880734,
+   880735,
+   880736,
+   880740,
+   880741,
+   880742,
+   880747,
+   880750,
+   880751,
+   880752,
+   880753,
+   880754,
+   880755,
+   880756,
+   880757,
+   880758,
+   880759,
+   880760,
+   880762,
+   880763,
+   880764,
+   880765,
+   880766
+  ],
+  "removidos": []
+ }
+}

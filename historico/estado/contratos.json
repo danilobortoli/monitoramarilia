@@ -3304,6 +3304,19 @@
    "tipo": "CVE - Convênio Estadual"
   },
   {
+   "nomeContratada": null,
+   "dataAssinatura": "2026-10-13",
+   "dataInicioVigencia": "2026-10-16",
+   "dataFimVigencia": "2027-10-15",
+   "dataVigencia": "2027-10-15",
+   "valorContrato": 21989.5,
+   "numeroContrato": 204,
+   "numeroProcesso": "93",
+   "tipoLicitacao": "Pregão Eletrônico",
+   "situacao": "Vigente",
+   "tipo": "ARP - Ata de Registro de Preço"
+  },
+  {
    "nomeContratada": "INSTITUTO LÓTTUS",
    "dataAssinatura": "2026-04-16",
    "dataInicioVigencia": "2026-04-16",
@@ -3702,6 +3715,19 @@
    "valorContrato": 85482,
    "numeroContrato": 79,
    "numeroProcesso": "18",
+   "tipoLicitacao": "Pregão Eletrônico",
+   "situacao": "Vigente",
+   "tipo": "ARP - Ata de Registro de Preço"
+  },
+  {
+   "nomeContratada": null,
+   "dataAssinatura": "2026-10-13",
+   "dataInicioVigencia": "2026-10-16",
+   "dataFimVigencia": "2027-10-15",
+   "dataVigencia": "2027-10-15",
+   "valorContrato": 18208.5,
+   "numeroContrato": 202,
+   "numeroProcesso": "93",
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "ARP - Ata de Registro de Preço"
@@ -5772,6 +5798,19 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "CF - Contrato de Fornecimento"
+  },
+  {
+   "nomeContratada": null,
+   "dataAssinatura": "2025-12-01",
+   "dataInicioVigencia": "2025-12-02",
+   "dataFimVigencia": "2026-12-01",
+   "dataVigencia": "2027-12-01",
+   "valorContrato": 43750,
+   "numeroContrato": 248,
+   "numeroProcesso": "110",
+   "tipoLicitacao": "Pregão Eletrônico",
+   "situacao": "Vigente",
+   "tipo": "ARP - Ata de Registro de Preço"
   },
   {
    "nomeContratada": "SERVIÇO FEDERAL DE PROCESSAMENTO DE DADOS – SERPRO",
@@ -11377,6 +11416,19 @@
    "tipo": "CST - Contrato de Serviços de Terceiros"
   },
   {
+   "nomeContratada": null,
+   "dataAssinatura": "2026-10-13",
+   "dataInicioVigencia": "2026-10-16",
+   "dataFimVigencia": "2027-10-15",
+   "dataVigencia": "2027-10-15",
+   "valorContrato": 938,
+   "numeroContrato": 203,
+   "numeroProcesso": "93",
+   "tipoLicitacao": "Pregão Eletrônico",
+   "situacao": "Vigente",
+   "tipo": "ARP - Ata de Registro de Preço"
+  },
+  {
    "nomeContratada": "ASSOCIAÇÃO FILANTROPICA DE MARILIA",
    "dataAssinatura": "2026-06-18",
    "dataInicioVigencia": "2026-06-18",
@@ -12038,6 +12090,19 @@
    "tipoLicitacao": "Pregão Presencial",
    "situacao": "Vigente",
    "tipo": "CST - Contrato de Serviços de Terceiros"
+  },
+  {
+   "nomeContratada": null,
+   "dataAssinatura": "2026-10-13",
+   "dataInicioVigencia": "2026-10-16",
+   "dataFimVigencia": "2027-10-15",
+   "dataVigencia": "2027-10-15",
+   "valorContrato": 4043.88,
+   "numeroContrato": 205,
+   "numeroProcesso": "93",
+   "tipoLicitacao": "Pregão Eletrônico",
+   "situacao": "Vigente",
+   "tipo": "ARP - Ata de Registro de Preço"
   },
   {
    "nomeContratada": null,
@@ -12906,6 +12971,19 @@
    "valorContrato": 49800,
    "numeroContrato": 66,
    "numeroProcesso": "118",
+   "tipoLicitacao": "Pregão Eletrônico",
+   "situacao": "Vigente",
+   "tipo": "ARP - Ata de Registro de Preço"
+  },
+  {
+   "nomeContratada": null,
+   "dataAssinatura": "2026-10-13",
+   "dataInicioVigencia": "2026-10-16",
+   "dataFimVigencia": "2027-10-15",
+   "dataVigencia": "2027-10-15",
+   "valorContrato": 1572.6,
+   "numeroContrato": 201,
+   "numeroProcesso": "93",
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "ARP - Ata de Registro de Preço"
@@ -14391,19 +14469,6 @@
    "tipoLicitacao": "Inexigibilidade",
    "situacao": "Vigente",
    "tipo": "TC - Termo de Colaboração"
-  },
-  {
-   "nomeContratada": null,
-   "dataAssinatura": "2025-12-01",
-   "dataInicioVigencia": "2025-12-02",
-   "dataFimVigencia": "2026-12-01",
-   "dataVigencia": "2026-12-01",
-   "valorContrato": 43750,
-   "numeroContrato": 248,
-   "numeroProcesso": "110",
-   "tipoLicitacao": "Pregão Eletrônico",
-   "situacao": "Vigente",
-   "tipo": "ARP - Ata de Registro de Preço"
   },
   {
    "nomeContratada": null,
