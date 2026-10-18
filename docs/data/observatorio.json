@@ -1,12 +1,12 @@
 {
-  "gerado_em": "2026-10-17T12:35:00",
+  "gerado_em": "2026-10-18T12:53:00",
   "exercicio": 2026,
   "fontes": {
     "portal": "https://transparencia.marilia.sp.gov.br",
     "dados_abertos": "https://www.marilia.sp.gov.br/portal/dados-abertos"
   },
   "coleta": {
-    "data": "2026-10-17",
+    "data": "2026-10-18",
     "visoes_portal": {
       "responderam": 17,
       "total": 17
@@ -18,7 +18,7 @@
       "despesa_sintetica": 19932,
       "empenho_modalidade": 9,
       "restos_a_pagar": 2349,
-      "diarias": 4760,
+      "diarias": 4778,
       "passagens": 514,
       "subvencoes": 0,
       "publicidade": 3,
@@ -738,7 +738,7 @@
       "familia": "Pessoal",
       "regra": "Diárias atípicas",
       "fonte": "Portal · diárias",
-      "base": "4.760 registros, 15 cargos comparáveis",
+      "base": "4.778 registros, 15 cargos comparáveis",
       "resultado": 2,
       "unidade": "acima do cargo",
       "fato": "Cada beneficiário é comparado com colegas do mesmo cargo; 15 cargos têm ao menos 5 beneficiários. O maior desvio é de assistente administrativo, com R$ 15.996,68 no ano, para um corte de R$ 2.833,31 no cargo.",
@@ -830,9 +830,9 @@
       "regra": "Contrato a vencer em 60 dias",
       "fonte": "Dados abertos · contratos",
       "base": "1.042 vigentes",
-      "resultado": 82,
+      "resultado": 84,
       "unidade": "a vencer",
-      "fato": "82 contratos e atas vigentes terminam até 16.12.2026, somando R$ 27.478.943,36; 61 deles não identificam a contratada.",
+      "fato": "84 contratos e atas vigentes terminam até 17.12.2026, somando R$ 27.634.823,36; 61 deles não identificam a contratada.",
       "itens": [
         {
           "numero": 212,
@@ -980,45 +980,8 @@
   ],
   "novidades": {
     "linha_de_base": false,
-    "resumo": "entraram 5 contratos ou atas novos, 5 sem o nome da contratada; 1 edição do Diário Oficial; 26 empenhos novos e 1 contrato alterado.",
-    "itens": [
-      {
-        "tipo": "Contratos · 13.10.2026",
-        "titulo": "5 contratos ou atas sem o nome da contratada",
-        "detalhe": "Nº 201, 202, 203, 204, 205; processo 93. Somam R$ 46.752,48.",
-        "fonte": "Dados abertos · contratos",
-        "acao": "Ver no radar",
-        "link": "radar.html#2",
-        "n": "1"
-      },
-      {
-        "tipo": "Diário Oficial · edição 4303",
-        "titulo": "Justificativa de quebra da ordem cronológica de pagamentos",
-        "detalhe": "Invoca o art. 141, §1º, III e V, da Lei 14.133/2021. A mesma frase consta de 110 das 201 edições do ano.",
-        "fonte": "Dados abertos · diário oficial",
-        "acao": "Ler a edição",
-        "link": "diario.html",
-        "n": "2"
-      },
-      {
-        "tipo": "Empenho · 16.10.2026",
-        "titulo": "Empenho nº 19792 a IRMANDADE DA SANTA CASA MISERICORDIA DE MARILIA",
-        "detalhe": "R$ 454.241,34, prefeitura municipal de marília.",
-        "fonte": "Portal · despesas e investimentos",
-        "acao": "Ver no radar",
-        "link": "radar.html",
-        "n": "3"
-      },
-      {
-        "tipo": "Contratos · alterado",
-        "titulo": "ARP - Ata de Registro de Preço nº 248, processo 110",
-        "detalhe": "Campos alterados desde a coleta anterior: dataVigencia.",
-        "fonte": "Dados abertos · contratos",
-        "acao": "Ver no radar",
-        "link": "radar.html#2",
-        "n": "4"
-      }
-    ]
+    "resumo": "nenhum registro novo nos conjuntos acompanhados.",
+    "itens": []
   },
   "serie_contratacao_direta": [
     {
@@ -1779,6 +1742,36 @@
         "diarias_atipicas": 2,
         "obra_parada_ou_cancelada": 7,
         "contrato_a_vencer": 82
+      }
+    },
+    {
+      "data": "2026-10-18",
+      "exercicio": 2026,
+      "totais": {
+        "compras_diretas": 681,
+        "dispensas": 497,
+        "inexigibilidades": 176,
+        "licitacoes": 168,
+        "licitacoes_abertas": 47,
+        "contratos": 1153,
+        "contratos_vigentes": 1042,
+        "obras": 38,
+        "obras_em_andamento": 22,
+        "obras_concluidas": 9,
+        "obras_canceladas": 7,
+        "empenhos": 21168,
+        "anulacoes": 1776,
+        "empenhado_liquido": 1358371606.54
+      },
+      "radar": {
+        "compra_direta_aberta": 59,
+        "contrato_sem_contratada": 478,
+        "licitacao_sem_valor": 168,
+        "quebra_ordem_cronologica": 110,
+        "fornecedor_novo_valor_alto": 55,
+        "diarias_atipicas": 2,
+        "obra_parada_ou_cancelada": 7,
+        "contrato_a_vencer": 84
       }
     }
   ]

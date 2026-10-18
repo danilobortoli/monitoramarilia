@@ -1,0 +1,30 @@
+{
+ "compra-direta": {
+  "novos": [],
+  "alterados": [],
+  "removidos": []
+ },
+ "contratos": {
+  "novos": [],
+  "alterados": [],
+  "removidos": []
+ },
+ "licitacoes": {
+  "novos": [],
+  "alterados": [],
+  "removidos": []
+ },
+ "obras": {
+  "novos": [],
+  "alterados": [],
+  "removidos": []
+ },
+ "diario_oficial": {
+  "novas": [],
+  "alteradas": []
+ },
+ "despesas": {
+  "novos": [],
+  "removidos": []
+ }
+}
