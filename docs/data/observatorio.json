@@ -1,12 +1,12 @@
 {
-  "gerado_em": "2026-10-18T12:53:00",
+  "gerado_em": "2026-10-19T16:01:43",
   "exercicio": 2026,
   "fontes": {
     "portal": "https://transparencia.marilia.sp.gov.br",
     "dados_abertos": "https://www.marilia.sp.gov.br/portal/dados-abertos"
   },
   "coleta": {
-    "data": "2026-10-18",
+    "data": "2026-10-19",
     "visoes_portal": {
       "responderam": 17,
       "total": 17
@@ -32,13 +32,13 @@
     }
   },
   "totais": {
-    "compras_diretas": 681,
-    "dispensas": 497,
+    "compras_diretas": 684,
+    "dispensas": 499,
     "inexigibilidades": 176,
-    "licitacoes": 168,
+    "licitacoes": 169,
     "licitacoes_abertas": 47,
-    "contratos": 1153,
-    "contratos_vigentes": 1042,
+    "contratos": 1160,
+    "contratos_vigentes": 1049,
     "obras": 38,
     "obras_em_andamento": 22,
     "obras_concluidas": 9,
@@ -53,11 +53,18 @@
       "familia": "Contratação direta",
       "regra": "Nova dispensa ou inexigibilidade",
       "fonte": "Dados abertos · compra direta",
-      "base": 681,
-      "resultado": 59,
+      "base": 684,
+      "resultado": 60,
       "unidade": "abertas",
-      "fato": "São 497 dispensas e 176 inexigibilidades no ano. 681 dos 681 registros não trazem valor estimado.",
+      "fato": "São 499 dispensas e 176 inexigibilidades no ano. 684 dos 684 registros não trazem valor estimado.",
       "itens": [
+        {
+          "processo": 9,
+          "modalidade": "Credenciamento",
+          "titulo": "Chamamento público para seleção de pessoas jurídicas interessadas na para a outorga de concessão de uso de bem público, a título precário e oneroso, destinada à exploração comercial de gêneros alimentícios e serviços correlatos (comércio ambulante em trailer, food truck, outros), em áreas delimitadas nas seguintes localidades do Município de Marília/SP.",
+          "data": "2026-11-19",
+          "sem_valor_estimado": true
+        },
         {
           "processo": 553,
           "modalidade": "Dispensa",
@@ -190,13 +197,6 @@
           "titulo": "Aquisição de uniformes para a equipe de coreografia com a finalidade de disputar o JOMI e os Jogos Regionais, destinada à Secretaria Municipal de Esportes, Lazer e Juventude.",
           "data": "2026-06-17",
           "sem_valor_estimado": true
-        },
-        {
-          "processo": 355,
-          "modalidade": "Dispensa",
-          "titulo": "Aquisição de bexigas, destinada à Secretaria Municipal de Assistência Social e Cidadania",
-          "data": "2026-06-04",
-          "sem_valor_estimado": true
         }
       ],
       "n": 1
@@ -206,10 +206,10 @@
       "familia": "Contratos",
       "regra": "Contrato ou ata sem nome da contratada",
       "fonte": "Dados abertos · contratos",
-      "base": 1153,
+      "base": 1160,
       "resultado": 478,
       "unidade": "sem nome",
-      "fato": "478 dos 1.153 registros do ano não identificam o fornecedor. Os mais recentes, assinados em 13.10.2026, são 5 e somam R$ 46.752,48.",
+      "fato": "478 dos 1.160 registros do ano não identificam o fornecedor. Os mais recentes, assinados em 13.10.2026, são 5 e somam R$ 46.752,48.",
       "itens": [
         {
           "numero": 205,
@@ -359,11 +359,18 @@
       "familia": "Licitações",
       "regra": "Licitação sem valor estimado",
       "fonte": "Dados abertos · licitações",
-      "base": 168,
-      "resultado": 168,
+      "base": 169,
+      "resultado": 169,
       "unidade": "sem valor",
-      "fato": "168 das 168 licitações do ano não trazem valor estimado no conjunto de dados; 47 estão abertas.",
+      "fato": "169 das 169 licitações do ano não trazem valor estimado no conjunto de dados; 47 estão abertas.",
       "itens": [
+        {
+          "processo": 9,
+          "modalidade": "Chamamento Público",
+          "situacao": "Aberto",
+          "titulo": "Chamamento público para seleção de pessoas jurídicas interessadas na para a outorga de concessão de uso de bem público, a título precário e oneroso, destinada à exploração comercial de gêneros alimentícios e serviços correlatos (comércio ambulante em trailer, food truck, outros), em áreas delimitadas nas seguintes localidades do Município de Marília/SP.",
+          "data": "2026-10-19"
+        },
         {
           "processo": 1,
           "modalidade": "Leilão - Eletrônico",
@@ -495,13 +502,6 @@
           "modalidade": "Pregão Eletrônico",
           "situacao": "Homologado",
           "titulo": "PE 098/2026-Aquisição de Unidade Odontológica Portátil, destinado a Secretaria Municipal da Saúde, conforme condições, quantidades e exigências estabelecidas neste Edital e seus anexos.",
-          "data": "2026-08-28"
-        },
-        {
-          "processo": 72,
-          "modalidade": "Pregão Eletrônico",
-          "situacao": "Aberto",
-          "titulo": "Contratação de Empresa visando o Fornecimento de Material e Mão de Obra para modernização do Banco de Alimentos, destinado à Secretaria Municipal de Assistência Social e Cidadania.",
           "data": "2026-08-28"
         }
       ],
@@ -829,10 +829,10 @@
       "familia": "Contratos",
       "regra": "Contrato a vencer em 60 dias",
       "fonte": "Dados abertos · contratos",
-      "base": "1.042 vigentes",
-      "resultado": 84,
+      "base": "1.049 vigentes",
+      "resultado": 94,
       "unidade": "a vencer",
-      "fato": "84 contratos e atas vigentes terminam até 17.12.2026, somando R$ 27.634.823,36; 61 deles não identificam a contratada.",
+      "fato": "94 contratos e atas vigentes terminam até 18.12.2026, somando R$ 27.744.310,34; 61 deles não identificam a contratada.",
       "itens": [
         {
           "numero": 212,
@@ -980,8 +980,45 @@
   ],
   "novidades": {
     "linha_de_base": false,
-    "resumo": "nenhum registro novo nos conjuntos acompanhados.",
-    "itens": []
+    "resumo": "entraram 3 compras diretas novas; 7 contratos ou atas novos; 1 licitação nova e 2 contratos alterados.",
+    "itens": [
+      {
+        "tipo": "Compra direta · 19.11.2026",
+        "titulo": "Credenciamento nº 9: Chamamento público para seleção de pessoas jurídicas interessadas na para a outorga de concessão de uso de…",
+        "detalhe": "Situação: aberto. O registro não informa valor estimado.",
+        "fonte": "Dados abertos · compra direta",
+        "acao": "Ver no radar",
+        "link": "radar.html#1",
+        "n": "1"
+      },
+      {
+        "tipo": "Compra direta · 17.10.2026",
+        "titulo": "Dispensa nº 557: Serviços de marcenaria planejada sob medida, com fornecimento de material e serviços, destinados ao Gabinete…",
+        "detalhe": "Situação: homologado. O registro não informa valor estimado.",
+        "fonte": "Dados abertos · compra direta",
+        "acao": "Ver no radar",
+        "link": "radar.html#1",
+        "n": "2"
+      },
+      {
+        "tipo": "Licitação · aberta",
+        "titulo": "Edital 9: Chamamento público para seleção de pessoas jurídicas interessadas na para a outorga de concessão de uso de…",
+        "detalhe": "Chamamento Público. O conjunto de dados não traz valor estimado.",
+        "fonte": "Dados abertos · licitações",
+        "acao": "Ver lacunas",
+        "link": "transparencia.html",
+        "n": "3"
+      },
+      {
+        "tipo": "Contratos · alterado",
+        "titulo": "TC - Termo de Colaboração nº 365, processo 109",
+        "detalhe": "Campos alterados desde a coleta anterior: dataVigencia.",
+        "fonte": "Dados abertos · contratos",
+        "acao": "Ver no radar",
+        "link": "radar.html#2",
+        "n": "4"
+      }
+    ]
   },
   "serie_contratacao_direta": [
     {
@@ -1368,29 +1405,29 @@
       {
         "conjunto": "Compras diretas",
         "campo": "Valor estimado",
-        "vazios": 681,
-        "total": 681,
+        "vazios": 684,
+        "total": 684,
         "pct": 100
       },
       {
         "conjunto": "Compras diretas",
         "campo": "Valor homologado",
-        "vazios": 681,
-        "total": 681,
+        "vazios": 684,
+        "total": 684,
         "pct": 100
       },
       {
         "conjunto": "Licitações",
         "campo": "Valor estimado",
-        "vazios": 168,
-        "total": 168,
+        "vazios": 169,
+        "total": 169,
         "pct": 100
       },
       {
         "conjunto": "Licitações",
         "campo": "Valor homologado",
-        "vazios": 168,
-        "total": 168,
+        "vazios": 169,
+        "total": 169,
         "pct": 100
       },
       {
@@ -1404,21 +1441,21 @@
         "conjunto": "Contratos e atas",
         "campo": "Nome da contratada",
         "vazios": 478,
-        "total": 1153,
+        "total": 1160,
         "pct": 41
       },
       {
         "conjunto": "Contratos e atas",
         "campo": "Tipo de licitação",
         "vazios": 126,
-        "total": 1153,
+        "total": 1160,
         "pct": 11
       },
       {
         "conjunto": "Contratos e atas",
         "campo": "Situação",
         "vazios": 107,
-        "total": 1153,
+        "total": 1160,
         "pct": 9
       },
       {
@@ -1432,21 +1469,21 @@
         "conjunto": "Contratos e atas",
         "campo": "Número do contrato",
         "vazios": 66,
-        "total": 1153,
+        "total": 1160,
         "pct": 6
       },
       {
         "conjunto": "Contratos e atas",
         "campo": "Valor do contrato",
         "vazios": 19,
-        "total": 1153,
+        "total": 1160,
         "pct": 2
       },
       {
         "conjunto": "Contratos e atas",
         "campo": "Fim da vigência",
         "vazios": 1,
-        "total": 1153,
+        "total": 1160,
         "pct": 0
       }
     ],
@@ -1772,6 +1809,36 @@
         "diarias_atipicas": 2,
         "obra_parada_ou_cancelada": 7,
         "contrato_a_vencer": 84
+      }
+    },
+    {
+      "data": "2026-10-19",
+      "exercicio": 2026,
+      "totais": {
+        "compras_diretas": 684,
+        "dispensas": 499,
+        "inexigibilidades": 176,
+        "licitacoes": 169,
+        "licitacoes_abertas": 47,
+        "contratos": 1160,
+        "contratos_vigentes": 1049,
+        "obras": 38,
+        "obras_em_andamento": 22,
+        "obras_concluidas": 9,
+        "obras_canceladas": 7,
+        "empenhos": 21168,
+        "anulacoes": 1776,
+        "empenhado_liquido": 1358371606.54
+      },
+      "radar": {
+        "compra_direta_aberta": 60,
+        "contrato_sem_contratada": 478,
+        "licitacao_sem_valor": 169,
+        "quebra_ordem_cronologica": 110,
+        "fornecedor_novo_valor_alto": 55,
+        "diarias_atipicas": 2,
+        "obra_parada_ou_cancelada": 7,
+        "contrato_a_vencer": 94
       }
     }
   ]

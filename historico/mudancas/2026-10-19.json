@@ -1,0 +1,241 @@
+{
+ "compra-direta": {
+  "novos": [
+   {
+    "titulo": "Chamamento público para seleção de pessoas jurídicas interessadas na para a outorga de concessão de uso de bem público, a título precário e oneroso, destinada à exploração comercial de gêneros alimentícios e serviços correlatos (comércio ambulante em trailer, food truck, outros), em áreas delimitadas nas seguintes localidades do Município de Marília/SP.",
+    "dataAtualizacao": "2026-10-19 09:22:04",
+    "dataPostagem": "2026-11-19 09:00:00",
+    "dataRealizacao": "2026-10-19 09:00:00",
+    "numeroEdital": 9,
+    "numeroProcesso": 9,
+    "modalidade": "Credenciamento",
+    "situacao": "Aberto",
+    "descricao": "Chamamento público para seleção de pessoas jurídicas interessadas na para a outorga de concessão de uso de bem público, a título precário e oneroso, destinada à exploração comercial de gêneros alimentícios e serviços correlatos (comércio ambulante em trailer, food truck, outros), em áreas delimitadas nas seguintes localidades do Município de Marília/SP.",
+    "valorEstimado": "",
+    "valorHomologado": ""
+   },
+   {
+    "titulo": "Serviços de marcenaria planejada sob medida, com fornecimento de material e serviços, destinados ao Gabinete do Prefeito.",
+    "dataAtualizacao": "2026-10-19 11:08:50",
+    "dataPostagem": "2026-10-17 08:00:00",
+    "dataRealizacao": "2026-10-17 08:00:00",
+    "numeroEdital": 557,
+    "numeroProcesso": 557,
+    "modalidade": "Dispensa",
+    "situacao": "Homologado",
+    "descricao": "Serviços de marcenaria planejada sob medida, com fornecimento de material e serviços, destinados ao Gabinete do Prefeito.",
+    "valorEstimado": "",
+    "valorHomologado": ""
+   },
+   {
+    "titulo": "Aquisição de 305 de brinquedos infantis diversos, destinados ao Fundo Social de Solidariedade vinculado ao Gabinete do Prefeito",
+    "dataAtualizacao": "2026-10-19 11:37:31",
+    "dataPostagem": "2026-10-17 08:00:00",
+    "dataRealizacao": "2026-10-17 08:00:00",
+    "numeroEdital": 561,
+    "numeroProcesso": 561,
+    "modalidade": "Dispensa",
+    "situacao": "Homologado",
+    "descricao": "Aquisição de 305 de brinquedos infantis diversos, destinados ao Fundo Social de Solidariedade vinculado ao Gabinete do Prefeito",
+    "valorEstimado": "",
+    "valorHomologado": ""
+   }
+  ],
+  "alterados": [],
+  "removidos": []
+ },
+ "contratos": {
+  "novos": [
+   {
+    "nomeContratada": "ASSOCIAÇÃO PROTETORA DOS ANIMAIS FRIDA",
+    "dataAssinatura": "2026-10-16",
+    "dataInicioVigencia": "2026-10-16",
+    "dataFimVigencia": "2026-12-31",
+    "dataVigencia": "2026-12-31",
+    "valorContrato": 10000,
+    "numeroContrato": 388,
+    "numeroProcesso": "146",
+    "tipoLicitacao": "Inexigibilidade",
+    "situacao": "Vigente",
+    "tipo": "TC - Termo de Colaboração"
+   },
+   {
+    "nomeContratada": "TEX TEXTIL LTDA",
+    "dataAssinatura": "2026-10-16",
+    "dataInicioVigencia": "2026-10-16",
+    "dataFimVigencia": "2027-04-16",
+    "dataVigencia": "2027-04-16",
+    "valorContrato": 5670,
+    "numeroContrato": 2094,
+    "numeroProcesso": "36",
+    "tipoLicitacao": "Pregão Eletrônico",
+    "situacao": "Vigente",
+    "tipo": "CF - Contrato de Fornecimento"
+   },
+   {
+    "nomeContratada": "M B COSTA ACESSÓRIOS LTDA",
+    "dataAssinatura": "2026-10-16",
+    "dataInicioVigencia": "2026-10-16",
+    "dataFimVigencia": "2027-04-16",
+    "dataVigencia": "2027-04-16",
+    "valorContrato": 4576,
+    "numeroContrato": 2093,
+    "numeroProcesso": "36",
+    "tipoLicitacao": "Pregão Eletrônico",
+    "situacao": "Vigente",
+    "tipo": "CF - Contrato de Fornecimento"
+   },
+   {
+    "nomeContratada": "KFC COMÉRCIO DE PRODUTOS E SERVIÇOS LTDA",
+    "dataAssinatura": "2026-10-16",
+    "dataInicioVigencia": "2026-10-16",
+    "dataFimVigencia": "2027-04-16",
+    "dataVigencia": "2027-04-16",
+    "valorContrato": 17880,
+    "numeroContrato": 2092,
+    "numeroProcesso": "36",
+    "tipoLicitacao": "Pregão Eletrônico",
+    "situacao": "Vigente",
+    "tipo": "CF - Contrato de Fornecimento"
+   },
+   {
+    "nomeContratada": "DZ NOVE DISTRIBUIDORA DE EQUIPAMENTOS E ACESSÓRIOS LTDA",
+    "dataAssinatura": "2026-10-16",
+    "dataInicioVigencia": "2026-10-16",
+    "dataFimVigencia": "2027-04-16",
+    "dataVigencia": "2027-04-16",
+    "valorContrato": 6639.8,
+    "numeroContrato": 2091,
+    "numeroProcesso": "36",
+    "tipoLicitacao": "Pregão Eletrônico",
+    "situacao": "Vigente",
+    "tipo": "CF - Contrato de Fornecimento"
+   },
+   {
+    "nomeContratada": "DALO EMPREENDIMENTOS LTDA",
+    "dataAssinatura": "2026-10-16",
+    "dataInicioVigencia": "2026-10-16",
+    "dataFimVigencia": "2027-04-16",
+    "dataVigencia": "2027-04-16",
+    "valorContrato": 21680,
+    "numeroContrato": 2090,
+    "numeroProcesso": "36",
+    "tipoLicitacao": "Pregão Eletrônico",
+    "situacao": "Vigente",
+    "tipo": "CF - Contrato de Fornecimento"
+   },
+   {
+    "nomeContratada": "AEF BID COMÉRCIO LTDA",
+    "dataAssinatura": "2026-10-16",
+    "dataInicioVigencia": "2026-10-16",
+    "dataFimVigencia": "2027-04-16",
+    "dataVigencia": "2027-04-16",
+    "valorContrato": 2054.83,
+    "numeroContrato": 2089,
+    "numeroProcesso": "36",
+    "tipoLicitacao": "Pregão Eletrônico",
+    "situacao": "Vigente",
+    "tipo": "CF - Contrato de Fornecimento"
+   }
+  ],
+  "alterados": [
+   {
+    "registro": {
+     "nomeContratada": "ASSOCIACAO CASA DO CAMINHO",
+     "dataAssinatura": "2026-07-27",
+     "dataInicioVigencia": "2026-07-27",
+     "dataFimVigencia": "2026-12-31",
+     "dataVigencia": "2027-12-31",
+     "valorContrato": 50000,
+     "numeroContrato": 365,
+     "numeroProcesso": "109",
+     "tipoLicitacao": "Inexigibilidade",
+     "situacao": "Vigente",
+     "tipo": "TC - Termo de Colaboração"
+    },
+    "campos": {
+     "dataVigencia": [
+      "2026-12-31",
+      "2027-12-31"
+     ]
+    }
+   },
+   {
+    "registro": {
+     "nomeContratada": "ASSOCIAÇÃO CASA DO CAMINHO",
+     "dataAssinatura": "2026-06-01",
+     "dataInicioVigencia": "2026-06-01",
+     "dataFimVigencia": "2026-12-31",
+     "dataVigencia": "2027-12-31",
+     "valorContrato": 90000,
+     "numeroContrato": 333,
+     "numeroProcesso": "60",
+     "tipoLicitacao": "Inexigibilidade",
+     "situacao": "Vigente",
+     "tipo": "TC - Termo de Colaboração"
+    },
+    "campos": {
+     "dataVigencia": [
+      "2026-12-31",
+      "2027-12-31"
+     ]
+    }
+   }
+  ],
+  "removidos": []
+ },
+ "licitacoes": {
+  "novos": [
+   {
+    "titulo": "Chamamento público para seleção de pessoas jurídicas interessadas na para a outorga de concessão de uso de bem público, a título precário e oneroso, destinada à exploração comercial de gêneros alimentícios e serviços correlatos (comércio ambulante em trailer, food truck, outros), em áreas delimitadas nas seguintes localidades do Município de Marília/SP.",
+    "dataAtualizacao": "2026-10-19 08:59:55",
+    "dataPostagem": "2026-11-19 09:00:00",
+    "dataRealizacao": "2026-10-19 08:00:00",
+    "numeroEdital": 9,
+    "numeroProcesso": 9,
+    "modalidade": "Chamamento Público",
+    "situacao": "Aberto",
+    "descricao": "Chamamento público para seleção de pessoas jurídicas interessadas na para a outorga de concessão de uso de bem público, a título precário e oneroso, destinada à exploração comercial de gêneros alimentícios e serviços correlatos (comércio ambulante em trailer, food truck, outros), em áreas delimitadas nas seguintes localidades do Município de Marília/SP.",
+    "valorEstimado": "",
+    "valorHomologado": ""
+   }
+  ],
+  "alterados": [
+   {
+    "registro": {
+     "titulo": "Contratação de Empresa visando o Fornecimento de Material e Mão de Obra para modernização do Banco de Alimentos, destinado à Secretaria Municipal de Assistência Social e Cidadania.",
+     "dataAtualizacao": "2026-10-19 11:49:18",
+     "dataPostagem": "2026-09-17 09:00:00",
+     "dataRealizacao": "2026-08-28 08:00:00",
+     "numeroEdital": 72,
+     "numeroProcesso": 72,
+     "modalidade": "Pregão Eletrônico",
+     "situacao": "Homologado",
+     "descricao": "<strong>Contratação de Empresa visando o Fornecimento de Material e Mão de Obra para modernização do Banco de Alimentos, destinado à Secretaria Municipal de Assistência Social e Cidadania.<br />\r\n(</strong><strong>Somente no Portal de Compras do Governo Federal (comprasnet), o presente processo licitatório figurará com o número 242026.)</strong><br />\r\n ",
+     "valorEstimado": "",
+     "valorHomologado": ""
+    },
+    "campos": {
+     "situacao": [
+      "Aberto",
+      "Homologado"
+     ]
+    }
+   }
+  ],
+  "removidos": []
+ },
+ "obras": {
+  "novos": [],
+  "alterados": [],
+  "removidos": []
+ },
+ "diario_oficial": {
+  "novas": [],
+  "alteradas": []
+ },
+ "despesas": {
+  "novos": [],
+  "removidos": []
+ }
+}

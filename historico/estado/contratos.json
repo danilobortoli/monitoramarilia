@@ -210,6 +210,19 @@
    "tipo": "CST - Contrato de Serviços de Terceiros"
   },
   {
+   "nomeContratada": "TEX TEXTIL LTDA",
+   "dataAssinatura": "2026-10-16",
+   "dataInicioVigencia": "2026-10-16",
+   "dataFimVigencia": "2027-04-16",
+   "dataVigencia": "2027-04-16",
+   "valorContrato": 5670,
+   "numeroContrato": 2094,
+   "numeroProcesso": "36",
+   "tipoLicitacao": "Pregão Eletrônico",
+   "situacao": "Vigente",
+   "tipo": "CF - Contrato de Fornecimento"
+  },
+  {
    "nomeContratada": "MARANATA TRANSPORTES E LOCAÇÕES LTDA",
    "dataAssinatura": "2025-09-09",
    "dataInicioVigencia": "2025-09-09",
@@ -1133,6 +1146,19 @@
    "tipo": "CST - Contrato de Serviços de Terceiros"
   },
   {
+   "nomeContratada": "DZ NOVE DISTRIBUIDORA DE EQUIPAMENTOS E ACESSÓRIOS LTDA",
+   "dataAssinatura": "2026-10-16",
+   "dataInicioVigencia": "2026-10-16",
+   "dataFimVigencia": "2027-04-16",
+   "dataVigencia": "2027-04-16",
+   "valorContrato": 6639.8,
+   "numeroContrato": 2091,
+   "numeroProcesso": "36",
+   "tipoLicitacao": "Pregão Eletrônico",
+   "situacao": "Vigente",
+   "tipo": "CF - Contrato de Fornecimento"
+  },
+  {
    "nomeContratada": "ASSOCIAÇÃO SOCIAL E CULTURAL EM BUSCA DE UM SORRISO",
    "dataAssinatura": "2026-08-31",
    "dataInicioVigencia": "2026-08-31",
@@ -1716,6 +1742,19 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "ARP - Ata de Registro de Preço"
+  },
+  {
+   "nomeContratada": "KFC COMÉRCIO DE PRODUTOS E SERVIÇOS LTDA",
+   "dataAssinatura": "2026-10-16",
+   "dataInicioVigencia": "2026-10-16",
+   "dataFimVigencia": "2027-04-16",
+   "dataVigencia": "2027-04-16",
+   "valorContrato": 17880,
+   "numeroContrato": 2092,
+   "numeroProcesso": "36",
+   "tipoLicitacao": "Pregão Eletrônico",
+   "situacao": "Vigente",
+   "tipo": "CF - Contrato de Fornecimento"
   },
   {
    "nomeContratada": "LICITA INVEST - ASSESSORIA COMERCIAL LTDA",
@@ -3390,19 +3429,6 @@
    "valorContrato": 10000,
    "numeroContrato": 327,
    "numeroProcesso": "53",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
-  },
-  {
-   "nomeContratada": "ASSOCIAÇÃO CASA DO CAMINHO",
-   "dataAssinatura": "2026-06-01",
-   "dataInicioVigencia": "2026-06-01",
-   "dataFimVigencia": "2026-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 90000,
-   "numeroContrato": 333,
-   "numeroProcesso": "60",
    "tipoLicitacao": "Inexigibilidade",
    "situacao": "Vigente",
    "tipo": "TC - Termo de Colaboração"
@@ -5486,6 +5512,19 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "ARP - Ata de Registro de Preço"
+  },
+  {
+   "nomeContratada": "AEF BID COMÉRCIO LTDA",
+   "dataAssinatura": "2026-10-16",
+   "dataInicioVigencia": "2026-10-16",
+   "dataFimVigencia": "2027-04-16",
+   "dataVigencia": "2027-04-16",
+   "valorContrato": 2054.83,
+   "numeroContrato": 2089,
+   "numeroProcesso": "36",
+   "tipoLicitacao": "Pregão Eletrônico",
+   "situacao": "Vigente",
+   "tipo": "CF - Contrato de Fornecimento"
   },
   {
    "nomeContratada": "PRIME CONSULTORIA E ASSESSORIA EMPRESARIAL LTDA",
@@ -9089,6 +9128,19 @@
    "tipo": "CO - Contrato de Obra"
   },
   {
+   "nomeContratada": "DALO EMPREENDIMENTOS LTDA",
+   "dataAssinatura": "2026-10-16",
+   "dataInicioVigencia": "2026-10-16",
+   "dataFimVigencia": "2027-04-16",
+   "dataVigencia": "2027-04-16",
+   "valorContrato": 21680,
+   "numeroContrato": 2090,
+   "numeroProcesso": "36",
+   "tipoLicitacao": "Pregão Eletrônico",
+   "situacao": "Vigente",
+   "tipo": "CF - Contrato de Fornecimento"
+  },
+  {
    "nomeContratada": null,
    "dataAssinatura": "2026-01-16",
    "dataInicioVigencia": "2026-01-20",
@@ -9869,6 +9921,19 @@
    "tipo": "ARP - Ata de Registro de Preço"
   },
   {
+   "nomeContratada": "M B COSTA ACESSÓRIOS LTDA",
+   "dataAssinatura": "2026-10-16",
+   "dataInicioVigencia": "2026-10-16",
+   "dataFimVigencia": "2027-04-16",
+   "dataVigencia": "2027-04-16",
+   "valorContrato": 4576,
+   "numeroContrato": 2093,
+   "numeroProcesso": "36",
+   "tipoLicitacao": "Pregão Eletrônico",
+   "situacao": "Vigente",
+   "tipo": "CF - Contrato de Fornecimento"
+  },
+  {
    "nomeContratada": "ASSOCIAÇÃO MARILIENSE DE ESPORTES INCLUSIVOS – AMEI",
    "dataAssinatura": "2025-08-11",
    "dataInicioVigencia": "2025-08-13",
@@ -10272,6 +10337,19 @@
    "tipo": "CG - Contratos Gerais/Outros"
   },
   {
+   "nomeContratada": "ASSOCIACAO CASA DO CAMINHO",
+   "dataAssinatura": "2026-07-27",
+   "dataInicioVigencia": "2026-07-27",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2027-12-31",
+   "valorContrato": 50000,
+   "numeroContrato": 365,
+   "numeroProcesso": "109",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
+  },
+  {
    "nomeContratada": "FUNDAÇÃO MANSÃO ISMAEL",
    "dataAssinatura": "2023-07-07",
    "dataInicioVigencia": "2023-07-07",
@@ -10348,6 +10426,19 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "CF - Contrato de Fornecimento"
+  },
+  {
+   "nomeContratada": "ASSOCIAÇÃO CASA DO CAMINHO",
+   "dataAssinatura": "2026-06-01",
+   "dataInicioVigencia": "2026-06-01",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2027-12-31",
+   "valorContrato": 90000,
+   "numeroContrato": 333,
+   "numeroProcesso": "60",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
   },
   {
    "nomeContratada": null,
@@ -11232,19 +11323,6 @@
    "tipoLicitacao": "Concorrência Pública",
    "situacao": "Vigente",
    "tipo": "CO - Contrato de Obra"
-  },
-  {
-   "nomeContratada": "ASSOCIACAO CASA DO CAMINHO",
-   "dataAssinatura": "2026-07-27",
-   "dataInicioVigencia": "2026-07-27",
-   "dataFimVigencia": "2026-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 50000,
-   "numeroContrato": 365,
-   "numeroProcesso": "109",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
   },
   {
    "nomeContratada": "BANCO DO BRASIL SA",
@@ -14911,6 +14989,19 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "ARP - Ata de Registro de Preço"
+  },
+  {
+   "nomeContratada": "ASSOCIAÇÃO PROTETORA DOS ANIMAIS FRIDA",
+   "dataAssinatura": "2026-10-16",
+   "dataInicioVigencia": "2026-10-16",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2026-12-31",
+   "valorContrato": 10000,
+   "numeroContrato": 388,
+   "numeroProcesso": "146",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
   },
   {
    "nomeContratada": "PMG PLUS MALHARIA CONFECCAO COMERCIO E ESTAMPARIA LTDA",
