@@ -1393,19 +1393,6 @@
    "tipo": "TC - Termo de Colaboração"
   },
   {
-   "nomeContratada": "ASSOCIAÇÃO DE RECUPERAÇÃO DE DEPENDENTES QUÍMICOS – PROJETO VIDA NOVA",
-   "dataAssinatura": "2026-08-19",
-   "dataInicioVigencia": "2026-08-19",
-   "dataFimVigencia": "2026-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 70000,
-   "numeroContrato": 369,
-   "numeroProcesso": "116",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
-  },
-  {
    "nomeContratada": null,
    "dataAssinatura": "2026-06-01",
    "dataInicioVigencia": "2026-06-02",
@@ -2288,6 +2275,19 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "ARP - Ata de Registro de Preço"
+  },
+  {
+   "nomeContratada": "ASSOCIAÇÃO DE RECUPERAÇÃO DE DEPENDENTES QUÍMICOS – PROJETO VIDA NOVA",
+   "dataAssinatura": "2026-08-19",
+   "dataInicioVigencia": "2026-08-19",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2027-12-31",
+   "valorContrato": 70000,
+   "numeroContrato": 369,
+   "numeroProcesso": "116",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
   },
   {
    "nomeContratada": null,

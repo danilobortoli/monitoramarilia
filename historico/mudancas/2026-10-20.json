@@ -1,0 +1,230 @@
+{
+ "compra-direta": {
+  "novos": [
+   {
+    "titulo": "Contratação de serviço licença de uso de plataforma digital baseada em Inteligência Artificial Generativa com 7 assentos Standard e 1 assento Premium, em ambiente SaaS, pelo período de 12 (doze) meses, destinado a Secretaria Municipal da Saúde",
+    "dataAtualizacao": "2026-10-20 07:43:18",
+    "dataPostagem": "2026-10-23 23:59:00",
+    "dataRealizacao": "2026-10-20 08:00:00",
+    "numeroEdital": 562,
+    "numeroProcesso": 562,
+    "modalidade": "Dispensa",
+    "situacao": "Aberto",
+    "descricao": "Contratação de serviço licença de uso de plataforma digital baseada em Inteligência Artificial Generativa com 7 assentos Standard e 1 assento Premium, em ambiente SaaS, pelo período de 12 (doze) meses, destinado a Secretaria Municipal da Saúde",
+    "valorEstimado": "",
+    "valorHomologado": ""
+   },
+   {
+    "titulo": "Serviços de marcenaria planejada sob medida, com fornecimento de material e serviços, destinados ao Gabinete do Prefeito.",
+    "dataAtualizacao": "2026-10-20 09:09:36",
+    "dataPostagem": "2026-10-17 08:00:00",
+    "dataRealizacao": "2026-10-17 08:00:00",
+    "numeroEdital": 558,
+    "numeroProcesso": 558,
+    "modalidade": "Dispensa",
+    "situacao": "Homologado",
+    "descricao": "Serviços de marcenaria planejada sob medida, com fornecimento de material e serviços, destinados ao Gabinete do Prefeito.",
+    "valorEstimado": "",
+    "valorHomologado": ""
+   }
+  ],
+  "alterados": [
+   {
+    "registro": {
+     "titulo": "Aquisição de antena e seus itens necessários para instalação, destinada ao Centro de Referência Especializado para População em Situação de Rua – Centro POP, vinculado à Secretaria Municipal de Assistência Social e Cidadania.",
+     "dataAtualizacao": "2026-10-20 09:17:22",
+     "dataPostagem": "2026-10-15 08:00:00",
+     "dataRealizacao": "2026-10-15 08:00:00",
+     "numeroEdital": 557,
+     "numeroProcesso": 557,
+     "modalidade": "Dispensa",
+     "situacao": "Homologado",
+     "descricao": "Aquisição de antena e seus itens necessários para instalação, destinada ao Centro de Referência Especializado para População em Situação de Rua – Centro POP, vinculado à Secretaria Municipal de Assistência Social e Cidadania.",
+     "valorEstimado": "",
+     "valorHomologado": ""
+    },
+    "campos": {
+     "dataPostagem": [
+      "2026-10-17 08:00:00",
+      "2026-10-15 08:00:00"
+     ],
+     "dataRealizacao": [
+      "2026-10-17 08:00:00",
+      "2026-10-15 08:00:00"
+     ],
+     "descricao": [
+      "Serviços de marcenaria planejada sob medida, com fornecimento de material e serviços, destinados ao Gabinete do Prefeito.",
+      "Aquisição de antena e seus itens necessários para instalação, destinada ao Centro de Referência Especializado para População em Situação de Rua – Centro POP, vinculado à Secretaria Municipal de Assistência Social e Cidadania."
+     ],
+     "titulo": [
+      "Serviços de marcenaria planejada sob medida, com fornecimento de material e serviços, destinados ao Gabinete do Prefeito.",
+      "Aquisição de antena e seus itens necessários para instalação, destinada ao Centro de Referência Especializado para População em Situação de Rua – Centro POP, vinculado à Secretaria Municipal de Assistência Social e Cidadania."
+     ]
+    }
+   }
+  ],
+  "removidos": []
+ },
+ "contratos": {
+  "novos": [],
+  "alterados": [
+   {
+    "registro": {
+     "nomeContratada": "ASSOCIAÇÃO DE RECUPERAÇÃO DE DEPENDENTES QUÍMICOS – PROJETO VIDA NOVA",
+     "dataAssinatura": "2026-08-19",
+     "dataInicioVigencia": "2026-08-19",
+     "dataFimVigencia": "2026-12-31",
+     "dataVigencia": "2027-12-31",
+     "valorContrato": 70000,
+     "numeroContrato": 369,
+     "numeroProcesso": "116",
+     "tipoLicitacao": "Inexigibilidade",
+     "situacao": "Vigente",
+     "tipo": "TC - Termo de Colaboração"
+    },
+    "campos": {
+     "dataVigencia": [
+      "2026-12-31",
+      "2027-12-31"
+     ]
+    }
+   }
+  ],
+  "removidos": []
+ },
+ "licitacoes": {
+  "novos": [],
+  "alterados": [
+   {
+    "registro": {
+     "titulo": "Registro de preços, pelo prazo de 12 meses, visando eventual fornecimento, preparo e organização de Coffee Breaks, Brunchs e Locação de Sala para Eventos, destinados às diversas Secretarias.",
+     "dataAtualizacao": "2026-10-20 10:08:17",
+     "dataPostagem": "2026-10-05 09:00:00",
+     "dataRealizacao": "2026-09-18 08:00:00",
+     "numeroEdital": 97,
+     "numeroProcesso": 97,
+     "modalidade": "Pregão Eletrônico",
+     "situacao": "Homologado",
+     "descricao": "Registro de preços, pelo prazo de 12 meses, visando eventual fornecimento, preparo e organização de Coffee Breaks, Brunchs e Locação de Sala para Eventos, destinados às diversas Secretarias.",
+     "valorEstimado": "",
+     "valorHomologado": ""
+    },
+    "campos": {
+     "situacao": [
+      "Aberto",
+      "Homologado"
+     ]
+    }
+   }
+  ],
+  "removidos": []
+ },
+ "obras": {
+  "novos": [],
+  "alterados": [],
+  "removidos": []
+ },
+ "diario_oficial": {
+  "novas": [
+   "4304"
+  ],
+  "alteradas": []
+ },
+ "despesas": {
+  "novos": [
+   880768,
+   880769,
+   880775,
+   880779,
+   880780,
+   880781,
+   880783,
+   880784,
+   880785,
+   880789,
+   880790,
+   880795,
+   880796,
+   880797,
+   880798,
+   880801,
+   880802,
+   880803,
+   880804,
+   880805,
+   880807,
+   880808,
+   880809,
+   880810,
+   880812,
+   880813,
+   880818,
+   880819,
+   880820,
+   880821,
+   880822,
+   880823,
+   880824,
+   880825,
+   880828,
+   880829,
+   880830,
+   880831,
+   880832,
+   880833,
+   880834,
+   880835,
+   880836,
+   880837,
+   880838,
+   880839,
+   880840,
+   880841,
+   880842,
+   880843,
+   880850,
+   880851,
+   880852,
+   880853,
+   880854,
+   880855,
+   880856,
+   880857,
+   880858,
+   880859,
+   880860,
+   880861,
+   880862,
+   880863,
+   880864,
+   880865,
+   880866,
+   880867,
+   880868,
+   880870,
+   880871,
+   880872,
+   880873,
+   880874,
+   880875,
+   880876,
+   880877,
+   880878,
+   880880,
+   880881,
+   880882,
+   880883,
+   880884,
+   880885,
+   880886,
+   880887,
+   880888,
+   880889,
+   880890,
+   880891,
+   880892,
+   880893
+  ],
+  "removidos": []
+ }
+}

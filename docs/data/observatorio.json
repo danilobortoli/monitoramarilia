@@ -1,51 +1,51 @@
 {
-  "gerado_em": "2026-10-19T16:01:43",
+  "gerado_em": "2026-10-20T13:58:42",
   "exercicio": 2026,
   "fontes": {
     "portal": "https://transparencia.marilia.sp.gov.br",
     "dados_abertos": "https://www.marilia.sp.gov.br/portal/dados-abertos"
   },
   "coleta": {
-    "data": "2026-10-19",
+    "data": "2026-10-20",
     "visoes_portal": {
       "responderam": 17,
       "total": 17
     },
     "registros_por_visao": {
-      "empenho_analitico": 35656,
-      "despesas_investimentos": 22944,
-      "movimento_empenho": 24642,
+      "empenho_analitico": 35765,
+      "despesas_investimentos": 23036,
+      "movimento_empenho": 24718,
       "despesa_sintetica": 19932,
       "empenho_modalidade": 9,
-      "restos_a_pagar": 2349,
-      "diarias": 4778,
-      "passagens": 514,
+      "restos_a_pagar": 2351,
+      "diarias": 4816,
+      "passagens": 522,
       "subvencoes": 0,
       "publicidade": 3,
       "publicidade_digital": 335,
       "emendas": 133,
-      "receita_analitica": 66412,
-      "arrecadacao_mes": 385,
+      "receita_analitica": 66712,
+      "arrecadacao_mes": 386,
       "pagamento_servidores": 52456,
       "patrimonio": 153211,
       "transferencias_educacao": 2015
     }
   },
   "totais": {
-    "compras_diretas": 684,
-    "dispensas": 499,
+    "compras_diretas": 686,
+    "dispensas": 501,
     "inexigibilidades": 176,
     "licitacoes": 169,
-    "licitacoes_abertas": 47,
+    "licitacoes_abertas": 46,
     "contratos": 1160,
     "contratos_vigentes": 1049,
     "obras": 38,
     "obras_em_andamento": 22,
     "obras_concluidas": 9,
     "obras_canceladas": 7,
-    "empenhos": 21168,
-    "anulacoes": 1776,
-    "empenhado_liquido": 1358371606.54
+    "empenhos": 21241,
+    "anulacoes": 1795,
+    "empenhado_liquido": 1360071961.75
   },
   "regras": [
     {
@@ -53,16 +53,23 @@
       "familia": "Contratação direta",
       "regra": "Nova dispensa ou inexigibilidade",
       "fonte": "Dados abertos · compra direta",
-      "base": 684,
-      "resultado": 60,
+      "base": 686,
+      "resultado": 61,
       "unidade": "abertas",
-      "fato": "São 499 dispensas e 176 inexigibilidades no ano. 684 dos 684 registros não trazem valor estimado.",
+      "fato": "São 501 dispensas e 176 inexigibilidades no ano. 686 dos 686 registros não trazem valor estimado.",
       "itens": [
         {
           "processo": 9,
           "modalidade": "Credenciamento",
           "titulo": "Chamamento público para seleção de pessoas jurídicas interessadas na para a outorga de concessão de uso de bem público, a título precário e oneroso, destinada à exploração comercial de gêneros alimentícios e serviços correlatos (comércio ambulante em trailer, food truck, outros), em áreas delimitadas nas seguintes localidades do Município de Marília/SP.",
           "data": "2026-11-19",
+          "sem_valor_estimado": true
+        },
+        {
+          "processo": 562,
+          "modalidade": "Dispensa",
+          "titulo": "Contratação de serviço licença de uso de plataforma digital baseada em Inteligência Artificial Generativa com 7 assentos Standard e 1 assento Premium, em ambiente SaaS, pelo período de 12 (doze) meses, destinado a Secretaria Municipal da Saúde",
+          "data": "2026-10-23",
           "sem_valor_estimado": true
         },
         {
@@ -189,13 +196,6 @@
           "modalidade": "Inexigibilidade",
           "titulo": "Apresentação Teatral Café com Bom Humor, destinada à Secretaria Municipal de Assistência Social e Cidadania.",
           "data": "2026-06-20",
-          "sem_valor_estimado": true
-        },
-        {
-          "processo": 349,
-          "modalidade": "Dispensa",
-          "titulo": "Aquisição de uniformes para a equipe de coreografia com a finalidade de disputar o JOMI e os Jogos Regionais, destinada à Secretaria Municipal de Esportes, Lazer e Juventude.",
-          "data": "2026-06-17",
           "sem_valor_estimado": true
         }
       ],
@@ -362,7 +362,7 @@
       "base": 169,
       "resultado": 169,
       "unidade": "sem valor",
-      "fato": "169 das 169 licitações do ano não trazem valor estimado no conjunto de dados; 47 estão abertas.",
+      "fato": "169 das 169 licitações do ano não trazem valor estimado no conjunto de dados; 46 estão abertas.",
       "itens": [
         {
           "processo": 9,
@@ -479,7 +479,7 @@
         {
           "processo": 97,
           "modalidade": "Pregão Eletrônico",
-          "situacao": "Aberto",
+          "situacao": "Homologado",
           "titulo": "Registro de preços, pelo prazo de 12 meses, visando eventual fornecimento, preparo e organização de Coffee Breaks, Brunchs e Locação de Sala para Eventos, destinados às diversas Secretarias.",
           "data": "2026-09-18"
         },
@@ -512,10 +512,10 @@
       "familia": "Pagamentos",
       "regra": "Quebra da ordem cronológica",
       "fonte": "Diário Oficial",
-      "base": 201,
+      "base": 202,
       "resultado": 110,
       "unidade": "com a justificativa",
-      "fato": "A justificativa com base no art. 141, §1º, consta de 110 das 201 edições do ano, desde a nº 4107.",
+      "fato": "A justificativa com base no art. 141, §1º, consta de 110 das 202 edições do ano, desde a nº 4107.",
       "itens": [
         {
           "edicao": "4303",
@@ -605,16 +605,16 @@
       "familia": "Fornecedores",
       "regra": "Fornecedor novo com valor alto",
       "fonte": "Portal · despesas e investimentos",
-      "base": "2.015 fornecedores no ano, comparados com 2024–2025",
-      "resultado": 55,
+      "base": "2.019 fornecedores no ano, comparados com 2024–2025",
+      "resultado": 56,
       "unidade": "novos",
-      "fato": "55 fornecedores sem empenho em 2024–2025 receberam ao menos R$ 100.000,00 em empenhos no ano, somando R$ 111.970.056,19. O maior é CONSORCIO PARQUE DA CRIANCA, com R$ 19.112.795,49.",
+      "fato": "56 fornecedores sem empenho em 2024–2025 receberam ao menos R$ 100.000,00 em empenhos no ano, somando R$ 112.922.854,10. O maior é CONSORCIO PARQUE DA CRIANCA, com R$ 19.950.000,00.",
       "itens": [
         {
           "fornecedor": "CONSORCIO PARQUE DA CRIANCA",
           "documento": "68.395.240/0001-76",
-          "empenhado": 19112795.49,
-          "lancamentos": 1
+          "empenhado": 19950000.0,
+          "lancamentos": 2
         },
         {
           "fornecedor": "PLANETA EDUCACAO, GRAFICA E EDITORA LTDA.",
@@ -655,8 +655,8 @@
         {
           "fornecedor": "2F DISTRIBUIDORA LTDA",
           "documento": "47.363.416/0001-38",
-          "empenhado": 3645583.24,
-          "lancamentos": 130
+          "empenhado": 3651828.64,
+          "lancamentos": 132
         },
         {
           "fornecedor": "BRASIL COMÉRCIO E DISTRIBUIDORA LTDA",
@@ -738,7 +738,7 @@
       "familia": "Pessoal",
       "regra": "Diárias atípicas",
       "fonte": "Portal · diárias",
-      "base": "4.778 registros, 15 cargos comparáveis",
+      "base": "4.816 registros, 15 cargos comparáveis",
       "resultado": 2,
       "unidade": "acima do cargo",
       "fato": "Cada beneficiário é comparado com colegas do mesmo cargo; 15 cargos têm ao menos 5 beneficiários. O maior desvio é de assistente administrativo, com R$ 15.996,68 no ano, para um corte de R$ 2.833,31 no cargo.",
@@ -755,8 +755,8 @@
           "beneficiario": "Regher Ferreira De Oliveira",
           "cargo": "Assistente Administrativo",
           "secretaria": "Secr Mun do Meio Ambiente e Serv Publicos",
-          "total": 2900.0,
-          "registros": 5,
+          "total": 3770.0,
+          "registros": 6,
           "corte_do_cargo": 2833.31
         }
       ],
@@ -832,7 +832,7 @@
       "base": "1.049 vigentes",
       "resultado": 94,
       "unidade": "a vencer",
-      "fato": "94 contratos e atas vigentes terminam até 18.12.2026, somando R$ 27.744.310,34; 61 deles não identificam a contratada.",
+      "fato": "94 contratos e atas vigentes terminam até 19.12.2026, somando R$ 27.744.310,34; 61 deles não identificam a contratada.",
       "itens": [
         {
           "numero": 212,
@@ -980,11 +980,11 @@
   ],
   "novidades": {
     "linha_de_base": false,
-    "resumo": "entraram 3 compras diretas novas; 7 contratos ou atas novos; 1 licitação nova e 2 contratos alterados.",
+    "resumo": "entraram 2 compras diretas novas; 1 edição do Diário Oficial; 35 empenhos novos e 1 contrato alterado.",
     "itens": [
       {
-        "tipo": "Compra direta · 19.11.2026",
-        "titulo": "Credenciamento nº 9: Chamamento público para seleção de pessoas jurídicas interessadas na para a outorga de concessão de uso de…",
+        "tipo": "Compra direta · 23.10.2026",
+        "titulo": "Dispensa nº 562: Contratação de serviço licença de uso de plataforma digital baseada em Inteligência Artificial Generativa com…",
         "detalhe": "Situação: aberto. O registro não informa valor estimado.",
         "fonte": "Dados abertos · compra direta",
         "acao": "Ver no radar",
@@ -993,7 +993,7 @@
       },
       {
         "tipo": "Compra direta · 17.10.2026",
-        "titulo": "Dispensa nº 557: Serviços de marcenaria planejada sob medida, com fornecimento de material e serviços, destinados ao Gabinete…",
+        "titulo": "Dispensa nº 558: Serviços de marcenaria planejada sob medida, com fornecimento de material e serviços, destinados ao Gabinete…",
         "detalhe": "Situação: homologado. O registro não informa valor estimado.",
         "fonte": "Dados abertos · compra direta",
         "acao": "Ver no radar",
@@ -1001,17 +1001,17 @@
         "n": "2"
       },
       {
-        "tipo": "Licitação · aberta",
-        "titulo": "Edital 9: Chamamento público para seleção de pessoas jurídicas interessadas na para a outorga de concessão de uso de…",
-        "detalhe": "Chamamento Público. O conjunto de dados não traz valor estimado.",
-        "fonte": "Dados abertos · licitações",
-        "acao": "Ver lacunas",
-        "link": "transparencia.html",
+        "tipo": "Empenho · 19.10.2026",
+        "titulo": "Empenho nº 19880 a CONSORCIO PARQUE DA CRIANCA",
+        "detalhe": "R$ 837.204,51, prefeitura municipal de marília.",
+        "fonte": "Portal · despesas e investimentos",
+        "acao": "Ver no radar",
+        "link": "radar.html",
         "n": "3"
       },
       {
         "tipo": "Contratos · alterado",
-        "titulo": "TC - Termo de Colaboração nº 365, processo 109",
+        "titulo": "TC - Termo de Colaboração nº 369, processo 116",
         "detalhe": "Campos alterados desde a coleta anterior: dataVigencia.",
         "fonte": "Dados abertos · contratos",
         "acao": "Ver no radar",
@@ -1044,25 +1044,25 @@
     },
     {
       "ano": 2026,
-      "direta": 146254837.48,
-      "total": 1442409770.47,
+      "direta": 146449688.94,
+      "total": 1444105348.57,
       "pct_direta": 10.1,
       "pct_sem_modalidade": 62.3
     }
   ],
   "saude": {
-    "medicamentos_em_falta": "2026-10-15",
+    "medicamentos_em_falta": "2026-10-19",
     "fila_de_leitos": "2026-10-14"
   },
   "diario": {
     "frase": "A interrupção de serviços contratados pode gerar impactos diretos à população",
-    "edicoes": 201,
+    "edicoes": 202,
     "extras": 6,
     "com_frase": 110,
     "primeira_edicao": "4103",
     "primeira_data": "2026-01-06",
-    "ultima_edicao": "4303",
-    "ultima_data": "2026-10-17",
+    "ultima_edicao": "4304",
+    "ultima_data": "2026-10-20",
     "primeira_com_frase": "4107",
     "faixa": [
       0,
@@ -1265,7 +1265,8 @@
       1,
       1,
       1,
-      1
+      1,
+      0
     ],
     "meses": [
       {
@@ -1316,10 +1317,20 @@
       {
         "mes": "out",
         "com": 9,
-        "total": 12
+        "total": 13
       }
     ],
     "recentes": [
+      {
+        "edicao": "4304",
+        "data": "2026-10-20",
+        "extra": false,
+        "caracteres": 15507,
+        "cnpjs": 8,
+        "dispensa": 14,
+        "portarias": 4,
+        "frase": false
+      },
       {
         "edicao": "4303",
         "data": "2026-10-17",
@@ -1379,16 +1390,6 @@
         "dispensa": 4,
         "portarias": 4,
         "frase": true
-      },
-      {
-        "edicao": "4297",
-        "data": "2026-10-08",
-        "extra": false,
-        "caracteres": 35606,
-        "cnpjs": 1,
-        "dispensa": 0,
-        "portarias": 5,
-        "frase": true
       }
     ],
     "trecho": {
@@ -1405,15 +1406,15 @@
       {
         "conjunto": "Compras diretas",
         "campo": "Valor estimado",
-        "vazios": 684,
-        "total": 684,
+        "vazios": 686,
+        "total": 686,
         "pct": 100
       },
       {
         "conjunto": "Compras diretas",
         "campo": "Valor homologado",
-        "vazios": 684,
-        "total": 684,
+        "vazios": 686,
+        "total": 686,
         "pct": 100
       },
       {
@@ -1836,6 +1837,36 @@
         "licitacao_sem_valor": 169,
         "quebra_ordem_cronologica": 110,
         "fornecedor_novo_valor_alto": 55,
+        "diarias_atipicas": 2,
+        "obra_parada_ou_cancelada": 7,
+        "contrato_a_vencer": 94
+      }
+    },
+    {
+      "data": "2026-10-20",
+      "exercicio": 2026,
+      "totais": {
+        "compras_diretas": 686,
+        "dispensas": 501,
+        "inexigibilidades": 176,
+        "licitacoes": 169,
+        "licitacoes_abertas": 46,
+        "contratos": 1160,
+        "contratos_vigentes": 1049,
+        "obras": 38,
+        "obras_em_andamento": 22,
+        "obras_concluidas": 9,
+        "obras_canceladas": 7,
+        "empenhos": 21241,
+        "anulacoes": 1795,
+        "empenhado_liquido": 1360071961.75
+      },
+      "radar": {
+        "compra_direta_aberta": 61,
+        "contrato_sem_contratada": 478,
+        "licitacao_sem_valor": 169,
+        "quebra_ordem_cronologica": 110,
+        "fornecedor_novo_valor_alto": 56,
         "diarias_atipicas": 2,
         "obra_parada_ou_cancelada": 7,
         "contrato_a_vencer": 94
