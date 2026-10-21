@@ -1497,19 +1497,6 @@
    "tipo": "CST - Contrato de Serviços de Terceiros"
   },
   {
-   "nomeContratada": "ASF ENGENHARIA E NEGOCIOS LTDA – EPP",
-   "dataAssinatura": "2024-11-01",
-   "dataInicioVigencia": "2024-11-04",
-   "dataFimVigencia": "2025-05-02",
-   "dataVigencia": "2026-11-08",
-   "valorContrato": 509699.33,
-   "numeroContrato": 1291,
-   "numeroProcesso": "5",
-   "tipoLicitacao": "Concorrência Eletrônica",
-   "situacao": "Vigente",
-   "tipo": "CO - Contrato de Obra"
-  },
-  {
    "nomeContratada": null,
    "dataAssinatura": "2026-09-08",
    "dataInicioVigencia": "2026-09-10",
@@ -4604,6 +4591,19 @@
    "tipo": "ARP - Ata de Registro de Preço"
   },
   {
+   "nomeContratada": "Associação Mariliense de Apoio e Assistência ao Renal Crônico - AMAR",
+   "dataAssinatura": "2026-08-17",
+   "dataInicioVigencia": "2026-08-17",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2027-12-31",
+   "valorContrato": 60189,
+   "numeroContrato": 368,
+   "numeroProcesso": "118",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
+  },
+  {
    "nomeContratada": "CONSÓRCIO MDH - PARQUE DO POVO",
    "dataAssinatura": "2026-07-16",
    "dataInicioVigencia": "2026-07-16",
@@ -4719,6 +4719,19 @@
    "tipoLicitacao": "Credenciamento",
    "situacao": "Vigente",
    "tipo": "CG - Contratos Gerais/Outros"
+  },
+  {
+   "nomeContratada": "32.673.176 RAFAEL PIRES DA SILVA",
+   "dataAssinatura": "2026-10-19",
+   "dataInicioVigencia": "2026-10-19",
+   "dataFimVigencia": "2027-02-19",
+   "dataVigencia": "2027-02-19",
+   "valorContrato": 19200,
+   "numeroContrato": 1885,
+   "numeroProcesso": "546",
+   "tipoLicitacao": "Dispensa",
+   "situacao": "Vigente",
+   "tipo": "CST - Contrato de Serviços de Terceiros"
   },
   {
    "nomeContratada": "MERCANTIL TOMASETTO LTDA",
@@ -5200,19 +5213,6 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "ARP - Ata de Registro de Preço"
-  },
-  {
-   "nomeContratada": "UNIMED DE MARÍLIA COOPERATIVA DE TRABALHO MÉDICO",
-   "dataAssinatura": "2022-11-29",
-   "dataInicioVigencia": "2022-12-01",
-   "dataFimVigencia": "2023-12-01",
-   "dataVigencia": "2026-11-29",
-   "valorContrato": 26179001.28,
-   "numeroContrato": 1627,
-   "numeroProcesso": "166",
-   "tipoLicitacao": "Pregão Presencial",
-   "situacao": "Vigente",
-   "tipo": "CST - Contrato de Serviços de Terceiros"
   },
   {
    "nomeContratada": "TERRAPLAM PLANEJAMENTO E OBRAS DE MARÍLIA LTDA",
@@ -7358,19 +7358,6 @@
    "tipoLicitacao": null,
    "situacao": "Vigente",
    "tipo": "CG - Contratos Gerais/Outros"
-  },
-  {
-   "nomeContratada": "Associação Mariliense de Apoio e Assistência ao Renal Crônico - AMAR",
-   "dataAssinatura": "2026-08-17",
-   "dataInicioVigencia": "2026-08-17",
-   "dataFimVigencia": "2026-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 60189,
-   "numeroContrato": 368,
-   "numeroProcesso": "118",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
   },
   {
    "nomeContratada": null,
@@ -9973,19 +9960,6 @@
    "tipo": "CST - Contrato de Serviços de Terceiros"
   },
   {
-   "nomeContratada": "GRUPO DE APOIO ÀS CRIANÇAS COM CÂNCER E HEMOPATIAS - GACCH",
-   "dataAssinatura": "2026-06-01",
-   "dataInicioVigencia": "2026-06-01",
-   "dataFimVigencia": "2026-12-31",
-   "dataVigencia": "2026-12-31",
-   "valorContrato": 65500,
-   "numeroContrato": 335,
-   "numeroProcesso": "69",
-   "tipoLicitacao": "Inexigibilidade",
-   "situacao": "Vigente",
-   "tipo": "TC - Termo de Colaboração"
-  },
-  {
    "nomeContratada": "FUNDAÇÃO MANSÃO ISMAEL",
    "dataAssinatura": "2025-06-02",
    "dataInicioVigencia": "2025-06-05",
@@ -10606,6 +10580,19 @@
    "numeroContrato": 371,
    "numeroProcesso": "3",
    "tipoLicitacao": "Chamamento Público",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
+  },
+  {
+   "nomeContratada": "ASSOCIAÇÃO BENEFICENTE SORRIA BRASIL",
+   "dataAssinatura": "2026-10-20",
+   "dataInicioVigencia": "2026-10-20",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2026-12-31",
+   "valorContrato": 10189,
+   "numeroContrato": 389,
+   "numeroProcesso": "145",
+   "tipoLicitacao": "Inexigibilidade",
    "situacao": "Vigente",
    "tipo": "TC - Termo de Colaboração"
   },
@@ -11310,6 +11297,19 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "ARP - Ata de Registro de Preço"
+  },
+  {
+   "nomeContratada": "VERLUMA COMÉRCIO LTDA",
+   "dataAssinatura": "2026-10-19",
+   "dataInicioVigencia": "2026-10-19",
+   "dataFimVigencia": "2027-04-19",
+   "dataVigencia": "2027-04-19",
+   "valorContrato": 535,
+   "numeroContrato": 2095,
+   "numeroProcesso": "36",
+   "tipoLicitacao": "Pregão Eletrônico",
+   "situacao": "Vigente",
+   "tipo": "CF - Contrato de Fornecimento"
   },
   {
    "nomeContratada": "JGM ESTRUTURA E CONSTRUTORA LTDA",
@@ -14157,6 +14157,19 @@
    "tipoLicitacao": "Pregão Eletrônico",
    "situacao": "Vigente",
    "tipo": "CF - Contrato de Fornecimento"
+  },
+  {
+   "nomeContratada": "GRUPO DE APOIO ÀS CRIANÇAS COM CÂNCER E HEMOPATIAS - GACCH",
+   "dataAssinatura": "2026-06-01",
+   "dataInicioVigencia": "2026-06-01",
+   "dataFimVigencia": "2026-12-31",
+   "dataVigencia": "2027-12-31",
+   "valorContrato": 65500,
+   "numeroContrato": 335,
+   "numeroProcesso": "69",
+   "tipoLicitacao": "Inexigibilidade",
+   "situacao": "Vigente",
+   "tipo": "TC - Termo de Colaboração"
   },
   {
    "nomeContratada": null,
