@@ -1,0 +1,254 @@
+{
+ "compra-direta": {
+  "novos": [
+   {
+    "titulo": "Aquisição de materiais elétricos, destinados ao 10º Grupamento de Bombeiros vinculado à Secretaria Municipal da Administração.",
+    "dataAtualizacao": "2026-10-21 14:57:51",
+    "dataPostagem": "2026-10-20 08:00:00",
+    "dataRealizacao": "2026-10-20 08:00:00",
+    "numeroEdital": 541,
+    "numeroProcesso": 541,
+    "modalidade": "Dispensa",
+    "situacao": "Homologado",
+    "descricao": "Aquisição de materiais elétricos, destinados ao 10º Grupamento de Bombeiros vinculado à Secretaria Municipal da Administração. <br />\r\n ",
+    "valorEstimado": "",
+    "valorHomologado": ""
+   },
+   {
+    "titulo": "Para manutenção de Câmaras de Vacinas das unidades, USF PADRE NOBREGA, UBS CHICO MENDES e SALA DE VACINAS, destinado à Secretaria Municipal da Saúde.",
+    "dataAtualizacao": "2026-10-21 11:20:24",
+    "dataPostagem": "2026-10-20 08:00:00",
+    "dataRealizacao": "2026-10-20 08:00:00",
+    "numeroEdital": 154,
+    "numeroProcesso": 154,
+    "modalidade": "Inexigibilidade",
+    "situacao": "Homologado",
+    "descricao": "<strong>para manutenção de Câmaras de Vacinas das unidades, USF PADRE NOBREGA, UBS CHICO MENDES e SALA DE VACINAS, destinado à Secretaria Municipal da Saúde.   </strong>",
+    "valorEstimado": "",
+    "valorHomologado": ""
+   },
+   {
+    "titulo": "Aquisição de alimentação para os usuários do CDI durante o passeio ao Zoológico de Bauru, destinado à Secretaria Municipal da Assistência Social e Cidadania.",
+    "dataAtualizacao": "2026-10-21 11:22:58",
+    "dataPostagem": "2026-10-20 08:00:00",
+    "dataRealizacao": "2026-10-20 08:00:00",
+    "numeroEdital": 159,
+    "numeroProcesso": 159,
+    "modalidade": "Inexigibilidade",
+    "situacao": "Homologado",
+    "descricao": "Aquisição de alimentação para os usuários do CDI durante o passeio ao Zoológico de Bauru, destinado à Secretaria Municipal da Assistência Social e Cidadania. ",
+    "valorEstimado": "",
+    "valorHomologado": ""
+   },
+   {
+    "titulo": "Apresentação musical na Segunda Edição do Festival do Café, destinado à Secretaria Municipal do Trabalho, Turismo e Desenvolvimento Econômico.",
+    "dataAtualizacao": "2026-10-21 12:13:04",
+    "dataPostagem": "2026-10-17 08:00:00",
+    "dataRealizacao": "2026-10-17 08:00:00",
+    "numeroEdital": 156,
+    "numeroProcesso": 156,
+    "modalidade": "Inexigibilidade",
+    "situacao": "Homologado",
+    "descricao": "<strong>Apresentação musical na Segunda Edição do Festival do Café, destinado à Secretaria Municipal do Trabalho, Turismo e Desenvolvimento Econômico.</strong>",
+    "valorEstimado": "",
+    "valorHomologado": ""
+   },
+   {
+    "titulo": "Apresentação musical na Segunda Edição do Festival do Café do grupo musical Tributo 90, destinado à Secretaria Municipal do Trabalho, Turismo e Desenvolvimento Econômico.",
+    "dataAtualizacao": "2026-10-21 12:38:56",
+    "dataPostagem": "2026-10-17 08:00:00",
+    "dataRealizacao": "2026-10-17 08:00:00",
+    "numeroEdital": 158,
+    "numeroProcesso": 158,
+    "modalidade": "Inexigibilidade",
+    "situacao": "Homologado",
+    "descricao": "<strong>Apresentação musical na Segunda Edição do Festival do Café do </strong><strong>grupo musical Tributo 90</strong><strong>, destinado à Secretaria Municipal do Trabalho, Turismo e Desenvolvimento Econômico.</strong>",
+    "valorEstimado": "",
+    "valorHomologado": ""
+   }
+  ],
+  "alterados": [],
+  "removidos": []
+ },
+ "contratos": {
+  "novos": [
+   {
+    "nomeContratada": "PRIMAX INDÚSTRIA E COMÉRCIO DE MÓVEIS LTDA",
+    "dataAssinatura": "2026-10-20",
+    "dataInicioVigencia": "2026-10-20",
+    "dataFimVigencia": "2027-04-20",
+    "dataVigencia": "2027-04-20",
+    "valorContrato": 101848,
+    "numeroContrato": 2096,
+    "numeroProcesso": "92",
+    "tipoLicitacao": "Pregão Eletrônico",
+    "situacao": "Vigente",
+    "tipo": "CF - Contrato de Fornecimento"
+   }
+  ],
+  "alterados": [],
+  "removidos": [
+   {
+    "nomeContratada": "MF SISTEMAS E SERVIÇOS DE T.I. LTDA.",
+    "dataAssinatura": "2023-10-30",
+    "dataInicioVigencia": "2023-10-30",
+    "dataFimVigencia": "2024-10-30",
+    "dataVigencia": "2026-10-30",
+    "valorContrato": 140000,
+    "numeroContrato": 1667,
+    "numeroProcesso": "123",
+    "tipoLicitacao": "Pregão Eletrônico",
+    "situacao": "Vigente",
+    "tipo": "CST - Contrato de Serviços de Terceiros"
+   }
+  ]
+ },
+ "licitacoes": {
+  "novos": [
+   {
+    "titulo": "Prestação de serviços de locação de solução de gestão de processos digitais (plataforma 100% web em ambiente de nuvem), contemplando direito de uso de plataforma de processos digitais, comunicação interna e externa, protocolo, aprovação de projetos, assinatura eletrônica e gestão documental, e serviços de implantação, treinamento e suporte técnico, destinados à Secretaria Munic",
+    "dataAtualizacao": "2026-10-22 08:03:57",
+    "dataPostagem": "2026-11-10 09:00:00",
+    "dataRealizacao": "2026-10-22 08:00:00",
+    "numeroEdital": 112,
+    "numeroProcesso": 112,
+    "modalidade": "Pregão Eletrônico",
+    "situacao": "Aberto",
+    "descricao": "Prestação de serviços de locação de solução de gestão de processos digitais (plataforma 100% web em ambiente de nuvem), contemplando direito de uso de plataforma de processos digitais, comunicação interna e externa, protocolo, aprovação de projetos, assinatura eletrônica e gestão documental, e serviços de implantação, treinamento e suporte técnico, destinados à Secretaria Municipal de Tecnologia e Inovação.",
+    "valorEstimado": "",
+    "valorHomologado": ""
+   }
+  ],
+  "alterados": [
+   {
+    "registro": {
+     "titulo": "PE 109/2025-Registro de preços, pelo prazo de 12 meses, visando eventual Aquisição de vestuário e equipamento de proteção individual, destinados à Secretaria Municipal da Saúde, conforme condições, quantidades e exigências estabelecidas neste Edital e seus anexos.",
+     "dataAtualizacao": "2026-10-22 08:58:39",
+     "dataPostagem": "2026-11-06 09:00:00",
+     "dataRealizacao": "2026-10-14 11:18:00",
+     "numeroEdital": 109,
+     "numeroProcesso": 109,
+     "modalidade": "Pregão Eletrônico",
+     "situacao": "Aberto",
+     "descricao": "PE 109/2026-Registro de preços, pelo prazo de 12 meses, visando eventual Aquisição de vestuário e equipamento de proteção individual, destinados à Secretaria Municipal da Saúde, conforme condições, quantidades e exigências estabelecidas neste Edital e seus anexos.<br />\r\n<strong>1.  </strong><strong>Havendo divergência entre o cadastro do material no Portal de Compras do Governo Federal (</strong><a href=\"http://www.comprasnet.gov.br\">www.comprasnet.gov.br</a><strong>) e o disposto neste Edital prevalecerá a descrição do Anexo I deste edital.</strong>",
+     "valorEstimado": "",
+     "valorHomologado": ""
+    },
+    "campos": {
+     "dataPostagem": [
+      "2026-10-30 09:00:00",
+      "2026-11-06 09:00:00"
+     ]
+    }
+   },
+   {
+    "registro": {
+     "titulo": "Contratação de Serviços de Apoio e Monitoramento aos Alunos, inclusive aos com Necessidades Especiais no Transporte Escolar, destinados à Secretaria Municipal da Educação",
+     "dataAtualizacao": "2026-10-22 08:37:18",
+     "dataPostagem": "2026-05-06 09:00:00",
+     "dataRealizacao": "2026-04-17 08:00:00",
+     "numeroEdital": 3,
+     "numeroProcesso": 3,
+     "modalidade": "Pregão Eletrônico",
+     "situacao": "Revogado",
+     "descricao": "Contratação de Serviços de Apoio e Monitoramento aos Alunos, inclusive aos com Necessidades Especiais no Transporte Escolar, destinados à Secretaria Municipal da Educação.",
+     "valorEstimado": "",
+     "valorHomologado": ""
+    },
+    "campos": {
+     "situacao": [
+      "Suspenso",
+      "Revogado"
+     ]
+    }
+   }
+  ],
+  "removidos": []
+ },
+ "obras": {
+  "novos": [],
+  "alterados": [],
+  "removidos": []
+ },
+ "diario_oficial": {
+  "novas": [
+   "4306"
+  ],
+  "alteradas": []
+ },
+ "despesas": {
+  "novos": [
+   880985,
+   880986,
+   880987,
+   880988,
+   880991,
+   880992,
+   880993,
+   880995,
+   880996,
+   880997,
+   880998,
+   880999,
+   881000,
+   881001,
+   881002,
+   881003,
+   881004,
+   881005,
+   881006,
+   881007,
+   881008,
+   881010,
+   881012,
+   881018,
+   881019,
+   881020,
+   881021,
+   881022,
+   881023,
+   881024,
+   881025,
+   881027,
+   881028,
+   881029,
+   881030,
+   881031,
+   881032,
+   881033,
+   881034,
+   881035,
+   881036,
+   881039,
+   881041,
+   881042,
+   881043,
+   881046,
+   881047,
+   881048,
+   881049,
+   881050,
+   881051,
+   881052,
+   881053,
+   881054,
+   881055,
+   881056,
+   881057,
+   881058,
+   881060,
+   881069,
+   881071,
+   881073,
+   881075,
+   881076,
+   881077,
+   881078,
+   881079,
+   881080,
+   881081,
+   881082
+  ],
+  "removidos": []
+ }
+}

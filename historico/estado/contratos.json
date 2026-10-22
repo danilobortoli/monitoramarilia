@@ -3733,6 +3733,19 @@
    "tipo": "ARP - Ata de Registro de Preço"
   },
   {
+   "nomeContratada": "PRIMAX INDÚSTRIA E COMÉRCIO DE MÓVEIS LTDA",
+   "dataAssinatura": "2026-10-20",
+   "dataInicioVigencia": "2026-10-20",
+   "dataFimVigencia": "2027-04-20",
+   "dataVigencia": "2027-04-20",
+   "valorContrato": 101848,
+   "numeroContrato": 2096,
+   "numeroProcesso": "92",
+   "tipoLicitacao": "Pregão Eletrônico",
+   "situacao": "Vigente",
+   "tipo": "CF - Contrato de Fornecimento"
+  },
+  {
    "nomeContratada": null,
    "dataAssinatura": "2026-10-13",
    "dataInicioVigencia": "2026-10-16",
@@ -6214,19 +6227,6 @@
    "tipoLicitacao": "Inexigibilidade",
    "situacao": "Vigente",
    "tipo": "TC - Termo de Colaboração"
-  },
-  {
-   "nomeContratada": "MF SISTEMAS E SERVIÇOS DE T.I. LTDA.",
-   "dataAssinatura": "2023-10-30",
-   "dataInicioVigencia": "2023-10-30",
-   "dataFimVigencia": "2024-10-30",
-   "dataVigencia": "2026-10-30",
-   "valorContrato": 140000,
-   "numeroContrato": 1667,
-   "numeroProcesso": "123",
-   "tipoLicitacao": "Pregão Eletrônico",
-   "situacao": "Vigente",
-   "tipo": "CST - Contrato de Serviços de Terceiros"
   },
   {
    "nomeContratada": null,
